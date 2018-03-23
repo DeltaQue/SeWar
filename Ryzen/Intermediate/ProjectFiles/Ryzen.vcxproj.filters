@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\Ryzen.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{9660A99A-9632-4763-A582-61BFBD43A116}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Ryzen.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\RyzenEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{C7EFDA2E-9831-4523-9E63-A2AC7790A0DF}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\Ryzen">
+			<UniqueIdentifier>{C1278BF2-3296-407C-AA7C-13295B32CC03}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\Ryzen\AutoPickup.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\AutoPickup.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\Interactable.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\Interactable.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\InventoryItem.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\InventoryItem.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\ManualPickup.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\ManualPickup.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\Ryzen\Ryzen.Build.cs">
+			<Filter>Source\Ryzen</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\Ryzen\Ryzen.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\Ryzen.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\RyzenCharacter.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\RyzenCharacter.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\RyzenController.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\RyzenController.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\RyzenGameMode.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\RyzenGameMode.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\RyzenStateBase.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\RyzenStateBase.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
