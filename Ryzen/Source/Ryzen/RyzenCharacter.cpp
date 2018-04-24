@@ -12,10 +12,11 @@
 #include "AutoPickup.h"
 #include "InventoryItem.h"
 #include "RyzenController.h"
+#include "UObject/ConstructorHelpers.h"
 //////////////////////////////////////////////////////////////////////////
 // ARyzenCharacter
 
-ARyzenCharacter::ARyzenCharacter()
+ARyzenCharacter::ARyzenCharacter() : GunOffset(FVector(68.0f, 16.0f, 24.0f)), CameraOffset(FVector(0,0,70.0f))
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -38,22 +39,38 @@ ARyzenCharacter::ARyzenCharacter()
 	// Create a camera boom (pulls in towards the player if there is a collision)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 300.0f; // The camera follows at this distance behind the character	
-	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller
+	//CameraBoom->TargetArmLength = 300.0f; // The camera follows at this distance behind the character	
+	CameraBoom->TargetArmLength = 0;
+	CameraBoom->bUsePawnControlRotation = false; // Rotate the arm based on the controller
+	CameraBoom->CameraRotationLagSpeed = 1.f;
 
 	// Create a follow camera
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
-	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
+	//FollowCamera->AttachTo(CharacterMesh, "head");
+	FollowCamera->bUsePawnControlRotation = false;
 
-
-
+	//Collection Sphere Initialized
 	CollectionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("CollectionSphere"));
 	CollectionSphere->SetupAttachment(RootComponent);
 	CollectionSphere->SetSphereRadius(200.f);
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
-	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+	// Ryzen Character Mesh Initialized
+	CharacterMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMesh"));
+	CharacterMesh->SetOnlyOwnerSee(true);
+	CharacterMesh->SetupAttachment(FollowCamera);
+	CharacterMesh->bCastDynamicShadow = false;
+	CharacterMesh->CastShadow = false;
+	CharacterMesh->RelativeRotation = FRotator(1.9f, -19.19f, 5.2f);
+	CharacterMesh->RelativeLocation = FVector(-0.5f, -4.4f, -155.7f);
+
+ // Camera does not rotate relative to arm
+
+	//Gun muzzle Location Initialized 
+	
+
+	//static ConstructorHelpers::FObjectFinder<USoundBase> FireSoundobj(TEXT("/Game/RyzenBP/Texture/FirstPersonCrosshair"));
+	//FireSound = 
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -83,6 +100,9 @@ void ARyzenCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInp
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ARyzenCharacter::OnResetVR);
+
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ARyzenCharacter::OnFire);
+
 }
 
 
@@ -140,6 +160,17 @@ void ARyzenCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void ARyzenCharacter::BeginPlay()
+{
+	// Call the base class  
+	Super::BeginPlay();
+
+	//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
+	//FP_Gun->AttachToComponent(Mesh1P, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
+
+
 }
 
 void ARyzenCharacter::Tick(float Deltatime)
@@ -208,5 +239,70 @@ void ARyzenCharacter::CheckForInteractables()
 		}
 		//Hit된 Actor가 없다면 nullptr를 
 		RController->CurrentInteractable = nullptr;
+	}
+}
+//
+//void ARyzenCharacter::CheckForManualPickup(AInteractable *Things)
+//{
+//
+//	ARyzenController* RController = Cast<ARyzenController>(GetController());
+//
+//	if (RController) 
+//	{
+//		AInteractable* Manual = Cast<AInteractable>(Things);
+//
+//		if (Manual)
+//		{
+//			RController->CurrentInteractable = Manual;
+//			return;
+//		}
+//
+//		RController->CurrentInteractable = nullptr;
+//	}
+//
+//}
+
+void ARyzenCharacter::OnFire()
+{
+
+	if (Bullets != NULL)
+	{
+		UWorld* const World = GetWorld();
+		if (World != NULL)
+		{
+			const FRotator SpawnRotation = GetControlRotation();
+			// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
+			const FVector SpawnLocation = ((MuzzleLocation != nullptr) ? MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
+
+			//Set Spawn Collision Handling Override
+			//액터의 콜리전을 생성될때 무언가에 충돌하면서 생성된다면 생성하지 못하게 셋팅
+			FActorSpawnParameters ActorSpawnParams;
+			ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+
+			// spawn the projectile at the muzzle
+			World->SpawnActor<ABullet>(Bullets, SpawnLocation, SpawnRotation, ActorSpawnParams);
+		}
+	}
+
+	if (FireSound != NULL)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+	}
+
+	//Fire 애니메이션 몽타주를 엔진에서 지정 했을때만 사용 가능
+	if (FireAnimation != NULL)
+	{
+		AnimInstance = CharacterMesh->GetAnimInstance();
+		if (AnimInstance != NULL)
+		{
+			AnimInstance->Montage_Play(FireAnimation, 1.f);
+		}
+	}
+
+	if (ParticleFX != NULL)
+	{
+		FVector loc = CharacterMesh->GetSocketLocation("Muzzle");
+		FRotator rot = CharacterMesh->GetSocketRotation("Muzzle");
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ParticleFX, loc, rot);
 	}
 }

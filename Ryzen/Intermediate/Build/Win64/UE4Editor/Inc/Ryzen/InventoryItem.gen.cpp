@@ -55,13 +55,6 @@ static struct FScriptStruct_Ryzen_StaticRegisterNativesFInventoryItem
 #endif
 			auto NewStructOpsLambda = []() -> void* { return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FInventoryItem>(); };
 #if WITH_METADATA
-			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Status_MetaData[] = {
-				{ "Category", "InventoryItem" },
-				{ "ModuleRelativePath", "InventoryItem.h" },
-			};
-#endif
-			static const UE4CodeGen_Private::FTextPropertyParams NewProp_Status = { UE4CodeGen_Private::EPropertyClass::Text, "Status", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000005, 1, nullptr, STRUCT_OFFSET(FInventoryItem, Status), METADATA_PARAMS(NewProp_Status_MetaData, ARRAY_COUNT(NewProp_Status_MetaData)) };
-#if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Description_MetaData[] = {
 				{ "Category", "InventoryItem" },
 				{ "ModuleRelativePath", "InventoryItem.h" },
@@ -104,7 +97,6 @@ static struct FScriptStruct_Ryzen_StaticRegisterNativesFInventoryItem
 #endif
 			static const UE4CodeGen_Private::FNamePropertyParams NewProp_ItemID = { UE4CodeGen_Private::EPropertyClass::Name, "ItemID", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000005, 1, nullptr, STRUCT_OFFSET(FInventoryItem, ItemID), METADATA_PARAMS(NewProp_ItemID_MetaData, ARRAY_COUNT(NewProp_ItemID_MetaData)) };
 			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
-				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Status,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Description,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Thumbnail,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Value,
@@ -128,7 +120,7 @@ static struct FScriptStruct_Ryzen_StaticRegisterNativesFInventoryItem
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FInventoryItem_CRC() { return 3847735214U; }
+	uint32 Get_Z_Construct_UScriptStruct_FInventoryItem_CRC() { return 886806852U; }
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)

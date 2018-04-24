@@ -8,13 +8,88 @@
 #include "ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef RYZEN_ManualPickup_generated_h
 #error "ManualPickup.generated.h already included, missing '#pragma once' in ManualPickup.h"
 #endif
 #define RYZEN_ManualPickup_generated_h
 
-#define Ryzen_Source_Ryzen_ManualPickup_h_15_RPC_WRAPPERS
-#define Ryzen_Source_Ryzen_ManualPickup_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Ryzen_Source_Ryzen_ManualPickup_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnEndOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnBeginOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOverlapCheck) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->OverlapCheck(); \
+		P_NATIVE_END; \
+	}
+
+
+#define Ryzen_Source_Ryzen_ManualPickup_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnEndOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnBeginOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOverlapCheck) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->OverlapCheck(); \
+		P_NATIVE_END; \
+	}
+
+
 #define Ryzen_Source_Ryzen_ManualPickup_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAManualPickup(); \
@@ -60,6 +135,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AManualPickup); \
 
 
 #define Ryzen_Source_Ryzen_ManualPickup_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__CollectionSphere() { return STRUCT_OFFSET(AManualPickup, CollectionSphere); } \
 	FORCEINLINE static uint32 __PPO__PickupMesh() { return STRUCT_OFFSET(AManualPickup, PickupMesh); } \
 	FORCEINLINE static uint32 __PPO__ItemID() { return STRUCT_OFFSET(AManualPickup, ItemID); }
 

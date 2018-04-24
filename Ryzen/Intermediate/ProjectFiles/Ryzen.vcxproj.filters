@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\Ryzen.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{9660A99A-9632-4763-A582-61BFBD43A116}</UniqueIdentifier>
+			<UniqueIdentifier>{CE5969E3-331E-4AD6-BBF7-87198FEB464D}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Ryzen.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{C7EFDA2E-9831-4523-9E63-A2AC7790A0DF}</UniqueIdentifier>
+			<UniqueIdentifier>{2EB54275-F3B0-469A-AD1C-A7194F8A9AC2}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,12 +31,18 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\Ryzen">
-			<UniqueIdentifier>{C1278BF2-3296-407C-AA7C-13295B32CC03}</UniqueIdentifier>
+			<UniqueIdentifier>{D9D1195C-9C35-4936-B49C-074637CFD8D2}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\Ryzen\AutoPickup.cpp">
 			<Filter>Source\Ryzen</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\Ryzen\AutoPickup.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\Bullet.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\Bullet.h">
 			<Filter>Source\Ryzen</Filter>
 		</ClInclude >
 		<ClCompile Include="..\..\Source\Ryzen\Interactable.cpp">
@@ -66,6 +72,15 @@
 		<ClInclude Include="..\..\Source\Ryzen\Ryzen.h">
 			<Filter>Source\Ryzen</Filter>
 		</ClInclude >
+		<None Include="..\..\Source\Ryzen\Ryzen.zip">
+			<Filter>Source\Ryzen</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\Ryzen\RyzenAnimInstance.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\RyzenAnimInstance.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
 		<ClCompile Include="..\..\Source\Ryzen\RyzenCharacter.cpp">
 			<Filter>Source\Ryzen</Filter>
 		</ClCompile >
@@ -84,10 +99,22 @@
 		<ClInclude Include="..\..\Source\Ryzen\RyzenGameMode.h">
 			<Filter>Source\Ryzen</Filter>
 		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\RyzenHUD.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\RyzenHUD.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
 		<ClCompile Include="..\..\Source\Ryzen\RyzenStateBase.cpp">
 			<Filter>Source\Ryzen</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\Ryzen\RyzenStateBase.h">
+			<Filter>Source\Ryzen</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Ryzen\RyzenStatus.cpp">
+			<Filter>Source\Ryzen</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Ryzen\RyzenStatus.h">
 			<Filter>Source\Ryzen</Filter>
 		</ClInclude >
 	</ItemGroup>

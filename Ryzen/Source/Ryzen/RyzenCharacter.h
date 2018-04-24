@@ -4,6 +4,8 @@
 
 #include "Engine.h"
 #include "GameFramework/Character.h"
+#include "Interactable.h"
+#include "Bullet.h"
 #include "RyzenCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -11,17 +13,31 @@ class ARyzenCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+		//  meta = (AllowPrivateAccess = "true")는 디테일 편집 가능
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* CameraBoom;
+		class USpringArmComponent* CameraBoom;
 
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* FollowCamera;
+		class UCameraComponent* FollowCamera;
 
 	//아이템 수집 반경체크 구체
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		class USphereComponent* CollectionSphere;
+
+	
+	/* Bullet이 발사되는 위치 */
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+		class USceneComponent* MuzzleLocation;
+
+	//Bullet이 발사될 대략적 위치
+	FVector GunOffset;
+	FVector CameraOffset;
+
+	//Fire Function
+	void OnFire();
+
 public:
 	ARyzenCharacter();
 
@@ -68,17 +84,50 @@ protected:
 	/** Collection Sphere 범위 내에 AutoPickup 가능한 물체가 있다면 습득  */
 	void CollectAutoPickups();
 
+
 	/** Collection Sphere 범위 내 캐릭터 시야(마우스포인터)에 상호작용 가능한 물체가 있는지 판단 */
 	void CheckForInteractables();
+
+	
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
 
+	virtual void BeginPlay();
 public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	//Pickup요청 함수
+	//void CheckForManualPickup(AInteractable *Things);
+
+	//Fire Animation
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GamePlay)
+		class UAnimMontage* FireAnimation;
+
+	UPROPERTY(VisibleDefaultsOnly)
+		class UAnimInstance* AnimInstance;
+	
+	//Gun Fire Sound
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		class USoundBase* FireSound;
+
+	//Gun Fire Particles Effect
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		class UParticleSystem* ParticleFX;
+
+	UPROPERTY(VisibleDefaultsOnly)
+		class UParticleSystemComponent* FireParticle;
+
+	/* Character Mesh */
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+		class USkeletalMeshComponent* CharacterMesh;
+
+	/* Bullet Class */
+	UPROPERTY(EditDefaultsOnly, Category = Bullet)
+		TSubclassOf<ABullet> Bullets;
 };
 

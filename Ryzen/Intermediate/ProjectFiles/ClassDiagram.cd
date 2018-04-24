@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ARyzenHUD">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\RyzenHUD.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URyzenStatus">
+    <Position X="13.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAABAAAQBAAAAAAAIAABAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\RyzenStatus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AAutoPickup">
+    <Position X="18.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAgAABAAAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\AutoPickup.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ABullet">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAQCAAAAAAAAAAAAACAABAAAAAAAAACAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Bullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AInteractable" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAQAIAEAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Interactable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AManualPickup" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAgAAAAAAICAAgAAAAAAACAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\ManualPickup.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARyzenCharacter">
+    <Position X="6.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAwAABAAABIgAAAQAAAIAiAQEAAAAhRIGJIAqgQKA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\RyzenCharacter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARyzenController">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAABAAEAAAAABAQAAAIAAAAgAAAAAAAgAAgAQ=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\RyzenController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARyzenGameMode">
+    <Position X="19" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\RyzenGameMode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARyzenStateBase">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\RyzenStateBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="FInventoryItem">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAKAAgAAAAoAAACQQAACAAAAAAAAAgAIAABAA=</HashCode>
+      <FileName>C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\InventoryItem.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

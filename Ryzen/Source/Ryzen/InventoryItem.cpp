@@ -9,6 +9,14 @@ FInventoryItem::FInventoryItem()
 	this->Weight = 1;
 	this->Value = 1;
 	this->Description = FText::FromString("No Description");
-	this->Status = FText::FromString("No Status");
 }
 
+FName FInventoryItem::GetItemID() const { return ItemID; }
+
+FText FInventoryItem::GetName() const { return Name; }
+
+int32 FInventoryItem::GetValue() const { return Value; }
+
+int32 FInventoryItem::GetWeight() const { return Weight; }
+
+FText FInventoryItem::GetDescription() const { return Description; }

@@ -15,9 +15,6 @@ struct FInventoryItem : public FTableRowBase
 {
 	GENERATED_BODY()
 
-public:
-	FInventoryItem();
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		FName ItemID;
 
@@ -36,13 +33,21 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		FText Description;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		FText Status;
-
 	bool operator==(const FInventoryItem& OtherItem) const
 	{
 		if (ItemID == OtherItem.ItemID)
 			return true;
 		return false;
 	}
+
+public:
+	FInventoryItem();
+
+	
+
+	FName GetItemID() const;
+	FText GetName() const;
+	int32 GetWeight() const;
+	int32 GetValue() const;
+	FText GetDescription() const;
 };
