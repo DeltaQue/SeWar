@@ -3,7 +3,7 @@
 #include "ManualPickup.h"
 #include "RyzenController.h"
 #include "Interactable.h"
-#include "RyzenCharacter.h"
+#include "PlayerCharacter.h"
 
 AManualPickup::AManualPickup()
 {

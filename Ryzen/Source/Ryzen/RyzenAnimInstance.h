@@ -4,6 +4,7 @@
 
 #include "Engine.h"
 #include "Animation/AnimInstance.h"
+#include "RyzenCharacter.h"
 #include "RyzenAnimInstance.generated.h"
 
 /**
@@ -21,13 +22,34 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		bool bIsFalling;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		FVector Speed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		FRotator Rotate;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		bool bEnableJump;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		bool bCrouching;
+
 	/*Holds the current speed of our character*/
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		float MovementSpeed;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		APawn *Pawn;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		ARyzenCharacter *Ryzen;
 
 	/*Updates the above properties*/
 	UFUNCTION(BlueprintCallable, Category = "UpdateAnimationProperties")
 		void UpdateAnimationProperties();
 	
-	
+private:
+	bool CanJump();
+
+	float CalculateDirection();
 };

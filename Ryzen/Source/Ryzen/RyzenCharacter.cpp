@@ -64,6 +64,8 @@ ARyzenCharacter::ARyzenCharacter() : GunOffset(FVector(68.0f, 16.0f, 24.0f)), Ca
 	CharacterMesh->RelativeRotation = FRotator(1.9f, -19.19f, 5.2f);
 	CharacterMesh->RelativeLocation = FVector(-0.5f, -4.4f, -155.7f);
 
+	JumpButtonDown = false;
+
  // Camera does not rotate relative to arm
 
 	//Gun muzzle Location Initialized 

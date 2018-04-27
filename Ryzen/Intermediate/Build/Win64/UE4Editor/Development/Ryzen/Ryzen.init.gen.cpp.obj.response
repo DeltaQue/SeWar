@@ -24,6 +24,10 @@
 /w44668
 /I D:\EpicGames\UE_4.19\Engine\Source
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source
+/I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public
+/I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Player
+/I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\UI
+/I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Inc\Ryzen
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen
 /I D:\EpicGames\UE_4.19\Engine\Source\Runtime\Core\Public
