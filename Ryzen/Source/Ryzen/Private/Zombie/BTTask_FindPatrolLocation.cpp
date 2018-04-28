@@ -22,7 +22,7 @@ EBTNodeResult::Type UBTTask_FindPatrolLocation::ExecuteTask(UBehaviorTreeCompone
 	AWaypoint* MyWaypoint = MyController->GetWaypoint();
 	if (MyWaypoint)
 	{
-		/const float SearchRadius = 200.0f;
+		const float SearchRadius = 200.0f;
 		const FVector SearchOrigin = MyWaypoint->GetActorLocation();
 
 		FNavLocation ResultLocation;

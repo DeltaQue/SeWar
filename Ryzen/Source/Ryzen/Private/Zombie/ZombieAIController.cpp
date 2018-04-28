@@ -1,7 +1,7 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
 #include "ZombieAIController.h"
-#include "ZombieCharacter.h"
+#include "ZombieCharacter_2.h"
 
 /* AI Specific includes */
 #include "BehaviorTree/BehaviorTree.h"
@@ -29,7 +29,7 @@ void AZombieAIController::Possess(class APawn* InPawn)
 {
 	Super::Possess(InPawn);
 
-	AZombieCharacter* ZombieBot = Cast<AZombieCharacter>(InPawn);
+	AZombieCharacter_2* ZombieBot = Cast<AZombieCharacter_2>(InPawn);
 	if (ZombieBot)
 	{
 		if (ZombieBot->BehaviorTree->BlackboardAsset)

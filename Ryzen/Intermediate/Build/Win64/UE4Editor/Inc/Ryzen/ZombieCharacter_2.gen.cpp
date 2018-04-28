@@ -56,7 +56,6 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BehaviorTree_MetaData[] = {
 				{ "Category", "AI" },
 				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
-				{ "ToolTip", "Assigned at the Character level (instead of Controller) so we may use different zombie behaviors while re-using one controller." },
 			};
 #endif
 			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BehaviorTree = { UE4CodeGen_Private::EPropertyClass::Object, "BehaviorTree", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000010001, 1, nullptr, STRUCT_OFFSET(AZombieCharacter_2, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(NewProp_BehaviorTree_MetaData, ARRAY_COUNT(NewProp_BehaviorTree_MetaData)) };
@@ -99,7 +98,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombieCharacter_2, 698576411);
+	IMPLEMENT_CLASS(AZombieCharacter_2, 612028142);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AZombieCharacter_2(Z_Construct_UClass_AZombieCharacter_2, &AZombieCharacter_2::StaticClass, TEXT("/Script/Ryzen"), TEXT("AZombieCharacter_2"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AZombieCharacter_2);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

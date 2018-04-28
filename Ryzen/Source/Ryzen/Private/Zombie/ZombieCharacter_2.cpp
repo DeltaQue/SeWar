@@ -87,7 +87,7 @@ void AZombieCharacter_2::OnSeePlayer(APawn* Pawn)
 	bSensedTarget = true;
 
 	AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
-	ARyzenBaseCharacter* SensedPawn = Cast<ARyzenBaseCharacter>(Pawn);
+	APlayerCharacter* SensedPawn = Cast<APlayerCharacter>(Pawn);
 	if (AIController && SensedPawn->IsAlive())
 	{
 		AIController->SetTargetEnemy(SensedPawn);
