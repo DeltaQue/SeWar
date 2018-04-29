@@ -2,7 +2,6 @@
 
 #include "ZombieCharacter_2.h"
 #include "ZombieAIController.h"
-#include "PlayerCharacter.h"
 #include "RyzenBaseCharacter.h"
 
 /* AI Include */
@@ -87,10 +86,22 @@ void AZombieCharacter_2::OnSeePlayer(APawn* Pawn)
 	bSensedTarget = true;
 
 	AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
-	APlayerCharacter* SensedPawn = Cast<APlayerCharacter>(Pawn);
+	ARyzenBaseCharacter* SensedPawn = Cast<ARyzenBaseCharacter>(Pawn);
 	if (AIController && SensedPawn->IsAlive())
 	{
 		AIController->SetTargetEnemy(SensedPawn);
 	}
 }
 
+void AZombieCharacter_2::SetBotType(EZombieType NewType) 
+{
+	ZombieType = NewType;
+
+	AZombieAIController* ZombieController = Cast<AZombieAIController>(GetController());
+	if (ZombieController)
+	{
+		ZombieController->SetBlackboardBotType(NewType);
+	}
+
+	BroadcastUpdateAudioLoop(bSensedTarget);
+}

@@ -143,9 +143,6 @@
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\ZombieAIController.cpp">
       <Filter>Source\Ryzen\Private\Zombie</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\ZombieCharacter.cpp">
-      <Filter>Source\Ryzen\Private\Zombie</Filter>
-    </ClCompile>
     <Filter Include="Source\Ryzen\Public">
       <UniqueIdentifier>{D5859D6E-2C7D-4521-95B5-B157181B51F6}</UniqueIdentifier>
     </Filter>
@@ -176,9 +173,6 @@
     <ClInclude Include="..\..\Source\Ryzen\Public\Zombie\ZombieAIController.h">
       <Filter>Source\Ryzen\Public\Zombie</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Ryzen\Public\Zombie\ZombieCharacter.h">
-      <Filter>Source\Ryzen\Public\Zombie</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Ryzen\Public\Zombie\ZombieCharacter_2.h">
@@ -186,6 +180,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Ryzen\Public\Player\PlayerCharacter.h">
       <Filter>Source\Ryzen\Public\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Ryzen\Public\StructClass.h">
+      <Filter>Source\Ryzen\Public</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

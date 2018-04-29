@@ -8,13 +8,36 @@
 #include "ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class APawn;
 #ifdef RYZEN_ZombieCharacter_2_generated_h
 #error "ZombieCharacter_2.generated.h already included, missing '#pragma once' in ZombieCharacter_2.h"
 #endif
 #define RYZEN_ZombieCharacter_2_generated_h
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnSeePlayer) \
+	{ \
+		P_GET_OBJECT(APawn,Z_Param_pawn); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnSeePlayer(Z_Param_pawn); \
+		P_NATIVE_END; \
+	}
+
+
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnSeePlayer) \
+	{ \
+		P_GET_OBJECT(APawn,Z_Param_pawn); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnSeePlayer(Z_Param_pawn); \
+		P_NATIVE_END; \
+	}
+
+
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAZombieCharacter_2(); \

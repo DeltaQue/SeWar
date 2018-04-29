@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Player/RyzenBaseCharacter.h"
+#include "StructClass.h"
 #include "ZombieCharacter_2.generated.h"
 
 
@@ -16,6 +17,7 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "AI")
 		class UPawnSensingComponent* PawnSensingComp;
 
+	//타겟을 찾지 못하는데 걸리는 시간 2.5초
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		float SenseTimeOut;
 
@@ -34,17 +36,22 @@ private:
 	virtual void Tick(float DeltaTime) override;
 
 private:
-	void OnSeePlayer(APawn* pawn);
-
-
+	UFUNCTION()
+		void OnSeePlayer(APawn* pawn);
+	
 public:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		class UBehaviorTree* BehaviorTree;
 
+	//좀비 타입
+	UPROPERTY(EditAnywhere, Category = "AI")
+		EZombieType ZombieType;
+
+	void SetBotType(EZombieType NewType);
+
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Attack")
 		UAnimMontage* ActtackAnimMontage;
-
 
 	
 };

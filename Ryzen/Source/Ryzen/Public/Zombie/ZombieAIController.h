@@ -3,8 +3,9 @@
 #pragma once
 
 #include "AIController.h"
-#include "PlayerCharacter.h"
+#include "RyzenBaseCharacter.h"
 #include "Waypoint.h"
+#include "StructClass.h"
 #include "ZombieAIController.generated.h"
 
 /**
@@ -51,7 +52,7 @@ public:
 
 	void SetTargetEnemy(APawn* NewTarget);
 
-	//void SetBlackboardBotType(EBotBehaviorType NewType);
+	void SetBlackboardZombieType(EZombieType NewType);
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorComp() const { return BehaviorComp; }

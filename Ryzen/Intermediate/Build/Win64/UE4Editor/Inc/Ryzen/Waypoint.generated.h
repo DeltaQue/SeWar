@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define RYZEN_Waypoint_generated_h
 
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_RPC_WRAPPERS
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_INCLASS_NO_PURE_DECLS \
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_RPC_WRAPPERS
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWaypoint(); \
 	friend RYZEN_API class UClass* Z_Construct_UClass_AWaypoint(); \
@@ -25,7 +25,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_INCLASS \
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesAWaypoint(); \
 	friend RYZEN_API class UClass* Z_Construct_UClass_AWaypoint(); \
@@ -35,7 +35,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_STANDARD_CONSTRUCTORS \
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AWaypoint(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWaypoint) \
@@ -48,7 +48,7 @@ private: \
 public:
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_ENHANCED_CONSTRUCTORS \
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AWaypoint(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -61,26 +61,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWaypoint); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWaypoint)
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_PRIVATE_PROPERTY_OFFSET
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_12_PROLOG
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_GENERATED_BODY_LEGACY \
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_PRIVATE_PROPERTY_OFFSET
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_11_PROLOG
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_PRIVATE_PROPERTY_OFFSET \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_RPC_WRAPPERS \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_INCLASS \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_STANDARD_CONSTRUCTORS \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_PRIVATE_PROPERTY_OFFSET \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_RPC_WRAPPERS \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_INCLASS \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_GENERATED_BODY \
+#define Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_PRIVATE_PROPERTY_OFFSET \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_INCLASS_NO_PURE_DECLS \
-	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_15_ENHANCED_CONSTRUCTORS \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_PRIVATE_PROPERTY_OFFSET \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_INCLASS_NO_PURE_DECLS \
+	Ryzen_Source_Ryzen_Public_Zombie_Waypoint_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -2,6 +2,7 @@
 
 #include "ZombieAIController.h"
 #include "ZombieCharacter_2.h"
+#include "RyzenBaseCharacter.h"
 
 /* AI Specific includes */
 #include "BehaviorTree/BehaviorTree.h"
@@ -94,10 +95,10 @@ ARyzenBaseCharacter* AZombieAIController::GetTargetEnemy()
 }
 
 
-//void AZombieAIController::SetBlackboardBotType(EBotBehaviorType NewType)
-//{
-//	if (BlackboardComp)
-//	{
-//		BlackboardComp->SetValueAsEnum(BotTypeKeyName, (uint8)NewType);
-//	}
-//}
+void AZombieAIController::SetBlackboardZombieType(EZombieType NewType)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsEnum(BotTypeKeyName, (uint8)NewType);
+	}
+}

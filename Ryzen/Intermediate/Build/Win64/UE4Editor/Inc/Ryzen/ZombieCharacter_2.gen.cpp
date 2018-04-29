@@ -17,12 +17,42 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 	RYZEN_API UClass* Z_Construct_UClass_AZombieCharacter_2();
 	RYZEN_API UClass* Z_Construct_UClass_ARyzenBaseCharacter();
 	UPackage* Z_Construct_UPackage__Script_Ryzen();
+	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer();
+	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UPawnSensingComponent_NoRegister();
 // End Cross Module References
 	void AZombieCharacter_2::StaticRegisterNativesAZombieCharacter_2()
 	{
+		UClass* Class = AZombieCharacter_2::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "OnSeePlayer", &AZombieCharacter_2::execOnSeePlayer },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer()
+	{
+		struct ZombieCharacter_2_eventOnSeePlayer_Parms
+		{
+			APawn* pawn;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_pawn = { UE4CodeGen_Private::EPropertyClass::Object, "pawn", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnSeePlayer_Parms, pawn), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_pawn,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "OnSeePlayer", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00040401, sizeof(ZombieCharacter_2_eventOnSeePlayer_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AZombieCharacter_2_NoRegister()
 	{
@@ -36,6 +66,9 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 			static UObject* (*const DependentSingletons[])() = {
 				(UObject* (*)())Z_Construct_UClass_ARyzenBaseCharacter,
 				(UObject* (*)())Z_Construct_UPackage__Script_Ryzen,
+			};
+			static const FClassFunctionLinkInfo FuncInfo[] = {
+				{ &Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer, "OnSeePlayer" }, // 2953399095
 			};
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
@@ -63,6 +96,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SenseTimeOut_MetaData[] = {
 				{ "Category", "AI" },
 				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+				{ "ToolTip", "\xc5\xb8???? \xc3\xa3?? ???\xcf\xb4\xc2\xb5? ?\xc9\xb8??? ?\xc3\xb0? 2.5??" },
 			};
 #endif
 			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SenseTimeOut = { UE4CodeGen_Private::EPropertyClass::Float, "SenseTimeOut", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AZombieCharacter_2, SenseTimeOut), METADATA_PARAMS(NewProp_SenseTimeOut_MetaData, ARRAY_COUNT(NewProp_SenseTimeOut_MetaData)) };
@@ -87,7 +121,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 				&AZombieCharacter_2::StaticClass,
 				DependentSingletons, ARRAY_COUNT(DependentSingletons),
 				0x00900080u,
-				nullptr, 0,
+				FuncInfo, ARRAY_COUNT(FuncInfo),
 				PropPointers, ARRAY_COUNT(PropPointers),
 				nullptr,
 				&StaticCppClassTypeInfo,
@@ -98,7 +132,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombieCharacter_2, 612028142);
+	IMPLEMENT_CLASS(AZombieCharacter_2, 3753984297);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AZombieCharacter_2(Z_Construct_UClass_AZombieCharacter_2, &AZombieCharacter_2::StaticClass, TEXT("/Script/Ryzen"), TEXT("AZombieCharacter_2"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AZombieCharacter_2);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

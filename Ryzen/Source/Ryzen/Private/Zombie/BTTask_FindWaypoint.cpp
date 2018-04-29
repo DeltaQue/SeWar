@@ -14,10 +14,10 @@
 EBTNodeResult::Type UBTTask_FindWaypoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	AZombieAIController* MyController = Cast<AZombieAIController>(OwnerComp.GetAIOwner());
-	/*if (MyController == nullptr)
+	if (MyController == nullptr)
 	{
 		return EBTNodeResult::Failed;
-	}*/
+	}
 
 	AWaypoint* CurrentWaypoint = MyController->GetWaypoint();
 	AActor* NewWaypoint = nullptr;

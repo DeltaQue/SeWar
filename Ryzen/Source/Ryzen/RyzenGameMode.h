@@ -13,6 +13,13 @@ class ARyzenGameMode : public AGameModeBase
 
 public:
 	ARyzenGameMode();
+
+
+protected:
+	virtual void PreInitializeComponents() override;
+	
+	void InitZombieType();
+	
 };
 
 
