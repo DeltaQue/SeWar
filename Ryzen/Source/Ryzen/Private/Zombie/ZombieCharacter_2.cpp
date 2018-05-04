@@ -12,29 +12,35 @@
 AZombieCharacter_2::AZombieCharacter_2(const class FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	/* Note: We assign the Controller class in the Blueprint extension of this class
-	Because the zombie AIController is a blueprint in content and it's better to avoid content references in code.  */
-	/*AIControllerClass = ASZombieAIController::StaticClass();*/
-
-	/* Our sensing component to detect players by visibility and noise checks. */
+	//시야에 적이 있는지 체크하는 컴포넌트
 	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
 	PawnSensingComp->SetPeripheralVisionAngle(60.0f);
 	PawnSensingComp->SightRadius = 2000;
 	PawnSensingComp->HearingThreshold = 600;
 	PawnSensingComp->LOSHearingThreshold = 1200;
 
-	/* Ignore this channel or it will absorb the trace impacts instead of the skeletal mesh */
 	GetCapsuleComponent()->SetCapsuleHalfHeight(96.0f, false);
 	GetCapsuleComponent()->SetCapsuleRadius(42.0f);
 
-	/* These values are matched up to the CapsuleComponent above and are used to find navigation paths */
+	AttackCollisionComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("AttackCollision"));
+	AttackCollisionComp->SetRelativeLocation(FVector(45, 0, 25));
+	AttackCollisionComp->SetCapsuleHalfHeight(60);
+	AttackCollisionComp->SetCapsuleRadius(35, false);
+	AttackCollisionComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+	AttackCollisionComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+	AttackCollisionComp->SetupAttachment(GetCapsuleComponent());
+
+
 	GetMovementComponent()->NavAgentProps.AgentRadius = 42;
 	GetMovementComponent()->NavAgentProps.AgentHeight = 192;
 
+	//기본 체력 100
 	Health = 100;
 
+	//적을 타겟으로 감지하고 리셋하는데 걸리는 시간 2.5초
 	SenseTimeOut = 2.5f;
 
+	//현재 시간 저장용 변수
 	LastSeenTime = 0.0f;
 }
 
@@ -46,6 +52,10 @@ void AZombieCharacter_2::BeginPlay()
 	if (PawnSensingComp)
 	{
 		PawnSensingComp->OnSeePawn.AddDynamic(this, &AZombieCharacter_2::OnSeePlayer);
+	}
+	if (AttackCollisionComp)
+	{
+		AttackCollisionComp->OnComponentBeginOverlap.AddDynamic(this, &AZombieCharacter_2::OnAttackCollisionCompBeginOverlap);
 	}
 }
 
@@ -65,6 +75,8 @@ void AZombieCharacter_2::Tick(float DeltaSeconds)
 			AIController->SetTargetEnemy(nullptr);
 		}
 	}
+
+	OnDeath();
 }
 
 
@@ -93,15 +105,49 @@ void AZombieCharacter_2::OnSeePlayer(APawn* Pawn)
 	}
 }
 
-void AZombieCharacter_2::SetBotType(EZombieType NewType) 
+void AZombieCharacter_2::SetZombieType(EZombieType NewType) 
 {
 	ZombieType = NewType;
 
 	AZombieAIController* ZombieController = Cast<AZombieAIController>(GetController());
 	if (ZombieController)
 	{
-		ZombieController->SetBlackboardBotType(NewType);
+		ZombieController->SetBlackboardZombieType(NewType);
+	}
+}
+
+
+void AZombieCharacter_2::OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	//AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherComp);
+	if (OtherActor && OtherActor != this && IsAlive()) {
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Overlap 1"));
+		if (AttackAnimMontage != NULL) {
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Overlap 2"));
+			AnimInstance = this->GetMesh()->GetAnimInstance();
+			if (AnimInstance != NULL) {
+				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Overlap 3"));
+				//PlayAnimMontage(AttackAnimMontage);
+				AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
+			}
+
+		}
+	}
+}
+
+bool AZombieCharacter_2::DamageHit(uint8 damage) {
+	if (this->Health - damage > 0) {
+		this->Health -= damage;
+		if (this->IsAlive()) {
+			return true;
+		}
+
 	}
 
-	BroadcastUpdateAudioLoop(bSensedTarget);
+	return false;
+}
+
+void AZombieCharacter_2::IsDeath() {
+	if (!this->IsAlive())
+		Destroy();
 }

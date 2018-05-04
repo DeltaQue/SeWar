@@ -13,54 +13,58 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeStructClass() {}
 // Cross Module References
-	RYZEN_API UClass* Z_Construct_UClass_UStructClass_NoRegister();
-	RYZEN_API UClass* Z_Construct_UClass_UStructClass();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
+	RYZEN_API UEnum* Z_Construct_UEnum_Ryzen_EZombieType();
 	UPackage* Z_Construct_UPackage__Script_Ryzen();
 // End Cross Module References
-	void UStructClass::StaticRegisterNativesUStructClass()
+	static UEnum* EZombieType_StaticEnum()
 	{
-	}
-	UClass* Z_Construct_UClass_UStructClass_NoRegister()
-	{
-		return UStructClass::StaticClass();
-	}
-	UClass* Z_Construct_UClass_UStructClass()
-	{
-		static UClass* OuterClass = nullptr;
-		if (!OuterClass)
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
 		{
-			static UObject* (*const DependentSingletons[])() = {
-				(UObject* (*)())Z_Construct_UClass_UObject,
-				(UObject* (*)())Z_Construct_UPackage__Script_Ryzen,
+			Singleton = GetStaticEnum(Z_Construct_UEnum_Ryzen_EZombieType, Z_Construct_UPackage__Script_Ryzen(), TEXT("EZombieType"));
+		}
+		return Singleton;
+	}
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EZombieType(EZombieType_StaticEnum, TEXT("/Script/Ryzen"), TEXT("EZombieType"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_Ryzen_EZombieType_CRC() { return 3435179160U; }
+	UEnum* Z_Construct_UEnum_Ryzen_EZombieType()
+	{
+#if WITH_HOT_RELOAD
+		UPackage* Outer = Z_Construct_UPackage__Script_Ryzen();
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("EZombieType"), 0, Get_Z_Construct_UEnum_Ryzen_EZombieType_CRC(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
+		if (!ReturnEnum)
+		{
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "EZombieType::Pssing", (int64)EZombieType::Pssing },
+				{ "EZombieType::Patrol", (int64)EZombieType::Patrol },
 			};
 #if WITH_METADATA
-			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-				{ "IncludePath", "StructClass.h" },
+			static const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 				{ "ModuleRelativePath", "Public/StructClass.h" },
+				{ "Patrol.ToolTip", "?\xc3\xb7??\xcc\xbe\xee\xb8\xa6 ?\xdf\xb0??\xcf\xb1? ???? \xc5\xbd???\xcf\xb4? ????" },
+				{ "Pssing.ToolTip", "?????? ?????? ?\xd6\xb4? ????" },
+				{ "ToolTip", "#include \"StructClass.generated.h\"" },
 			};
 #endif
-			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
-				TCppClassTypeTraits<UStructClass>::IsAbstract,
-			};
-			static const UE4CodeGen_Private::FClassParams ClassParams = {
-				&UStructClass::StaticClass,
-				DependentSingletons, ARRAY_COUNT(DependentSingletons),
-				0x00100080u,
-				nullptr, 0,
-				nullptr, 0,
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_Ryzen,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				"EZombieType",
+				RF_Public|RF_Transient|RF_MarkAsNative,
 				nullptr,
-				&StaticCppClassTypeInfo,
-				nullptr, 0,
-				METADATA_PARAMS(Class_MetaDataParams, ARRAY_COUNT(Class_MetaDataParams))
+				(uint8)UEnum::ECppForm::EnumClass,
+				"EZombieType",
+				Enumerators,
+				ARRAY_COUNT(Enumerators),
+				METADATA_PARAMS(Enum_MetaDataParams, ARRAY_COUNT(Enum_MetaDataParams))
 			};
-			UE4CodeGen_Private::ConstructUClass(OuterClass, ClassParams);
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
 		}
-		return OuterClass;
+		return ReturnEnum;
 	}
-	IMPLEMENT_CLASS(UStructClass, 1880253);
-	static FCompiledInDefer Z_CompiledInDefer_UClass_UStructClass(Z_Construct_UClass_UStructClass, &UStructClass::StaticClass, TEXT("/Script/Ryzen"), TEXT("UStructClass"), false, nullptr, nullptr, nullptr);
-	DEFINE_VTABLE_PTR_HELPER_CTOR(UStructClass);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)

@@ -4,6 +4,7 @@
 
 #include "Engine.h"
 #include "GameFramework/Character.h"
+#include "StructClass.h"
 #include "RyzenBaseCharacter.generated.h"
 
 //UCLASS(ABSTRACT)는 이 클래스는 추상 클래스이므로 객체화 할 수 없다는 뜻이다.

@@ -5,7 +5,6 @@
 #include "AIController.h"
 #include "RyzenBaseCharacter.h"
 #include "Waypoint.h"
-#include "StructClass.h"
 #include "ZombieAIController.generated.h"
 
 /**

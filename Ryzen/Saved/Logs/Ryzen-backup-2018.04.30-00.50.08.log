@@ -1,0 +1,705 @@
+﻿Log file open, 04/29/18 23:07:09
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogInit: Display: Running engine for game: Ryzen
+LogPlatformFile: Not using cached read wrapper
+LogInit: Display: RandInit(-1693853948) SRandInit(-1693853948).
+LogInit: Read version file with build ID '3944462'
+LogInit: Overriding engine version to CL 3989454, compatible CL 3944462
+LogInit: Registered custom module enumerator with build ID '3944462'
+LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 43.071661
+LogD3D11RHI: Aftermath initialized
+LogICUInternationalization: Display: ICU TimeZone Detection - Raw Offset: +9:00, Platform Override: ''
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin LiveLink
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin HTML5Networking
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin LinearTimecode
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin NetcodeUnitTest
+LogPluginManager: Mounting plugin NUTUnrealEngine4
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleARKit
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin ImmediatePhysics
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Plugin shader directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders found
+LogPluginManager: Mapping shader source directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders to virtual directory /Plugin/OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogStreaming: Display: Took  0.318s to configure plugins.
+LogModuleManager: Display: Found up-to-date module file C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Binaries/Win64/UE4Editor-Ryzen-7314.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2D.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2DEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperSpriteSheetImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperTiledImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-SmartSnapping.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLink.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLinkEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeRuntime.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/CLionSourceCodeAccess/Binaries/Win64/UE4Editor-CLionSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/GitSourceControl/Binaries/Win64/UE4Editor-GitSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/PerforceSourceControl/Binaries/Win64/UE4Editor-PerforceSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/SubversionSourceControl/Binaries/Win64/UE4Editor-SubversionSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/UObjectPlugin/Binaries/Win64/UE4Editor-UObjectPlugin.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioCodeSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioCodeSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/AssetManagerEditor/Binaries/Win64/UE4Editor-AssetManagerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeys.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeysOpenSSL.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/DataValidation/Binaries/Win64/UE4Editor-DataValidation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimationEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/GameplayTagsEditor/Binaries/Win64/UE4Editor-GameplayTagsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/MobileLauncherProfileWizard/Binaries/Win64/UE4Editor-MobileLauncherProfileWizard.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/PluginBrowser/Binaries/Win64/UE4Editor-PluginBrowser.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/SpeedTreeImporter/Binaries/Win64/UE4Editor-SpeedTreeImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Enterprise/DatasmithContent/Binaries/Win64/UE4Editor-DatasmithContent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/CharacterAI/Binaries/Win64/UE4Editor-CharacterAI.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/HTML5Networking/Binaries/Win64/UE4Editor-HTML5Networking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-OpenExrWrapper.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/LinearTimecode/Binaries/Win64/UE4Editor-LinearTimecode.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositing.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositingEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaPlayerEditor/Binaries/Win64/UE4Editor-MediaPlayerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/TcpMessaging/Binaries/Win64/UE4Editor-TcpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/UdpMessaging/Binaries/Win64/UE4Editor-UdpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/ActorSequence/Binaries/Win64/UE4Editor-ActorSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/LevelSequenceEditor/Binaries/Win64/UE4Editor-LevelSequenceEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/MatineeToLevelSequence/Binaries/Win64/UE4Editor-MatineeToLevelSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NetcodeUnitTest/Binaries/Win64/UE4Editor-NetcodeUnitTest.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NUTUnrealEngine4/Binaries/Win64/UE4Editor-NUTUnrealEngine4.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystem/Binaries/Win64/UE4Editor-OnlineSubsystem.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemNull/Binaries/Win64/UE4Editor-OnlineSubsystemNull.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineSubsystemUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineBlueprintSupport.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidDeviceProfileSelector/Binaries/Win64/UE4Editor-AndroidDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidPermission/Binaries/Win64/UE4Editor-AndroidPermission.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AppleARKit/Binaries/Win64/UE4Editor-AppleARKit.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ArchVisCharacter/Binaries/Win64/UE4Editor-ArchVisCharacter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCapture.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCaptureEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CableComponent/Binaries/Win64/UE4Editor-CableComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CustomMeshComponent/Binaries/Win64/UE4Editor-CustomMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ExampleDeviceProfileSelector/Binaries/Win64/UE4Editor-ExampleDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysics.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysicsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/LocationServicesBPLibrary/Binaries/Win64/UE4Editor-LocationServicesBPLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/MobilePatchingUtils/Binaries/Win64/UE4Editor-MobilePatchingUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusHMD.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusInput.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehicles.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehiclesEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponentEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/RuntimePhysXCooking/Binaries/Win64/UE4Editor-RuntimePhysXCooking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVR.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVRController.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/WindowsMoviePlayer/Binaries/Win64/UE4Editor-WindowsMoviePlayer.dll (API version 3944462).
+LogInit: Using libcurl 7.47.1
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.0.2g
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = false  - Libcurl will NOT verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogInit: WinSock: I am DESKTOP-HBOF36B (192.168.10.100:0)
+LogInit: Build: ++UE4+Release-4.19-CL-3989454
+LogInit: Engine Version: 4.19.1-3989454+++UE4+Release-4.19
+LogInit: Compatible Engine Version: 4.19.0-3944462+++UE4+Release-4.19
+LogInit: Net CL: 3944462
+LogDevObjectVersion: Number of dev versions registered: 18
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 2
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 23
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 33
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 2
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 25
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 6
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 1
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 2
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 16
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogInit: Compiled (64-bit): Apr  6 2018 12:26:04
+LogInit: Compiled with Visual C++: 19.00.24215.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.19
+LogInit: Command Line:  
+LogInit: Base Directory: D:/EpicGames/UE_4.19/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogStreaming: Display: Took  0.006s to delete old logs.
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2018.04.29-14.07.18:101][  0]LogInit: Selected Device Profile: [Windows]
+[2018.04.29-14.07.18:101][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2018.04.29-14.07.18:283][  0]LogInit: Computer: DESKTOP-HBOF36B
+[2018.04.29-14.07.18:283][  0]LogInit: User: logix
+[2018.04.29-14.07.18:283][  0]LogInit: CPU Page size=4096, Cores=4
+[2018.04.29-14.07.18:284][  0]LogInit: High frequency timer resolution =3.897874 MHz
+[2018.04.29-14.07.18:293][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx)
+[2018.04.29-14.07.18:293][  0]LogMemory: Platform Memory Stats for Windows
+[2018.04.29-14.07.18:293][  0]LogMemory: Process Physical Memory: 273.71 MB used, 273.71 MB peak
+[2018.04.29-14.07.18:293][  0]LogMemory: Process Virtual Memory: 270.53 MB used, 270.53 MB peak
+[2018.04.29-14.07.18:293][  0]LogMemory: Physical Memory: 4477.94 MB used,  3686.43 MB free, 8164.38 MB total
+[2018.04.29-14.07.18:293][  0]LogMemory: Virtual Memory: 698.73 MB used,  3686.43 MB free, 134217728.00 MB total
+[2018.04.29-14.07.20:882][  0]LogInit: Using OS detected language (ko-KR).
+[2018.04.29-14.07.20:882][  0]LogInit: Using OS detected locale (ko-KR).
+[2018.04.29-14.07.21:865][  0]LogTextLocalizationManager: No specific localization for 'ko-KR' exists, so the 'ko' localization will be used.
+[2018.04.29-14.07.23:276][  0]LogStreaming: Display: Took  2.446s to EndInitTextLocalization.
+[2018.04.29-14.07.23:316][  0]LogInit: Setting process to per monitor DPI aware
+[2018.04.29-14.07.24:533][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2018.04.29-14.07.24:533][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2018.04.29-14.07.28:209][  0]LogD3D11RHI: D3D11 adapters:
+[2018.04.29-14.07.28:359][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1070' (Feature Level 11_0)
+[2018.04.29-14.07.28:359][  0]LogD3D11RHI:       8096/0/4082 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2018.04.29-14.07.28:366][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2018.04.29-14.07.28:366][  0]LogD3D11RHI:       0/0/4082 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2018.04.29-14.07.28:366][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2018.04.29-14.07.28:397][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2018.04.29-14.07.28:397][  0]LogD3D11RHI:     GPU DeviceId: 0x1b81 (for the marketing name, search the web for "GPU Device Id")
+[2018.04.29-14.07.28:397][  0]LogWindows: EnumDisplayDevices:
+[2018.04.29-14.07.28:397][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1070' (P:1 D:1)
+[2018.04.29-14.07.28:398][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.04.29-14.07.28:399][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.04.29-14.07.28:399][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.04.29-14.07.28:399][  0]LogWindows: DebugString: GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter FoundDriverCount:0 
+[2018.04.29-14.07.28:399][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1070
+[2018.04.29-14.07.28:399][  0]LogD3D11RHI:   Driver Version: Unknown (internal:Unknown, unified:Unknown)
+[2018.04.29-14.07.28:400][  0]LogD3D11RHI:      Driver Date: Unknown
+[2018.04.29-14.07.28:410][  0]LogRHI: Texture pool is 5667 MB (70% of 8096 MB)
+[2018.04.29-14.07.28:488][  0]LogD3D11RHI: [Aftermath] Aftermath enabled but failed to initialize
+[2018.04.29-14.07.28:488][  0]LogD3D11RHI: [Aftermath] Aftermath enabled and primed
+[2018.04.29-14.07.28:488][  0]LogD3D11RHI: Async texture creation enabled
+[2018.04.29-14.07.28:896][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
+[2018.04.29-14.07.29:070][  0]LogShaderCompilers: Guid format shader working directory is 1 characters bigger than the processId version (C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Intermediate/Shaders/WorkingDirectory/9232/).
+[2018.04.29-14.07.29:078][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/logix/AppData/Local/Temp/UnrealShaderWorkingDir/89999D0E4F9F1DA57981B49C97C6E123/'.
+[2018.04.29-14.07.31:140][  0]LogTemp: Display: Loaded TP AllDesktopTargetPlatform
+[2018.04.29-14.07.31:165][  0]LogTemp: Display: Loaded TP MacClientTargetPlatform
+[2018.04.29-14.07.31:189][  0]LogTemp: Display: Loaded TP MacNoEditorTargetPlatform
+[2018.04.29-14.07.31:215][  0]LogTemp: Display: Loaded TP MacServerTargetPlatform
+[2018.04.29-14.07.31:282][  0]LogTemp: Display: Loaded TP MacTargetPlatform
+[2018.04.29-14.07.31:305][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
+[2018.04.29-14.07.31:327][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
+[2018.04.29-14.07.31:353][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
+[2018.04.29-14.07.31:364][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
+[2018.04.29-14.07.31:385][  0]LogTemp: Display: Loaded TP Android_ASTCTargetPlatform
+[2018.04.29-14.07.31:409][  0]LogTemp: Display: Loaded TP Android_ATCTargetPlatform
+[2018.04.29-14.07.31:429][  0]LogTemp: Display: Loaded TP Android_DXTTargetPlatform
+[2018.04.29-14.07.31:451][  0]LogTemp: Display: Loaded TP Android_ETC1aTargetPlatform
+[2018.04.29-14.07.31:474][  0]LogTemp: Display: Loaded TP Android_ETC1TargetPlatform
+[2018.04.29-14.07.31:496][  0]LogTemp: Display: Loaded TP Android_ETC2TargetPlatform
+[2018.04.29-14.07.31:538][  0]LogTemp: Display: Loaded TP Android_MultiTargetPlatform
+[2018.04.29-14.07.31:538][  0]LogTemp: Display: Loaded TP Android_PVRTCTargetPlatform
+[2018.04.29-14.07.31:579][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.04.29-14.07.31:581][  0]LogTemp: Display: Loaded TP HTML5TargetPlatform
+[2018.04.29-14.07.31:777][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
+[2018.04.29-14.07.31:804][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
+[2018.04.29-14.07.31:824][  0]LogTemp: Display: Loaded TP LinuxClientTargetPlatform
+[2018.04.29-14.07.31:845][  0]LogTemp: Display: Loaded TP LinuxNoEditorTargetPlatform
+[2018.04.29-14.07.31:866][  0]LogTemp: Display: Loaded TP LinuxServerTargetPlatform
+[2018.04.29-14.07.31:915][  0]LogTemp: Display: Loaded TP LinuxTargetPlatform
+[2018.04.29-14.07.31:915][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2018.04.29-14.07.36:914][  0]LogXGEController: Cleaning working directory: C:/Users/logix/AppData/Local/Temp/UnrealXGEWorkingDir/
+[2018.04.29-14.07.36:930][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2018.04.29-14.07.36:941][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2018.04.29-14.07.36:941][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2018.04.29-14.07.46:371][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2018.04.29-14.07.47:510][  0]LogDerivedDataCache: Loaded boot cache 1.13s 107MB C:/Users/logix/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2018.04.29-14.07.47:510][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/logix/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc
+[2018.04.29-14.07.47:510][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2018.04.29-14.07.47:510][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2018.04.29-14.07.47:510][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2018.04.29-14.07.47:510][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2018.04.29-14.07.47:833][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2018.04.29-14.07.47:847][  0]LogDerivedDataCache: Using Local data cache path C:/Users/logix/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2018.04.29-14.07.48:066][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2018.04.29-14.07.48:538][  0]LogSlate: Using Freetype 2.6.0
+[2018.04.29-14.07.48:955][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.04.29-14.07.48:955][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.04.29-14.08.06:995][  0]LogAssetRegistry: FAssetRegistry took 0.0415 seconds to start up
+[2018.04.29-14.08.21:904][  0]LogInit: Selected Device Profile: [Windows]
+[2018.04.29-14.08.24:857][  0]LogSimplygon: Simplygon DLL not present - disabling.
+[2018.04.29-14.08.25:075][  0]LogMeshReduction: Using SimplygonSwarm for distributed automatic mesh merging
+[2018.04.29-14.08.25:124][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2018.04.29-14.08.25:149][  0]LogMeshReduction: No automatic skeletal mesh reduction module available
+[2018.04.29-14.08.25:149][  0]LogMeshReduction: No automatic mesh merging module available
+[2018.04.29-14.08.25:149][  0]LogMeshMerging: No automatic mesh merging module available
+[2018.04.29-14.08.27:280][  0]LogNetVersion: Ryzen , NetCL: 3944462, EngineNetVer: 2, GameNetVer: 0 (Checksum: 1119402876)
+[2018.04.29-14.08.34:439][  0]LogPackageLocalizationCache: Processed 9 localized package path(s) for 2 prioritized culture(s) in 0.191493 seconds
+[2018.04.29-14.08.34:482][  0]LogUObjectArray: 36728 objects as part of root set at end of initial load.
+[2018.04.29-14.08.34:482][  0]LogUObjectAllocator: 7314304 out of 0 bytes used by permanent object pool.
+[2018.04.29-14.08.34:482][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2018.04.29-14.08.57:868][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2018.04.29-14.08.57:964][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2018.04.29-14.09.04:271][  0]LogSkeletalMesh: Skeletal Mesh found in DDC [28.634071ms] /Game/ParagonMurdock/Characters/Heroes/Murdock/Meshes/Murdock.Murdock
+[2018.04.29-14.09.05:499][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.29-14.09.05:499][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.29-14.09.05:587][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.29-14.09.05:757][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.29-14.09.08:238][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2018.04.29-14.09.08:702][  0]LogOcInput: OculusInput pre-init called
+[2018.04.29-14.09.09:585][  0]LogEngine: Initializing Engine...
+[2018.04.29-14.09.09:833][  0]LogHMD: Failed to initialize OpenVR with code 126
+[2018.04.29-14.09.09:899][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.04.29-14.09.09:906][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.04.29-14.09.12:032][  0]LogAIModule: Creating AISystem for world Untitled
+[2018.04.29-14.09.12:502][  0]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.29-14.09.12:539][  0]LogInit: FAudioDevice initialized.
+[2018.04.29-14.09.12:797][  0]LogDerivedDataCache: Saved boot cache 0.23s 107MB C:/Users/logix/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2018.04.29-14.09.12:823][  0]LogInit: Texture streaming: Enabled
+[2018.04.29-14.09.12:992][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2018.04.29-14.09.13:542][  0]LogInit: Transaction tracking system initialized
+[2018.04.29-14.09.14:109][  0]BlueprintLog: New page: 에디터 로드
+[2018.04.29-14.09.17:312][  0]LocalizationService: 현지화 서비스가 비활성화되었습니다.
+[2018.04.29-14.09.19:382][  0]LogConsoleResponse: Display: 
+[2018.04.29-14.09.23:408][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/' took 0.08s
+[2018.04.29-14.09.23:408][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2018.04.29-14.09.23:409][  0]LogCook: Display: Mobile HDR setting 1
+[2018.04.29-14.09.23:423][  0]LogGameplayTags: Display: UGameplayTagsManager::DoneAddingNativeTags. DelegateIsBound: 0
+[2018.04.29-14.09.23:431][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.04.29-14.09.23:431][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.04.29-14.09.25:599][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.29-14.09.25:668][  0]Cmd: MAP LOAD FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2018.04.29-14.09.25:691][  0]LightingResults: New page: 라이팅 빌드
+[2018.04.29-14.09.26:162][  0]MapCheck: New page: 맵 체크
+[2018.04.29-14.09.26:162][  0]LightingResults: New page: 라이팅 빌드
+[2018.04.29-14.09.31:458][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.29-14.09.31:459][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.29-14.09.31:500][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.29-14.09.31:500][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.29-14.09.31:554][  0]LogBlueprint: Warning: [Compiler C_InventorySlot] [0202.53] C_InventorySlot 컴파일에 실패했습니다. 치명적 오류 4 회, 경고 0 회, [소요시간 108 ms] (/Game/UserInterface/C_InventorySlot.C_InventorySlot)
+[2018.04.29-14.09.33:702][  0]LogSlate: Took 0.080274 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
+[2018.04.29-14.09.33:739][  0]LogSlate: Took 0.022939 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2018.04.29-14.09.39:884][  0]LogSlate: Window '메시지' being destroyed
+[2018.04.29-14.09.39:907][  0]LogWindowsTextInputMethodSystem: Display: IME system now activated using TSF (Microsoft 입력기).
+[2018.04.29-14.09.40:217][  0]LogSkeletalMesh: Skeletal Mesh found in DDC [28.022455ms] /Game/AnimStarterPack/UE4_Mannequin/Mesh/SK_Mannequin.SK_Mannequin
+[2018.04.29-14.09.40:599][  0]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.29-14.09.42:329][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2018.04.29-14.09.42:682][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2018.04.29-14.09.42:867][  0]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 185.531ms.
+[2018.04.29-14.09.42:874][  0]LogFileHelpers: Loading map 'ThirdPersonExampleMap' took 17.233
+[2018.04.29-14.09.44:204][  0]LogWindowsTextInputMethodSystem: Display: IME system now activated using TSF (Microsoft 입력기).
+[2018.04.29-14.09.45:353][  0]LogCollectionManager: Loaded 0 collections in 0.001621 seconds
+[2018.04.29-14.09.45:558][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Collections/' took 0.01s
+[2018.04.29-14.09.45:558][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Developers/logix/Collections/' took 0.01s
+[2018.04.29-14.09.45:558][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Collections/' took 0.01s
+[2018.04.29-14.09.45:558][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000001 seconds
+[2018.04.29-14.09.45:608][  0]LogContentBrowser: Native class hierarchy populated in 0.0352 seconds. Added 2472 classes and 564 folders.
+[2018.04.29-14.09.45:762][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0026 seconds. Added 0 classes and 0 folders.
+[2018.04.29-14.09.47:299][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0027 seconds. Added 0 classes and 0 folders.
+[2018.04.29-14.09.47:417][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0030 seconds. Added 1 classes and 2 folders.
+[2018.04.29-14.09.49:098][  0]LogSlate: Took 0.066978 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicBold.ttf' (4188K)
+[2018.04.29-14.09.49:130][  0]LogSlate: Took 0.032045 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2018.04.29-14.09.49:200][  0]LogSlate: Took 0.009437 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2018.04.29-14.09.50:104][  0]LogRenderer: Reallocating scene render targets to support 1208x576 Format 10 NumSamples 1 (Frame:1).
+[2018.04.29-14.09.50:990][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0028 seconds. Added 0 classes and 0 folders.
+[2018.04.29-14.09.50:990][  0]LogLoad: (Engine Initialization) Total time: 221.98 seconds
+[2018.04.29-14.09.50:990][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2018.04.29-14.09.51:418][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2018.04.29-14.09.51:785][  0]LogSlate: Took 0.021168 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2018.04.29-14.09.52:437][  6]LogAssetRegistry: Asset discovery search completed in 105.4713 seconds
+[2018.04.29-14.09.52:465][  6]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2018.04.29-14.09.52:465][  6]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000101 seconds (updated 0 objects)
+[2018.04.29-15.13.15:755][ 71]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.29-15.13.16:126][ 81]Candidate modules for hot reload:
+[2018.04.29-15.13.16:126][ 81]  Ryzen
+[2018.04.29-15.13.16:126][ 81]Launching UnrealBuildTool... [D:/EpicGames/UE_4.19/Engine/Binaries/DotNET/UnrealBuildTool.exe Ryzen -ModuleWithSuffix=Ryzen,6037 Win64 Development -editorrecompile -canskiplink "C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Ryzen.uproject" ]
+[2018.04.29-15.13.16:130][ 81]Warning: Starting HotReload took  0.3s.
+[2018.04.29-15.14.41:897][500]CompilerResultsLog: New page: 컴파일 - 2018. 4. 30. 오전 9:14:37
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: Compiling game modules for hot reload
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: Parsing headers for RyzenEditor
+[2018.04.29-15.14.42:457][500]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Ryzen.uproject" "C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\RyzenEditor\Development\RyzenEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: Reflection code generated for RyzenEditor in 25.2748729 seconds
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: Performing 8 actions (4 in parallel)
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: ZombieCharacter.cpp
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: ZombieAIController.gen.cpp
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: ZombieAIController.cpp
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: ZombieCharacter_2.cpp
+[2018.04.29-15.14.42:457][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2a7 that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x722 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:992][500]CompilerResultsLog: 
+[2018.04.29-15.14.42:992][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2a8 that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x725 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:992][500]CompilerResultsLog: 
+[2018.04.29-15.14.42:992][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2a9 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:992][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x726 that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2aa that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: 
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x727 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2ac that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x728 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: 
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2ad that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: 
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72c that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2af that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: 
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x735 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x737 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73f that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x740 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x747 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x749 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x74a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x74e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x750 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x751 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x754 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x755 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x756 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x758 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x75a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x75b that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:993][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x847 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x848 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84b that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x914 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x915 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x917 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x919 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x91c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x91e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x921 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x922 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x924 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x925 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x926 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x927 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x930 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x931 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.42:994][500]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x933 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.14.43:020][500]LogMainFrame: MainFrame: Module compiling took 87.004 seconds
+[2018.04.29-15.14.43:146][500]Warning: HotReload failed, recompile failed
+[2018.04.29-15.15.17:711][701]Candidate modules for hot reload:
+[2018.04.29-15.15.17:711][701]  Ryzen
+[2018.04.29-15.15.17:711][701]Launching UnrealBuildTool... [D:/EpicGames/UE_4.19/Engine/Binaries/DotNET/UnrealBuildTool.exe Ryzen -ModuleWithSuffix=Ryzen,561 Win64 Development -editorrecompile -canskiplink "C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Ryzen.uproject" ]
+[2018.04.29-15.15.17:715][701]Warning: Starting HotReload took 23.2s.
+[2018.04.29-15.20.55:548][450]CompilerResultsLog: New page: 컴파일 - 2018. 4. 30. 오전 9:20:55
+[2018.04.29-15.20.55:633][450]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2018.04.29-15.20.55:633][450]CompilerResultsLog: Compiling game modules for hot reload
+[2018.04.29-15.20.55:633][450]CompilerResultsLog: Performing full C++ include scan (no include cache file)
+[2018.04.29-15.20.55:633][450]CompilerResultsLog: Performing 8 actions (4 in parallel)
+[2018.04.29-15.20.55:633][450]CompilerResultsLog: ZombieAIController.gen.cpp
+[2018.04.29-15.20.55:633][450]CompilerResultsLog: ZombieCharacter_2.cpp
+[2018.04.29-15.20.55:633][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x722 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x725 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x726 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x727 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x728 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x735 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x737 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73f that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x740 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x747 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: ZombieAIController.cpp
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: ZombieCharacter.cpp
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x749 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x74a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x74e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x750 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x751 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x754 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x755 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x756 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x758 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x75a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x75b that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x847 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:634][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x848 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84b that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x914 that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2a7 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: 
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x915 that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2a8 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: 
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x917 that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2a9 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: 
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x919 that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2aa that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: 
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2ac that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x91c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: 
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2ad that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x91e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: 
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2af that is illegal in the current source character set (codepage 65001).C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x921 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: 
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x922 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x924 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x925 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x926 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x927 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x930 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x931 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:635][450]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x933 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.20.55:636][450]CompilerResultsLog: Error: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp(91) : error C2440: 'return': cannot convert from 'ARyzenBaseCharacter *' to 'APlayerCharacter *'
+[2018.04.29-15.20.55:636][450]CompilerResultsLog: Error: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp(91) : note: Cast from base to derived requires dynamic_cast or static_cast
+[2018.04.29-15.20.55:636][450]CompilerResultsLog: BTTask_FindPatrolLocation.cpp
+[2018.04.29-15.20.55:636][450]CompilerResultsLog: BTTask_FindWaypoint.cpp
+[2018.04.29-15.20.55:636][450]CompilerResultsLog: ERROR: UBT ERROR: Failed to produce item: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Binaries\Win64\UE4Editor-Ryzen-561.dll
+[2018.04.29-15.20.55:636][450]CompilerResultsLog: Total build time: 337.35 seconds (Local executor: 0.00 seconds)
+[2018.04.29-15.20.55:637][450]LogMainFrame: MainFrame: Module compiling took 337.932 seconds
+[2018.04.29-15.20.55:637][450]Warning: HotReload failed, recompile failed
+[2018.04.29-15.42.49:129][313]Candidate modules for hot reload:
+[2018.04.29-15.42.49:129][313]  Ryzen
+[2018.04.29-15.42.49:129][313]Launching UnrealBuildTool... [D:/EpicGames/UE_4.19/Engine/Binaries/DotNET/UnrealBuildTool.exe Ryzen -ModuleWithSuffix=Ryzen,4919 Win64 Development -editorrecompile -canskiplink "C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Ryzen.uproject" ]
+[2018.04.29-15.42.49:330][313]Warning: Starting HotReload took  0.2s.
+[2018.04.29-15.43.30:680][546]CompilerResultsLog: New page: 컴파일 - 2018. 4. 30. 오전 9:43:30
+[2018.04.29-15.43.30:680][546]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2018.04.29-15.43.30:680][546]CompilerResultsLog: Compiling game modules for hot reload
+[2018.04.29-15.43.30:680][546]CompilerResultsLog: Parsing headers for RyzenEditor
+[2018.04.29-15.43.30:680][546]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Ryzen.uproject" "C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\RyzenEditor\Development\RyzenEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2018.04.29-15.43.30:680][546]CompilerResultsLog: Error: C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Source/Ryzen/Public/Zombie/ZombieCharacter_2.h(39)  : Error: Unrecognized type 'void' - type must be a UCLASS, USTRUCT or UENUM
+[2018.04.29-15.43.30:680][546]CompilerResultsLog: UnrealHeaderTool failed for target 'RyzenEditor' (platform: Win64, module info: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\RyzenEditor\Development\RyzenEditor.uhtmanifest).
+[2018.04.29-15.43.30:680][546]LogMainFrame: MainFrame: Module compiling took 41.555 seconds
+[2018.04.29-15.43.30:680][546]Warning: HotReload failed, recompile failed
+[2018.04.29-15.43.35:812][816]LogVSAccessor: Warning: Couldn't goto line number '39' in 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Source/Ryzen/Public/Zombie/ZombieCharacter_2.h'
+[2018.04.29-15.44.35:564][553]Candidate modules for hot reload:
+[2018.04.29-15.44.35:565][553]  Ryzen
+[2018.04.29-15.44.35:565][553]Launching UnrealBuildTool... [D:/EpicGames/UE_4.19/Engine/Binaries/DotNET/UnrealBuildTool.exe Ryzen -ModuleWithSuffix=Ryzen,9812 Win64 Development -editorrecompile -canskiplink "C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Ryzen.uproject" ]
+[2018.04.29-15.44.35:570][553]Warning: Starting HotReload took  0.0s.
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: New page: 컴파일 - 2018. 4. 30. 오전 9:47:22
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: Compiling game modules for hot reload
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: Parsing headers for RyzenEditor
+[2018.04.29-15.47.22:845][151]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Ryzen.uproject" "C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\RyzenEditor\Development\RyzenEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: Reflection code generated for RyzenEditor in 11.4567492 seconds
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: Performing 10 actions (4 in parallel)
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: Ryzen.init.gen.cpp
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: ZombieAIController.gen.cpp
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: ZombieCharacter.cpp
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: ZombieCharacter_2.cpp
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x704 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x707 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:845][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x708 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x709 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x70a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x70c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x70e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x70f that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x710 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x717 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x719 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x71c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x71e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x720 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x721 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x722 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x729 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72b that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x730 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x732 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x733 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x736 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x737 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x738 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x829 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x82a that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x82c that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x82d that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x82e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x82f that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:846][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x8f6 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x8f7 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x8f9 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x8fb that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x8fe that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x900 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x903 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x904 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x906 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x907 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x908 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x909 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x90e that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x90f that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x910 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x912 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x913 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x915 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: ZombieAIController.cpp
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2aa that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2ab that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2ac that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2ad that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2af that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2b0 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieAIController.cpp: warning C4828: The file contains a character starting at offset 0x2b2 that is illegal in the current source character set (codepage 65001).
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: BTTask_FindPatrolLocation.cpp
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: ZombieCharacter_2.gen.cpp
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: BTTask_FindWaypoint.cpp
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: [9/10] Link UE4Editor-Ryzen-9812.dll
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: [10/10] Link UE4Editor-Ryzen-9812.lib
+[2018.04.29-15.47.22:847][151]CompilerResultsLog:    Creating library C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-9812.lib and object C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-9812.exp
+[2018.04.29-15.47.22:847][151]CompilerResultsLog:    Creating library C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-9812.suppressed.lib and object C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-9812.suppressed.exp
+[2018.04.29-15.47.22:847][151]CompilerResultsLog: Total build time: 166.89 seconds (Local executor: 153.79 seconds)
+[2018.04.29-15.47.22:847][151]LogMainFrame: MainFrame: Module compiling took 167.288 seconds
+[2018.04.29-15.47.25:178][151]LogClass: Could not find existing class ZombieCharacter_2 in package /Script/Ryzen for HotReload, assuming new class
+[2018.04.29-15.47.25:215][151]LogClass: Function OnSeePlayer is new.
+[2018.04.29-15.47.25:230][151]LogClass: InventoryItem HotReload.
+[2018.04.29-15.47.25:537][151]LogHotReload: Re-instancing ManualPickup after hot-reload.
+[2018.04.29-15.47.32:277][151]LogHotReload: Re-instancing PlayerCharacter after hot-reload.
+[2018.04.29-15.47.33:305][151]LogHotReload: Re-instancing RyzenCharacter after hot-reload.
+[2018.04.29-15.47.33:462][151]LogHotReload: Re-instancing ZombieCharacter_2 after hot-reload.
+[2018.04.29-15.47.33:945][151]LogContentBrowser: Native class hierarchy updated for 'Ryzen' in 0.1129 seconds. Added 20 classes and 6 folders.
+[2018.04.29-15.47.33:979][151]Display: HotReload successful (14 functions remapped  1 scriptstructs remapped)
+[2018.04.29-15.47.34:564][151]LogContentBrowser: Native class hierarchy populated in 0.0540 seconds. Added 2473 classes and 566 folders.
+[2018.04.29-15.47.34:576][151]Display: HotReload took 179.0s.
+[2018.04.29-15.49.26:052][984]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.04.29-15.49.26:357][984]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.29-15.49.26:421][984]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.04.29-15.49.27:855][984]LogSlate: Window '메시지' being destroyed
+[2018.04.29-15.49.27:976][984]PIE: New page: PIE 세션: ThirdPersonExampleMap (2018. 4. 30. 오전 9:49:27)
+[2018.04.29-15.49.28:000][984]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2018.04.29-15.49.28:743][984]LogPlayLevel: PIE: StaticDuplicateObject took: (0.741275s)
+[2018.04.29-15.49.29:098][984]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.29-15.49.29:160][984]LogPlayLevel: PIE: World Init took: (0.407750s)
+[2018.04.29-15.49.29:160][984]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (1.160675s)
+[2018.04.29-15.49.29:305][984]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.29-15.49.29:336][984]LogInit: FAudioDevice initialized.
+[2018.04.29-15.49.29:725][984]LogLoad: Game class is 'RyzenGameMode_BP_C'
+[2018.04.29-15.49.30:008][984]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2018.04.30-00.49.30
+[2018.04.29-15.49.43:769][984]LogWindows: Error: === Critical error: ===
+[2018.04.29-15.49.43:805][984]LogWindows: Error: 
+[2018.04.29-15.49.43:805][984]LogWindows: Error: Fatal error!
+[2018.04.29-15.49.43:805][984]LogWindows: Error: 
+[2018.04.29-15.49.43:805][984]LogWindows: Error: Unhandled Exception: EXCEPTION_ACCESS_VIOLATION reading address 0x00000058
+[2018.04.29-15.49.43:805][984]LogWindows: Error: 
+[2018.04.29-15.49.43:805][984]LogWindows: Error: [Callstack] 0x0000000087FC1D77 UE4Editor-Ryzen-9812.dll!AZombieAIController::Possess() [c:\users\logix\desktop\raproject\ra-git\ryzen\source\ryzen\private\zombie\zombieaicontroller.cpp:36]
+[2018.04.29-15.49.43:805][984]LogWindows: Error: [Callstack] 0x000000005A89BF7A UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.29-15.49.43:805][984]LogWindows: Error: [Callstack] 0x000000005A88F6F9 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.29-15.49.43:805][984]LogWindows: Error: [Callstack] 0x0000000059F8BB87 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.29-15.49.43:805][984]LogWindows: Error: [Callstack] 0x000000005A4A9986 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x000000005AE56C4B UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x000000005A343EA2 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x0000000058C426F0 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x0000000058C61156 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x0000000058C7BAFF UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x00000000586EC961 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x0000000058F89516 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x000000002DC55EAC UE4Editor.exe!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x000000002DC66BD0 UE4Editor.exe!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x000000002DC66C4A UE4Editor.exe!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x000000002DC74149 UE4Editor.exe!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x000000002DC75B57 UE4Editor.exe!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x0000000094541FE4 KERNEL32.DLL!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x0000000094DDF061 ntdll.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: [Callstack] 0x0000000094DDF061 ntdll.dll!UnknownFunction []
+[2018.04.29-15.49.43:806][984]LogWindows: Error: 
+[2018.04.29-15.49.43:865][984]LogExit: Executing StaticShutdownAfterError
+[2018.04.29-15.49.44:661][984]LogWindows: FPlatformMisc::RequestExit(1)
+[2018.04.29-15.49.44:661][984]Log file closed, 04/30/18 00:49:44

@@ -2,6 +2,7 @@
 
 #include "Bullet.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "ZombieCharacter_2.h"
 #include "Components/SphereComponent.h"
 
 // Sets default values
@@ -41,6 +42,9 @@ void ABullet::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitive
 	{
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
 
+		AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherActor);
+
+		other->DamageHit(10);
 		Destroy();
 	}
 }

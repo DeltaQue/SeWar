@@ -21,7 +21,7 @@ void ARyzenGameMode::PreInitializeComponents()
 	Super::PreInitializeComponents();
 
 	/* Set timer to run every second */
-	GetWorldTimerManager().SetTimer(TimerHandle_DefaultTimer, this, &ARyzenGameMode::InitZombieType, GetWorldSettings()->GetEffectiveTimeDilation(), true);
+	//GetWorldTimerManager().SetTimer(TimerHandle_DefaultTimer, this, &ARyzenGameMode::InitZombieType, GetWorldSettings()->GetEffectiveTimeDilation(), true);
 }
 
 void ARyzenGameMode::InitZombieType() {
@@ -30,7 +30,7 @@ void ARyzenGameMode::InitZombieType() {
 		AZombieCharacter_2* Zombie = Cast<AZombieCharacter_2>(*It);
 		if (Zombie)
 		{
-			Zombie->SetBotType(EZombieType::Patrol);
+			Zombie->SetZombieType(EZombieType::Patrol);
 		}
 	}
 }

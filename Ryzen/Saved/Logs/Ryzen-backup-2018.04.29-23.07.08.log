@@ -1,0 +1,1286 @@
+﻿Log file open, 04/28/18 09:19:00
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogInit: Display: Running engine for game: Ryzen
+LogPlatformFile: Not using cached read wrapper
+LogInit: Display: RandInit(376736455) SRandInit(376736455).
+LogInit: Read version file with build ID '3944462'
+LogInit: Overriding engine version to CL 3989454, compatible CL 3944462
+LogInit: Registered custom module enumerator with build ID '3944462'
+LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 11.481280
+LogD3D11RHI: Aftermath initialized
+LogICUInternationalization: Display: ICU TimeZone Detection - Raw Offset: +9:00, Platform Override: ''
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin LiveLink
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin HTML5Networking
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin LinearTimecode
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin NetcodeUnitTest
+LogPluginManager: Mounting plugin NUTUnrealEngine4
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleARKit
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin ImmediatePhysics
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Plugin shader directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders found
+LogPluginManager: Mapping shader source directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders to virtual directory /Plugin/OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogStreaming: Display: Took  0.238s to configure plugins.
+LogModuleManager: Display: Found up-to-date module file C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Binaries/Win64/UE4Editor-Ryzen-2857.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2D.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2DEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperSpriteSheetImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperTiledImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-SmartSnapping.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLink.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLinkEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeRuntime.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/CLionSourceCodeAccess/Binaries/Win64/UE4Editor-CLionSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/GitSourceControl/Binaries/Win64/UE4Editor-GitSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/PerforceSourceControl/Binaries/Win64/UE4Editor-PerforceSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/SubversionSourceControl/Binaries/Win64/UE4Editor-SubversionSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/UObjectPlugin/Binaries/Win64/UE4Editor-UObjectPlugin.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioCodeSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioCodeSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/AssetManagerEditor/Binaries/Win64/UE4Editor-AssetManagerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeys.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeysOpenSSL.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/DataValidation/Binaries/Win64/UE4Editor-DataValidation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimationEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/GameplayTagsEditor/Binaries/Win64/UE4Editor-GameplayTagsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/MobileLauncherProfileWizard/Binaries/Win64/UE4Editor-MobileLauncherProfileWizard.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/PluginBrowser/Binaries/Win64/UE4Editor-PluginBrowser.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/SpeedTreeImporter/Binaries/Win64/UE4Editor-SpeedTreeImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Enterprise/DatasmithContent/Binaries/Win64/UE4Editor-DatasmithContent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/CharacterAI/Binaries/Win64/UE4Editor-CharacterAI.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/HTML5Networking/Binaries/Win64/UE4Editor-HTML5Networking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-OpenExrWrapper.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/LinearTimecode/Binaries/Win64/UE4Editor-LinearTimecode.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositing.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositingEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaPlayerEditor/Binaries/Win64/UE4Editor-MediaPlayerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/TcpMessaging/Binaries/Win64/UE4Editor-TcpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/UdpMessaging/Binaries/Win64/UE4Editor-UdpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/ActorSequence/Binaries/Win64/UE4Editor-ActorSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/LevelSequenceEditor/Binaries/Win64/UE4Editor-LevelSequenceEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/MatineeToLevelSequence/Binaries/Win64/UE4Editor-MatineeToLevelSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NetcodeUnitTest/Binaries/Win64/UE4Editor-NetcodeUnitTest.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NUTUnrealEngine4/Binaries/Win64/UE4Editor-NUTUnrealEngine4.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystem/Binaries/Win64/UE4Editor-OnlineSubsystem.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemNull/Binaries/Win64/UE4Editor-OnlineSubsystemNull.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineSubsystemUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineBlueprintSupport.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidDeviceProfileSelector/Binaries/Win64/UE4Editor-AndroidDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidPermission/Binaries/Win64/UE4Editor-AndroidPermission.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AppleARKit/Binaries/Win64/UE4Editor-AppleARKit.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ArchVisCharacter/Binaries/Win64/UE4Editor-ArchVisCharacter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCapture.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCaptureEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CableComponent/Binaries/Win64/UE4Editor-CableComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CustomMeshComponent/Binaries/Win64/UE4Editor-CustomMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ExampleDeviceProfileSelector/Binaries/Win64/UE4Editor-ExampleDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysics.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysicsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/LocationServicesBPLibrary/Binaries/Win64/UE4Editor-LocationServicesBPLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/MobilePatchingUtils/Binaries/Win64/UE4Editor-MobilePatchingUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusHMD.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusInput.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehicles.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehiclesEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponentEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/RuntimePhysXCooking/Binaries/Win64/UE4Editor-RuntimePhysXCooking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVR.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVRController.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/WindowsMoviePlayer/Binaries/Win64/UE4Editor-WindowsMoviePlayer.dll (API version 3944462).
+LogInit: Using libcurl 7.47.1
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.0.2g
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = false  - Libcurl will NOT verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogInit: WinSock: I am DESKTOP-HBOF36B (192.168.10.100:0)
+LogInit: Build: ++UE4+Release-4.19-CL-3989454
+LogInit: Engine Version: 4.19.1-3989454+++UE4+Release-4.19
+LogInit: Compatible Engine Version: 4.19.0-3944462+++UE4+Release-4.19
+LogInit: Net CL: 3944462
+LogDevObjectVersion: Number of dev versions registered: 18
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 2
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 23
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 33
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 2
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 25
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 6
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 1
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 2
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 16
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogInit: Compiled (64-bit): Apr  6 2018 12:26:04
+LogInit: Compiled with Visual C++: 19.00.24215.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.19
+LogInit: Command Line:  
+LogInit: Base Directory: D:/EpicGames/UE_4.19/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogStreaming: Display: Took  0.013s to delete old logs.
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2018.04.28-00.19.05:933][  0]LogInit: Selected Device Profile: [Windows]
+[2018.04.28-00.19.05:933][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2018.04.28-00.19.06:017][  0]LogInit: Computer: DESKTOP-HBOF36B
+[2018.04.28-00.19.06:017][  0]LogInit: User: logix
+[2018.04.28-00.19.06:017][  0]LogInit: CPU Page size=4096, Cores=4
+[2018.04.28-00.19.06:017][  0]LogInit: High frequency timer resolution =3.897874 MHz
+[2018.04.28-00.19.06:017][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx)
+[2018.04.28-00.19.06:018][  0]LogMemory: Platform Memory Stats for Windows
+[2018.04.28-00.19.06:018][  0]LogMemory: Process Physical Memory: 274.14 MB used, 274.14 MB peak
+[2018.04.28-00.19.06:018][  0]LogMemory: Process Virtual Memory: 264.45 MB used, 264.45 MB peak
+[2018.04.28-00.19.06:018][  0]LogMemory: Physical Memory: 5134.54 MB used,  3029.84 MB free, 8164.38 MB total
+[2018.04.28-00.19.06:018][  0]LogMemory: Virtual Memory: 692.79 MB used,  3029.84 MB free, 134217728.00 MB total
+[2018.04.28-00.19.06:351][  0]LogInit: Using OS detected language (ko-KR).
+[2018.04.28-00.19.06:351][  0]LogInit: Using OS detected locale (ko-KR).
+[2018.04.28-00.19.06:586][  0]LogTextLocalizationManager: No specific localization for 'ko-KR' exists, so the 'ko' localization will be used.
+[2018.04.28-00.19.07:505][  0]LogStreaming: Display: Took  1.159s to EndInitTextLocalization.
+[2018.04.28-00.19.07:506][  0]LogInit: Setting process to per monitor DPI aware
+[2018.04.28-00.19.08:251][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2018.04.28-00.19.08:251][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2018.04.28-00.19.11:632][  0]LogD3D11RHI: D3D11 adapters:
+[2018.04.28-00.19.11:741][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1070' (Feature Level 11_0)
+[2018.04.28-00.19.11:741][  0]LogD3D11RHI:       8096/0/4082 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2018.04.28-00.19.11:750][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2018.04.28-00.19.11:750][  0]LogD3D11RHI:       0/0/4082 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2018.04.28-00.19.11:750][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2018.04.28-00.19.11:767][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2018.04.28-00.19.11:767][  0]LogD3D11RHI:     GPU DeviceId: 0x1b81 (for the marketing name, search the web for "GPU Device Id")
+[2018.04.28-00.19.11:767][  0]LogWindows: EnumDisplayDevices:
+[2018.04.28-00.19.11:768][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1070' (P:1 D:1)
+[2018.04.28-00.19.11:768][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.04.28-00.19.11:769][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.04.28-00.19.11:769][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.04.28-00.19.11:770][  0]LogWindows: DebugString: GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter FoundDriverCount:0 
+[2018.04.28-00.19.11:770][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1070
+[2018.04.28-00.19.11:770][  0]LogD3D11RHI:   Driver Version: Unknown (internal:Unknown, unified:Unknown)
+[2018.04.28-00.19.11:770][  0]LogD3D11RHI:      Driver Date: Unknown
+[2018.04.28-00.19.11:770][  0]LogRHI: Texture pool is 5667 MB (70% of 8096 MB)
+[2018.04.28-00.19.11:821][  0]LogD3D11RHI: [Aftermath] Aftermath enabled but failed to initialize
+[2018.04.28-00.19.11:821][  0]LogD3D11RHI: [Aftermath] Aftermath enabled and primed
+[2018.04.28-00.19.11:821][  0]LogD3D11RHI: Async texture creation enabled
+[2018.04.28-00.19.11:933][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
+[2018.04.28-00.19.12:058][  0]LogShaderCompilers: Guid format shader working directory is 0 characters bigger than the processId version (C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Intermediate/Shaders/WorkingDirectory/11208/).
+[2018.04.28-00.19.12:058][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/logix/AppData/Local/Temp/UnrealShaderWorkingDir/39B5A7714C92781E3E2F82835E5C1718/'.
+[2018.04.28-00.19.12:758][  0]LogTemp: Display: Loaded TP AllDesktopTargetPlatform
+[2018.04.28-00.19.12:788][  0]LogTemp: Display: Loaded TP MacClientTargetPlatform
+[2018.04.28-00.19.12:821][  0]LogTemp: Display: Loaded TP MacNoEditorTargetPlatform
+[2018.04.28-00.19.12:865][  0]LogTemp: Display: Loaded TP MacServerTargetPlatform
+[2018.04.28-00.19.12:922][  0]LogTemp: Display: Loaded TP MacTargetPlatform
+[2018.04.28-00.19.12:956][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
+[2018.04.28-00.19.12:989][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
+[2018.04.28-00.19.13:011][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
+[2018.04.28-00.19.13:024][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
+[2018.04.28-00.19.13:083][  0]LogTemp: Display: Loaded TP Android_ASTCTargetPlatform
+[2018.04.28-00.19.13:120][  0]LogTemp: Display: Loaded TP Android_ATCTargetPlatform
+[2018.04.28-00.19.13:152][  0]LogTemp: Display: Loaded TP Android_DXTTargetPlatform
+[2018.04.28-00.19.13:177][  0]LogTemp: Display: Loaded TP Android_ETC1aTargetPlatform
+[2018.04.28-00.19.13:201][  0]LogTemp: Display: Loaded TP Android_ETC1TargetPlatform
+[2018.04.28-00.19.13:224][  0]LogTemp: Display: Loaded TP Android_ETC2TargetPlatform
+[2018.04.28-00.19.13:306][  0]LogTemp: Display: Loaded TP Android_MultiTargetPlatform
+[2018.04.28-00.19.13:306][  0]LogTemp: Display: Loaded TP Android_PVRTCTargetPlatform
+[2018.04.28-00.19.13:366][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.04.28-00.19.13:380][  0]LogTemp: Display: Loaded TP HTML5TargetPlatform
+[2018.04.28-00.19.13:540][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
+[2018.04.28-00.19.13:557][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
+[2018.04.28-00.19.13:591][  0]LogTemp: Display: Loaded TP LinuxClientTargetPlatform
+[2018.04.28-00.19.13:617][  0]LogTemp: Display: Loaded TP LinuxNoEditorTargetPlatform
+[2018.04.28-00.19.13:651][  0]LogTemp: Display: Loaded TP LinuxServerTargetPlatform
+[2018.04.28-00.19.13:707][  0]LogTemp: Display: Loaded TP LinuxTargetPlatform
+[2018.04.28-00.19.13:707][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2018.04.28-00.19.14:698][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2018.04.28-00.19.14:698][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2018.04.28-00.19.14:698][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2018.04.28-00.19.17:464][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2018.04.28-00.19.18:499][  0]LogDerivedDataCache: Loaded boot cache 1.03s 107MB C:/Users/logix/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2018.04.28-00.19.18:499][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/logix/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc
+[2018.04.28-00.19.18:499][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2018.04.28-00.19.18:499][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2018.04.28-00.19.18:499][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2018.04.28-00.19.18:499][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2018.04.28-00.19.18:584][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2018.04.28-00.19.18:597][  0]LogDerivedDataCache: Using Local data cache path C:/Users/logix/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2018.04.28-00.19.18:628][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2018.04.28-00.19.18:679][  0]LogSlate: Using Freetype 2.6.0
+[2018.04.28-00.19.18:680][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.04.28-00.19.18:680][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.04.28-00.19.25:066][  0]LogAssetRegistry: FAssetRegistry took 0.0282 seconds to start up
+[2018.04.28-00.19.28:217][  0]LogInit: Selected Device Profile: [Windows]
+[2018.04.28-00.19.33:212][  0]LogSimplygon: Simplygon DLL not present - disabling.
+[2018.04.28-00.19.33:484][  0]LogMeshReduction: Using SimplygonSwarm for distributed automatic mesh merging
+[2018.04.28-00.19.33:542][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2018.04.28-00.19.33:542][  0]LogMeshReduction: No automatic skeletal mesh reduction module available
+[2018.04.28-00.19.33:542][  0]LogMeshReduction: No automatic mesh merging module available
+[2018.04.28-00.19.33:542][  0]LogMeshMerging: No automatic mesh merging module available
+[2018.04.28-00.19.34:335][  0]LogNetVersion: Ryzen , NetCL: 3944462, EngineNetVer: 2, GameNetVer: 0 (Checksum: 1119402876)
+[2018.04.28-00.19.39:371][  0]LogPackageLocalizationCache: Processed 9 localized package path(s) for 2 prioritized culture(s) in 0.148479 seconds
+[2018.04.28-00.19.39:391][  0]LogUObjectArray: 36728 objects as part of root set at end of initial load.
+[2018.04.28-00.19.39:391][  0]LogUObjectAllocator: 7314304 out of 0 bytes used by permanent object pool.
+[2018.04.28-00.19.39:391][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2018.04.28-00.19.59:164][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2018.04.28-00.19.59:234][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2018.04.28-00.20.02:995][  0]LogSkeletalMesh: Skeletal Mesh found in DDC [28.756702ms] /Game/ParagonMurdock/Characters/Heroes/Murdock/Meshes/Murdock.Murdock
+[2018.04.28-00.20.03:811][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.28-00.20.03:811][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.28-00.20.03:912][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.28-00.20.03:975][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.28-00.20.05:618][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2018.04.28-00.20.06:002][  0]LogOcInput: OculusInput pre-init called
+[2018.04.28-00.20.06:597][  0]LogEngine: Initializing Engine...
+[2018.04.28-00.20.06:721][  0]LogHMD: Failed to initialize OpenVR with code 126
+[2018.04.28-00.20.06:741][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.04.28-00.20.06:741][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.04.28-00.20.07:974][  0]LogAIModule: Creating AISystem for world Untitled
+[2018.04.28-00.20.08:015][  0]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.28-00.20.08:070][  0]LogInit: FAudioDevice initialized.
+[2018.04.28-00.20.08:282][  0]LogDerivedDataCache: Saved boot cache 0.21s 107MB C:/Users/logix/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2018.04.28-00.20.08:320][  0]LogInit: Texture streaming: Enabled
+[2018.04.28-00.20.08:377][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2018.04.28-00.20.08:377][  0]LogEngineSessionManager: EngineSessionManager sent abnormal shutdown report. Type=Crashed, SessionId={0A2D5350-4035-708A-FEC8-56BDC77051C5}
+[2018.04.28-00.20.08:474][  0]LogInit: Transaction tracking system initialized
+[2018.04.28-00.20.08:740][  0]BlueprintLog: New page: 에디터 로드
+[2018.04.28-00.20.09:890][  0]LocalizationService: 현지화 서비스가 비활성화되었습니다.
+[2018.04.28-00.20.10:692][  0]LogConsoleResponse: Display: 
+[2018.04.28-00.20.13:810][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2018.04.28-00.20.13:810][  0]LogCook: Display: Mobile HDR setting 1
+[2018.04.28-00.20.13:810][  0]LogGameplayTags: Display: UGameplayTagsManager::DoneAddingNativeTags. DelegateIsBound: 0
+[2018.04.28-00.20.13:811][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.04.28-00.20.13:811][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.04.28-00.20.14:257][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/' took 0.05s
+[2018.04.28-00.20.15:711][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.04.28-00.20.15:742][  0]Cmd: MAP LOAD FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2018.04.28-00.20.15:753][  0]LightingResults: New page: 라이팅 빌드
+[2018.04.28-00.20.15:816][  0]MapCheck: New page: 맵 체크
+[2018.04.28-00.20.15:816][  0]LightingResults: New page: 라이팅 빌드
+[2018.04.28-00.20.18:684][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.28-00.20.18:684][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.28-00.20.18:714][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.28-00.20.18:714][  0]LogBlueprint: Error: [Compiler C_InventorySlot] C_InventorySlot  에 선언된 Item 변수에 유효하지 않은 구조체 유형이 있습니다. 
+[2018.04.28-00.20.18:732][  0]LogBlueprint: Warning: [Compiler C_InventorySlot] [0118.37] C_InventorySlot 컴파일에 실패했습니다. 치명적 오류 4 회, 경고 0 회, [소요시간 48 ms] (/Game/UserInterface/C_InventorySlot.C_InventorySlot)
+[2018.04.28-00.20.20:029][  0]LogSlate: Took 0.072230 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
+[2018.04.28-00.20.20:029][  0]LogSlate: Took 0.000266 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2018.04.28-00.21.36:501][  0]LogSlate: Window '메시지' being destroyed
+[2018.04.28-00.21.36:503][  0]LogWindowsTextInputMethodSystem: Display: IME system now activated using TSF (Microsoft 입력기).
+[2018.04.28-00.21.36:749][  0]LogSkeletalMesh: Skeletal Mesh found in DDC [21.189499ms] /Game/AnimStarterPack/UE4_Mannequin/Mesh/SK_Mannequin.SK_Mannequin
+[2018.04.28-00.21.37:001][  0]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.28-00.21.37:185][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2018.04.28-00.21.37:233][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2018.04.28-00.21.37:390][  0]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 156.922ms.
+[2018.04.28-00.21.37:390][  0]LogFileHelpers: Loading map 'ThirdPersonExampleMap' took 81.656
+[2018.04.28-00.21.37:474][  0]LogWindowsTextInputMethodSystem: Display: IME system now activated using TSF (Microsoft 입력기).
+[2018.04.28-00.21.37:987][  0]LogCollectionManager: Loaded 0 collections in 0.001628 seconds
+[2018.04.28-00.21.38:193][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Collections/' took 0.01s
+[2018.04.28-00.21.38:193][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Developers/logix/Collections/' took 0.01s
+[2018.04.28-00.21.38:193][  0]LogFileCache: Scanning file cache for directory 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Collections/' took 0.01s
+[2018.04.28-00.21.38:193][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000000 seconds
+[2018.04.28-00.21.38:211][  0]LogContentBrowser: Native class hierarchy populated in 0.0168 seconds. Added 2472 classes and 564 folders.
+[2018.04.28-00.21.38:289][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0028 seconds. Added 0 classes and 0 folders.
+[2018.04.28-00.21.39:841][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0028 seconds. Added 0 classes and 0 folders.
+[2018.04.28-00.21.39:891][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0028 seconds. Added 1 classes and 2 folders.
+[2018.04.28-00.21.40:466][  0]LogSlate: Took 0.063199 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicBold.ttf' (4188K)
+[2018.04.28-00.21.40:466][  0]LogSlate: Took 0.000260 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2018.04.28-00.21.40:484][  0]LogSlate: Took 0.012008 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2018.04.28-00.21.40:907][  0]LogRenderer: Reallocating scene render targets to support 1208x576 Format 10 NumSamples 1 (Frame:1).
+[2018.04.28-00.21.41:183][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0029 seconds. Added 0 classes and 0 folders.
+[2018.04.28-00.21.41:183][  0]LogLoad: (Engine Initialization) Total time: 200.82 seconds
+[2018.04.28-00.21.41:183][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2018.04.28-00.21.41:254][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2018.04.28-00.21.41:384][  0]LogSlate: Took 0.018340 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2018.04.28-00.21.41:571][  5]LogAssetRegistry: Asset discovery search completed in 136.5269 seconds
+[2018.04.28-00.21.41:576][  5]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2018.04.28-00.21.41:576][  5]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000058 seconds (updated 0 objects)
+[2018.04.28-00.21.42:234][ 72]LogSlate: Took 0.000306 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2018.04.28-00.21.46:714][604]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-00.21.46:797][614]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.04.28-00.21.46:811][614]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.21.46:811][614]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.04.28-00.21.47:726][614]LogSlate: Window '메시지' being destroyed
+[2018.04.28-00.21.47:775][614]PIE: New page: PIE 세션: ThirdPersonExampleMap (2018. 4. 28. 오후 6:21:47)
+[2018.04.28-00.21.47:775][614]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2018.04.28-00.21.47:817][614]LogPlayLevel: PIE: StaticDuplicateObject took: (0.042656s)
+[2018.04.28-00.21.47:819][614]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.28-00.21.47:819][614]LogPlayLevel: PIE: World Init took: (0.001178s)
+[2018.04.28-00.21.47:819][614]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.044056s)
+[2018.04.28-00.21.47:881][614]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.28-00.21.47:902][614]LogInit: FAudioDevice initialized.
+[2018.04.28-00.21.47:946][614]LogLoad: Game class is 'RyzenGameMode_BP_C'
+[2018.04.28-00.21.47:950][614]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2018.04.28-09.21.47
+[2018.04.28-00.21.47:957][614]LogWorld: Bringing up level for play took: 0.009656
+[2018.04.28-00.21.48:071][614]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0030 seconds. Added 11 classes and 0 folders.
+[2018.04.28-00.21.48:608][614]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.525 s
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: === Handled ensure: ===
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: 
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: Ensure condition failed: this->IsBound() [File:D:\EpicGames\UE_4.19\Engine\Source\Runtime\Core\Public\Delegates/DelegateSignatureImpl.inl] [Line: 1058]
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: Unable to bind delegate to 'OnSeePlayer' (function might not be marked as a UFUNCTION or object may be pending kill)
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: Stack: 
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005E4EB6F6 UE4Editor-Core.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005E24AE2A UE4Editor-Core.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005E25ECC6 UE4Editor-Core.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000004A64256A UE4Editor-Ryzen-2857.dll!TBaseDynamicDelegate<FWeakObjectPtr,void,APawn * __ptr64>::__Internal_BindDynamic<AZombieCharacter_2>() [d:\epicgames\ue_4.19\engine\source\runtime\core\public\delegates\delegatesignatureimpl.inl:1058]
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000004A6423E2 UE4Editor-Ryzen-2857.dll!TBaseDynamicMulticastDelegate<FWeakObjectPtr,void,APawn * __ptr64>::__Internal_AddDynamic<AZombieCharacter_2>() [d:\epicgames\ue_4.19\engine\source\runtime\core\public\delegates\delegatesignatureimpl.inl:1140]
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000004A6428AA UE4Editor-Ryzen-2857.dll!AZombieCharacter_2::BeginPlay() [c:\users\logix\desktop\raproject\ra-git\ryzen\source\ryzen\private\zombie\zombiecharacter_2.cpp:51]
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005B6472FB UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005C8FA683 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005BDBF331 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005C8E399E UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005BDE403E UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005A6E26F0 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005A701156 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005A71BAFF UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005A18C961 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x000000005AA29516 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x00000000BD235EAC UE4Editor.exe!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x00000000BD246BD0 UE4Editor.exe!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x00000000BD246C4A UE4Editor.exe!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x00000000BD254149 UE4Editor.exe!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x00000000BD255B57 UE4Editor.exe!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x0000000094541FE4 KERNEL32.DLL!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: [Callstack] 0x0000000094DDF061 ntdll.dll!UnknownFunction []
+[2018.04.28-00.21.48:608][614]LogOutputDevice: Error: 
+[2018.04.28-00.21.48:618][614]LogStats:                SubmitErrorReport -  0.000 s
+[2018.04.28-00.21.49:044][614]LogStats:                    SendNewReport -  0.426 s
+[2018.04.28-00.21.49:044][614]LogStats:             FDebug::EnsureFailed -  0.961 s
+[2018.04.28-00.21.49:124][614]PIE: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 에 대한 에디터에서 플레이 시작 시간: 1.537
+[2018.04.28-00.21.49:125][614]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.21.49:291][614]LogSlate: Took 0.007100 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/../../Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
+[2018.04.28-00.21.49:297][614]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:374][615]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:387][616]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:395][617]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:403][618]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:413][619]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:426][620]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:436][621]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:447][622]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:458][623]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:470][624]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:480][625]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:489][626]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:498][627]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:509][628]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:517][629]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.21.49:528][630]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_0.WB_ManualPickup_C_0
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.22.02:976][222]LogAnimMontage: Warning: Playing a Montage (Fire_Montage) for the wrong Skeleton (UE4_Mannequin_Skeleton) instead of (Murdock_Skeleton).
+[2018.04.28-00.22.07:932][775]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.22.08:073][775]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.22.09:337][892]LogEditorViewport: Clicking on Actor (LMB): ZombieCharacter_BP_C (ZombieCharacter)
+[2018.04.28-00.22.18:991][721]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-00.22.19:860][730]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0034 seconds. Added 116 classes and 0 folders.
+[2018.04.28-00.22.22:613][797]LogSlate: Window 'ZombieCharacter_BP' being destroyed
+[2018.04.28-00.22.23:200][797]LogSlate: Took 0.018043 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2018.04.28-00.23.48:887][673]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.04.28-00.23.48:901][673]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.23.48:913][673]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.04.28-00.23.48:913][673]PIE: New page: PIE 세션: ThirdPersonExampleMap (2018. 4. 28. 오후 6:23:48)
+[2018.04.28-00.23.48:913][673]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2018.04.28-00.23.48:950][673]LogPlayLevel: PIE: StaticDuplicateObject took: (0.037079s)
+[2018.04.28-00.23.48:951][673]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.28-00.23.48:952][673]LogPlayLevel: PIE: World Init took: (0.001492s)
+[2018.04.28-00.23.48:952][673]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.038779s)
+[2018.04.28-00.23.49:135][673]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.28-00.23.49:156][673]LogInit: FAudioDevice initialized.
+[2018.04.28-00.23.49:210][673]LogLoad: Game class is 'RyzenGameMode_BP_C'
+[2018.04.28-00.23.49:213][673]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2018.04.28-09.23.49
+[2018.04.28-00.23.49:214][673]LogWorld: Bringing up level for play took: 0.003854
+[2018.04.28-00.23.49:216][673]PIE: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 에 대한 에디터에서 플레이 시작 시간: -0.372
+[2018.04.28-00.23.49:216][673]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.23.49:241][673]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:288][674]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:301][675]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:313][676]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:325][677]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:338][678]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:350][679]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:362][680]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:374][681]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:386][682]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:400][683]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:412][684]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:425][685]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:437][686]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:450][687]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:463][688]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.23.49:475][689]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_1.WB_ManualPickup_C_1
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.24.05:982][162]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.24.06:072][162]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.24.07:049][232]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-00.26.11:504][ 48]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-00.26.19:692][513]LogSlate: Window 'PlayerCharacter' being destroyed
+[2018.04.28-00.26.19:696][513]LogSlate: Window 'PlayerCharacter' being destroyed
+[2018.04.28-00.26.19:867][513]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2018.04.28-00.26.42:746][441]LogSlate: Window 'ZombieCharacter_BP' being destroyed
+[2018.04.28-00.26.42:750][441]LogSlate: Window 'ZombieCharacter_BP' being destroyed
+[2018.04.28-00.28.22:886][623]LogSlate: Took 0.015942 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2018.04.28-00.29.24:937][815]BlueprintLog: New page: PlayerCharacter 컴파일
+[2018.04.28-00.29.29:565][128]LogSlate: Window 'PlayerCharacter*' being destroyed
+[2018.04.28-00.29.29:568][128]LogSlate: Window 'PlayerCharacter*' being destroyed
+[2018.04.28-00.29.33:496][478]LogSlate: Window 'ZombieAIController_BP' being destroyed
+[2018.04.28-00.29.51:794][816]BlueprintLog: New page: ZombieCharacter_BP 컴파일
+[2018.04.28-00.29.55:129][ 69]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.04.28-00.29.55:156][ 69]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.29.55:156][ 69]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.04.28-00.29.55:156][ 69]PIE: New page: PIE 세션: ThirdPersonExampleMap (2018. 4. 28. 오후 6:29:55)
+[2018.04.28-00.29.55:156][ 69]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2018.04.28-00.29.55:182][ 69]LogPlayLevel: PIE: StaticDuplicateObject took: (0.025863s)
+[2018.04.28-00.29.55:183][ 69]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.28-00.29.55:183][ 69]LogPlayLevel: PIE: World Init took: (0.001101s)
+[2018.04.28-00.29.55:183][ 69]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.027197s)
+[2018.04.28-00.29.55:265][ 69]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.28-00.29.55:286][ 69]LogInit: FAudioDevice initialized.
+[2018.04.28-00.29.55:319][ 69]LogLoad: Game class is 'RyzenGameMode_BP_C'
+[2018.04.28-00.29.55:322][ 69]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2018.04.28-09.29.55
+[2018.04.28-00.29.55:323][ 69]LogWorld: Bringing up level for play took: 0.003391
+[2018.04.28-00.29.55:325][ 69]PIE: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 에 대한 에디터에서 플레이 시작 시간: -0.263
+[2018.04.28-00.29.55:325][ 69]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.29.55:351][ 69]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:371][ 70]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:379][ 71]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:388][ 72]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:397][ 73]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:406][ 74]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:414][ 75]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:423][ 76]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:432][ 77]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:442][ 78]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:452][ 79]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:461][ 80]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:469][ 81]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:477][ 82]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:486][ 83]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:495][ 84]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.29.55:503][ 85]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_2.WB_ManualPickup_C_2
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.07:385][507]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.30.07:424][507]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.30.11:386][964]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-00.30.30:191][438]Candidate modules for hot reload:
+[2018.04.28-00.30.30:191][438]  Ryzen
+[2018.04.28-00.30.30:191][438]Launching UnrealBuildTool... [D:/EpicGames/UE_4.19/Engine/Binaries/DotNET/UnrealBuildTool.exe Ryzen -ModuleWithSuffix=Ryzen,4181 Win64 Development -editorrecompile -canskiplink "C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Ryzen.uproject" ]
+[2018.04.28-00.30.30:575][438]Warning: Starting HotReload took  0.6s.
+[2018.04.28-00.30.31:793][529]CompilerResultsLog: New page: 컴파일 - 2018. 4. 28. 오후 6:30:31
+[2018.04.28-00.30.31:820][529]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2018.04.28-00.30.31:834][529]LogMainFrame: MainFrame: Module compiling took 1.783 seconds
+[2018.04.28-00.30.31:852][529]Warning: HotReload failed, recompile failed
+[2018.04.28-00.30.32:982][619]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.04.28-00.30.33:000][619]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.30.33:004][619]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.04.28-00.30.33:004][619]PIE: New page: PIE 세션: ThirdPersonExampleMap (2018. 4. 28. 오후 6:30:33)
+[2018.04.28-00.30.33:004][619]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2018.04.28-00.30.33:031][619]LogPlayLevel: PIE: StaticDuplicateObject took: (0.026816s)
+[2018.04.28-00.30.33:032][619]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.28-00.30.33:032][619]LogPlayLevel: PIE: World Init took: (0.001109s)
+[2018.04.28-00.30.33:032][619]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.028144s)
+[2018.04.28-00.30.33:113][619]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.28-00.30.33:134][619]LogInit: FAudioDevice initialized.
+[2018.04.28-00.30.33:166][619]LogLoad: Game class is 'RyzenGameMode_BP_C'
+[2018.04.28-00.30.33:169][619]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2018.04.28-09.30.33
+[2018.04.28-00.30.33:170][619]LogWorld: Bringing up level for play took: 0.003905
+[2018.04.28-00.30.33:172][619]PIE: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 에 대한 에디터에서 플레이 시작 시간: -0.415
+[2018.04.28-00.30.33:172][619]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.30.33:203][619]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:232][620]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:247][621]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:261][622]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:274][623]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:288][624]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:301][625]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:314][626]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:328][627]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:343][628]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:357][629]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:371][630]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:385][631]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:399][632]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:414][633]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:426][634]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.30.33:439][635]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_3.WB_ManualPickup_C_3
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-00.31.05:154][124]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-00.31.47:045][830]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.31.47:089][830]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-00.33.46:847][286]LogSavePackage: Save=316.27ms
+[2018.04.28-00.33.46:847][286]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/ThirdPersonExampleMap_Auto1EFA8414F48CAAEBA912368AC117D6266.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap_Auto1.umap'
+[2018.04.28-00.33.46:868][286]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap_Auto1.umap
+[2018.04.28-00.33.46:915][286]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap' took 0.649
+[2018.04.28-00.33.46:921][286]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.649
+[2018.04.28-00.33.46:924][286]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/RyzenBP/PlayerCharacter] ([1] browsable assets)...
+[2018.04.28-00.33.46:966][286]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/RyzenBP/PlayerCharacter.PlayerCharacter]
+[2018.04.28-00.33.46:966][286]OBJ SavePackage: Finished generating thumbnails for package [/Game/RyzenBP/PlayerCharacter]
+[2018.04.28-00.33.46:966][286]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/RyzenBP/PlayerCharacter" FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/RyzenBP/PlayerCharacter_Auto1.uasset" SILENT=false AUTOSAVING=true
+[2018.04.28-00.33.47:029][286]LogSavePackage: Save=50.53ms
+[2018.04.28-00.33.47:029][286]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/PlayerCharacter_Auto17F6267D846D33E63935865A2B9B6C4DB.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/RyzenBP/PlayerCharacter_Auto1.uasset'
+[2018.04.28-00.33.47:031][286]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/RyzenBP/PlayerCharacter_Auto1.uasset
+[2018.04.28-00.33.47:032][286]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Zombie/ZombieCharacter_BP] ([1] browsable assets)...
+[2018.04.28-00.33.47:053][286]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Zombie/ZombieCharacter_BP.ZombieCharacter_BP]
+[2018.04.28-00.33.47:053][286]OBJ SavePackage: Finished generating thumbnails for package [/Game/Zombie/ZombieCharacter_BP]
+[2018.04.28-00.33.47:053][286]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Zombie/ZombieCharacter_BP" FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/Zombie/ZombieCharacter_BP_Auto1.uasset" SILENT=false AUTOSAVING=true
+[2018.04.28-00.33.47:093][286]LogSavePackage: Save=29.59ms
+[2018.04.28-00.33.47:093][286]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/ZombieCharacter_BP_Auto1142AF5F04B2DD46D27B5FB83C81BE1E0.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/Zombie/ZombieCharacter_BP_Auto1.uasset'
+[2018.04.28-00.33.47:095][286]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/Zombie/ZombieCharacter_BP_Auto1.uasset
+[2018.04.28-00.33.47:095][286]LogFileHelpers: Auto-saving content packages took 0.173
+[2018.04.28-00.34.21:854][494]Candidate modules for hot reload:
+[2018.04.28-00.34.21:854][494]  Ryzen
+[2018.04.28-00.34.21:854][494]Launching UnrealBuildTool... [D:/EpicGames/UE_4.19/Engine/Binaries/DotNET/UnrealBuildTool.exe Ryzen -ModuleWithSuffix=Ryzen,7314 Win64 Development -editorrecompile -canskiplink "C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Ryzen.uproject" ]
+[2018.04.28-00.34.21:858][494]Warning: Starting HotReload took  0.0s.
+[2018.04.28-00.41.06:903][529]CompilerResultsLog: New page: 컴파일 - 2018. 4. 28. 오후 6:41:06
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: Compiling game modules for hot reload
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: Performing 3 actions (4 in parallel)
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: ZombieCharacter_2.cpp
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x722 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x725 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x726 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x727 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x728 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72a that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72c that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72d that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x72e that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x735 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x737 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73a that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73c that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73e that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x73f that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:904][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x740 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x747 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x749 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x74a that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x74e that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x750 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x751 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x754 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x755 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x756 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x758 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x75a that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x75b that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x847 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x848 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84a that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84b that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84c that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x84d that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x914 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x915 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x917 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x919 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x91c that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x91e that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x921 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:905][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x922 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x924 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x925 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x926 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x927 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92c that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92d that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x92e that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x930 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x931 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp: warning C4828: The file contains a character starting at offset 0x933 that is illegal in the current source character set (codepage 65001).
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: [2/3] Link UE4Editor-Ryzen-7314.dll
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: [3/3] Link UE4Editor-Ryzen-7314.lib
+[2018.04.28-00.41.06:906][529]CompilerResultsLog:    Creating library C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-7314.lib and object C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-7314.exp
+[2018.04.28-00.41.06:906][529]CompilerResultsLog:    Creating library C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-7314.suppressed.lib and object C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Ryzen-7314.suppressed.exp
+[2018.04.28-00.41.06:906][529]CompilerResultsLog: Total build time: 404.75 seconds (Local executor: 402.73 seconds)
+[2018.04.28-00.41.06:906][529]LogMainFrame: MainFrame: Module compiling took 405.057 seconds
+[2018.04.28-00.41.07:258][529]LogClass: InventoryItem HotReload.
+[2018.04.28-00.41.07:269][529]LogHotReload: Re-instancing ManualPickup after hot-reload.
+[2018.04.28-00.41.08:296][529]LogHotReload: Re-instancing PlayerCharacter after hot-reload.
+[2018.04.28-00.41.08:783][529]LogHotReload: Re-instancing RyzenCharacter after hot-reload.
+[2018.04.28-00.41.08:925][529]LogHotReload: Re-instancing ZombieCharacter_2 after hot-reload.
+[2018.04.28-00.41.09:597][529]LogContentBrowser: Native class hierarchy updated for 'Ryzen' in 0.0033 seconds. Added 20 classes and 6 folders.
+[2018.04.28-00.41.09:618][529]Display: HotReload successful (14 functions remapped  1 scriptstructs remapped)
+[2018.04.28-00.41.10:237][529]LogContentBrowser: Native class hierarchy populated in 0.0206 seconds. Added 2473 classes and 566 folders.
+[2018.04.28-00.41.10:249][529]Display: HotReload took 408.4s.
+[2018.04.28-00.43.47:248][913]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap' took 0.084
+[2018.04.28-00.43.47:251][913]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/RyzenBP/PlayerCharacter] ([1] browsable assets)...
+[2018.04.28-00.43.47:251][913]OBJ SavePackage: Finished generating thumbnails for package [/Game/RyzenBP/PlayerCharacter]
+[2018.04.28-00.43.47:251][913]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/RyzenBP/PlayerCharacter" FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/RyzenBP/PlayerCharacter_Auto2.uasset" SILENT=false AUTOSAVING=true
+[2018.04.28-00.43.47:292][913]LogSavePackage: Save=21.59ms
+[2018.04.28-00.43.47:292][913]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/PlayerCharacter_Auto2E280B3B647B3C92BC7D604B480F14F47.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/RyzenBP/PlayerCharacter_Auto2.uasset'
+[2018.04.28-00.43.47:294][913]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/RyzenBP/PlayerCharacter_Auto2.uasset
+[2018.04.28-00.43.47:295][913]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Zombie/ZombieCharacter_BP] ([1] browsable assets)...
+[2018.04.28-00.43.47:311][913]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Zombie/ZombieCharacter_BP.ZombieCharacter_BP]
+[2018.04.28-00.43.47:311][913]OBJ SavePackage: Finished generating thumbnails for package [/Game/Zombie/ZombieCharacter_BP]
+[2018.04.28-00.43.47:311][913]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Zombie/ZombieCharacter_BP" FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/Zombie/ZombieCharacter_BP_Auto2.uasset" SILENT=false AUTOSAVING=true
+[2018.04.28-00.43.47:355][913]LogSavePackage: Save=27.42ms
+[2018.04.28-00.43.47:355][913]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/ZombieCharacter_BP_Auto24815624A4D6628F88AB35E983EDDB64B.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/Zombie/ZombieCharacter_BP_Auto2.uasset'
+[2018.04.28-00.43.47:357][913]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Autosaves/Game/Zombie/ZombieCharacter_BP_Auto2.uasset
+[2018.04.28-00.43.47:357][913]LogFileHelpers: Auto-saving content packages took 0.107
+[2018.04.28-02.19.23:195][524]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.04.28-02.19.23:221][524]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-02.19.23:226][524]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.04.28-02.19.23:227][524]PIE: New page: PIE 세션: ThirdPersonExampleMap (2018. 4. 28. 오후 8:19:23)
+[2018.04.28-02.19.23:227][524]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2018.04.28-02.19.23:264][524]LogPlayLevel: PIE: StaticDuplicateObject took: (0.037390s)
+[2018.04.28-02.19.23:266][524]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2018.04.28-02.19.23:266][524]LogPlayLevel: PIE: World Init took: (0.001945s)
+[2018.04.28-02.19.23:266][524]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.039555s)
+[2018.04.28-02.19.23:414][524]LogInit: XAudio2 using 'C27F591-8(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.28-02.19.23:435][524]LogInit: FAudioDevice initialized.
+[2018.04.28-02.19.23:471][524]LogLoad: Game class is 'RyzenGameMode_BP_C'
+[2018.04.28-02.19.23:474][524]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2018.04.28-11.19.23
+[2018.04.28-02.19.23:475][524]LogWorld: Bringing up level for play took: 0.003613
+[2018.04.28-02.19.23:625][524]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.145 s
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: === Handled ensure: ===
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: 
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: Ensure condition failed: this->IsBound() [File:D:\EpicGames\UE_4.19\Engine\Source\Runtime\Core\Public\Delegates/DelegateSignatureImpl.inl] [Line: 1058]
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: Unable to bind delegate to 'OnSeePlayer' (function might not be marked as a UFUNCTION or object may be pending kill)
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: Stack: 
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: [Callstack] 0x000000005E4EB6F6 UE4Editor-Core.dll!UnknownFunction []
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: [Callstack] 0x000000005E24AE2A UE4Editor-Core.dll!UnknownFunction []
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: [Callstack] 0x000000005E25ECC6 UE4Editor-Core.dll!UnknownFunction []
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: [Callstack] 0x000000003E86256A UE4Editor-Ryzen-7314.dll!TBaseDynamicDelegate<FWeakObjectPtr,void,APawn * __ptr64>::__Internal_BindDynamic<AZombieCharacter_2>() [d:\epicgames\ue_4.19\engine\source\runtime\core\public\delegates\delegatesignatureimpl.inl:1058]
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: [Callstack] 0x000000003E8623E2 UE4Editor-Ryzen-7314.dll!TBaseDynamicMulticastDelegate<FWeakObjectPtr,void,APawn * __ptr64>::__Internal_AddDynamic<AZombieCharacter_2>() [d:\epicgames\ue_4.19\engine\source\runtime\core\public\delegates\delegatesignatureimpl.inl:1140]
+[2018.04.28-02.19.23:625][524]LogOutputDevice: Error: [Callstack] 0x000000003E8628AA UE4Editor-Ryzen-7314.dll!AZombieCharacter_2::BeginPlay() [c:\users\logix\desktop\raproject\ra-git\ryzen\source\ryzen\private\zombie\zombiecharacter_2.cpp:51]
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005B6472FB UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005C8FA683 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005BDBF331 UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005C8E399E UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005BDE403E UE4Editor-Engine.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005A6E26F0 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005A701156 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005A71BAFF UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005A18C961 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x000000005AA29516 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x00000000BD235EAC UE4Editor.exe!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x00000000BD246BD0 UE4Editor.exe!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x00000000BD246C4A UE4Editor.exe!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x00000000BD254149 UE4Editor.exe!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x00000000BD255B57 UE4Editor.exe!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x0000000094541FE4 KERNEL32.DLL!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: [Callstack] 0x0000000094DDF061 ntdll.dll!UnknownFunction []
+[2018.04.28-02.19.23:626][524]LogOutputDevice: Error: 
+[2018.04.28-02.19.23:633][524]LogStats:                SubmitErrorReport -  0.000 s
+[2018.04.28-02.19.29:974][524]LogStats:                    SendNewReport -  6.340 s
+[2018.04.28-02.19.29:974][524]LogStats:             FDebug::EnsureFailed -  6.493 s
+[2018.04.28-02.19.29:974][524]PIE: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 에 대한 에디터에서 플레이 시작 시간: 6.386
+[2018.04.28-02.19.29:974][524]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-02.19.29:979][524]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:064][525]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:072][526]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:080][527]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:088][528]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:098][529]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:106][530]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:116][531]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:125][532]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:135][533]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:145][534]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:155][535]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:165][536]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:175][537]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:188][538]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:199][539]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.30:208][540]LogScript: Warning: CurrentInteractable 프로퍼티를 읽으려던 중 None 에 접근했습니다.
+	WB_ManualPickup_C /Engine/Transient.UnrealEdEngine_0:GameInstance_4.WB_ManualPickup_C_4
+	Function /Game/UserInterface/WB_ManualPickup.WB_ManualPickup_C:Get_Interact_Item:00B6
+[2018.04.28-02.19.35:845][ 56]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-02.19.37:933][250]LogAnimMontage: Warning: Playing a Montage (Fire_Montage) for the wrong Skeleton (UE4_Mannequin_Skeleton) instead of (Murdock_Skeleton).
+[2018.04.28-02.19.46:266][968]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-02.19.46:308][968]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2018.04.28-02.20.07:263][321]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-02.20.07:365][330]LogSlate: Window 'ZombieBT' being destroyed
+[2018.04.28-02.20.07:369][330]LogSlate: Window 'ZombieBT' being destroyed
+[2018.04.28-02.20.07:459][330]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2018.04.28-02.20.07:811][360]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.04.28-02.20.09:159][374]LogSlate: Window '콘텐츠 저장' being destroyed
+[2018.04.28-02.20.09:198][374]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/RyzenBP/PlayerCharacter" FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/RyzenBP/PlayerCharacter.uasset" SILENT=true
+[2018.04.28-02.20.09:231][374]LogSavePackage: Save=19.65ms
+[2018.04.28-02.20.09:231][374]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/PlayerCharacter50D71D7E4345C3D30467ACBEFCD5D528.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/RyzenBP/PlayerCharacter.uasset'
+[2018.04.28-02.20.09:238][374]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/RyzenBP/PlayerCharacter.uasset
+[2018.04.28-02.20.11:007][374]LogSavePackage: Save=257.34ms
+[2018.04.28-02.20.11:007][374]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/ThirdPersonExampleMapB28860CA439DF426A0802D9D352A701A.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap'
+[2018.04.28-02.20.11:016][374]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap
+[2018.04.28-02.20.11:046][374]LogFileHelpers: Saving map 'ThirdPersonExampleMap' took 1.805
+[2018.04.28-02.20.11:053][374]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Zombie/ZombieCharacter_BP" FILE="C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Zombie/ZombieCharacter_BP.uasset" SILENT=true
+[2018.04.28-02.20.11:080][374]LogSavePackage: Save=17.75ms
+[2018.04.28-02.20.11:080][374]LogSavePackage: Moving 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/ZombieCharacter_BP588EA80E4B4066C39DD1078E06CF36B2.tmp' to 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Zombie/ZombieCharacter_BP.uasset'
+[2018.04.28-02.20.11:084][374]LogSavePackage: Display: Finished SavePackage C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Zombie/ZombieCharacter_BP.uasset
+[2018.04.28-02.20.11:252][374]LogSlate: Window 'Ryzen - 언리얼 에디터' being destroyed
+[2018.04.28-02.20.11:256][374]LogWindowsTextInputMethodSystem: Display: IME system now activated using TSF (Microsoft 입력기).
+[2018.04.28-02.20.11:818][375]Cmd: QUIT_EDITOR
+[2018.04.28-02.20.12:825][375]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2018.04.28-02.20.12:837][375]LogExit: Preparing to exit.
+[2018.04.28-02.20.15:645][375]LogExit: Editor shut down
+[2018.04.28-02.20.15:658][375]LogExit: Transaction tracking system shut down
+[2018.04.28-02.20.16:361][375]LogDirectoryWatcher: A directory notification for '../../../Engine/Content/' was aborted.
+[2018.04.28-02.20.16:361][375]LogDirectoryWatcher: A directory notification for 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/' was aborted.
+[2018.04.28-02.20.16:361][375]LogDirectoryWatcher: A directory notification for '../../Plugins/2D/Paper2D/Content/' was aborted.
+[2018.04.28-02.20.16:361][375]LogDirectoryWatcher: A directory notification for '../../Plugins/Enterprise/DatasmithContent/Content/' was aborted.
+[2018.04.28-02.20.16:361][375]LogDirectoryWatcher: A directory notification for '../../Plugins/Media/MediaCompositing/Content/' was aborted.
+[2018.04.28-02.20.16:361][375]LogDirectoryWatcher: A directory notification for '../../Plugins/Runtime/AppleARKit/Content/' was aborted.
+[2018.04.28-02.20.16:362][375]LogDirectoryWatcher: A directory notification for '../../Plugins/Runtime/Oculus/OculusVR/Content/' was aborted.
+[2018.04.28-02.20.16:362][375]LogDirectoryWatcher: A directory notification for '../../Plugins/Runtime/Steam/SteamVR/Content/' was aborted.
+[2018.04.28-02.20.18:139][375]LogExit: Object subsystem successfully closed.
+[2018.04.28-02.20.18:315][375]LogShaderCompilers: Display: Shaders left to compile 0
+[2018.04.28-02.20.18:362][375]LogD3D11RHI: Shutdown
+[2018.04.28-02.20.18:362][375]LogD3D11RHI: CleanupD3DDevice
+[2018.04.28-02.20.18:416][375]LogD3D11RHI: ~FD3D11DynamicRHI
+[2018.04.28-02.20.19:586][375]LogModuleManager: Shutting down and abandoning module Ryzen (581)
+[2018.04.28-02.20.19:586][375]LogModuleManager: Shutting down and abandoning module BlueprintGraph (580)
+[2018.04.28-02.20.19:586][375]LogModuleManager: Shutting down and abandoning module MovieSceneCapture (578)
+[2018.04.28-02.20.19:586][375]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (576)
+[2018.04.28-02.20.19:586][375]LogModuleManager: Shutting down and abandoning module DesktopPlatform (574)
+[2018.04.28-02.20.19:592][375]LogModuleManager: Shutting down and abandoning module SceneOutliner (572)
+[2018.04.28-02.20.19:604][375]LogModuleManager: Shutting down and abandoning module AddContentDialog (570)
+[2018.04.28-02.20.19:614][375]LogDirectoryWatcher: A directory notification for 'D:/EpicGames/UE_4.19/FeaturePacks/' was aborted.
+[2018.04.28-02.20.19:650][375]LogModuleManager: Shutting down and abandoning module WidgetCarousel (569)
+[2018.04.28-02.20.19:650][375]LogModuleManager: Shutting down and abandoning module EditorWidgets (566)
+[2018.04.28-02.20.19:650][375]LogModuleManager: Shutting down and abandoning module CollectionManager (564)
+[2018.04.28-02.20.19:671][375]LogDirectoryWatcher: A directory notification for 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Collections/' was aborted.
+[2018.04.28-02.20.19:671][375]LogDirectoryWatcher: A directory notification for 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Content/Developers/logix/Collections/' was aborted.
+[2018.04.28-02.20.19:671][375]LogDirectoryWatcher: A directory notification for 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Saved/Collections/' was aborted.
+[2018.04.28-02.20.19:671][375]LogModuleManager: Shutting down and abandoning module StatsViewer (562)
+[2018.04.28-02.20.19:687][375]LogModuleManager: Shutting down and abandoning module FoliageEdit (560)
+[2018.04.28-02.20.19:701][375]LogModuleManager: Shutting down and abandoning module LandscapeEditor (558)
+[2018.04.28-02.20.19:738][375]LogModuleManager: Shutting down and abandoning module MeshPaintMode (556)
+[2018.04.28-02.20.19:739][375]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (554)
+[2018.04.28-02.20.19:739][375]LogModuleManager: Shutting down and abandoning module ActorPickerMode (552)
+[2018.04.28-02.20.19:739][375]LogModuleManager: Shutting down and abandoning module GeometryMode (550)
+[2018.04.28-02.20.19:750][375]LogModuleManager: Shutting down and abandoning module TextureAlignMode (548)
+[2018.04.28-02.20.19:750][375]LogModuleManager: Shutting down and abandoning module BspMode (546)
+[2018.04.28-02.20.19:750][375]LogModuleManager: Shutting down and abandoning module PIEPreviewDeviceProfileSelector (544)
+[2018.04.28-02.20.19:750][375]LogModuleManager: Shutting down and abandoning module HardwareSurvey (542)
+[2018.04.28-02.20.19:750][375]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (540)
+[2018.04.28-02.20.19:764][375]LogModuleManager: Shutting down and abandoning module AutomationWorker (538)
+[2018.04.28-02.20.19:764][375]LogModuleManager: Shutting down and abandoning module AudioCaptureEditor (536)
+[2018.04.28-02.20.19:765][375]LogModuleManager: Shutting down and abandoning module SequenceRecorder (535)
+[2018.04.28-02.20.19:781][375]LogModuleManager: Shutting down and abandoning module MatineeToLevelSequence (532)
+[2018.04.28-02.20.19:790][375]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (530)
+[2018.04.28-02.20.19:838][375]LogModuleManager: Shutting down and abandoning module PlacementMode (529)
+[2018.04.28-02.20.19:838][375]LogModuleManager: Shutting down and abandoning module MaterialEditor (528)
+[2018.04.28-02.20.19:880][375]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (524)
+[2018.04.28-02.20.19:880][375]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (522)
+[2018.04.28-02.20.19:880][375]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (520)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (518)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (516)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module ImgMediaEditor (514)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (512)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (510)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (508)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (506)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module CharacterAI (504)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module SmartSnapping (502)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module SessionServices (500)
+[2018.04.28-02.20.19:900][375]LogModuleManager: Shutting down and abandoning module ViewportSnapping (498)
+[2018.04.28-02.20.19:901][375]LogModuleManager: Shutting down and abandoning module ViewportInteraction (496)
+[2018.04.28-02.20.19:901][375]LogModuleManager: Shutting down and abandoning module ClothPainter (494)
+[2018.04.28-02.20.19:936][375]LogModuleManager: Shutting down and abandoning module SkeletalMeshEditor (493)
+[2018.04.28-02.20.19:955][375]LogModuleManager: Shutting down and abandoning module LogVisualizer (490)
+[2018.04.28-02.20.19:971][375]LogModuleManager: Shutting down and abandoning module IntroTutorials (488)
+[2018.04.28-02.20.20:010][375]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (487)
+[2018.04.28-02.20.20:018][375]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (484)
+[2018.04.28-02.20.20:031][375]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (482)
+[2018.04.28-02.20.20:031][375]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (480)
+[2018.04.28-02.20.20:031][375]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (479)
+[2018.04.28-02.20.20:844][375]LogModuleManager: Shutting down and abandoning module WindowsPlatformEditor (476)
+[2018.04.28-02.20.20:844][375]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (474)
+[2018.04.28-02.20.20:844][375]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (472)
+[2018.04.28-02.20.20:844][375]LogModuleManager: Shutting down and abandoning module InputBindingEditor (470)
+[2018.04.28-02.20.20:852][375]LogModuleManager: Shutting down and abandoning module MergeActors (468)
+[2018.04.28-02.20.20:873][375]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (466)
+[2018.04.28-02.20.20:887][375]LogModuleManager: Shutting down and abandoning module LocalizationService (465)
+[2018.04.28-02.20.20:896][375]LogModuleManager: Shutting down and abandoning module HardwareTargeting (462)
+[2018.04.28-02.20.20:896][375]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (460)
+[2018.04.28-02.20.20:916][375]LogModuleManager: Shutting down and abandoning module UndoHistory (458)
+[2018.04.28-02.20.20:916][375]LogModuleManager: Shutting down and abandoning module XmlParser (456)
+[2018.04.28-02.20.20:923][375]LogModuleManager: Shutting down and abandoning module Blutility (454)
+[2018.04.28-02.20.20:923][375]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (452)
+[2018.04.28-02.20.20:923][375]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (451)
+[2018.04.28-02.20.20:923][375]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (448)
+[2018.04.28-02.20.20:924][375]LogModuleManager: Shutting down and abandoning module SettingsEditor (446)
+[2018.04.28-02.20.20:941][375]LogModuleManager: Shutting down and abandoning module ProjectLauncher (444)
+[2018.04.28-02.20.20:950][375]LogModuleManager: Shutting down and abandoning module SessionFrontend (442)
+[2018.04.28-02.20.20:959][375]LogModuleManager: Shutting down and abandoning module ProfilerClient (440)
+[2018.04.28-02.20.20:972][375]LogModuleManager: Shutting down and abandoning module DeviceManager (438)
+[2018.04.28-02.20.20:982][375]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (437)
+[2018.04.28-02.20.21:056][375]LogModuleManager: Shutting down and abandoning module AutomationController (434)
+[2018.04.28-02.20.21:069][375]LogModuleManager: Shutting down and abandoning module AutomationWindow (432)
+[2018.04.28-02.20.21:094][375]LogModuleManager: Shutting down and abandoning module Layers (430)
+[2018.04.28-02.20.21:126][375]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (428)
+[2018.04.28-02.20.21:132][375]LogModuleManager: Shutting down and abandoning module DetailCustomizations (426)
+[2018.04.28-02.20.21:159][375]LogModuleManager: Shutting down and abandoning module PackagesDialog (424)
+[2018.04.28-02.20.21:160][375]LogModuleManager: Shutting down and abandoning module Persona (422)
+[2018.04.28-02.20.21:176][375]LogModuleManager: Shutting down and abandoning module AdvancedPreviewScene (421)
+[2018.04.28-02.20.21:176][375]LogModuleManager: Shutting down and abandoning module AnimGraph (419)
+[2018.04.28-02.20.21:176][375]LogModuleManager: Shutting down and abandoning module Kismet (416)
+[2018.04.28-02.20.21:206][375]LogModuleManager: Shutting down and abandoning module GraphEditor (414)
+[2018.04.28-02.20.21:206][375]LogModuleManager: Shutting down and abandoning module ClassViewer (412)
+[2018.04.28-02.20.21:208][375]LogModuleManager: Shutting down and abandoning module Toolbox (410)
+[2018.04.28-02.20.21:208][375]LogModuleManager: Shutting down and abandoning module ModuleUI (408)
+[2018.04.28-02.20.21:227][375]LogModuleManager: Shutting down and abandoning module MovieSceneTools (406)
+[2018.04.28-02.20.21:256][375]LogModuleManager: Shutting down and abandoning module OutputLog (404)
+[2018.04.28-02.20.21:262][375]LogModuleManager: Shutting down and abandoning module GammaUI (402)
+[2018.04.28-02.20.21:272][375]LogModuleManager: Shutting down and abandoning module Documentation (400)
+[2018.04.28-02.20.21:272][375]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (398)
+[2018.04.28-02.20.21:272][375]LogModuleManager: Shutting down and abandoning module MovieScene (396)
+[2018.04.28-02.20.21:273][375]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (394)
+[2018.04.28-02.20.21:273][375]LogModuleManager: Shutting down and abandoning module LauncherPlatform (392)
+[2018.04.28-02.20.21:273][375]LogModuleManager: Shutting down and abandoning module AnalyticsET (390)
+[2018.04.28-02.20.21:273][375]LogModuleManager: Shutting down and abandoning module PortalServices (388)
+[2018.04.28-02.20.21:273][375]LogModuleManager: Shutting down and abandoning module PortalRpc (386)
+[2018.04.28-02.20.21:273][375]LogModuleManager: Shutting down and abandoning module MessagingRpc (384)
+[2018.04.28-02.20.21:273][375]LogModuleManager: Shutting down and abandoning module AIModule (382)
+[2018.04.28-02.20.21:279][375]LogModuleManager: Shutting down and abandoning module GameplayDebugger (381)
+[2018.04.28-02.20.21:279][375]LogModuleManager: Shutting down and abandoning module AITestSuite (379)
+[2018.04.28-02.20.21:285][375]LogModuleManager: Shutting down and abandoning module ProfilerService (376)
+[2018.04.28-02.20.21:375][375]LogModuleManager: Shutting down and abandoning module TaskGraph (374)
+[2018.04.28-02.20.21:396][375]LogModuleManager: Shutting down and abandoning module SteamVRController (372)
+[2018.04.28-02.20.21:396][375]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (370)
+[2018.04.28-02.20.21:396][375]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (368)
+[2018.04.28-02.20.21:403][375]LogModuleManager: Shutting down and abandoning module OculusInput (366)
+[2018.04.28-02.20.21:403][375]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (364)
+[2018.04.28-02.20.21:403][375]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (362)
+[2018.04.28-02.20.21:404][375]LogModuleManager: Shutting down and abandoning module CableComponent (360)
+[2018.04.28-02.20.21:421][375]LogModuleManager: Shutting down and abandoning module AudioCapture (358)
+[2018.04.28-02.20.21:421][375]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (356)
+[2018.04.28-02.20.21:422][375]LogModuleManager: Shutting down and abandoning module AndroidPermission (354)
+[2018.04.28-02.20.21:422][375]LogModuleManager: Shutting down and abandoning module NUTUnrealEngine4 (350)
+[2018.04.28-02.20.21:422][375]LogModuleManager: Shutting down and abandoning module NetcodeUnitTest (348)
+[2018.04.28-02.20.21:449][375]LogModuleManager: Shutting down and abandoning module MediaCompositingEditor (346)
+[2018.04.28-02.20.21:449][375]LogModuleManager: Shutting down and abandoning module MediaCompositing (344)
+[2018.04.28-02.20.21:449][375]LogModuleManager: Shutting down and abandoning module LinearTimecode (342)
+[2018.04.28-02.20.21:449][375]LogModuleManager: Shutting down and abandoning module ImgMedia (340)
+[2018.04.28-02.20.21:465][375]LogModuleManager: Shutting down and abandoning module HTML5Networking (338)
+[2018.04.28-02.20.21:465][375]LogModuleManager: Shutting down and abandoning module AlembicImporter (336)
+[2018.04.28-02.20.21:474][375]LogModuleManager: Shutting down and abandoning module AlembicLibrary (335)
+[2018.04.28-02.20.21:474][375]LogModuleManager: Shutting down and abandoning module GeometryCache (334)
+[2018.04.28-02.20.21:474][375]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (333)
+[2018.04.28-02.20.21:474][375]LogModuleManager: Shutting down and abandoning module DatasmithContent (328)
+[2018.04.28-02.20.21:474][375]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (326)
+[2018.04.28-02.20.21:474][375]LogModuleManager: Shutting down and abandoning module PluginBrowser (324)
+[2018.04.28-02.20.21:508][375]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (322)
+[2018.04.28-02.20.21:512][375]LogModuleManager: Shutting down and abandoning module CryptoKeysOpenSSL (320)
+[2018.04.28-02.20.21:522][375]LogModuleManager: Shutting down and abandoning module CryptoKeys (318)
+[2018.04.28-02.20.21:522][375]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (316)
+[2018.04.28-02.20.21:522][375]LogModuleManager: Shutting down and abandoning module VisualStudioCodeSourceCodeAccess (314)
+[2018.04.28-02.20.21:522][375]LogModuleManager: Shutting down and abandoning module UObjectPlugin (312)
+[2018.04.28-02.20.21:522][375]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (310)
+[2018.04.28-02.20.21:534][375]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (308)
+[2018.04.28-02.20.21:559][375]LogModuleManager: Shutting down and abandoning module GitSourceControl (306)
+[2018.04.28-02.20.21:580][375]LogModuleManager: Shutting down and abandoning module SourceControl (305)
+[2018.04.28-02.20.21:601][375]LogModuleManager: Shutting down and abandoning module CLionSourceCodeAccess (302)
+[2018.04.28-02.20.21:613][375]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (300)
+[2018.04.28-02.20.21:613][375]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (298)
+[2018.04.28-02.20.21:613][375]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (296)
+[2018.04.28-02.20.21:613][375]LogModuleManager: Shutting down and abandoning module Paper2DEditor (294)
+[2018.04.28-02.20.21:638][375]LogModuleManager: Shutting down and abandoning module MeshPaint (293)
+[2018.04.28-02.20.21:654][375]LogModuleManager: Shutting down and abandoning module RuntimePhysXCooking (288)
+[2018.04.28-02.20.21:654][375]LogModuleManager: Shutting down and abandoning module PhysXVehiclesEditor (286)
+[2018.04.28-02.20.21:654][375]LogModuleManager: Shutting down and abandoning module PhysXVehicles (284)
+[2018.04.28-02.20.21:654][375]LogModuleManager: Shutting down and abandoning module OculusEditor (282)
+[2018.04.28-02.20.21:654][375]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (280)
+[2018.04.28-02.20.21:654][375]LogModuleManager: Shutting down and abandoning module ImmediatePhysicsEditor (278)
+[2018.04.28-02.20.21:654][375]LogModuleManager: Shutting down and abandoning module ImmediatePhysics (276)
+[2018.04.28-02.20.21:664][375]LogModuleManager: Shutting down and abandoning module ActorSequence (274)
+[2018.04.28-02.20.21:664][375]LogModuleManager: Shutting down and abandoning module UdpMessaging (272)
+[2018.04.28-02.20.21:778][375]LogModuleManager: Shutting down and abandoning module TcpMessaging (270)
+[2018.04.28-02.20.21:884][375]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (268)
+[2018.04.28-02.20.21:904][375]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (266)
+[2018.04.28-02.20.21:904][375]LogModuleManager: Shutting down and abandoning module FacialAnimation (264)
+[2018.04.28-02.20.21:904][375]LogModuleManager: Shutting down and abandoning module DataValidation (262)
+[2018.04.28-02.20.21:931][375]LogModuleManager: Shutting down and abandoning module AssetManagerEditor (260)
+[2018.04.28-02.20.21:951][375]LogModuleManager: Shutting down and abandoning module LevelEditor (259)
+[2018.04.28-02.20.21:967][375]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (258)
+[2018.04.28-02.20.21:979][375]LogModuleManager: Shutting down and abandoning module CommonMenuExtensions (256)
+[2018.04.28-02.20.21:980][375]LogModuleManager: Shutting down and abandoning module MainFrame (254)
+[2018.04.28-02.20.21:980][375]LogModuleManager: Shutting down and abandoning module HotReload (253)
+[2018.04.28-02.20.21:980][375]LogDirectoryWatcher: A directory notification for 'C:/Users/logix/Desktop/RAProject/RA-Git/Ryzen/Binaries/Win64' was aborted.
+[2018.04.28-02.20.22:002][375]LogModuleManager: Shutting down and abandoning module ContentBrowser (249)
+[2018.04.28-02.20.22:004][375]LogModuleManager: Shutting down and abandoning module TreeMap (247)
+[2018.04.28-02.20.22:019][375]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (244)
+[2018.04.28-02.20.22:019][375]LogModuleManager: Shutting down and abandoning module LiveLinkEditor (242)
+[2018.04.28-02.20.22:036][375]LogModuleManager: Shutting down and abandoning module LiveLink (240)
+[2018.04.28-02.20.22:844][375]LogModuleManager: Shutting down and abandoning module Paper2D (238)
+[2018.04.28-02.20.22:849][375]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (236)
+[2018.04.28-02.20.22:855][375]LogModuleManager: Shutting down and abandoning module WmfMedia (234)
+[2018.04.28-02.20.22:864][375]LogModuleManager: Shutting down and abandoning module Media (233)
+[2018.04.28-02.20.22:871][375]LogModuleManager: Shutting down and abandoning module PacketHandler (230)
+[2018.04.28-02.20.22:871][375]LogModuleManager: Shutting down and abandoning module ClothingSystemEditor (228)
+[2018.04.28-02.20.22:871][375]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntime (226)
+[2018.04.28-02.20.22:892][375]LogModuleManager: Shutting down and abandoning module MediaAssets (224)
+[2018.04.28-02.20.22:892][375]LogModuleManager: Shutting down and abandoning module Overlay (222)
+[2018.04.28-02.20.22:892][375]LogModuleManager: Shutting down and abandoning module OverlayEditor (221)
+[2018.04.28-02.20.22:892][375]LogModuleManager: Shutting down and abandoning module VREditor (218)
+[2018.04.28-02.20.22:921][375]LogModuleManager: Shutting down and abandoning module StringTableEditor (216)
+[2018.04.28-02.20.22:921][375]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (214)
+[2018.04.28-02.20.22:921][375]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (212)
+[2018.04.28-02.20.22:921][375]LogModuleManager: Shutting down and abandoning module FunctionalTesting (210)
+[2018.04.28-02.20.22:935][375]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (208)
+[2018.04.28-02.20.22:946][375]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (207)
+[2018.04.28-02.20.22:946][375]LogModuleManager: Shutting down and abandoning module UMG (204)
+[2018.04.28-02.20.22:960][375]LogModuleManager: Shutting down and abandoning module UMGEditor (203)
+[2018.04.28-02.20.22:980][375]LogModuleManager: Shutting down and abandoning module Sequencer (202)
+[2018.04.28-02.20.23:009][375]LogModuleManager: Shutting down and abandoning module MessageLog (199)
+[2018.04.28-02.20.23:009][375]LogModuleManager: Shutting down and abandoning module SlateReflector (194)
+[2018.04.28-02.20.23:032][375]LogModuleManager: Shutting down and abandoning module Slate (192)
+[2018.04.28-02.20.23:032][375]LogModuleManager: Shutting down and abandoning module EditorStyle (190)
+[2018.04.28-02.20.23:084][375]LogModuleManager: Shutting down and abandoning module MRMesh (188)
+[2018.04.28-02.20.23:084][375]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (186)
+[2018.04.28-02.20.23:084][375]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (184)
+[2018.04.28-02.20.23:084][375]LogModuleManager: Shutting down and abandoning module XAudio2 (182)
+[2018.04.28-02.20.23:084][375]LogModuleManager: Shutting down and abandoning module Networking (180)
+[2018.04.28-02.20.23:084][375]LogModuleManager: Shutting down and abandoning module Core (178)
+[2018.04.28-02.20.23:084][375]LogModuleManager: Shutting down and abandoning module LevelSequence (176)
+[2018.04.28-02.20.23:096][375]LogModuleManager: Shutting down and abandoning module KismetCompiler (174)
+[2018.04.28-02.20.23:096][375]LogModuleManager: Shutting down and abandoning module MeshUtilities (172)
+[2018.04.28-02.20.23:116][375]LogModuleManager: Shutting down and abandoning module MeshMergeUtilities (171)
+[2018.04.28-02.20.23:116][375]LogModuleManager: Shutting down and abandoning module MeshReductionInterface (170)
+[2018.04.28-02.20.23:116][375]LogModuleManager: Shutting down and abandoning module SimplygonSwarm (169)
+[2018.04.28-02.20.23:128][375]LogModuleManager: Shutting down and abandoning module SimplygonMeshReduction (167)
+[2018.04.28-02.20.23:153][375]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (165)
+[2018.04.28-02.20.23:169][375]LogModuleManager: Shutting down and abandoning module MaterialBaking (161)
+[2018.04.28-02.20.23:180][375]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (157)
+[2018.04.28-02.20.23:223][375]LogModuleManager: Shutting down and abandoning module DerivedDataCache (154)
+[2018.04.28-02.20.23:265][375]LogDerivedDataCache: Shutdown
+[2018.04.28-02.20.23:265][375]LogModuleManager: Shutting down and abandoning module XGEController (152)
+[2018.04.28-02.20.23:265][375]LogModuleManager: Shutting down and abandoning module TargetPlatform (150)
+[2018.04.28-02.20.23:265][375]LogModuleManager: Shutting down and abandoning module VulkanShaderFormat (149)
+[2018.04.28-02.20.23:277][375]LogModuleManager: Shutting down and abandoning module ShaderFormatVectorVM (147)
+[2018.04.28-02.20.23:288][375]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (145)
+[2018.04.28-02.20.23:299][375]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (143)
+[2018.04.28-02.20.23:315][375]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (141)
+[2018.04.28-02.20.23:338][375]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (139)
+[2018.04.28-02.20.23:338][375]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (137)
+[2018.04.28-02.20.23:338][375]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (135)
+[2018.04.28-02.20.23:354][375]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (133)
+[2018.04.28-02.20.23:362][375]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (131)
+[2018.04.28-02.20.23:362][375]LogModuleManager: Shutting down and abandoning module ImageWrapper (130)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (127)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (125)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (123)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (121)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (119)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (117)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (115)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module LinuxClientTargetPlatform (113)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module TVOSTargetPlatform (111)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module Messaging (109)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (107)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (105)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (103)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (101)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module Android_MultiTargetPlatform (99)
+[2018.04.28-02.20.23:363][375]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (97)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (95)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module Android_ETC1aTargetPlatform (93)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (91)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (89)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (87)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (85)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (83)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (81)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (79)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module MacTargetPlatform (77)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module MacServerTargetPlatform (75)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module MacNoEditorTargetPlatform (73)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module MacClientTargetPlatform (71)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (69)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module InputCore (66)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module Settings (64)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module PhysXCooking (62)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module SteamVR (60)
+[2018.04.28-02.20.23:364][375]LogModuleManager: Shutting down and abandoning module OculusHMD (58)
+[2018.04.28-02.20.23:382][375]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (56)
+[2018.04.28-02.20.23:382][375]LogModuleManager: Shutting down and abandoning module AppleARKit (54)
+[2018.04.28-02.20.23:382][375]LogModuleManager: Shutting down and abandoning module AugmentedReality (51)
+[2018.04.28-02.20.23:382][375]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (48)
+[2018.04.28-02.20.23:382][375]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (44)
+[2018.04.28-02.20.23:421][375]LogModuleManager: Shutting down and abandoning module XMPP (43)
+[2018.04.28-02.20.23:445][375]LogModuleManager: Shutting down and abandoning module HTTP (41)
+[2018.04.28-02.20.23:462][375]LogHttp: Display: Http module shutting down, but needs to wait on 1 outstanding Http requests:
+[2018.04.28-02.20.23:462][375]LogHttp: Display: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BF0E4D8D2-4887-2036-0E73-28870C73E2DF%7D&AppID=UEEditor.Rocket.Release&AppVersion=4.19.1-3989454%2B%2B%2BUE4%2BRelease-4.19&UserID=86dda5a2406d5f064f2c16943486115b%7C08d7164c659843878d142b90a225840e%7C6cbbdeec-cb7a-4fdd-9a74-45f12431cb79&AppEnvironment=datacollector-binary&UploadType=eteventstream] status=Processing
+[2018.04.28-02.20.23:481][375]LogModuleManager: Shutting down and abandoning module SSL (40)
+[2018.04.28-02.20.23:510][375]LogModuleManager: Shutting down and abandoning module AnimationModifiers (36)
+[2018.04.28-02.20.23:532][375]LogModuleManager: Shutting down and abandoning module PropertyEditor (35)
+[2018.04.28-02.20.23:539][375]LogModuleManager: Shutting down and abandoning module AudioEditor (32)
+[2018.04.28-02.20.23:563][375]LogModuleManager: Shutting down and abandoning module TextureCompressor (30)
+[2018.04.28-02.20.23:588][375]LogModuleManager: Shutting down and abandoning module ShaderCore (28)
+[2018.04.28-02.20.23:588][375]LogModuleManager: Shutting down and abandoning module Landscape (26)
+[2018.04.28-02.20.23:588][375]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (24)
+[2018.04.28-02.20.23:663][375]LogModuleManager: Shutting down and abandoning module OpenGLDrv (22)
+[2018.04.28-02.20.23:678][375]LogModuleManager: Shutting down and abandoning module D3D11RHI (20)
+[2018.04.28-02.20.23:678][375]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (18)
+[2018.04.28-02.20.23:691][375]LogModuleManager: Shutting down and abandoning module Renderer (16)
+[2018.04.28-02.20.23:691][375]LogModuleManager: Shutting down and abandoning module Engine (14)
+[2018.04.28-02.20.23:691][375]LogModuleManager: Shutting down and abandoning module CoreUObject (12)
+[2018.04.28-02.20.23:691][375]LogModuleManager: Shutting down and abandoning module NetworkFile (10)
+[2018.04.28-02.20.23:703][375]LogModuleManager: Shutting down and abandoning module CookedIterativeFile (8)
+[2018.04.28-02.20.23:703][375]LogModuleManager: Shutting down and abandoning module StreamingFile (6)
+[2018.04.28-02.20.23:719][375]LogModuleManager: Shutting down and abandoning module SandboxFile (4)
+[2018.04.28-02.20.23:730][375]LogModuleManager: Shutting down and abandoning module PakFile (2)
+[2018.04.28-02.20.23:777][375]LogExit: Exiting.
+[2018.04.28-02.20.23:805][375]Log file closed, 04/28/18 11:20:23

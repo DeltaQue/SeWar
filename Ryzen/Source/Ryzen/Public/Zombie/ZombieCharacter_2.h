@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Player/RyzenBaseCharacter.h"
-#include "StructClass.h"
 #include "ZombieCharacter_2.generated.h"
 
 
@@ -17,6 +16,10 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "AI")
 		class UPawnSensingComponent* PawnSensingComp;
 
+	UFUNCTION()
+		void OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+	
+	
 	//타겟을 찾지 못하는데 걸리는 시간 2.5초
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		float SenseTimeOut;
@@ -39,6 +42,11 @@ private:
 	UFUNCTION()
 		void OnSeePlayer(APawn* pawn);
 	
+	UPROPERTY(VisibleAnywhere, Category = "Attack")
+		UCapsuleComponent* AttackCollisionComp;
+
+	//체력이 0이하로 내려갔을때 행동들 정의, ragdoll 등..
+	void IsDeath();
 public:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		class UBehaviorTree* BehaviorTree;
@@ -47,11 +55,13 @@ public:
 	UPROPERTY(EditAnywhere, Category = "AI")
 		EZombieType ZombieType;
 
-	void SetBotType(EZombieType NewType);
+	void SetZombieType(EZombieType NewType);
 
+	bool DamageHit(uint8 damage);
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Attack")
-		UAnimMontage* ActtackAnimMontage;
+		UAnimMontage* AttackAnimMontage;
 
-	
+	UPROPERTY(VisibleDefaultsOnly)
+		class UAnimInstance* AnimInstance;
 };

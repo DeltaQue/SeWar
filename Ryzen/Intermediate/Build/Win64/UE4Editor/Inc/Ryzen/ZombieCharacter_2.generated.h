@@ -9,6 +9,9 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class APawn;
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef RYZEN_ZombieCharacter_2_generated_h
 #error "ZombieCharacter_2.generated.h already included, missing '#pragma once' in ZombieCharacter_2.h"
 #endif
@@ -23,6 +26,20 @@ class APawn;
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
 		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnAttackCollisionCompBeginOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnAttackCollisionCompBeginOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
 	}
 
 
@@ -34,6 +51,20 @@ class APawn;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnAttackCollisionCompBeginOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnAttackCollisionCompBeginOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
 		P_NATIVE_END; \
 	}
 
@@ -85,7 +116,9 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AZombieCharacter_2); \
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__PawnSensingComp() { return STRUCT_OFFSET(AZombieCharacter_2, PawnSensingComp); } \
 	FORCEINLINE static uint32 __PPO__SenseTimeOut() { return STRUCT_OFFSET(AZombieCharacter_2, SenseTimeOut); } \
-	FORCEINLINE static uint32 __PPO__ActtackAnimMontage() { return STRUCT_OFFSET(AZombieCharacter_2, ActtackAnimMontage); }
+	FORCEINLINE static uint32 __PPO__AttackCollisionComp() { return STRUCT_OFFSET(AZombieCharacter_2, AttackCollisionComp); } \
+	FORCEINLINE static uint32 __PPO__AttackAnimMontage() { return STRUCT_OFFSET(AZombieCharacter_2, AttackAnimMontage); } \
+	FORCEINLINE static uint32 __PPO__AnimInstance() { return STRUCT_OFFSET(AZombieCharacter_2, AnimInstance); }
 
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_10_PROLOG
