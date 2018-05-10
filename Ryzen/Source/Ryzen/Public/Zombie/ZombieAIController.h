@@ -41,6 +41,9 @@ class RYZEN_API AZombieAIController : public AAIController
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName BotTypeKeyName;
 
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName ReconnaissanceLocationKeyName;
+
 public:
 
 	AWaypoint* GetWaypoint();
@@ -52,6 +55,8 @@ public:
 	void SetTargetEnemy(APawn* NewTarget);
 
 	void SetBlackboardZombieType(EZombieType NewType);
+
+	void SetReconnaissanceLocation(FVector vector);
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorComp() const { return BehaviorComp; }

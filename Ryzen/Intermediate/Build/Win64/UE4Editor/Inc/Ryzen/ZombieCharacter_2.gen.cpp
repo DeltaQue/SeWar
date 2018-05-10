@@ -21,8 +21,10 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
-	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer();
+	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnHearNoise();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
+	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	RYZEN_API UEnum* Z_Construct_UEnum_Ryzen_EZombieType();
@@ -35,6 +37,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		UClass* Class = AZombieCharacter_2::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "OnAttackCollisionCompBeginOverlap", &AZombieCharacter_2::execOnAttackCollisionCompBeginOverlap },
+			{ "OnHearNoise", &AZombieCharacter_2::execOnHearNoise },
 			{ "OnSeePlayer", &AZombieCharacter_2::execOnSeePlayer },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
@@ -93,6 +96,40 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnHearNoise()
+	{
+		struct ZombieCharacter_2_eventOnHearNoise_Parms
+		{
+			APawn* PawnInstigator;
+			FVector Location;
+			float Volume;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Volume = { UE4CodeGen_Private::EPropertyClass::Float, "Volume", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnHearNoise_Parms, Volume), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Location_MetaData[] = {
+				{ "NativeConst", "" },
+			};
+#endif
+			static const UE4CodeGen_Private::FStructPropertyParams NewProp_Location = { UE4CodeGen_Private::EPropertyClass::Struct, "Location", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000008000182, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnHearNoise_Parms, Location), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(NewProp_Location_MetaData, ARRAY_COUNT(NewProp_Location_MetaData)) };
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_PawnInstigator = { UE4CodeGen_Private::EPropertyClass::Object, "PawnInstigator", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnHearNoise_Parms, PawnInstigator), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Volume,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Location,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_PawnInstigator,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "OnHearNoise", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00C40401, sizeof(ZombieCharacter_2_eventOnHearNoise_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer()
 	{
 		struct ZombieCharacter_2_eventOnSeePlayer_Parms
@@ -131,6 +168,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 			};
 			static const FClassFunctionLinkInfo FuncInfo[] = {
 				{ &Z_Construct_UFunction_AZombieCharacter_2_OnAttackCollisionCompBeginOverlap, "OnAttackCollisionCompBeginOverlap" }, // 1890504576
+				{ &Z_Construct_UFunction_AZombieCharacter_2_OnHearNoise, "OnHearNoise" }, // 350365120
 				{ &Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer, "OnSeePlayer" }, // 2953399095
 			};
 #if WITH_METADATA
@@ -223,7 +261,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombieCharacter_2, 4003743966);
+	IMPLEMENT_CLASS(AZombieCharacter_2, 3069043143);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AZombieCharacter_2(Z_Construct_UClass_AZombieCharacter_2, &AZombieCharacter_2::StaticClass, TEXT("/Script/Ryzen"), TEXT("AZombieCharacter_2"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AZombieCharacter_2);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

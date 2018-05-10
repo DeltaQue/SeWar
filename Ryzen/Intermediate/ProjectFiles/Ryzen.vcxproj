@@ -426,10 +426,12 @@
     <ClInclude Include="..\..\Source\Ryzen\ManualPickup.h" />
     <None Include="..\..\Source\Ryzen\Ryzen.Build.cs" />
     <ClCompile Include="..\..\Source\Ryzen\Private\Player\PlayerCharacter.cpp" />
+    <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\BTTask_Attack.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Ryzen.cpp" />
     <ClInclude Include="..\..\Source\Ryzen\Public\Player\PlayerCharacter.h" />
     <ClInclude Include="..\..\Source\Ryzen\Public\StructClass.h" />
+    <ClInclude Include="..\..\Source\Ryzen\Public\Zombie\BTTask_Attack.h" />
     <ClInclude Include="..\..\Source\Ryzen\Public\Zombie\ZombieCharacter_2.h" />
     <ClInclude Include="..\..\Source\Ryzen\Ryzen.h" />
     <ClCompile Include="..\..\Source\Ryzen\RyzenAnimInstance.cpp" />

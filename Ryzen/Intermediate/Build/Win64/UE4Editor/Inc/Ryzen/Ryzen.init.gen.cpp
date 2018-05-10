@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeRyzen_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/Ryzen",
 				PKG_CompiledIn | 0x00000000,
-				0x41924AE4,
-				0x1568A3C8,
+				0xD8D015E7,
+				0x1D0A292D,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};

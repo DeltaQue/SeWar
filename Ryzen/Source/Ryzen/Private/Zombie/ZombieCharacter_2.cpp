@@ -52,6 +52,8 @@ void AZombieCharacter_2::BeginPlay()
 	if (PawnSensingComp)
 	{
 		PawnSensingComp->OnSeePawn.AddDynamic(this, &AZombieCharacter_2::OnSeePlayer);
+
+		PawnSensingComp->OnHearNoise.AddDynamic(this, &AZombieCharacter_2::OnHearNoise);
 	}
 	if (AttackCollisionComp)
 	{
@@ -65,7 +67,8 @@ void AZombieCharacter_2::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 
 	/* 2.5초 동안 플레이어를 쫒다가 플레이어를 쫒지 못하면 타겟 초기화 */
-	if (bSensedTarget && (GetWorld()->TimeSeconds - LastSeenTime) > SenseTimeOut)
+	if (bSensedTarget && (GetWorld()->TimeSeconds - LastSeenTime) > SenseTimeOut
+		&& (GetWorld()->TimeSeconds - LastHeardTime) > SenseTimeOut)
 	{
 		AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
 		if (AIController)
@@ -76,7 +79,7 @@ void AZombieCharacter_2::Tick(float DeltaSeconds)
 		}
 	}
 
-	OnDeath();
+	IsDeath();
 }
 
 
@@ -102,6 +105,27 @@ void AZombieCharacter_2::OnSeePlayer(APawn* Pawn)
 	if (AIController && SensedPawn->IsAlive())
 	{
 		AIController->SetTargetEnemy(SensedPawn);
+	}
+}
+
+void AZombieCharacter_2::OnHearNoise(APawn* PawnInstigator, const FVector& Location, float Volume) {
+	if (!IsAlive())
+	{
+		return;
+	}
+
+	if (!bSensedTarget)
+	{
+
+	}
+
+	bSensedTarget = true;
+	LastHeardTime = GetWorld()->GetTimeSeconds();
+
+	AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
+	if (AIController)
+	{
+		AIController->SetTargetEnemy(PawnInstigator);
 	}
 }
 

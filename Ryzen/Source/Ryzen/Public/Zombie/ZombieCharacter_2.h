@@ -28,6 +28,8 @@ private:
 	bool bSensedTarget;
 	//타겟을 발견 한 뒤 월드 시간을 받음
 	float LastSeenTime;
+	//
+	float LastHeardTime;
 public:
 	// Sets default values for this character's properties
 	AZombieCharacter_2(const class FObjectInitializer& ObjectInitializer);
@@ -41,6 +43,9 @@ private:
 private:
 	UFUNCTION()
 		void OnSeePlayer(APawn* pawn);
+
+	UFUNCTION()
+		void OnHearNoise(APawn* PawnInstigator, const FVector& Location, float Volume);
 	
 	UPROPERTY(VisibleAnywhere, Category = "Attack")
 		UCapsuleComponent* AttackCollisionComp;

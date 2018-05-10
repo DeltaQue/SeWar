@@ -9,6 +9,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class APawn;
+struct FVector;
 class UPrimitiveComponent;
 class AActor;
 struct FHitResult;
@@ -18,6 +19,17 @@ struct FHitResult;
 #define RYZEN_ZombieCharacter_2_generated_h
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnHearNoise) \
+	{ \
+		P_GET_OBJECT(APawn,Z_Param_PawnInstigator); \
+		P_GET_STRUCT_REF(FVector,Z_Param_Out_Location); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Volume); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnHearNoise(Z_Param_PawnInstigator,Z_Param_Out_Location,Z_Param_Volume); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnSeePlayer) \
 	{ \
@@ -44,6 +56,17 @@ struct FHitResult;
 
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnHearNoise) \
+	{ \
+		P_GET_OBJECT(APawn,Z_Param_PawnInstigator); \
+		P_GET_STRUCT_REF(FVector,Z_Param_Out_Location); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Volume); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnHearNoise(Z_Param_PawnInstigator,Z_Param_Out_Location,Z_Param_Volume); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnSeePlayer) \
 	{ \

@@ -184,6 +184,9 @@
     <ClInclude Include="..\..\Source\Ryzen\Public\StructClass.h">
       <Filter>Source\Ryzen\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Ryzen\Public\Zombie\BTTask_Attack.h">
+      <Filter>Source\Ryzen\Public\Zombie</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp">
@@ -191,6 +194,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Ryzen\Private\Player\PlayerCharacter.cpp">
       <Filter>Source\Ryzen\Private\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\BTTask_Attack.cpp">
+      <Filter>Source\Ryzen\Private\Zombie</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

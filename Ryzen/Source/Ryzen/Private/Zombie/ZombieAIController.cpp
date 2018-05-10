@@ -102,3 +102,11 @@ void AZombieAIController::SetBlackboardZombieType(EZombieType NewType)
 		BlackboardComp->SetValueAsEnum(BotTypeKeyName, (uint8)NewType);
 	}
 }
+
+void AZombieAIController::SetReconnaissanceLocation(FVector vector) 
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsVector(ReconnaissanceLocationKeyName, vector);
+	}
+}
