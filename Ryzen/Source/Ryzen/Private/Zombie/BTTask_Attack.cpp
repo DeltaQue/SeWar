@@ -12,12 +12,13 @@
 
 EBTNodeResult::Type UBTTask_Attack::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
-	AZombieCharacter_2* MyCharacter = Cast<AZombieCharacter_2>(OwnerComp.GetAIOwner());
-	if (MyCharacter == nullptr)
+	AZombieCharacter_2* MyCharacter = Cast<AZombieCharacter_2>(OwnerComp.GetOwner());
+	if (MyCharacter == nullptr && MyCharacter->GetOverlapAttackCollision() == false)
 	{
 		return EBTNodeResult::Failed;
 	}
 
-	//MyCharacter->execOnAttackCollisionCompBeginOverlap
+	//MyCharacter->GetAttackAnimInstance()->Montage_Play(MyCharacter->GetAttackAnimMontage(), 2.5f);
+
 	return EBTNodeResult::Failed;
 }

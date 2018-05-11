@@ -8,6 +8,8 @@
 #include "ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UAnimMontage;
+class UAnimInstance;
 class APawn;
 struct FVector;
 class UPrimitiveComponent;
@@ -19,6 +21,30 @@ struct FHitResult;
 #define RYZEN_ZombieCharacter_2_generated_h
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetAttackAnimMontage) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UAnimMontage**)Z_Param__Result=P_THIS->GetAttackAnimMontage(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetAttackAnimInstance) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UAnimInstance**)Z_Param__Result=P_THIS->GetAttackAnimInstance(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetOverlapAttackCollision) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->GetOverlapAttackCollision(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnHearNoise) \
 	{ \
@@ -37,6 +63,20 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnAttackCollisionCompEndOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnAttackCollisionCompEndOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
 		P_NATIVE_END; \
 	} \
  \
@@ -57,6 +97,30 @@ struct FHitResult;
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetAttackAnimMontage) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UAnimMontage**)Z_Param__Result=P_THIS->GetAttackAnimMontage(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetAttackAnimInstance) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UAnimInstance**)Z_Param__Result=P_THIS->GetAttackAnimInstance(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetOverlapAttackCollision) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->GetOverlapAttackCollision(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execOnHearNoise) \
 	{ \
 		P_GET_OBJECT(APawn,Z_Param_PawnInstigator); \
@@ -74,6 +138,20 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnAttackCollisionCompEndOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnAttackCollisionCompEndOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
 		P_NATIVE_END; \
 	} \
  \

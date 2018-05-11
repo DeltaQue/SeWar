@@ -184,6 +184,9 @@ void APlayerCharacter::Tick(float Deltatime)
 	// Collection Sphere를 Tick마다 확인 
 	CollectAutoPickups();
 	CheckForInteractables();
+
+	//Loudness 0.0f ~ 1.0f
+	//MakePawnNoise(1.0f);
 }
 
 //AutoPickup
@@ -309,4 +312,12 @@ void APlayerCharacter::OnFire()
 		FRotator rot = CharacterMesh->GetSocketRotation("Muzzle");
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ParticleFX, loc, rot);
 	}
+
+	MakePawnNoise(1.0f);
+}
+
+void APlayerCharacter::MakePawnNoise(float Loudness)
+{
+	/* AI에서 감지 할 수 있는 사운드를 발생시킴 */
+	MakeNoise(Loudness, this, GetActorLocation());
 }

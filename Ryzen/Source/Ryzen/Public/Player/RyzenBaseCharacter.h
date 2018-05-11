@@ -17,7 +17,9 @@ public:
 	// Sets default values for this character's properties
 	ARyzenBaseCharacter(const class FObjectInitializer& ObjectInitializer);
 	
-
+private:
+	//Pawn에서 Sound체크하기 위한 컴포넌트
+	UPawnNoiseEmitterComponent* NoiseEmitterComp;
 
 public:
 	//캐릭터 사운드 관련, 
@@ -37,17 +39,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "PlayerCondition")
 		bool IsAlive() const;
 
+	/* 현재 카메라의 Pitch/Yaw 검색 */
+	UFUNCTION(BlueprintCallable, Category = "Targeting")
+		FRotator GetAimOffsets() const;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerCondition")
 		float Health;
 
 	bool bisDying;
-
-public:
-	/* 현재 카메라의 Pitch/Yaw 검색 */
-	UFUNCTION(BlueprintCallable, Category = "Targeting")
-		FRotator GetAimOffsets() const;
-
-
+	
 };

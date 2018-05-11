@@ -43,12 +43,12 @@ void EmptyLinkFunctionForGeneratedCodeZombieAIController() {}
 			};
 #endif
 #if WITH_METADATA
-			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReconnaissanceLocationKeyName_MetaData[] = {
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReconLocationKeyName_MetaData[] = {
 				{ "Category", "AI" },
 				{ "ModuleRelativePath", "Public/Zombie/ZombieAIController.h" },
 			};
 #endif
-			static const UE4CodeGen_Private::FNamePropertyParams NewProp_ReconnaissanceLocationKeyName = { UE4CodeGen_Private::EPropertyClass::Name, "ReconnaissanceLocationKeyName", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AZombieAIController, ReconnaissanceLocationKeyName), METADATA_PARAMS(NewProp_ReconnaissanceLocationKeyName_MetaData, ARRAY_COUNT(NewProp_ReconnaissanceLocationKeyName_MetaData)) };
+			static const UE4CodeGen_Private::FNamePropertyParams NewProp_ReconLocationKeyName = { UE4CodeGen_Private::EPropertyClass::Name, "ReconLocationKeyName", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AZombieAIController, ReconLocationKeyName), METADATA_PARAMS(NewProp_ReconLocationKeyName_MetaData, ARRAY_COUNT(NewProp_ReconLocationKeyName_MetaData)) };
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BotTypeKeyName_MetaData[] = {
 				{ "Category", "AI" },
@@ -78,7 +78,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieAIController() {}
 #endif
 			static const UE4CodeGen_Private::FNamePropertyParams NewProp_TargetEnemyKeyName = { UE4CodeGen_Private::EPropertyClass::Name, "TargetEnemyKeyName", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AZombieAIController, TargetEnemyKeyName), METADATA_PARAMS(NewProp_TargetEnemyKeyName_MetaData, ARRAY_COUNT(NewProp_TargetEnemyKeyName_MetaData)) };
 			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
-				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReconnaissanceLocationKeyName,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReconLocationKeyName,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_BotTypeKeyName,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_CurrentWaypointKeyName,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_PatrolLocationKeyName,
@@ -102,7 +102,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieAIController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombieAIController, 554805014);
+	IMPLEMENT_CLASS(AZombieAIController, 1709024883);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AZombieAIController(Z_Construct_UClass_AZombieAIController, &AZombieAIController::StaticClass, TEXT("/Script/Ryzen"), TEXT("AZombieAIController"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AZombieAIController);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

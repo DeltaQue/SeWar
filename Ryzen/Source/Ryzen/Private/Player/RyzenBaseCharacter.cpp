@@ -7,7 +7,7 @@
 ARyzenBaseCharacter::ARyzenBaseCharacter(const class FObjectInitializer& ObjectInitializer)
 {
 
-
+	NoiseEmitterComp = CreateDefaultSubobject<UPawnNoiseEmitterComponent>(TEXT("NoiseEmitterComp"));
 }
 
 

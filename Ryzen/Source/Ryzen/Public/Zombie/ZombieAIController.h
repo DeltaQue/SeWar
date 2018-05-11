@@ -42,7 +42,7 @@ class RYZEN_API AZombieAIController : public AAIController
 		FName BotTypeKeyName;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		FName ReconnaissanceLocationKeyName;
+		FName ReconLocationKeyName;
 
 public:
 
@@ -50,13 +50,18 @@ public:
 
 	ARyzenBaseCharacter* GetTargetEnemy();
 
+	FVector GetReconLocation();
+
+
 	void SetWaypoint(AWaypoint* NewWaypoint);
 
 	void SetTargetEnemy(APawn* NewTarget);
 
 	void SetBlackboardZombieType(EZombieType NewType);
 
-	void SetReconnaissanceLocation(FVector vector);
+	void SetReconLocation(FVector vector);
+
+	
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorComp() const { return BehaviorComp; }

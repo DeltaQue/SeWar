@@ -19,17 +19,28 @@ private:
 	UFUNCTION()
 		void OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	
+	UFUNCTION()
+		void OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	
+	
+
 	//타겟을 찾지 못하는데 걸리는 시간 2.5초
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		float SenseTimeOut;
 
 	/* 타겟을 쫒다가 SenseTimeOut이 지나면 타겟을 리셋하는용 */
 	bool bSensedTarget;
+
+	bool bHeardTarget;
+
 	//타겟을 발견 한 뒤 월드 시간을 받음
 	float LastSeenTime;
-	//
+	
 	float LastHeardTime;
+
+	bool bOverlapAttackCollision;
+
+	float DefaultMaxWalkSpeed;
 public:
 	// Sets default values for this character's properties
 	AZombieCharacter_2(const class FObjectInitializer& ObjectInitializer);
@@ -59,6 +70,15 @@ public:
 	//좀비 타입
 	UPROPERTY(EditAnywhere, Category = "AI")
 		EZombieType ZombieType;
+
+	UFUNCTION()
+		bool GetOverlapAttackCollision() const;
+
+	UFUNCTION()
+		UAnimInstance* GetAttackAnimInstance() const;
+
+	UFUNCTION()
+		UAnimMontage* GetAttackAnimMontage() const;
 
 	void SetZombieType(EZombieType NewType);
 

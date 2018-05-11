@@ -37,11 +37,19 @@ AZombieCharacter_2::AZombieCharacter_2(const class FObjectInitializer& ObjectIni
 	//기본 체력 100
 	Health = 100;
 
+	bSensedTarget = false;
+	bHeardTarget = false;
+
 	//적을 타겟으로 감지하고 리셋하는데 걸리는 시간 2.5초
 	SenseTimeOut = 2.5f;
 
 	//현재 시간 저장용 변수
 	LastSeenTime = 0.0f;
+	LastHeardTime = 0.0f;
+
+	bOverlapAttackCollision = false;
+
+	DefaultMaxWalkSpeed = 0.0f;
 }
 
 
@@ -59,6 +67,8 @@ void AZombieCharacter_2::BeginPlay()
 	{
 		AttackCollisionComp->OnComponentBeginOverlap.AddDynamic(this, &AZombieCharacter_2::OnAttackCollisionCompBeginOverlap);
 	}
+
+	DefaultMaxWalkSpeed = GetMovementComponent()->GetMaxSpeed();
 }
 
 
@@ -76,6 +86,12 @@ void AZombieCharacter_2::Tick(float DeltaSeconds)
 			bSensedTarget = false;
 			/* 타겟 리셋 */
 			AIController->SetTargetEnemy(nullptr);
+
+			bHeardTarget = false;
+
+			AIController->SetReconLocation(FVector(-1, -1, -1));
+
+			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed;
 		}
 	}
 
@@ -105,6 +121,8 @@ void AZombieCharacter_2::OnSeePlayer(APawn* Pawn)
 	if (AIController && SensedPawn->IsAlive())
 	{
 		AIController->SetTargetEnemy(SensedPawn);
+		//167.0f == Zombie Run
+		Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = 167.0f;
 	}
 }
 
@@ -116,16 +134,19 @@ void AZombieCharacter_2::OnHearNoise(APawn* PawnInstigator, const FVector& Locat
 
 	if (!bSensedTarget)
 	{
-
+		//AudioLoop(true);
 	}
 
 	bSensedTarget = true;
 	LastHeardTime = GetWorld()->GetTimeSeconds();
 
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Noise Check!"));
+
 	AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
 	if (AIController)
 	{
 		AIController->SetTargetEnemy(PawnInstigator);
+		AIController->SetReconLocation(Location);
 	}
 }
 
@@ -145,18 +166,26 @@ void AZombieCharacter_2::OnAttackCollisionCompBeginOverlap(class UPrimitiveCompo
 {
 	//AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherComp);
 	if (OtherActor && OtherActor != this && IsAlive()) {
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Overlap 1"));
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Begin Attack"));
 		if (AttackAnimMontage != NULL) {
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Overlap 2"));
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack Loop"));
 			AnimInstance = this->GetMesh()->GetAnimInstance();
 			if (AnimInstance != NULL) {
-				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Overlap 3"));
+				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("End Attack"));
 				//PlayAnimMontage(AttackAnimMontage);
 				AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
+				bOverlapAttackCollision = true;
 			}
 
 		}
 	}
+
+	
+}
+
+void AZombieCharacter_2::OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	bOverlapAttackCollision = false;
 }
 
 bool AZombieCharacter_2::DamageHit(uint8 damage) {
@@ -175,3 +204,9 @@ void AZombieCharacter_2::IsDeath() {
 	if (!this->IsAlive())
 		Destroy();
 }
+
+bool AZombieCharacter_2::GetOverlapAttackCollision() const{	return bOverlapAttackCollision; }
+
+UAnimInstance* AZombieCharacter_2::GetAttackAnimInstance() const { return AnimInstance; }
+
+UAnimMontage* AZombieCharacter_2::GetAttackAnimMontage() const { return AttackAnimMontage; }

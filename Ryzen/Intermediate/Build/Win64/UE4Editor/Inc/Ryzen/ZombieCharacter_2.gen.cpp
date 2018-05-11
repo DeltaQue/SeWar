@@ -17,16 +17,20 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 	RYZEN_API UClass* Z_Construct_UClass_AZombieCharacter_2();
 	RYZEN_API UClass* Z_Construct_UClass_ARyzenBaseCharacter();
 	UPackage* Z_Construct_UPackage__Script_Ryzen();
+	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_GetAttackAnimInstance();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance_NoRegister();
+	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_GetAttackAnimMontage();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
+	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_GetOverlapAttackCollision();
 	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnAttackCollisionCompBeginOverlap();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnAttackCollisionCompEndOverlap();
 	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnHearNoise();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
 	RYZEN_API UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer();
-	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	RYZEN_API UEnum* Z_Construct_UEnum_Ryzen_EZombieType();
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
@@ -36,11 +40,85 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 	{
 		UClass* Class = AZombieCharacter_2::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetAttackAnimInstance", &AZombieCharacter_2::execGetAttackAnimInstance },
+			{ "GetAttackAnimMontage", &AZombieCharacter_2::execGetAttackAnimMontage },
+			{ "GetOverlapAttackCollision", &AZombieCharacter_2::execGetOverlapAttackCollision },
 			{ "OnAttackCollisionCompBeginOverlap", &AZombieCharacter_2::execOnAttackCollisionCompBeginOverlap },
+			{ "OnAttackCollisionCompEndOverlap", &AZombieCharacter_2::execOnAttackCollisionCompEndOverlap },
 			{ "OnHearNoise", &AZombieCharacter_2::execOnHearNoise },
 			{ "OnSeePlayer", &AZombieCharacter_2::execOnSeePlayer },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	UFunction* Z_Construct_UFunction_AZombieCharacter_2_GetAttackAnimInstance()
+	{
+		struct ZombieCharacter_2_eventGetAttackAnimInstance_Parms
+		{
+			UAnimInstance* ReturnValue;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Object, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventGetAttackAnimInstance_Parms, ReturnValue), Z_Construct_UClass_UAnimInstance_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "GetAttackAnimInstance", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x40020401, sizeof(ZombieCharacter_2_eventGetAttackAnimInstance_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AZombieCharacter_2_GetAttackAnimMontage()
+	{
+		struct ZombieCharacter_2_eventGetAttackAnimMontage_Parms
+		{
+			UAnimMontage* ReturnValue;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Object, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventGetAttackAnimMontage_Parms, ReturnValue), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "GetAttackAnimMontage", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x40020401, sizeof(ZombieCharacter_2_eventGetAttackAnimMontage_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AZombieCharacter_2_GetOverlapAttackCollision()
+	{
+		struct ZombieCharacter_2_eventGetOverlapAttackCollision_Parms
+		{
+			bool ReturnValue;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((ZombieCharacter_2_eventGetOverlapAttackCollision_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(ZombieCharacter_2_eventGetOverlapAttackCollision_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "GetOverlapAttackCollision", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x40020401, sizeof(ZombieCharacter_2_eventGetOverlapAttackCollision_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnAttackCollisionCompBeginOverlap()
 	{
@@ -92,6 +170,60 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 			};
 #endif
 			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "OnAttackCollisionCompBeginOverlap", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00440401, sizeof(ZombieCharacter_2_eventOnAttackCollisionCompBeginOverlap_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AZombieCharacter_2_OnAttackCollisionCompEndOverlap()
+	{
+		struct ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms
+		{
+			UPrimitiveComponent* OverlappedComponent;
+			AActor* OtherActor;
+			UPrimitiveComponent* OtherComp;
+			int32 OtherBodyIndex;
+			bool bFromSweep;
+			FHitResult SweepResult;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SweepResult_MetaData[] = {
+				{ "NativeConst", "" },
+			};
+#endif
+			static const UE4CodeGen_Private::FStructPropertyParams NewProp_SweepResult = { UE4CodeGen_Private::EPropertyClass::Struct, "SweepResult", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010008008000182, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(NewProp_SweepResult_MetaData, ARRAY_COUNT(NewProp_SweepResult_MetaData)) };
+			auto NewProp_bFromSweep_SetBit = [](void* Obj){ ((ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms*)Obj)->bFromSweep = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bFromSweep = { UE4CodeGen_Private::EPropertyClass::Bool, "bFromSweep", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_bFromSweep_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_OtherBodyIndex = { UE4CodeGen_Private::EPropertyClass::Int, "OtherBodyIndex", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms, OtherBodyIndex), METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OtherComp_MetaData[] = {
+				{ "EditInline", "true" },
+			};
+#endif
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OtherComp = { UE4CodeGen_Private::EPropertyClass::Object, "OtherComp", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000080080, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(NewProp_OtherComp_MetaData, ARRAY_COUNT(NewProp_OtherComp_MetaData)) };
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OtherActor = { UE4CodeGen_Private::EPropertyClass::Object, "OtherActor", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OverlappedComponent_MetaData[] = {
+				{ "EditInline", "true" },
+			};
+#endif
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OverlappedComponent = { UE4CodeGen_Private::EPropertyClass::Object, "OverlappedComponent", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000080080, 1, nullptr, STRUCT_OFFSET(ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms, OverlappedComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(NewProp_OverlappedComponent_MetaData, ARRAY_COUNT(NewProp_OverlappedComponent_MetaData)) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_SweepResult,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_bFromSweep,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_OtherBodyIndex,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_OtherComp,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_OtherActor,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_OverlappedComponent,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "OnAttackCollisionCompEndOverlap", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00440401, sizeof(ZombieCharacter_2_eventOnAttackCollisionCompEndOverlap_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
@@ -167,7 +299,11 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 				(UObject* (*)())Z_Construct_UPackage__Script_Ryzen,
 			};
 			static const FClassFunctionLinkInfo FuncInfo[] = {
+				{ &Z_Construct_UFunction_AZombieCharacter_2_GetAttackAnimInstance, "GetAttackAnimInstance" }, // 3792410621
+				{ &Z_Construct_UFunction_AZombieCharacter_2_GetAttackAnimMontage, "GetAttackAnimMontage" }, // 3800044334
+				{ &Z_Construct_UFunction_AZombieCharacter_2_GetOverlapAttackCollision, "GetOverlapAttackCollision" }, // 413339637
 				{ &Z_Construct_UFunction_AZombieCharacter_2_OnAttackCollisionCompBeginOverlap, "OnAttackCollisionCompBeginOverlap" }, // 1890504576
+				{ &Z_Construct_UFunction_AZombieCharacter_2_OnAttackCollisionCompEndOverlap, "OnAttackCollisionCompEndOverlap" }, // 749556355
 				{ &Z_Construct_UFunction_AZombieCharacter_2_OnHearNoise, "OnHearNoise" }, // 350365120
 				{ &Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer, "OnSeePlayer" }, // 2953399095
 			};
@@ -261,7 +397,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombieCharacter_2, 3069043143);
+	IMPLEMENT_CLASS(AZombieCharacter_2, 1666895251);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AZombieCharacter_2(Z_Construct_UClass_AZombieCharacter_2, &AZombieCharacter_2::StaticClass, TEXT("/Script/Ryzen"), TEXT("AZombieCharacter_2"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AZombieCharacter_2);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

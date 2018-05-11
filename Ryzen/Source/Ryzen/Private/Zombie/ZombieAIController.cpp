@@ -21,7 +21,7 @@ AZombieAIController::AZombieAIController(const class FObjectInitializer& ObjectI
 	CurrentWaypointKeyName = "CurrentWaypoint";
 	BotTypeKeyName = "BotType";
 	TargetEnemyKeyName = "TargetEnemy";
-
+	ReconLocationKeyName = "ReconLocation";
 
 }
 
@@ -83,6 +83,15 @@ AWaypoint* AZombieAIController::GetWaypoint()
 	return nullptr;
 }
 
+FVector AZombieAIController::GetReconLocation()
+{
+	if (BlackboardComp)
+	{
+		return FVector(BlackboardComp->GetValueAsVector(ReconLocationKeyName));
+	}
+
+	return FVector(-1,-1,-1);
+}
 
 ARyzenBaseCharacter* AZombieAIController::GetTargetEnemy()
 {
@@ -103,10 +112,10 @@ void AZombieAIController::SetBlackboardZombieType(EZombieType NewType)
 	}
 }
 
-void AZombieAIController::SetReconnaissanceLocation(FVector vector) 
+void AZombieAIController::SetReconLocation(FVector vector) 
 {
 	if (BlackboardComp)
 	{
-		BlackboardComp->SetValueAsVector(ReconnaissanceLocationKeyName, vector);
+		BlackboardComp->SetValueAsVector(ReconLocationKeyName, vector);
 	}
 }

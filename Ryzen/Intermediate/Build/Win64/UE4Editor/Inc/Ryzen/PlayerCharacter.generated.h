@@ -13,8 +13,30 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define RYZEN_PlayerCharacter_generated_h
 
-#define Ryzen_Source_Ryzen_Public_Player_PlayerCharacter_h_15_RPC_WRAPPERS
-#define Ryzen_Source_Ryzen_Public_Player_PlayerCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Ryzen_Source_Ryzen_Public_Player_PlayerCharacter_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execMakePawnNoise) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Loudness); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->MakePawnNoise(Z_Param_Loudness); \
+		P_NATIVE_END; \
+	}
+
+
+#define Ryzen_Source_Ryzen_Public_Player_PlayerCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execMakePawnNoise) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Loudness); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->MakePawnNoise(Z_Param_Loudness); \
+		P_NATIVE_END; \
+	}
+
+
 #define Ryzen_Source_Ryzen_Public_Player_PlayerCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \

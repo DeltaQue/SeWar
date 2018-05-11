@@ -14,9 +14,10 @@ class APlayerCharacter : public ARyzenBaseCharacter
 {
 	GENERATED_BODY()
 
-		//  meta = (AllowPrivateAccess = "true")는 디테일 편집 가능
-		/** Camera boom positioning the camera behind the character */
-		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+private:
+	//  meta = (AllowPrivateAccess = "true")는 디테일 편집 가능
+	/** Camera boom positioning the camera behind the character */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		class USpringArmComponent* CameraBoom;
 
 	/** Follow camera */
@@ -36,8 +37,13 @@ class APlayerCharacter : public ARyzenBaseCharacter
 	FVector GunOffset;
 	FVector CameraOffset;
 
+	float LastNoiseLoudness;
+
+	float LastMakeNoiseTime;
+
 	//Fire Function
 	void OnFire();
+
 
 public:
 	APlayerCharacter(const class FObjectInitializer& ObjectInitializer);
@@ -55,7 +61,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		bool JumpButtonDown;
 
-
+	UFUNCTION(BlueprintCallable, Category = "AI")
+		void MakePawnNoise(float Loudness);
 
 protected:
 

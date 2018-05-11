@@ -3,6 +3,7 @@ C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Player\RyzenBa
 C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\UI\PlayerHUD.h
 C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie\BTTask_Attack.h
 C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie\BTTask_FindPatrolLocation.h
+C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie\BTTask_FindReconLocation.h
 C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie\BTTask_FindWaypoint.h
 C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie\Waypoint.h
 C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie\ZombieAIController.h

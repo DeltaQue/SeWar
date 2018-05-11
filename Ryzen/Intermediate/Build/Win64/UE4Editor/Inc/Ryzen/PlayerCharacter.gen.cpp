@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	RYZEN_API UClass* Z_Construct_UClass_APlayerCharacter();
 	RYZEN_API UClass* Z_Construct_UClass_ARyzenBaseCharacter();
 	UPackage* Z_Construct_UPackage__Script_Ryzen();
+	RYZEN_API UFunction* Z_Construct_UFunction_APlayerCharacter_MakePawnNoise();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	RYZEN_API UClass* Z_Construct_UClass_ABullet_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
@@ -32,6 +33,35 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 // End Cross Module References
 	void APlayerCharacter::StaticRegisterNativesAPlayerCharacter()
 	{
+		UClass* Class = APlayerCharacter::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "MakePawnNoise", &APlayerCharacter::execMakePawnNoise },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	UFunction* Z_Construct_UFunction_APlayerCharacter_MakePawnNoise()
+	{
+		struct PlayerCharacter_eventMakePawnNoise_Parms
+		{
+			float Loudness;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Loudness = { UE4CodeGen_Private::EPropertyClass::Float, "Loudness", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(PlayerCharacter_eventMakePawnNoise_Parms, Loudness), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Loudness,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "AI" },
+				{ "ModuleRelativePath", "Public/Player/PlayerCharacter.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, "MakePawnNoise", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(PlayerCharacter_eventMakePawnNoise_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_APlayerCharacter_NoRegister()
 	{
@@ -45,6 +75,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 			static UObject* (*const DependentSingletons[])() = {
 				(UObject* (*)())Z_Construct_UClass_ARyzenBaseCharacter,
 				(UObject* (*)())Z_Construct_UPackage__Script_Ryzen,
+			};
+			static const FClassFunctionLinkInfo FuncInfo[] = {
+				{ &Z_Construct_UFunction_APlayerCharacter_MakePawnNoise, "MakePawnNoise" }, // 626325803
 			};
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
@@ -196,7 +229,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 				&APlayerCharacter::StaticClass,
 				DependentSingletons, ARRAY_COUNT(DependentSingletons),
 				0x00800080u,
-				nullptr, 0,
+				FuncInfo, ARRAY_COUNT(FuncInfo),
 				PropPointers, ARRAY_COUNT(PropPointers),
 				"Game",
 				&StaticCppClassTypeInfo,
@@ -207,7 +240,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 356109174);
+	IMPLEMENT_CLASS(APlayerCharacter, 1441556000);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_APlayerCharacter(Z_Construct_UClass_APlayerCharacter, &APlayerCharacter::StaticClass, TEXT("/Script/Ryzen"), TEXT("APlayerCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(APlayerCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
