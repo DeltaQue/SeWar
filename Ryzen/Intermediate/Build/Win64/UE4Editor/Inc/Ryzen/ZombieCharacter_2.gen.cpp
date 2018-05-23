@@ -354,13 +354,21 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 #endif
 			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AttackCollisionComp = { UE4CodeGen_Private::EPropertyClass::Object, "AttackCollisionComp", RF_Public|RF_Transient|RF_MarkAsNative, 0x00400000000a0009, 1, nullptr, STRUCT_OFFSET(AZombieCharacter_2, AttackCollisionComp), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(NewProp_AttackCollisionComp_MetaData, ARRAY_COUNT(NewProp_AttackCollisionComp_MetaData)) };
 #if WITH_METADATA
-			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SenseTimeOut_MetaData[] = {
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HearingSenseTimeOut_MetaData[] = {
+				{ "Category", "AI" },
+				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
+				{ "ToolTip", "?\xd2\xb8??? ?????\xcf\xb0? ?? ???? \xc5\xbd???\xcf\xb4? ?\xc3\xb0? 6??" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_HearingSenseTimeOut = { UE4CodeGen_Private::EPropertyClass::Float, "HearingSenseTimeOut", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AZombieCharacter_2, HearingSenseTimeOut), METADATA_PARAMS(NewProp_HearingSenseTimeOut_MetaData, ARRAY_COUNT(NewProp_HearingSenseTimeOut_MetaData)) };
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SightSenseTimeOut_MetaData[] = {
 				{ "Category", "AI" },
 				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
 				{ "ToolTip", "\xc5\xb8???? \xc3\xa3?? ???\xcf\xb4\xc2\xb5? ?\xc9\xb8??? ?\xc3\xb0? 2.5??" },
 			};
 #endif
-			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SenseTimeOut = { UE4CodeGen_Private::EPropertyClass::Float, "SenseTimeOut", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AZombieCharacter_2, SenseTimeOut), METADATA_PARAMS(NewProp_SenseTimeOut_MetaData, ARRAY_COUNT(NewProp_SenseTimeOut_MetaData)) };
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SightSenseTimeOut = { UE4CodeGen_Private::EPropertyClass::Float, "SightSenseTimeOut", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AZombieCharacter_2, SightSenseTimeOut), METADATA_PARAMS(NewProp_SightSenseTimeOut_MetaData, ARRAY_COUNT(NewProp_SightSenseTimeOut_MetaData)) };
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PawnSensingComp_MetaData[] = {
 				{ "Category", "AI" },
@@ -376,7 +384,8 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ZombieType_Underlying,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_BehaviorTree,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_AttackCollisionComp,
-				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_SenseTimeOut,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_HearingSenseTimeOut,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_SightSenseTimeOut,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_PawnSensingComp,
 			};
 			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -397,7 +406,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombieCharacter_2, 1666895251);
+	IMPLEMENT_CLASS(AZombieCharacter_2, 1465920812);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AZombieCharacter_2(Z_Construct_UClass_AZombieCharacter_2, &AZombieCharacter_2::StaticClass, TEXT("/Script/Ryzen"), TEXT("AZombieCharacter_2"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AZombieCharacter_2);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

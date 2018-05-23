@@ -22,7 +22,7 @@ AZombieAIController::AZombieAIController(const class FObjectInitializer& ObjectI
 	BotTypeKeyName = "BotType";
 	TargetEnemyKeyName = "TargetEnemy";
 	ReconLocationKeyName = "ReconLocation";
-
+	IsArriveKeyName = "IsArrive";
 }
 
 
@@ -42,6 +42,7 @@ void AZombieAIController::Possess(class APawn* InPawn)
 		}
 
 		BehaviorComp->StartTree(*ZombieBot->BehaviorTree);
+		SetIsArrive(true);
 	}
 }
 
@@ -103,6 +104,15 @@ ARyzenBaseCharacter* AZombieAIController::GetTargetEnemy()
 	return nullptr;
 }
 
+bool AZombieAIController::GetIsArrive()
+{
+	if (BlackboardComp)
+	{
+		return BlackboardComp->GetValueAsBool(IsArriveKeyName);
+	}
+
+	return false;
+}
 
 void AZombieAIController::SetBlackboardZombieType(EZombieType NewType)
 {
@@ -117,5 +127,13 @@ void AZombieAIController::SetReconLocation(FVector vector)
 	if (BlackboardComp)
 	{
 		BlackboardComp->SetValueAsVector(ReconLocationKeyName, vector);
+	}
+}
+
+void AZombieAIController::SetIsArrive(bool Arrive)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsBool(IsArriveKeyName, Arrive);
 	}
 }

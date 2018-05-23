@@ -44,6 +44,8 @@ class RYZEN_API AZombieAIController : public AAIController
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName ReconLocationKeyName;
 
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName IsArriveKeyName;
 public:
 
 	AWaypoint* GetWaypoint();
@@ -51,6 +53,8 @@ public:
 	ARyzenBaseCharacter* GetTargetEnemy();
 
 	FVector GetReconLocation();
+
+	bool GetIsArrive();
 
 
 	void SetWaypoint(AWaypoint* NewWaypoint);
@@ -60,6 +64,8 @@ public:
 	void SetBlackboardZombieType(EZombieType NewType);
 
 	void SetReconLocation(FVector vector);
+
+	void SetIsArrive(bool Arrive);
 
 	
 

@@ -16,5 +16,12 @@ class RYZEN_API UBTTask_FindPatrolLocation : public UBTTask_BlackboardBase
 	
 	
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
-	
+	virtual void TickTask(UBehaviorTreeComponent & OwnerComp, uint8 * NodeMemory, float DeltaSeconds) override;
+
+	UPROPERTY()
+		FVector CharacterLocation;
+
+	UPROPERTY()
+		float Distance;
+
 };

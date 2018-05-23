@@ -68,7 +68,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AZombieAIController); \
 	FORCEINLINE static uint32 __PPO__PatrolLocationKeyName() { return STRUCT_OFFSET(AZombieAIController, PatrolLocationKeyName); } \
 	FORCEINLINE static uint32 __PPO__CurrentWaypointKeyName() { return STRUCT_OFFSET(AZombieAIController, CurrentWaypointKeyName); } \
 	FORCEINLINE static uint32 __PPO__BotTypeKeyName() { return STRUCT_OFFSET(AZombieAIController, BotTypeKeyName); } \
-	FORCEINLINE static uint32 __PPO__ReconLocationKeyName() { return STRUCT_OFFSET(AZombieAIController, ReconLocationKeyName); }
+	FORCEINLINE static uint32 __PPO__ReconLocationKeyName() { return STRUCT_OFFSET(AZombieAIController, ReconLocationKeyName); } \
+	FORCEINLINE static uint32 __PPO__IsArriveKeyName() { return STRUCT_OFFSET(AZombieAIController, IsArriveKeyName); }
 
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieAIController_h_15_PROLOG

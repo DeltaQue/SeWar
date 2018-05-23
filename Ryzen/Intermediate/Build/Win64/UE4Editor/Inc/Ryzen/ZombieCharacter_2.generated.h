@@ -216,7 +216,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AZombieCharacter_2); \
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__PawnSensingComp() { return STRUCT_OFFSET(AZombieCharacter_2, PawnSensingComp); } \
-	FORCEINLINE static uint32 __PPO__SenseTimeOut() { return STRUCT_OFFSET(AZombieCharacter_2, SenseTimeOut); } \
+	FORCEINLINE static uint32 __PPO__SightSenseTimeOut() { return STRUCT_OFFSET(AZombieCharacter_2, SightSenseTimeOut); } \
+	FORCEINLINE static uint32 __PPO__HearingSenseTimeOut() { return STRUCT_OFFSET(AZombieCharacter_2, HearingSenseTimeOut); } \
 	FORCEINLINE static uint32 __PPO__AttackCollisionComp() { return STRUCT_OFFSET(AZombieCharacter_2, AttackCollisionComp); } \
 	FORCEINLINE static uint32 __PPO__AttackAnimMontage() { return STRUCT_OFFSET(AZombieCharacter_2, AttackAnimMontage); } \
 	FORCEINLINE static uint32 __PPO__AnimInstance() { return STRUCT_OFFSET(AZombieCharacter_2, AnimInstance); }

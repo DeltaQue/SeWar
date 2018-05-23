@@ -22,11 +22,15 @@ private:
 	UFUNCTION()
 		void OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	
-	
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser);
 
 	//타겟을 찾지 못하는데 걸리는 시간 2.5초
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		float SenseTimeOut;
+		float SightSenseTimeOut;
+
+	//소리를 감지하고 그 곳을 탐색하는 시간 6초
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		float HearingSenseTimeOut;
 
 	/* 타겟을 쫒다가 SenseTimeOut이 지나면 타겟을 리셋하는용 */
 	bool bSensedTarget;

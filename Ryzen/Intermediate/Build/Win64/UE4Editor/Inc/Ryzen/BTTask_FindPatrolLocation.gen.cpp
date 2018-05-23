@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_FindPatrolLocation() {}
 	RYZEN_API UClass* Z_Construct_UClass_UBTTask_FindPatrolLocation();
 	AIMODULE_API UClass* Z_Construct_UClass_UBTTask_BlackboardBase();
 	UPackage* Z_Construct_UPackage__Script_Ryzen();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
 	void UBTTask_FindPatrolLocation::StaticRegisterNativesUBTTask_FindPatrolLocation()
 	{
@@ -40,6 +41,22 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_FindPatrolLocation() {}
 				{ "ModuleRelativePath", "Public/Zombie/BTTask_FindPatrolLocation.h" },
 			};
 #endif
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Distance_MetaData[] = {
+				{ "ModuleRelativePath", "Public/Zombie/BTTask_FindPatrolLocation.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Distance = { UE4CodeGen_Private::EPropertyClass::Float, "Distance", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000000000, 1, nullptr, STRUCT_OFFSET(UBTTask_FindPatrolLocation, Distance), METADATA_PARAMS(NewProp_Distance_MetaData, ARRAY_COUNT(NewProp_Distance_MetaData)) };
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CharacterLocation_MetaData[] = {
+				{ "ModuleRelativePath", "Public/Zombie/BTTask_FindPatrolLocation.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FStructPropertyParams NewProp_CharacterLocation = { UE4CodeGen_Private::EPropertyClass::Struct, "CharacterLocation", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000000000, 1, nullptr, STRUCT_OFFSET(UBTTask_FindPatrolLocation, CharacterLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(NewProp_CharacterLocation_MetaData, ARRAY_COUNT(NewProp_CharacterLocation_MetaData)) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Distance,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_CharacterLocation,
+			};
 			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 				TCppClassTypeTraits<UBTTask_FindPatrolLocation>::IsAbstract,
 			};
@@ -48,7 +65,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_FindPatrolLocation() {}
 				DependentSingletons, ARRAY_COUNT(DependentSingletons),
 				0x00100080u,
 				nullptr, 0,
-				nullptr, 0,
+				PropPointers, ARRAY_COUNT(PropPointers),
 				nullptr,
 				&StaticCppClassTypeInfo,
 				nullptr, 0,
@@ -58,7 +75,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_FindPatrolLocation() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UBTTask_FindPatrolLocation, 1371806332);
+	IMPLEMENT_CLASS(UBTTask_FindPatrolLocation, 4235986364);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UBTTask_FindPatrolLocation(Z_Construct_UClass_UBTTask_FindPatrolLocation, &UBTTask_FindPatrolLocation::StaticClass, TEXT("/Script/Ryzen"), TEXT("UBTTask_FindPatrolLocation"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTTask_FindPatrolLocation);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

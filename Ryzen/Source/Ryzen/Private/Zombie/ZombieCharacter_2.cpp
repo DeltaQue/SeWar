@@ -41,7 +41,8 @@ AZombieCharacter_2::AZombieCharacter_2(const class FObjectInitializer& ObjectIni
 	bHeardTarget = false;
 
 	//적을 타겟으로 감지하고 리셋하는데 걸리는 시간 2.5초
-	SenseTimeOut = 2.5f;
+	SightSenseTimeOut = 2.5f;
+	HearingSenseTimeOut = 6.0f;
 
 	//현재 시간 저장용 변수
 	LastSeenTime = 0.0f;
@@ -77,8 +78,8 @@ void AZombieCharacter_2::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 
 	/* 2.5초 동안 플레이어를 쫒다가 플레이어를 쫒지 못하면 타겟 초기화 */
-	if (bSensedTarget && (GetWorld()->TimeSeconds - LastSeenTime) > SenseTimeOut
-		&& (GetWorld()->TimeSeconds - LastHeardTime) > SenseTimeOut)
+	if (bSensedTarget && (GetWorld()->TimeSeconds - LastSeenTime) > SightSenseTimeOut
+		&& (GetWorld()->TimeSeconds - LastHeardTime) > HearingSenseTimeOut)
 	{
 		AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
 		if (AIController)

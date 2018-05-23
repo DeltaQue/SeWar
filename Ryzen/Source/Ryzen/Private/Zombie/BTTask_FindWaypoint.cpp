@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BTTask_FindWaypoint.h"
+#include "BTTask_FindPatrolLocation.h"
 #include "Waypoint.h"
 #include "ZombieAIController.h"
 
@@ -30,8 +31,11 @@ EBTNodeResult::Type UBTTask_FindWaypoint::ExecuteTask(UBehaviorTreeComponent& Ow
 
 	NewWaypoint = AllWaypoints[FMath::RandRange(0, AllWaypoints.Num() - 1)];
 
+	//if (NewWaypoint && MyController->GetIsArrive() )
 	if (NewWaypoint)
 	{
+		//NewWaypoint = AllWaypoints[FMath::RandRange(0, AllWaypoints.Num() - 1)];
+
 		OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Object>(BlackboardKey.GetSelectedKeyID(), NewWaypoint);
 		return EBTNodeResult::Succeeded;
 	}

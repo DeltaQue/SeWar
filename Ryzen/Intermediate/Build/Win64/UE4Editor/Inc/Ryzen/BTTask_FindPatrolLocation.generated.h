@@ -61,7 +61,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UBTTask_FindPatrolLocation); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBTTask_FindPatrolLocation)
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_FindPatrolLocation_h_15_PRIVATE_PROPERTY_OFFSET
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_FindPatrolLocation_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__CharacterLocation() { return STRUCT_OFFSET(UBTTask_FindPatrolLocation, CharacterLocation); } \
+	FORCEINLINE static uint32 __PPO__Distance() { return STRUCT_OFFSET(UBTTask_FindPatrolLocation, Distance); }
+
+
 #define Ryzen_Source_Ryzen_Public_Zombie_BTTask_FindPatrolLocation_h_12_PROLOG
 #define Ryzen_Source_Ryzen_Public_Zombie_BTTask_FindPatrolLocation_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
