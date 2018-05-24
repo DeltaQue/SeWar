@@ -16,4 +16,6 @@ class RYZEN_API UBTTask_Attack : public UBTTask_BlackboardBase
 
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 	
+
+	
 };

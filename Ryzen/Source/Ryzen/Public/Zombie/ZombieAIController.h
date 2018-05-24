@@ -46,15 +46,20 @@ class RYZEN_API AZombieAIController : public AAIController
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName IsArriveKeyName;
+
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName IsAttackCollisionOverlapKeyName;
 public:
 
-	AWaypoint* GetWaypoint();
+	AWaypoint* GetWaypoint() const;
 
-	ARyzenBaseCharacter* GetTargetEnemy();
+	ARyzenBaseCharacter* GetTargetEnemy() const;
 
-	FVector GetReconLocation();
+	FVector GetReconLocation() const;
 
-	bool GetIsArrive();
+	bool GetIsArrive() const;
+
+	bool GetIsAttackCollisionOverlap() const;
 
 
 	void SetWaypoint(AWaypoint* NewWaypoint);
@@ -67,7 +72,7 @@ public:
 
 	void SetIsArrive(bool Arrive);
 
-	
+	void SetIsAttackCollisionOverlap(bool Overlaped);
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorComp() const { return BehaviorComp; }

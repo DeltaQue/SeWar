@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "RyzenBaseCharacter.h"
 #include "Player/RyzenBaseCharacter.h"
 #include "ZombieCharacter_2.generated.h"
 
@@ -22,7 +23,11 @@ private:
 	UFUNCTION()
 		void OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	
-	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser);
+	UFUNCTION(BlueprintCallable, Category = "Attack")
+		void ScratchAttack(AActor* HitActor);
+
+	UFUNCTION(BlueprintCallable, Category = "Attack")
+		void ReTriggerAttack();
 
 	//타겟을 찾지 못하는데 걸리는 시간 2.5초
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
@@ -31,6 +36,11 @@ private:
 	//소리를 감지하고 그 곳을 탐색하는 시간 6초
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		float HearingSenseTimeOut;
+
+	
+	float LastAttackTime;
+
+	float AttackCooltime;
 
 	/* 타겟을 쫒다가 SenseTimeOut이 지나면 타겟을 리셋하는용 */
 	bool bSensedTarget;
@@ -42,9 +52,9 @@ private:
 	
 	float LastHeardTime;
 
-	bool bOverlapAttackCollision;
-
 	float DefaultMaxWalkSpeed;
+
+	FTimerHandle TimerHandle_AttackTimer;
 public:
 	// Sets default values for this character's properties
 	AZombieCharacter_2(const class FObjectInitializer& ObjectInitializer);
@@ -76,13 +86,19 @@ public:
 		EZombieType ZombieType;
 
 	UFUNCTION()
-		bool GetOverlapAttackCollision() const;
-
-	UFUNCTION()
 		UAnimInstance* GetAttackAnimInstance() const;
 
 	UFUNCTION()
 		UAnimMontage* GetAttackAnimMontage() const;
+
+	UFUNCTION()
+		void PlayAttackMotion();
+
+	UFUNCTION()
+		void TimerHandleFunc();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* AttackSound;
 
 	void SetZombieType(EZombieType NewType);
 
@@ -93,4 +109,10 @@ protected:
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UAnimInstance* AnimInstance;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+		TSubclassOf<UDamageType> ScratchDamageType;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attacking")
+		float AttackDamage;
 };

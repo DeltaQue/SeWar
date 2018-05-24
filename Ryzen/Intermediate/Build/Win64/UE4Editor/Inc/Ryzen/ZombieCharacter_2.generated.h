@@ -12,15 +12,31 @@ class UAnimMontage;
 class UAnimInstance;
 class APawn;
 struct FVector;
-class UPrimitiveComponent;
 class AActor;
+class UPrimitiveComponent;
 struct FHitResult;
 #ifdef RYZEN_ZombieCharacter_2_generated_h
 #error "ZombieCharacter_2.generated.h already included, missing '#pragma once' in ZombieCharacter_2.h"
 #endif
 #define RYZEN_ZombieCharacter_2_generated_h
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execTimerHandleFunc) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->TimerHandleFunc(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execPlayAttackMotion) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->PlayAttackMotion(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execGetAttackAnimMontage) \
 	{ \
@@ -35,14 +51,6 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		*(UAnimInstance**)Z_Param__Result=P_THIS->GetAttackAnimInstance(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetOverlapAttackCollision) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(bool*)Z_Param__Result=P_THIS->GetOverlapAttackCollision(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -63,6 +71,23 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execReTriggerAttack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ReTriggerAttack(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execScratchAttack) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_HitActor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ScratchAttack(Z_Param_HitActor); \
 		P_NATIVE_END; \
 	} \
  \
@@ -95,7 +120,23 @@ struct FHitResult;
 	}
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execTimerHandleFunc) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->TimerHandleFunc(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execPlayAttackMotion) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->PlayAttackMotion(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execGetAttackAnimMontage) \
 	{ \
@@ -110,14 +151,6 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		*(UAnimInstance**)Z_Param__Result=P_THIS->GetAttackAnimInstance(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execGetOverlapAttackCollision) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		*(bool*)Z_Param__Result=P_THIS->GetOverlapAttackCollision(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -138,6 +171,23 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execReTriggerAttack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ReTriggerAttack(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execScratchAttack) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_HitActor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ScratchAttack(Z_Param_HitActor); \
 		P_NATIVE_END; \
 	} \
  \
@@ -170,7 +220,7 @@ struct FHitResult;
 	}
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_INCLASS_NO_PURE_DECLS \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAZombieCharacter_2(); \
 	friend RYZEN_API class UClass* Z_Construct_UClass_AZombieCharacter_2(); \
@@ -180,7 +230,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_INCLASS \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesAZombieCharacter_2(); \
 	friend RYZEN_API class UClass* Z_Construct_UClass_AZombieCharacter_2(); \
@@ -190,7 +240,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_STANDARD_CONSTRUCTORS \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AZombieCharacter_2(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AZombieCharacter_2) \
@@ -203,7 +253,7 @@ private: \
 public:
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_ENHANCED_CONSTRUCTORS \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AZombieCharacter_2(AZombieCharacter_2&&); \
@@ -214,34 +264,36 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AZombieCharacter_2); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AZombieCharacter_2)
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_PRIVATE_PROPERTY_OFFSET \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__PawnSensingComp() { return STRUCT_OFFSET(AZombieCharacter_2, PawnSensingComp); } \
 	FORCEINLINE static uint32 __PPO__SightSenseTimeOut() { return STRUCT_OFFSET(AZombieCharacter_2, SightSenseTimeOut); } \
 	FORCEINLINE static uint32 __PPO__HearingSenseTimeOut() { return STRUCT_OFFSET(AZombieCharacter_2, HearingSenseTimeOut); } \
 	FORCEINLINE static uint32 __PPO__AttackCollisionComp() { return STRUCT_OFFSET(AZombieCharacter_2, AttackCollisionComp); } \
 	FORCEINLINE static uint32 __PPO__AttackAnimMontage() { return STRUCT_OFFSET(AZombieCharacter_2, AttackAnimMontage); } \
-	FORCEINLINE static uint32 __PPO__AnimInstance() { return STRUCT_OFFSET(AZombieCharacter_2, AnimInstance); }
+	FORCEINLINE static uint32 __PPO__AnimInstance() { return STRUCT_OFFSET(AZombieCharacter_2, AnimInstance); } \
+	FORCEINLINE static uint32 __PPO__ScratchDamageType() { return STRUCT_OFFSET(AZombieCharacter_2, ScratchDamageType); } \
+	FORCEINLINE static uint32 __PPO__AttackDamage() { return STRUCT_OFFSET(AZombieCharacter_2, AttackDamage); }
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_10_PROLOG
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_GENERATED_BODY_LEGACY \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_11_PROLOG
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_PRIVATE_PROPERTY_OFFSET \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_INCLASS \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_STANDARD_CONSTRUCTORS \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_PRIVATE_PROPERTY_OFFSET \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_RPC_WRAPPERS \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_INCLASS \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_GENERATED_BODY \
+#define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_PRIVATE_PROPERTY_OFFSET \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_INCLASS_NO_PURE_DECLS \
-	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_13_ENHANCED_CONSTRUCTORS \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_PRIVATE_PROPERTY_OFFSET \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_INCLASS_NO_PURE_DECLS \
+	Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

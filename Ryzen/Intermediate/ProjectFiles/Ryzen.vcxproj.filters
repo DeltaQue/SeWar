@@ -190,6 +190,9 @@
     <ClInclude Include="..\..\Source\Ryzen\Public\Zombie\BTTask_FindReconLocation.h">
       <Filter>Source\Ryzen\Public\Zombie</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Ryzen\Public\RDamageType.h">
+      <Filter>Source\Ryzen\Public</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp">
@@ -203,6 +206,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\BTTask_FindReconLocation.cpp">
       <Filter>Source\Ryzen\Private\Zombie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Ryzen\Private\RDamageType.cpp">
+      <Filter>Source\Ryzen\Private</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

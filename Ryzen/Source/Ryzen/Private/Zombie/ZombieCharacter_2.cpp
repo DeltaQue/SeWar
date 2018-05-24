@@ -48,9 +48,9 @@ AZombieCharacter_2::AZombieCharacter_2(const class FObjectInitializer& ObjectIni
 	LastSeenTime = 0.0f;
 	LastHeardTime = 0.0f;
 
-	bOverlapAttackCollision = false;
-
 	DefaultMaxWalkSpeed = 0.0f;
+
+	AttackCooltime = 1.5f;
 }
 
 
@@ -165,31 +165,26 @@ void AZombieCharacter_2::SetZombieType(EZombieType NewType)
 
 void AZombieCharacter_2::OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	//AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherComp);
-	if (OtherActor && OtherActor != this && IsAlive()) {
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Begin Attack"));
-		if (AttackAnimMontage != NULL) {
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack Loop"));
-			AnimInstance = this->GetMesh()->GetAnimInstance();
-			if (AnimInstance != NULL) {
-				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("End Attack"));
-				//PlayAnimMontage(AttackAnimMontage);
-				AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
-				bOverlapAttackCollision = true;
-			}
+	//Timer Stop
+	TimerHandle_AttackTimer.Invalidate();
 
-		}
-	}
+	ScratchAttack(OtherActor);
 
-	
+	AZombieAIController* Controller = Cast<AZombieAIController>(GetController());
+	Controller->SetIsAttackCollisionOverlap(true);
+
+	//TimerHandleFunc();
 }
 
 void AZombieCharacter_2::OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	bOverlapAttackCollision = false;
+	AZombieAIController* Controller = Cast<AZombieAIController>(GetController());
+
+	Controller->SetIsAttackCollisionOverlap(false);
 }
 
-bool AZombieCharacter_2::DamageHit(uint8 damage) {
+bool AZombieCharacter_2::DamageHit(uint8 damage) 
+{
 	if (this->Health - damage > 0) {
 		this->Health -= damage;
 		if (this->IsAlive()) {
@@ -201,12 +196,89 @@ bool AZombieCharacter_2::DamageHit(uint8 damage) {
 	return false;
 }
 
-void AZombieCharacter_2::IsDeath() {
+void AZombieCharacter_2::IsDeath() 
+{
 	if (!this->IsAlive())
 		Destroy();
 }
 
-bool AZombieCharacter_2::GetOverlapAttackCollision() const{	return bOverlapAttackCollision; }
+void AZombieCharacter_2::PlayAttackMotion()
+{
+	if (AttackAnimMontage)
+	{
+		AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
+	}
+	else
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack anim error"));
+	
+	if (AttackSound)
+	{
+		UGameplayStatics::SpawnSoundAttached(AttackSound, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+	}
+	else
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack sound error"));
+}
+
+
+void AZombieCharacter_2::ScratchAttack(AActor* HitActor)
+{
+	if (LastAttackTime > GetWorld()->GetTimeSeconds() - AttackCooltime)
+	{
+		return;
+	}
+
+	//AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherComp);
+	if (HitActor && HitActor != this && IsAlive()) {
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Begin Attack"));
+		if (AttackAnimMontage != NULL) {
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack Loop"));
+			AnimInstance = this->GetMesh()->GetAnimInstance();
+			if (AnimInstance != NULL) {
+				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("End Attack"));
+
+				LastAttackTime = GetWorld()->GetTimeSeconds();
+
+
+				FPointDamageEvent DmgEvent;
+				DmgEvent.DamageTypeClass = ScratchDamageType;
+				DmgEvent.Damage = AttackDamage;
+
+				HitActor->TakeDamage(DmgEvent.Damage, DmgEvent, GetController(), this);
+
+				PlayAttackMotion();
+			}
+
+		}
+	}
+}
+
+
+void AZombieCharacter_2::ReTriggerAttack()
+{
+	TArray<AActor*> OverlapActor;
+	//Attack Collision에 Timer가 ReTriggerAttack을 실행 할 때 마다, Overlap된 액터를 집어넣음
+	AttackCollisionComp->GetOverlappingActors(OverlapActor, ARyzenBaseCharacter::StaticClass());
+	for (int32 i = 0; OverlapActor.Num() < i; i++)
+	{
+		ARyzenBaseCharacter* OverlappingPawn = Cast<ARyzenBaseCharacter>(OverlapActor[i]);
+		if (OverlappingPawn)
+		{
+			ScratchAttack(OverlappingPawn);
+		}
+	}
+	if (OverlapActor.Num() == 0)
+	{
+		TimerHandle_AttackTimer.Invalidate();
+	}
+}
+
+
+void AZombieCharacter_2::TimerHandleFunc()
+{
+
+	//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
+	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter_2::ReTriggerAttack, AttackCooltime, true);
+}
 
 UAnimInstance* AZombieCharacter_2::GetAttackAnimInstance() const { return AnimInstance; }
 

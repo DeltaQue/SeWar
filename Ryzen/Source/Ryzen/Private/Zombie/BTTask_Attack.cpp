@@ -17,12 +17,15 @@ EBTNodeResult::Type UBTTask_Attack::ExecuteTask(UBehaviorTreeComponent& OwnerCom
 	AZombieCharacter_2* MyCharacter = Cast<AZombieCharacter_2>(MyController->GetPawn());
 	
 	
-	if (MyCharacter == nullptr && MyCharacter->GetOverlapAttackCollision() == false)
+	if (MyCharacter == nullptr && MyController->GetIsAttackCollisionOverlap() == false)
 	{
 		return EBTNodeResult::Failed;
 	}
 
-	MyCharacter->GetAttackAnimInstance()->Montage_Play(MyCharacter->GetAttackAnimMontage(), 2.5f);
+	if (MyController->GetIsAttackCollisionOverlap()) 
+	{
+		MyCharacter->TimerHandleFunc();
+	}
 
-	return EBTNodeResult::Failed;
+	return EBTNodeResult::Succeeded;
 }

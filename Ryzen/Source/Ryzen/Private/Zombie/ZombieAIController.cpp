@@ -74,7 +74,7 @@ void AZombieAIController::SetTargetEnemy(APawn* NewTarget)
 }
 
 
-AWaypoint* AZombieAIController::GetWaypoint()
+AWaypoint* AZombieAIController::GetWaypoint() const
 {
 	if (BlackboardComp)
 	{
@@ -84,7 +84,7 @@ AWaypoint* AZombieAIController::GetWaypoint()
 	return nullptr;
 }
 
-FVector AZombieAIController::GetReconLocation()
+FVector AZombieAIController::GetReconLocation() const
 {
 	if (BlackboardComp)
 	{
@@ -94,7 +94,7 @@ FVector AZombieAIController::GetReconLocation()
 	return FVector(-1,-1,-1);
 }
 
-ARyzenBaseCharacter* AZombieAIController::GetTargetEnemy()
+ARyzenBaseCharacter* AZombieAIController::GetTargetEnemy() const
 {
 	if (BlackboardComp)
 	{
@@ -104,7 +104,7 @@ ARyzenBaseCharacter* AZombieAIController::GetTargetEnemy()
 	return nullptr;
 }
 
-bool AZombieAIController::GetIsArrive()
+bool AZombieAIController::GetIsArrive() const
 {
 	if (BlackboardComp)
 	{
@@ -113,6 +113,18 @@ bool AZombieAIController::GetIsArrive()
 
 	return false;
 }
+
+bool AZombieAIController::GetIsAttackCollisionOverlap() const
+{
+	if (BlackboardComp)
+	{
+		return BlackboardComp->GetValueAsBool(IsAttackCollisionOverlapKeyName);
+	}
+
+	return false;
+}
+
+
 
 void AZombieAIController::SetBlackboardZombieType(EZombieType NewType)
 {
@@ -135,5 +147,13 @@ void AZombieAIController::SetIsArrive(bool Arrive)
 	if (BlackboardComp)
 	{
 		BlackboardComp->SetValueAsBool(IsArriveKeyName, Arrive);
+	}
+}
+
+void AZombieAIController::SetIsAttackCollisionOverlap(bool Overlaped)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsBool(IsAttackCollisionOverlapKeyName, Overlaped);
 	}
 }
