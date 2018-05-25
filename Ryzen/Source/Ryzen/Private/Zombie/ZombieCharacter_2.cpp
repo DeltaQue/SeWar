@@ -224,20 +224,19 @@ void AZombieCharacter_2::ScratchAttack(AActor* HitActor)
 {
 	if (LastAttackTime > GetWorld()->GetTimeSeconds() - AttackCooltime)
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack CoolTime!"));
 		return;
 	}
 
 	//AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherComp);
 	if (HitActor && HitActor != this && IsAlive()) {
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Begin Attack"));
+		
 		if (AttackAnimMontage != NULL) {
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack Loop"));
 			AnimInstance = this->GetMesh()->GetAnimInstance();
 			if (AnimInstance != NULL) {
-				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("End Attack"));
+				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Begin Attack"));
 
 				LastAttackTime = GetWorld()->GetTimeSeconds();
-
 
 				FPointDamageEvent DmgEvent;
 				DmgEvent.DamageTypeClass = ScratchDamageType;
@@ -265,6 +264,8 @@ void AZombieCharacter_2::ReTriggerAttack()
 		{
 			ScratchAttack(OverlappingPawn);
 		}
+		else
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("ReTrigger Attack fail"));
 	}
 	if (OverlapActor.Num() == 0)
 	{
@@ -275,7 +276,6 @@ void AZombieCharacter_2::ReTriggerAttack()
 
 void AZombieCharacter_2::TimerHandleFunc()
 {
-
 	//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
 	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter_2::ReTriggerAttack, AttackCooltime, true);
 }
