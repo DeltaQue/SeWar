@@ -25,6 +25,7 @@
 /I D:\EpicGames\UE_4.19\Engine\Source
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public
+/I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\NPC
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Player
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\UI
 /I C:\Users\logix\Desktop\RAProject\RA-Git\Ryzen\Source\Ryzen\Public\Zombie

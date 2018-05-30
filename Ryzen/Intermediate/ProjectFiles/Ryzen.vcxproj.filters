@@ -193,6 +193,9 @@
     <ClInclude Include="..\..\Source\Ryzen\Public\RDamageType.h">
       <Filter>Source\Ryzen\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Ryzen\Public\NPC\NPCAIController.h">
+      <Filter>Source\Ryzen\Public\NPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp">
@@ -210,5 +213,16 @@
     <ClCompile Include="..\..\Source\Ryzen\Private\RDamageType.cpp">
       <Filter>Source\Ryzen\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Ryzen\Private\NPC\NPCAIController.cpp">
+      <Filter>Source\Ryzen\Private\NPC</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\Ryzen\Public\NPC">
+      <UniqueIdentifier>{85f0e195-9c9b-45d5-b528-27fbaabbb9e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Ryzen\Private\NPC">
+      <UniqueIdentifier>{62f2e625-6cc9-496b-b6a7-5ce66465f4fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

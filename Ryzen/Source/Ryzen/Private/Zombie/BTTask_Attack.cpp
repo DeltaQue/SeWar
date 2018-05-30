@@ -24,7 +24,7 @@ EBTNodeResult::Type UBTTask_Attack::ExecuteTask(UBehaviorTreeComponent& OwnerCom
 
 	if (MyController->GetIsAttackCollisionOverlap()) 
 	{
-		MyCharacter->TimerHandleFunc();
+		//MyCharacter->PlayAttackMotion();
 	}
 
 	return EBTNodeResult::Succeeded;

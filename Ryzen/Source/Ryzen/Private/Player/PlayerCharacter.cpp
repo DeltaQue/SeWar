@@ -188,10 +188,12 @@ void APlayerCharacter::Tick(float Deltatime)
 	//Loudness 0.0f ~ 1.0f
 	//MakePawnNoise(1.0f);
 
-	/*ARyzenBaseCharacter* BaseCharacter = Cast<ARyzenBaseCharacter>(this);
-	FString str = FString::Printf(TEXT("HP : %f"), BaseCharacter->GetHealth());
+	ARyzenBaseCharacter* BaseCharacter = Cast<ARyzenBaseCharacter>(this);
+	
+//	FString str = FString::Printf(TEXT("HP : %f"), BaseCharacter->GetHealth());
+	FString str = FString::Printf(TEXT("HP : %f"), Super::GetHealth());
 
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, str);*/
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, str);
 }
 
 //AutoPickup

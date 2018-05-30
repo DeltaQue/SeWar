@@ -173,6 +173,8 @@ void AZombieCharacter_2::OnAttackCollisionCompBeginOverlap(class UPrimitiveCompo
 	AZombieAIController* Controller = Cast<AZombieAIController>(GetController());
 	Controller->SetIsAttackCollisionOverlap(true);
 
+	//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
+	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter_2::ReTriggerAttack, AttackCooltime, true);
 	//TimerHandleFunc();
 }
 
@@ -224,6 +226,10 @@ void AZombieCharacter_2::ScratchAttack(AActor* HitActor)
 {
 	if (LastAttackTime > GetWorld()->GetTimeSeconds() - AttackCooltime)
 	{
+		if (!TimerHandle_AttackTimer.IsValid()) 
+		{
+
+		}
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack CoolTime!"));
 		return;
 	}
@@ -257,7 +263,7 @@ void AZombieCharacter_2::ReTriggerAttack()
 	TArray<AActor*> OverlapActor;
 	//Attack Collision에 Timer가 ReTriggerAttack을 실행 할 때 마다, Overlap된 액터를 집어넣음
 	AttackCollisionComp->GetOverlappingActors(OverlapActor, ARyzenBaseCharacter::StaticClass());
-	for (int32 i = 0; OverlapActor.Num() < i; i++)
+	for (int32 i = 0; i < OverlapActor.Num(); i++)
 	{
 		ARyzenBaseCharacter* OverlappingPawn = Cast<ARyzenBaseCharacter>(OverlapActor[i]);
 		if (OverlappingPawn)

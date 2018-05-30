@@ -425,12 +425,14 @@
     <ClCompile Include="..\..\Source\Ryzen\ManualPickup.cpp" />
     <ClInclude Include="..\..\Source\Ryzen\ManualPickup.h" />
     <None Include="..\..\Source\Ryzen\Ryzen.Build.cs" />
+    <ClCompile Include="..\..\Source\Ryzen\Private\NPC\NPCAIController.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Private\Player\PlayerCharacter.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Private\RDamageType.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\BTTask_Attack.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\BTTask_FindReconLocation.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Private\Zombie\ZombieCharacter_2.cpp" />
     <ClCompile Include="..\..\Source\Ryzen\Ryzen.cpp" />
+    <ClInclude Include="..\..\Source\Ryzen\Public\NPC\NPCAIController.h" />
     <ClInclude Include="..\..\Source\Ryzen\Public\Player\PlayerCharacter.h" />
     <ClInclude Include="..\..\Source\Ryzen\Public\RDamageType.h" />
     <ClInclude Include="..\..\Source\Ryzen\Public\StructClass.h" />
