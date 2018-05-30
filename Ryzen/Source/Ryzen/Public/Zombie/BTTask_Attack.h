@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "BehaviorTree/Tasks/BTTask_BlackboardBase.h"
+#include "ZombieCharacter_2.h"
+#include "ZombieAIController.h"
 #include "BTTask_Attack.generated.h"
 
 /**
@@ -15,6 +17,15 @@ class RYZEN_API UBTTask_Attack : public UBTTask_BlackboardBase
 	GENERATED_BODY()
 
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
-	
+	virtual void TickTask(UBehaviorTreeComponent & OwnerComp, uint8 * NodeMemory, float DeltaSeconds) override;
+	EBTNodeResult::Type QuitTask();
+
+	void ReTriggerAttack();
+
+	FTimerHandle TimerHandle_AttackTimer;
+	float AttackCooltime;
+
+	AZombieAIController* MyController;
+	AZombieCharacter_2* MyCharacter;
 
 };

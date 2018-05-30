@@ -296,7 +296,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
 			};
 #endif
-			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "ReTriggerAttack", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04040401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "ReTriggerAttack", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
@@ -320,7 +320,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 				{ "ModuleRelativePath", "Public/Zombie/ZombieCharacter_2.h" },
 			};
 #endif
-			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "ScratchAttack", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04040401, sizeof(ZombieCharacter_2_eventScratchAttack_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_AZombieCharacter_2, "ScratchAttack", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(ZombieCharacter_2_eventScratchAttack_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
@@ -361,8 +361,8 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 				{ &Z_Construct_UFunction_AZombieCharacter_2_OnHearNoise, "OnHearNoise" }, // 350365120
 				{ &Z_Construct_UFunction_AZombieCharacter_2_OnSeePlayer, "OnSeePlayer" }, // 2953399095
 				{ &Z_Construct_UFunction_AZombieCharacter_2_PlayAttackMotion, "PlayAttackMotion" }, // 3320353828
-				{ &Z_Construct_UFunction_AZombieCharacter_2_ReTriggerAttack, "ReTriggerAttack" }, // 2416203845
-				{ &Z_Construct_UFunction_AZombieCharacter_2_ScratchAttack, "ScratchAttack" }, // 1670896707
+				{ &Z_Construct_UFunction_AZombieCharacter_2_ReTriggerAttack, "ReTriggerAttack" }, // 249660637
+				{ &Z_Construct_UFunction_AZombieCharacter_2_ScratchAttack, "ScratchAttack" }, // 1702432544
 				{ &Z_Construct_UFunction_AZombieCharacter_2_TimerHandleFunc, "TimerHandleFunc" }, // 2482305924
 			};
 #if WITH_METADATA
@@ -488,7 +488,7 @@ void EmptyLinkFunctionForGeneratedCodeZombieCharacter_2() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AZombieCharacter_2, 3834441244);
+	IMPLEMENT_CLASS(AZombieCharacter_2, 3676662184);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AZombieCharacter_2(Z_Construct_UClass_AZombieCharacter_2, &AZombieCharacter_2::StaticClass, TEXT("/Script/Ryzen"), TEXT("AZombieCharacter_2"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AZombieCharacter_2);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

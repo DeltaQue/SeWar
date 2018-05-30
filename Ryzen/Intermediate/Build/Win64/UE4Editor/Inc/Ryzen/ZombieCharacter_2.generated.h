@@ -8,11 +8,11 @@
 #include "ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 class UAnimMontage;
 class UAnimInstance;
 class APawn;
 struct FVector;
-class AActor;
 class UPrimitiveComponent;
 struct FHitResult;
 #ifdef RYZEN_ZombieCharacter_2_generated_h
@@ -21,6 +21,23 @@ struct FHitResult;
 #define RYZEN_ZombieCharacter_2_generated_h
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execReTriggerAttack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ReTriggerAttack(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execScratchAttack) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_HitActor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ScratchAttack(Z_Param_HitActor); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execTimerHandleFunc) \
 	{ \
@@ -71,23 +88,6 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execReTriggerAttack) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->ReTriggerAttack(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execScratchAttack) \
-	{ \
-		P_GET_OBJECT(AActor,Z_Param_HitActor); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->ScratchAttack(Z_Param_HitActor); \
 		P_NATIVE_END; \
 	} \
  \
@@ -122,6 +122,23 @@ struct FHitResult;
 
 #define Ryzen_Source_Ryzen_Public_Zombie_ZombieCharacter_2_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execReTriggerAttack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ReTriggerAttack(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execScratchAttack) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_HitActor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ScratchAttack(Z_Param_HitActor); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execTimerHandleFunc) \
 	{ \
 		P_FINISH; \
@@ -171,23 +188,6 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnSeePlayer(Z_Param_pawn); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execReTriggerAttack) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->ReTriggerAttack(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execScratchAttack) \
-	{ \
-		P_GET_OBJECT(AActor,Z_Param_HitActor); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->ScratchAttack(Z_Param_HitActor); \
 		P_NATIVE_END; \
 	} \
  \

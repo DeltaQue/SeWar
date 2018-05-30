@@ -38,7 +38,7 @@ FRotator ARyzenBaseCharacter::GetAimOffsets() const{
 
 float ARyzenBaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {
-	if (Health < 0.0f) 
+	if (Health <= 0.0f) 
 	{
 		return -1.0f;
 	}

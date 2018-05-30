@@ -165,16 +165,14 @@ void AZombieCharacter_2::SetZombieType(EZombieType NewType)
 
 void AZombieCharacter_2::OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	//Timer Stop
-	TimerHandle_AttackTimer.Invalidate();
+	//Timer 초기화
+	//TimerHandle_AttackTimer.Invalidate();
 
 	ScratchAttack(OtherActor);
 
 	AZombieAIController* Controller = Cast<AZombieAIController>(GetController());
 	Controller->SetIsAttackCollisionOverlap(true);
 
-	//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
-	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter_2::ReTriggerAttack, AttackCooltime, true);
 	//TimerHandleFunc();
 }
 
@@ -289,3 +287,5 @@ void AZombieCharacter_2::TimerHandleFunc()
 UAnimInstance* AZombieCharacter_2::GetAttackAnimInstance() const { return AnimInstance; }
 
 UAnimMontage* AZombieCharacter_2::GetAttackAnimMontage() const { return AttackAnimMontage; }
+
+UCapsuleComponent* AZombieCharacter_2::GetAttackCollisionComp() const { return AttackCollisionComp; }

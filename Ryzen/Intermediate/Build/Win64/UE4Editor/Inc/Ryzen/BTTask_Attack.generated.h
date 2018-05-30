@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define RYZEN_BTTask_Attack_generated_h
 
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_RPC_WRAPPERS
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_INCLASS_NO_PURE_DECLS \
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_RPC_WRAPPERS
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUBTTask_Attack(); \
 	friend RYZEN_API class UClass* Z_Construct_UClass_UBTTask_Attack(); \
@@ -25,7 +25,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_INCLASS \
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesUBTTask_Attack(); \
 	friend RYZEN_API class UClass* Z_Construct_UClass_UBTTask_Attack(); \
@@ -35,7 +35,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_STANDARD_CONSTRUCTORS \
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UBTTask_Attack(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBTTask_Attack) \
@@ -48,7 +48,7 @@ private: \
 public:
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_ENHANCED_CONSTRUCTORS \
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UBTTask_Attack(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -61,26 +61,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UBTTask_Attack); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBTTask_Attack)
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_PRIVATE_PROPERTY_OFFSET
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_12_PROLOG
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_GENERATED_BODY_LEGACY \
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_PRIVATE_PROPERTY_OFFSET
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_14_PROLOG
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_PRIVATE_PROPERTY_OFFSET \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_RPC_WRAPPERS \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_INCLASS \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_STANDARD_CONSTRUCTORS \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_PRIVATE_PROPERTY_OFFSET \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_RPC_WRAPPERS \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_INCLASS \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_GENERATED_BODY \
+#define Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_PRIVATE_PROPERTY_OFFSET \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_INCLASS_NO_PURE_DECLS \
-	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_15_ENHANCED_CONSTRUCTORS \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_PRIVATE_PROPERTY_OFFSET \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_INCLASS_NO_PURE_DECLS \
+	Ryzen_Source_Ryzen_Public_Zombie_BTTask_Attack_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

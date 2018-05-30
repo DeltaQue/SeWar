@@ -22,12 +22,9 @@ private:
 	
 	UFUNCTION()
 		void OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
-	
-	UFUNCTION(BlueprintCallable, Category = "Attack")
-		void ScratchAttack(AActor* HitActor);
 
-	UFUNCTION(BlueprintCallable, Category = "Attack")
-		void ReTriggerAttack();
+
+
 
 	//타겟을 찾지 못하는데 걸리는 시간 2.5초
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
@@ -99,6 +96,14 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* AttackSound;
+
+	UFUNCTION(BlueprintCallable, Category = "Attack")
+		void ScratchAttack(AActor* HitActor);
+
+	UFUNCTION(BlueprintCallable, Category = "Attack")
+		void ReTriggerAttack();
+
+	UCapsuleComponent* GetAttackCollisionComp() const;
 
 	void SetZombieType(EZombieType NewType);
 
