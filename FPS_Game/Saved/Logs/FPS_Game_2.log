@@ -1,0 +1,1086 @@
+﻿Log file open, 09/18/18 05:43:06
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogInit: Display: Running engine for game: FPS_Game
+LogPlatformFile: Not using cached read wrapper
+LogInit: Display: RandInit(-931932455) SRandInit(-931932455).
+LogInit: Read version file with build ID '3944462'
+LogInit: Overriding engine version to CL 4033788, compatible CL 3944462
+LogInit: Registered custom module enumerator with build ID '3944462'
+LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.420868
+LogD3D11RHI: Aftermath initialized
+LogICUInternationalization: Display: ICU TimeZone Detection - Raw Offset: +9:00, Platform Override: ''
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin LiveLink
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin HTML5Networking
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin LinearTimecode
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin NetcodeUnitTest
+LogPluginManager: Mounting plugin NUTUnrealEngine4
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleARKit
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin ImmediatePhysics
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Plugin shader directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders found
+LogPluginManager: Mapping shader source directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders to virtual directory /Plugin/OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogStreaming: Display: Took  0.178s to configure plugins.
+LogModuleManager: Display: Found up-to-date module file ../../../../../../FPS_Game/Binaries/Win64/UE4Editor-FPS_Game-8512.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2D.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2DEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperSpriteSheetImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperTiledImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-SmartSnapping.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLink.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLinkEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeRuntime.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/CLionSourceCodeAccess/Binaries/Win64/UE4Editor-CLionSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/GitSourceControl/Binaries/Win64/UE4Editor-GitSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/PerforceSourceControl/Binaries/Win64/UE4Editor-PerforceSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/SubversionSourceControl/Binaries/Win64/UE4Editor-SubversionSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/UObjectPlugin/Binaries/Win64/UE4Editor-UObjectPlugin.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioCodeSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioCodeSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/AssetManagerEditor/Binaries/Win64/UE4Editor-AssetManagerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeys.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeysOpenSSL.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/DataValidation/Binaries/Win64/UE4Editor-DataValidation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimationEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/GameplayTagsEditor/Binaries/Win64/UE4Editor-GameplayTagsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/MobileLauncherProfileWizard/Binaries/Win64/UE4Editor-MobileLauncherProfileWizard.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/PluginBrowser/Binaries/Win64/UE4Editor-PluginBrowser.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/SpeedTreeImporter/Binaries/Win64/UE4Editor-SpeedTreeImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Enterprise/DatasmithContent/Binaries/Win64/UE4Editor-DatasmithContent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/CharacterAI/Binaries/Win64/UE4Editor-CharacterAI.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/HTML5Networking/Binaries/Win64/UE4Editor-HTML5Networking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-OpenExrWrapper.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/LinearTimecode/Binaries/Win64/UE4Editor-LinearTimecode.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositing.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositingEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaPlayerEditor/Binaries/Win64/UE4Editor-MediaPlayerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/TcpMessaging/Binaries/Win64/UE4Editor-TcpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/UdpMessaging/Binaries/Win64/UE4Editor-UdpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/ActorSequence/Binaries/Win64/UE4Editor-ActorSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/LevelSequenceEditor/Binaries/Win64/UE4Editor-LevelSequenceEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/MatineeToLevelSequence/Binaries/Win64/UE4Editor-MatineeToLevelSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NetcodeUnitTest/Binaries/Win64/UE4Editor-NetcodeUnitTest.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NUTUnrealEngine4/Binaries/Win64/UE4Editor-NUTUnrealEngine4.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystem/Binaries/Win64/UE4Editor-OnlineSubsystem.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemNull/Binaries/Win64/UE4Editor-OnlineSubsystemNull.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineSubsystemUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineBlueprintSupport.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidDeviceProfileSelector/Binaries/Win64/UE4Editor-AndroidDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidPermission/Binaries/Win64/UE4Editor-AndroidPermission.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AppleARKit/Binaries/Win64/UE4Editor-AppleARKit.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ArchVisCharacter/Binaries/Win64/UE4Editor-ArchVisCharacter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCapture.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCaptureEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CableComponent/Binaries/Win64/UE4Editor-CableComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CustomMeshComponent/Binaries/Win64/UE4Editor-CustomMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ExampleDeviceProfileSelector/Binaries/Win64/UE4Editor-ExampleDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysics.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysicsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/LocationServicesBPLibrary/Binaries/Win64/UE4Editor-LocationServicesBPLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/MobilePatchingUtils/Binaries/Win64/UE4Editor-MobilePatchingUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusHMD.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusInput.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehicles.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehiclesEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponentEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/RuntimePhysXCooking/Binaries/Win64/UE4Editor-RuntimePhysXCooking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVR.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVRController.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/WindowsMoviePlayer/Binaries/Win64/UE4Editor-WindowsMoviePlayer.dll (API version 3944462).
+LogInit: Using libcurl 7.47.1
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.0.2g
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = false  - Libcurl will NOT verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogInit: WinSock: I am DESKTOP-5A88OB5 (192.168.10.101:0)
+LogInit: Build: ++UE4+Release-4.19-CL-4033788
+LogInit: Engine Version: 4.19.2-4033788+++UE4+Release-4.19
+LogInit: Compatible Engine Version: 4.19.0-3944462+++UE4+Release-4.19
+LogInit: Net CL: 3944462
+LogDevObjectVersion: Number of dev versions registered: 18
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 2
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 23
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 33
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 2
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 25
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 6
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 1
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 2
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 16
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogInit: Compiled (64-bit): Apr 27 2018 02:06:57
+LogInit: Compiled with Visual C++: 19.00.24215.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.19
+LogInit: Command Line:  
+LogInit: Base Directory: C:/Program Files/Epic Games/UE_4.19/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogStreaming: Display: Took  0.007s to delete old logs.
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2018.09.17-20.43.11:174][  0]LogInit: Selected Device Profile: [Windows]
+[2018.09.17-20.43.11:174][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2018.09.17-20.43.11:222][  0]LogInit: Computer: DESKTOP-5A88OB5
+[2018.09.17-20.43.11:222][  0]LogInit: User: 김재원
+[2018.09.17-20.43.11:222][  0]LogInit: CPU Page size=4096, Cores=4
+[2018.09.17-20.43.11:222][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2018.09.17-20.43.11:223][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx)
+[2018.09.17-20.43.11:223][  0]LogMemory: Platform Memory Stats for Windows
+[2018.09.17-20.43.11:223][  0]LogMemory: Process Physical Memory: 275.09 MB used, 275.09 MB peak
+[2018.09.17-20.43.11:223][  0]LogMemory: Process Virtual Memory: 264.68 MB used, 264.68 MB peak
+[2018.09.17-20.43.11:223][  0]LogMemory: Physical Memory: 6600.84 MB used,  1563.53 MB free, 8164.38 MB total
+[2018.09.17-20.43.11:223][  0]LogMemory: Virtual Memory: 4790.51 MB used,  1563.53 MB free, 134217728.00 MB total
+[2018.09.17-20.43.11:419][  0]LogInit: Using OS detected language (ko-KR).
+[2018.09.17-20.43.11:419][  0]LogInit: Using OS detected locale (ko-KR).
+[2018.09.17-20.43.11:508][  0]LogTextLocalizationManager: No specific localization for 'ko-KR' exists, so the 'ko' localization will be used.
+[2018.09.17-20.43.12:225][  0]LogStreaming: Display: Took  0.806s to EndInitTextLocalization.
+[2018.09.17-20.43.12:225][  0]LogInit: Setting process to per monitor DPI aware
+[2018.09.17-20.43.12:377][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2018.09.17-20.43.12:377][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2018.09.17-20.43.16:486][  0]LogD3D11RHI: D3D11 adapters:
+[2018.09.17-20.43.16:618][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1070' (Feature Level 11_0)
+[2018.09.17-20.43.16:618][  0]LogD3D11RHI:       8088/0/4082 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2018.09.17-20.43.16:622][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2018.09.17-20.43.16:622][  0]LogD3D11RHI:       0/0/4082 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2018.09.17-20.43.16:622][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2018.09.17-20.43.16:634][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2018.09.17-20.43.16:634][  0]LogD3D11RHI:     GPU DeviceId: 0x1b81 (for the marketing name, search the web for "GPU Device Id")
+[2018.09.17-20.43.16:634][  0]LogWindows: EnumDisplayDevices:
+[2018.09.17-20.43.16:635][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1070' (P:1 D:1)
+[2018.09.17-20.43.16:635][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.09.17-20.43.16:636][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.09.17-20.43.16:637][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.09.17-20.43.16:637][  0]LogWindows: DebugString: GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter FoundDriverCount:0 
+[2018.09.17-20.43.16:637][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1070
+[2018.09.17-20.43.16:637][  0]LogD3D11RHI:   Driver Version: Unknown (internal:Unknown, unified:Unknown)
+[2018.09.17-20.43.16:637][  0]LogD3D11RHI:      Driver Date: Unknown
+[2018.09.17-20.43.16:640][  0]LogRHI: Texture pool is 5661 MB (70% of 8088 MB)
+[2018.09.17-20.43.16:705][  0]LogD3D11RHI: [Aftermath] Aftermath enabled and primed
+[2018.09.17-20.43.16:705][  0]LogD3D11RHI: [Aftermath] Aftermath enabled and primed
+[2018.09.17-20.43.16:705][  0]LogD3D11RHI: Async texture creation enabled
+[2018.09.17-20.43.16:730][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
+[2018.09.17-20.43.16:776][  0]LogShaderCompilers: Guid format shader working directory is 17 characters bigger than the processId version (../../../../../../FPS_Game/Intermediate/Shaders/WorkingDirectory/16112/).
+[2018.09.17-20.43.16:776][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/김재원/AppData/Local/Temp/UnrealShaderWorkingDir/C18BBFC9486079B78AAA83A9CC74546F/'.
+[2018.09.17-20.43.17:925][  0]LogTemp: Display: Loaded TP AllDesktopTargetPlatform
+[2018.09.17-20.43.17:950][  0]LogTemp: Display: Loaded TP MacClientTargetPlatform
+[2018.09.17-20.43.17:975][  0]LogTemp: Display: Loaded TP MacNoEditorTargetPlatform
+[2018.09.17-20.43.18:000][  0]LogTemp: Display: Loaded TP MacServerTargetPlatform
+[2018.09.17-20.43.18:063][  0]LogTemp: Display: Loaded TP MacTargetPlatform
+[2018.09.17-20.43.18:106][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
+[2018.09.17-20.43.18:147][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
+[2018.09.17-20.43.18:185][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
+[2018.09.17-20.43.18:233][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
+[2018.09.17-20.43.18:284][  0]LogTemp: Display: Loaded TP Android_ASTCTargetPlatform
+[2018.09.17-20.43.18:324][  0]LogTemp: Display: Loaded TP Android_ATCTargetPlatform
+[2018.09.17-20.43.18:365][  0]LogTemp: Display: Loaded TP Android_DXTTargetPlatform
+[2018.09.17-20.43.18:406][  0]LogTemp: Display: Loaded TP Android_ETC1aTargetPlatform
+[2018.09.17-20.43.18:455][  0]LogTemp: Display: Loaded TP Android_ETC1TargetPlatform
+[2018.09.17-20.43.18:505][  0]LogTemp: Display: Loaded TP Android_ETC2TargetPlatform
+[2018.09.17-20.43.18:605][  0]LogTemp: Display: Loaded TP Android_MultiTargetPlatform
+[2018.09.17-20.43.18:605][  0]LogTemp: Display: Loaded TP Android_PVRTCTargetPlatform
+[2018.09.17-20.43.18:641][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.17-20.43.18:680][  0]LogTemp: Display: Loaded TP HTML5TargetPlatform
+[2018.09.17-20.43.18:847][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
+[2018.09.17-20.43.18:868][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
+[2018.09.17-20.43.18:893][  0]LogTemp: Display: Loaded TP LinuxClientTargetPlatform
+[2018.09.17-20.43.18:919][  0]LogTemp: Display: Loaded TP LinuxNoEditorTargetPlatform
+[2018.09.17-20.43.18:944][  0]LogTemp: Display: Loaded TP LinuxServerTargetPlatform
+[2018.09.17-20.43.19:016][  0]LogTemp: Display: Loaded TP LinuxTargetPlatform
+[2018.09.17-20.43.19:016][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2018.09.17-20.43.19:355][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2018.09.17-20.43.19:355][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2018.09.17-20.43.19:355][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2018.09.17-20.43.22:464][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2018.09.17-20.43.28:224][  0]LogDerivedDataCache: Loaded boot cache 5.71s 101MB C:/Users/김재원/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2018.09.17-20.43.28:224][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/김재원/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc
+[2018.09.17-20.43.28:225][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../FPS_Game/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2018.09.17-20.43.28:225][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2018.09.17-20.43.28:225][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../FPS_Game/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2018.09.17-20.43.28:225][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2018.09.17-20.43.28:250][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2018.09.17-20.43.28:263][  0]LogDerivedDataCache: Using Local data cache path C:/Users/김재원/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2018.09.17-20.43.28:263][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2018.09.17-20.43.28:263][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2018.09.17-20.43.28:282][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2018.09.17-20.43.28:283][  0]LogSlate: Using Freetype 2.6.0
+[2018.09.17-20.43.28:297][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.09.17-20.43.28:297][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.09.17-20.43.30:756][  0]LogAssetRegistry: FAssetRegistry took 0.0291 seconds to start up
+[2018.09.17-20.43.31:456][  0]LogInit: Selected Device Profile: [Windows]
+[2018.09.17-20.43.31:781][  0]LogSimplygon: Simplygon DLL not present - disabling.
+[2018.09.17-20.43.31:794][  0]LogMeshReduction: Using SimplygonSwarm for distributed automatic mesh merging
+[2018.09.17-20.43.31:795][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2018.09.17-20.43.31:795][  0]LogMeshReduction: No automatic skeletal mesh reduction module available
+[2018.09.17-20.43.31:796][  0]LogMeshReduction: No automatic mesh merging module available
+[2018.09.17-20.43.31:796][  0]LogMeshMerging: No automatic mesh merging module available
+[2018.09.17-20.43.31:871][  0]LogNetVersion: FPS_Game , NetCL: 3944462, EngineNetVer: 2, GameNetVer: 0 (Checksum: 1628388489)
+[2018.09.17-20.43.32:730][  0]LogPackageLocalizationCache: Processed 9 localized package path(s) for 2 prioritized culture(s) in 0.143928 seconds
+[2018.09.17-20.43.32:738][  0]LogUObjectArray: 36728 objects as part of root set at end of initial load.
+[2018.09.17-20.43.32:738][  0]LogUObjectAllocator: 7314312 out of 0 bytes used by permanent object pool.
+[2018.09.17-20.43.32:738][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2018.09.17-20.43.39:638][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2018.09.17-20.43.39:718][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2018.09.17-20.43.40:583][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.09.17-20.43.40:583][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.09.17-20.43.40:631][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.09.17-20.43.40:674][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.09.17-20.43.41:741][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2018.09.17-20.43.42:133][  0]LogOcInput: OculusInput pre-init called
+[2018.09.17-20.43.42:374][  0]LogEngine: Initializing Engine...
+[2018.09.17-20.43.42:381][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2018.09.17-20.43.42:385][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.09.17-20.43.42:386][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.09.17-20.43.42:751][  0]LogAIModule: Creating AISystem for world Untitled
+[2018.09.17-20.43.42:902][  0]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-20.43.42:972][  0]LogInit: FAudioDevice initialized.
+[2018.09.17-20.43.43:259][  0]LogDerivedDataCache: Saved boot cache 0.29s 101MB C:/Users/김재원/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2018.09.17-20.43.43:305][  0]LogInit: Texture streaming: Enabled
+[2018.09.17-20.43.43:352][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2018.09.17-20.43.43:394][  0]LogInit: Transaction tracking system initialized
+[2018.09.17-20.43.43:488][  0]BlueprintLog: New page: 에디터 로드
+[2018.09.17-20.43.43:772][  0]LocalizationService: 현지화 서비스가 비활성화되었습니다.
+[2018.09.17-20.43.44:033][  0]LogConsoleResponse: Display: 
+[2018.09.17-20.43.44:303][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2018.09.17-20.43.44:304][  0]LogCook: Display: Mobile HDR setting 1
+[2018.09.17-20.43.44:304][  0]LogGameplayTags: Display: UGameplayTagsManager::DoneAddingNativeTags. DelegateIsBound: 0
+[2018.09.17-20.43.44:304][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.09.17-20.43.44:304][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.09.17-20.43.44:615][  0]LogFileCache: Scanning file cache for directory 'C:/FPS_Game/Content/' took 0.04s
+[2018.09.17-20.43.45:587][  0]SourceControl: 소스 콘트롤이 꺼졌습니다.
+[2018.09.17-20.43.45:587][  0]Cmd: MAP LOAD FILE="../../../Engine/Content/Maps/Templates/Template_Default.umap" TEMPLATE=1 SHOWPROGRESS=1 FEATURELEVEL=3
+[2018.09.17-20.43.45:598][  0]LightingResults: New page: 라이팅 빌드
+[2018.09.17-20.43.45:609][  0]MapCheck: New page: 맵 체크
+[2018.09.17-20.43.45:609][  0]LightingResults: New page: 라이팅 빌드
+[2018.09.17-20.43.45:998][  0]LogAIModule: Creating AISystem for world Untitled_1
+[2018.09.17-20.43.46:009][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2018.09.17-20.43.46:038][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2018.09.17-20.43.46:140][  0]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 102.133ms.
+[2018.09.17-20.43.46:141][  0]LogFileHelpers: Loading map 'Template_Default' took 0.553
+[2018.09.17-20.43.46:405][  0]LogCollectionManager: Loaded 0 collections in 0.005451 seconds
+[2018.09.17-20.43.46:464][  0]LogFileCache: Scanning file cache for directory 'C:/FPS_Game/Saved/Collections/' took 0.01s
+[2018.09.17-20.43.46:464][  0]LogFileCache: Scanning file cache for directory 'C:/FPS_Game/Content/Developers/김재원/Collections/' took 0.01s
+[2018.09.17-20.43.46:464][  0]LogFileCache: Scanning file cache for directory 'C:/FPS_Game/Content/Collections/' took 0.01s
+[2018.09.17-20.43.46:464][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000000 seconds
+[2018.09.17-20.43.46:483][  0]LogContentBrowser: Native class hierarchy populated in 0.0182 seconds. Added 2458 classes and 563 folders.
+[2018.09.17-20.43.46:508][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0025 seconds. Added 0 classes and 0 folders.
+[2018.09.17-20.43.47:132][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0026 seconds. Added 0 classes and 0 folders.
+[2018.09.17-20.43.47:154][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0028 seconds. Added 1 classes and 2 folders.
+[2018.09.17-20.43.47:298][  0]LogSlate: Took 0.012434 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2018.09.17-20.43.47:351][  0]LogSlate: Took 0.052111 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
+[2018.09.17-20.43.47:403][  0]LogSlate: Took 0.050407 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicBold.ttf' (4188K)
+[2018.09.17-20.43.47:411][  0]LogSlate: Took 0.007685 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2018.09.17-20.43.47:425][  0]LogSlate: Took 0.008559 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2018.09.17-20.43.47:678][  0]LogRenderer: Reallocating scene render targets to support 1208x612 Format 10 NumSamples 1 (Frame:1).
+[2018.09.17-20.43.47:948][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0027 seconds. Added 0 classes and 0 folders.
+[2018.09.17-20.43.47:948][  0]LogLoad: (Engine Initialization) Total time: 45.26 seconds
+[2018.09.17-20.43.47:948][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2018.09.17-20.43.48:312][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2018.09.17-20.43.48:391][  0]LogSlate: Took 0.009303 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2018.09.17-20.43.48:964][  2]LogAssetRegistry: Asset discovery search completed in 18.2304 seconds
+[2018.09.17-20.43.48:967][  2]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000000 seconds (found 0 objects)
+[2018.09.17-20.43.48:967][  2]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000082 seconds (updated 0 objects)
+[2018.09.17-20.44.01:494][132]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-20.44.02:406][235]LogSlate: Took 0.000333 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2018.09.17-20.44.02:553][235]LogUObjectGlobals: Created PersistentFrame Addr=0x000001e32b787600, Size=128, Default__HeroFPP_AnimationBlueprint_C Function /Game/Characters/HeroFPP/HeroFPP_AnimationBlueprint.HeroFPP_AnimationBlueprint_C:ExecuteUbergraph_HeroFPP_AnimationBlueprint
+[2018.09.17-20.44.02:587][235]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x000001e32b787600, Size=128
+[2018.09.17-20.44.02:587][235]LogUObjectGlobals: Created PersistentFrame Addr=0x000001e32b787600, Size=128, Default__HeroFPP_AnimationBlueprint_C Function /Engine/Transient.REINST_HeroFPP_AnimationBlueprint_C_0:ExecuteUbergraph_HeroFPP_AnimationBlueprint
+[2018.09.17-20.44.02:629][235]LogUObjectGlobals: Created PersistentFrame Addr=0x000001e34c0d3780, Size=128, Default__HeroFPP_AnimationBlueprint_C Function /Game/Characters/HeroFPP/HeroFPP_AnimationBlueprint.HeroFPP_AnimationBlueprint_C:ExecuteUbergraph_HeroFPP_AnimationBlueprint
+[2018.09.17-20.44.04:876][235]LogSkeletalMesh: Skeletal Mesh found in DDC [11.990400ms] /Game/Characters/HeroFPP/HeroFPP.HeroFPP
+[2018.09.17-20.44.04:926][235]LogSkeletalMesh: Skeletal Mesh found in DDC [23.292101ms] /Game/Weapons/Rifle.Rifle
+[2018.09.17-20.44.05:794][235]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-20.44.05:832][235]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x000001e32b787600, Size=128
+[2018.09.17-20.44.05:835][235]Cmd: MAP LOAD FILE="../../../../../../FPS_Game/Content/NewMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2018.09.17-20.44.05:835][235]LightingResults: New page: 라이팅 빌드
+[2018.09.17-20.44.05:836][235]LoadErrors: New page: 맵 로드중: NewMap.umap
+[2018.09.17-20.44.05:838][235]MapCheck: New page: 맵 체크
+[2018.09.17-20.44.05:838][235]LightingResults: New page: 라이팅 빌드
+[2018.09.17-20.44.05:971][235]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2018.09.17-20.44.06:071][235]Cmd: MAP CHECKDEP NOCLEARLOG
+[2018.09.17-20.44.06:223][235]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 151.855ms.
+[2018.09.17-20.44.06:225][235]LogFileHelpers: Loading map 'NewMap' took 0.391
+[2018.09.17-20.44.07:327][355]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-20.44.07:362][355]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-20.44.07:364][355]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 2:44:07)
+[2018.09.17-20.44.07:364][355]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-20.44.07:369][355]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004393s)
+[2018.09.17-20.44.07:370][355]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-20.44.07:370][355]LogPlayLevel: PIE: World Init took: (0.001003s)
+[2018.09.17-20.44.07:370][355]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.005601s)
+[2018.09.17-20.44.07:427][355]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-20.44.07:449][355]LogInit: FAudioDevice initialized.
+[2018.09.17-20.44.07:493][355]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-20.44.07:495][355]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-05.44.07
+[2018.09.17-20.44.07:495][355]LogWorld: Bringing up level for play took: 0.000745
+[2018.09.17-20.44.07:508][355]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0027 seconds. Added 11 classes and 0 folders.
+[2018.09.17-20.44.07:511][355]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 1.087
+[2018.09.17-20.44.19:146][670]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-20.44.22:188][963]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0032 seconds. Added 116 classes and 0 folders.
+[2018.09.17-20.44.22:618][963]LogUObjectGlobals: Created PersistentFrame Addr=0x000001e334fb9270, Size=4, Default__SKEL_PROTO_BP_AnimBlueprint_0_C Function /Engine/Transient.SKEL_PROTO_BP_AnimBlueprint_0_C:ExecuteUbergraph_PROTO_BP_AnimBlueprint_0
+[2018.09.17-20.44.22:618][963]LogUObjectGlobals: Created PersistentFrame Addr=0x000001e334fb9238, Size=4, Default__PROTO_BP_AnimBlueprint_0_C Function /Engine/Transient.PROTO_BP_AnimBlueprint_0_C:ExecuteUbergraph_PROTO_BP_AnimBlueprint_0
+[2018.09.17-20.44.27:687][271]LogSlate: Window 'PlayerCharacter_BP' being destroyed
+[2018.09.17-20.44.28:251][271]LogSlate: Took 0.008875 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2018.09.17-20.44.29:538][353]LogSlate: Took 0.011152 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2018.09.17-20.44.50:105][816]BlueprintLog: New page: PlayerCharacter_BP 컴파일
+[2018.09.17-20.44.50:956][848]LogRenderer: Reallocating scene render targets to support 1208x712 Format 10 NumSamples 1 (Frame:1).
+[2018.09.17-20.45.02:532][731]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-20.45.07:138][ 83]LogContentBrowser: Native class hierarchy updated for 'SkeletonEditor' in 0.0033 seconds. Added 1 classes and 2 folders.
+[2018.09.17-20.45.07:672][ 83]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_7:PersistentLevel.Actor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2018.09.17-20.45.07:684][ 83]LogContentBrowser: Native class hierarchy updated for 'PinnedCommandList' in 0.0025 seconds. Added 1 classes and 0 folders.
+[2018.09.17-20.45.08:237][ 83]LogContentBrowser: Native class hierarchy updated for 'ClothingSystemEditorInterface' in 0.0026 seconds. Added 1 classes and 0 folders.
+[2018.09.17-20.45.08:274][ 84]LogRenderer: Reallocating scene render targets to support 1208x888 Format 10 NumSamples 1 (Frame:1).
+[2018.09.17-20.45.15:339][600]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Characters/HeroFPP/HeroFPP_Skeleton" FILE="../../../../../../FPS_Game/Content/Characters/HeroFPP/HeroFPP_Skeleton.uasset" SILENT=true
+[2018.09.17-20.45.15:400][600]LogSavePackage: Save=17.35ms
+[2018.09.17-20.45.15:401][600]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/HeroFPP_SkeletonE26E95124B93A7036E36D2B150A3BB30.tmp' to '../../../../../../FPS_Game/Content/Characters/HeroFPP/HeroFPP_Skeleton.uasset'
+[2018.09.17-20.45.15:408][600]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Content/Characters/HeroFPP/HeroFPP_Skeleton.uasset
+[2018.09.17-20.45.38:158][525]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-20.45.46:666][136]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-20.45.46:706][136]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-20.45.46:706][136]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 2:45:46)
+[2018.09.17-20.45.46:707][136]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-20.45.46:709][136]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002640s)
+[2018.09.17-20.45.46:710][136]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-20.45.46:710][136]LogPlayLevel: PIE: World Init took: (0.001038s)
+[2018.09.17-20.45.46:710][136]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.003863s)
+[2018.09.17-20.45.46:786][136]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-20.45.46:808][136]LogInit: FAudioDevice initialized.
+[2018.09.17-20.45.46:845][136]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-20.45.46:846][136]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-05.45.46
+[2018.09.17-20.45.46:847][136]LogWorld: Bringing up level for play took: 0.000689
+[2018.09.17-20.45.46:849][136]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.425
+[2018.09.17-20.48.21:474][541]LogHotReload: New module detected: UE4Editor-FPS_Game-6347.dll
+[2018.09.17-20.48.23:161][547]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-20.48.23:306][547]LogClass: WeaponData HotReload.
+[2018.09.17-20.48.23:316][547]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0026 seconds. Added 6 classes and 5 folders.
+[2018.09.17-20.48.23:320][547]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-20.48.23:895][547]LogContentBrowser: Native class hierarchy populated in 0.0181 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-20.48.23:913][547]Display: HotReload took  0.8s.
+[2018.09.17-20.50.46:249][974]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-20.50.47:978][102]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-20.50.48:095][111]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-20.50.48:142][111]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-20.50.48:142][111]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 2:50:48)
+[2018.09.17-20.50.48:142][111]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-20.50.48:145][111]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002807s)
+[2018.09.17-20.50.48:146][111]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-20.50.48:146][111]LogPlayLevel: PIE: World Init took: (0.001037s)
+[2018.09.17-20.50.48:146][111]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.004043s)
+[2018.09.17-20.50.48:254][111]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-20.50.48:279][111]LogInit: FAudioDevice initialized.
+[2018.09.17-20.50.48:316][111]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-20.50.48:317][111]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-05.50.48
+[2018.09.17-20.50.48:318][111]LogWorld: Bringing up level for play took: 0.000874
+[2018.09.17-20.50.48:320][111]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: -0.104
+[2018.09.17-20.54.42:951][723]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/NewMap' took 0.058
+[2018.09.17-20.54.42:962][723]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Character/PlayerCharacter_BP] ([1] browsable assets)...
+[2018.09.17-20.54.43:004][723]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Character/PlayerCharacter_BP.PlayerCharacter_BP]
+[2018.09.17-20.54.43:004][723]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Character/PlayerCharacter_BP]
+[2018.09.17-20.54.43:243][723]LogSavePackage: Save=94.46ms
+[2018.09.17-20.54.43:243][723]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/PlayerCharacter_BP_Auto1B06AEA7B4AC449D6C7DAF89E46FE9B14.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto1.uasset'
+[2018.09.17-20.54.43:246][723]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto1.uasset
+[2018.09.17-20.54.43:249][723]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Characters/HeroFPP/HeroFPP] ([1] browsable assets)...
+[2018.09.17-20.54.43:271][723]OBJ SavePackage:     Rendered thumbnail for [SkeletalMesh /Game/Characters/HeroFPP/HeroFPP.HeroFPP]
+[2018.09.17-20.54.43:271][723]OBJ SavePackage: Finished generating thumbnails for package [/Game/Characters/HeroFPP/HeroFPP]
+[2018.09.17-20.54.43:271][723]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Characters/HeroFPP/HeroFPP" FILE="../../../../../../FPS_Game/Saved/Autosaves/Game/Characters/HeroFPP/HeroFPP_Auto1.uasset" SILENT=false AUTOSAVING=true
+[2018.09.17-20.54.43:334][723]LogSavePackage: Save=40.15ms
+[2018.09.17-20.54.43:334][723]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/HeroFPP_Auto1DB1E291D48C97083AE78D0BC3D3F7EF1.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Characters/HeroFPP/HeroFPP_Auto1.uasset'
+[2018.09.17-20.54.43:338][723]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Characters/HeroFPP/HeroFPP_Auto1.uasset
+[2018.09.17-20.54.43:338][723]LogFileHelpers: Auto-saving content packages took 0.385
+[2018.09.17-20.55.17:363][826]LogHotReload: New module detected: UE4Editor-FPS_Game-3722.dll
+[2018.09.17-20.55.19:383][833]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-20.55.19:501][833]LogClass: WeaponData HotReload.
+[2018.09.17-20.55.19:512][833]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0032 seconds. Added 6 classes and 5 folders.
+[2018.09.17-20.55.19:518][833]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-20.55.20:036][833]LogContentBrowser: Native class hierarchy populated in 0.0197 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-20.55.20:042][833]Display: HotReload took  0.7s.
+[2018.09.17-20.55.23:535][924]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-20.55.23:641][936]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-20.55.23:683][936]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-20.55.23:706][936]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 2:55:23)
+[2018.09.17-20.55.23:706][936]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-20.55.23:712][936]LogPlayLevel: PIE: StaticDuplicateObject took: (0.006048s)
+[2018.09.17-20.55.23:713][936]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-20.55.23:714][936]LogPlayLevel: PIE: World Init took: (0.001447s)
+[2018.09.17-20.55.23:714][936]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.007799s)
+[2018.09.17-20.55.23:849][936]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-20.55.23:913][936]LogInit: FAudioDevice initialized.
+[2018.09.17-20.55.23:953][936]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-20.55.23:955][936]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-05.55.23
+[2018.09.17-20.55.23:955][936]LogWorld: Bringing up level for play took: 0.000698
+[2018.09.17-20.55.23:957][936]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: -0.467
+[2018.09.17-20.57.24:943][713]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-20.57.25:362][763]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-20.57.25:418][763]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-20.57.25:419][763]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 2:57:25)
+[2018.09.17-20.57.25:419][763]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-20.57.25:422][763]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002884s)
+[2018.09.17-20.57.25:423][763]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-20.57.25:423][763]LogPlayLevel: PIE: World Init took: (0.000965s)
+[2018.09.17-20.57.25:423][763]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.004133s)
+[2018.09.17-20.57.25:505][763]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-20.57.25:528][763]LogInit: FAudioDevice initialized.
+[2018.09.17-20.57.25:560][763]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-20.57.25:562][763]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-05.57.25
+[2018.09.17-20.57.25:562][763]LogWorld: Bringing up level for play took: 0.000698
+[2018.09.17-20.57.25:564][763]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 1.14
+[2018.09.17-21.05.38:600][551]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.05.41:792][758]BlueprintLog: New page: PlayerCharacter_BP 컴파일
+[2018.09.17-21.06.57:812][165]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/NewMap' took 0.053
+[2018.09.17-21.06.57:815][165]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Character/PlayerCharacter_BP] ([1] browsable assets)...
+[2018.09.17-21.06.57:833][165]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Character/PlayerCharacter_BP.PlayerCharacter_BP]
+[2018.09.17-21.06.57:833][165]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Character/PlayerCharacter_BP]
+[2018.09.17-21.06.57:968][165]LogSavePackage: Save=100.30ms
+[2018.09.17-21.06.57:968][165]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/PlayerCharacter_BP_Auto200DD26E54C01E1E3E7BE6DBCE4CDC1B8.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto2.uasset'
+[2018.09.17-21.06.57:972][165]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto2.uasset
+[2018.09.17-21.06.57:972][165]LogFileHelpers: Auto-saving content packages took 0.159
+[2018.09.17-21.07.49:744][970]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-21.07.50:637][ 66]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-21.07.50:737][ 78]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-21.07.50:777][ 78]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-21.07.50:778][ 78]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 3:07:50)
+[2018.09.17-21.07.50:778][ 78]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-21.07.50:782][ 78]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004153s)
+[2018.09.17-21.07.50:783][ 78]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-21.07.50:784][ 78]LogPlayLevel: PIE: World Init took: (0.001656s)
+[2018.09.17-21.07.50:784][ 78]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.005999s)
+[2018.09.17-21.07.50:880][ 78]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-21.07.50:914][ 78]LogInit: FAudioDevice initialized.
+[2018.09.17-21.07.50:949][ 78]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-21.07.50:951][ 78]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-06.07.50
+[2018.09.17-21.07.50:951][ 78]LogWorld: Bringing up level for play took: 0.000864
+[2018.09.17-21.07.50:953][ 78]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.53
+[2018.09.17-21.08.11:825][511]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.08.12:658][595]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.08.14:881][595]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2018.09.17-21.08.16:696][596]LogTemp: Executing iPhonePackager certificates Engine -bundlename com.YourCompany.FPSGame
+[2018.09.17-21.08.16:696][596]LogTemp: CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.17-21.08.16:696][596]LogTemp: Initial Dir: C:\Program Files\Epic Games\UE_4.19
+[2018.09.17-21.08.16:696][596]LogTemp: Env CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.17-21.08.16:696][596]LogTemp: BranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries --- GameBranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries
+[2018.09.17-21.08.16:696][596]LogTemp: IPP ERROR: Could not find provision directory 'C:\Users\??????\AppData\Local/Apple Computer/MobileDevice/Provisioning Profiles/'.
+[2018.09.17-21.11.01:014][418]LogSlate: Window '프로젝트 세팅' being destroyed
+[2018.09.17-21.11.01:020][418]LogSlate: Window '프로젝트 세팅' being destroyed
+[2018.09.17-21.11.02:687][523]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.11.39:701][969]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.11.47:627][349]BlueprintLog: New page: PlayerCharacter_BP 컴파일
+[2018.09.17-21.12.13:353][340]BlueprintLog: New page: PlayerCharacter_BP 컴파일
+[2018.09.17-21.13.06:271][302]BlueprintLog: New page: PlayerCharacter_BP 컴파일
+[2018.09.17-21.15.00:567][588]BlueprintLog: New page: Rifle_BP 컴파일
+[2018.09.17-21.15.06:081][804]BlueprintLog: New page: PlayerCharacter_BP 컴파일
+[2018.09.17-21.15.07:773][905]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-21.15.07:906][921]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-21.15.07:952][921]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-21.15.07:954][921]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 3:15:07)
+[2018.09.17-21.15.07:954][921]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-21.15.07:959][921]LogPlayLevel: PIE: StaticDuplicateObject took: (0.005516s)
+[2018.09.17-21.15.07:961][921]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-21.15.07:961][921]LogPlayLevel: PIE: World Init took: (0.002064s)
+[2018.09.17-21.15.07:961][921]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.007780s)
+[2018.09.17-21.15.08:051][921]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-21.15.08:074][921]LogInit: FAudioDevice initialized.
+[2018.09.17-21.15.08:135][921]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-21.15.08:137][921]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-06.15.08
+[2018.09.17-21.15.08:138][921]LogWorld: Bringing up level for play took: 0.001129
+[2018.09.17-21.15.08:145][921]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: -0.279
+[2018.09.17-21.17.37:920][664]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/NewMap' took 0.059
+[2018.09.17-21.17.37:925][664]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Character/PlayerCharacter_BP] ([1] browsable assets)...
+[2018.09.17-21.17.37:947][664]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Character/PlayerCharacter_BP.PlayerCharacter_BP]
+[2018.09.17-21.17.38:016][664]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Character/PlayerCharacter_BP]
+[2018.09.17-21.17.38:128][664]LogSavePackage: Save=59.06ms
+[2018.09.17-21.17.38:128][664]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/PlayerCharacter_BP_Auto3DA4BDE3D4D126F7AABCEFD87CA3765BB.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto3.uasset'
+[2018.09.17-21.17.38:131][664]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto3.uasset
+[2018.09.17-21.17.38:132][664]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Weapon/Rifle_BP] ([1] browsable assets)...
+[2018.09.17-21.17.38:153][664]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Weapon/Rifle_BP.Rifle_BP]
+[2018.09.17-21.17.38:153][664]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Weapon/Rifle_BP]
+[2018.09.17-21.17.38:153][664]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Weapon/Rifle_BP" FILE="../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto3.uasset" SILENT=false AUTOSAVING=true
+[2018.09.17-21.17.38:223][664]LogSavePackage: Save=48.77ms
+[2018.09.17-21.17.38:223][664]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_BP_Auto32BA6E0B74DE18A1E902F20935BAFF571.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto3.uasset'
+[2018.09.17-21.17.38:225][664]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto3.uasset
+[2018.09.17-21.17.38:225][664]LogFileHelpers: Auto-saving content packages took 0.304
+[2018.09.17-21.17.47:384][740]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.17.48:382][845]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.17.48:815][845]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2018.09.17-21.17.50:319][847]LogTemp: Executing iPhonePackager certificates Engine -bundlename com.YourCompany.FPSGame
+[2018.09.17-21.17.50:319][847]LogTemp: CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.17-21.17.50:319][847]LogTemp: Initial Dir: C:\Program Files\Epic Games\UE_4.19
+[2018.09.17-21.17.50:319][847]LogTemp: Env CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.17-21.17.50:326][847]LogTemp: BranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries --- GameBranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries
+[2018.09.17-21.17.50:378][847]LogTemp: IPP ERROR: Could not find provision directory 'C:\Users\??????\AppData\Local/Apple Computer/MobileDevice/Provisioning Profiles/'.
+[2018.09.17-21.17.57:558][462]LogSlate: Window '프로젝트 세팅' being destroyed
+[2018.09.17-21.17.57:563][462]LogSlate: Window '프로젝트 세팅' being destroyed
+[2018.09.17-21.18.01:987][912]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-21.18.02:098][925]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-21.18.02:154][925]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-21.18.02:167][925]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 3:18:02)
+[2018.09.17-21.18.02:168][925]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-21.18.02:210][925]LogPlayLevel: PIE: StaticDuplicateObject took: (0.041655s)
+[2018.09.17-21.18.02:217][925]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-21.18.02:226][925]LogPlayLevel: PIE: World Init took: (0.016062s)
+[2018.09.17-21.18.02:226][925]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.058603s)
+[2018.09.17-21.18.02:324][925]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-21.18.02:350][925]LogInit: FAudioDevice initialized.
+[2018.09.17-21.18.02:398][925]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-21.18.02:403][925]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-06.18.02
+[2018.09.17-21.18.02:405][925]LogWorld: Bringing up level for play took: 0.003552
+[2018.09.17-21.18.02:449][925]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.025
+[2018.09.17-21.24.37:179][983]LogHotReload: New module detected: UE4Editor-FPS_Game-9697.dll
+[2018.09.17-21.24.39:239][991]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-21.24.41:102][991]LogClass: WeaponData HotReload.
+[2018.09.17-21.24.41:248][991]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0575 seconds. Added 6 classes and 5 folders.
+[2018.09.17-21.24.41:258][991]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-21.24.43:620][991]LogContentBrowser: Native class hierarchy populated in 0.0453 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-21.24.43:633][991]Display: HotReload took  4.4s.
+[2018.09.17-21.24.52:303][ 17]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-21.24.54:601][171]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-21.24.54:725][185]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-21.24.54:773][185]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-21.24.54:773][185]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 3:24:54)
+[2018.09.17-21.24.54:773][185]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-21.24.54:776][185]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002872s)
+[2018.09.17-21.24.54:777][185]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-21.24.54:778][185]LogPlayLevel: PIE: World Init took: (0.001462s)
+[2018.09.17-21.24.54:778][185]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.004592s)
+[2018.09.17-21.24.55:125][185]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-21.24.55:176][185]LogInit: FAudioDevice initialized.
+[2018.09.17-21.24.55:288][185]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-21.24.55:290][185]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-06.24.55
+[2018.09.17-21.24.55:290][185]LogWorld: Bringing up level for play took: 0.001009
+[2018.09.17-21.24.55:293][185]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.869
+[2018.09.17-21.25.44:430][387]LogHotReload: New module detected: UE4Editor-FPS_Game-2267.dll
+[2018.09.17-21.25.46:117][393]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-21.25.46:262][393]LogClass: WeaponData HotReload.
+[2018.09.17-21.25.46:273][393]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0029 seconds. Added 6 classes and 5 folders.
+[2018.09.17-21.25.46:279][393]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-21.25.46:998][393]LogContentBrowser: Native class hierarchy populated in 0.0189 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-21.25.47:005][393]Display: HotReload took  0.9s.
+[2018.09.17-21.25.51:441][474]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-21.25.51:553][487]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-21.25.51:700][487]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-21.25.51:700][487]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 3:25:51)
+[2018.09.17-21.25.51:700][487]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-21.25.51:721][487]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002914s)
+[2018.09.17-21.25.51:721][487]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-21.25.51:722][487]LogPlayLevel: PIE: World Init took: (0.001041s)
+[2018.09.17-21.25.51:722][487]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.021749s)
+[2018.09.17-21.25.51:934][487]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-21.25.51:962][487]LogInit: FAudioDevice initialized.
+[2018.09.17-21.25.52:113][487]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-21.25.52:114][487]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-06.25.52
+[2018.09.17-21.25.52:114][487]LogWorld: Bringing up level for play took: 0.000666
+[2018.09.17-21.25.52:116][487]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: -0.308
+[2018.09.17-22.38.39:779][629]LogHotReload: New module detected: UE4Editor-FPS_Game-9423.dll
+[2018.09.17-22.38.41:994][632]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-22.38.47:591][632]LogClass: Could not find existing class Weapons in package /Script/FPS_Game for HotReload, assuming new class
+[2018.09.17-22.38.48:041][632]LogHotReload: Re-instancing Weapons after hot-reload.
+[2018.09.17-22.38.51:941][632]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0165 seconds. Added 6 classes and 5 folders.
+[2018.09.17-22.38.51:953][632]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-22.38.53:303][632]LogContentBrowser: Native class hierarchy populated in 0.0310 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-22.38.53:321][632]Display: HotReload took 11.3s.
+[2018.09.17-22.38.53:669][633]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.38.56:758][849]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.38.56:866][861]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-22.38.56:993][861]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-22.38.57:017][861]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 4:38:57)
+[2018.09.17-22.38.57:025][861]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-22.38.57:218][861]LogPlayLevel: PIE: StaticDuplicateObject took: (0.192896s)
+[2018.09.17-22.38.57:566][861]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-22.38.57:627][861]LogPlayLevel: PIE: World Init took: (0.405218s)
+[2018.09.17-22.38.57:627][861]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.609146s)
+[2018.09.17-22.38.57:965][861]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-22.38.58:033][861]LogInit: FAudioDevice initialized.
+[2018.09.17-22.38.58:167][861]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-22.38.58:310][861]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-07.38.58
+[2018.09.17-22.38.58:326][861]LogWorld: Bringing up level for play took: 0.093557
+[2018.09.17-22.38.58:680][861]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 2.256
+[2018.09.17-22.39.37:877][389]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/NewMap' took 0.086
+[2018.09.17-22.39.37:884][389]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Weapon/Rifle_BP] ([1] browsable assets)...
+[2018.09.17-22.39.37:918][389]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Weapon/Rifle_BP.Rifle_BP]
+[2018.09.17-22.39.37:918][389]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Weapon/Rifle_BP]
+[2018.09.17-22.39.37:919][389]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Weapon/Rifle_BP" FILE="../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto4.uasset" SILENT=false AUTOSAVING=true
+[2018.09.17-22.39.38:093][389]LogSavePackage: Save=123.55ms
+[2018.09.17-22.39.38:093][389]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_BP_Auto406B18EA742F5D6E4EC9EB693A5B2FA0C.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto4.uasset'
+[2018.09.17-22.39.38:098][389]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto4.uasset
+[2018.09.17-22.39.38:098][389]LogFileHelpers: Auto-saving content packages took 0.220
+[2018.09.17-22.39.51:790][431]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.43.49:736][296]LogHotReload: New module detected: UE4Editor-FPS_Game-1168.dll
+[2018.09.17-22.43.51:435][302]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-22.43.51:728][302]LogClass: Could not find existing class BaseCharacter in package /Script/FPS_Game for HotReload, assuming new class
+[2018.09.17-22.43.51:735][302]LogClass: Could not find existing class PlayerCharacter in package /Script/FPS_Game for HotReload, assuming new class
+[2018.09.17-22.43.51:735][302]LogClass: Function GetWeapon is new.
+[2018.09.17-22.43.51:736][302]LogClass: Function IsFire is new.
+[2018.09.17-22.43.51:736][302]LogClass: Function IsJumping is new.
+[2018.09.17-22.43.51:736][302]LogClass: Function IsSprint is new.
+[2018.09.17-22.43.51:736][302]LogClass: Function IsTargeting is new.
+[2018.09.17-22.43.51:742][302]LogClass: WeaponData HotReload.
+[2018.09.17-22.43.51:843][302]LogHotReload: Re-instancing BaseCharacter after hot-reload.
+[2018.09.17-22.43.52:019][302]LogHotReload: Re-instancing PlayerCharacter after hot-reload.
+[2018.09.17-22.43.53:023][302]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0026 seconds. Added 6 classes and 5 folders.
+[2018.09.17-22.43.53:029][302]Display: HotReload successful (0 functions remapped  1 scriptstructs remapped)
+[2018.09.17-22.43.53:722][302]LogContentBrowser: Native class hierarchy populated in 0.0376 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-22.43.53:736][302]Display: HotReload took  2.3s.
+[2018.09.17-22.45.45:036][769]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.45.45:137][781]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-22.45.45:186][781]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-22.45.45:187][781]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 4:45:45)
+[2018.09.17-22.45.45:187][781]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-22.45.45:198][781]LogPlayLevel: PIE: StaticDuplicateObject took: (0.011452s)
+[2018.09.17-22.45.45:199][781]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-22.45.45:212][781]LogPlayLevel: PIE: World Init took: (0.013441s)
+[2018.09.17-22.45.45:212][781]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.025150s)
+[2018.09.17-22.45.45:567][781]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-22.45.45:606][781]LogInit: FAudioDevice initialized.
+[2018.09.17-22.45.45:653][781]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-22.45.45:655][781]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-07.45.45
+[2018.09.17-22.45.45:655][781]LogWorld: Bringing up level for play took: 0.000744
+[2018.09.17-22.45.45:657][781]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 1.233
+[2018.09.17-22.45.55:058][618]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.45.58:770][827]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.46.00:983][955]BlueprintLog: New page: PlayerCharacter_BP 컴파일
+[2018.09.17-22.46.33:136][767]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2018.09.17-22.47.32:748][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 GrenadeLauncher_ProjectileLoop_Stereo 웨이브 빌드중...
+[2018.09.17-22.47.32:928][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 GrenadeLauncher_ProjectileLoop 웨이브 빌드중...
+[2018.09.17-22.47.33:093][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars05 웨이브 빌드중...
+[2018.09.17-22.47.33:173][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars04 웨이브 빌드중...
+[2018.09.17-22.47.33:296][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars03 웨이브 빌드중...
+[2018.09.17-22.47.33:425][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars02 웨이브 빌드중...
+[2018.09.17-22.47.33:549][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars01 웨이브 빌드중...
+[2018.09.17-22.47.33:708][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars09 웨이브 빌드중...
+[2018.09.17-22.47.33:756][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars08 웨이브 빌드중...
+[2018.09.17-22.47.33:825][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars07 웨이브 빌드중...
+[2018.09.17-22.47.33:899][381]LogAudioDerivedData: Display: OGG 압축 오디오 포맷 MetalCreak_Pillars10 웨이브 빌드중...
+[2018.09.17-22.47.44:848][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.44:848][ 72]LogLinker: Warning: ../../../../../../FPS_Game/Content/Sounds/FoleyFlesh/Mono/FoleyFlesh_Gib_Cue.uasset 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.44:886][ 72]LoadErrors: Error: /Game/Sounds/FoleyFlesh/Mono/FoleyFlesh_Gib_Cue : 애셋에 대한 파일을 찾을 수 없습니다. /Script/ShooterGame
+[2018.09.17-22.47.44:887][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.44:887][ 72]LogLinker: Warning: ../../../../../../FPS_Game/Content/Sounds/FoleyFlesh/Mono/FoleyFlesh_Gib_Cue.uasset 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.44:891][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.44:891][ 72]LogLinker: Warning: NULL 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.44:891][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.44:891][ 72]LogLinker: Warning: NULL 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:690][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:690][ 72]LogLinker: Warning: ../../../../../../FPS_Game/Content/Sounds/Weapon_GrenadeLauncher/Mono/GrenadeLauncher_Shot_Cue.uasset 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:690][ 72]LoadErrors: Error: /Game/Sounds/Weapon_GrenadeLauncher/Mono/GrenadeLauncher_Shot_Cue : 애셋에 대한 파일을 찾을 수 없습니다. /Script/ShooterGame
+[2018.09.17-22.47.45:691][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:691][ 72]LogLinker: Warning: ../../../../../../FPS_Game/Content/Sounds/Weapon_GrenadeLauncher/Mono/GrenadeLauncher_Shot_Cue.uasset 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:693][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:693][ 72]LogLinker: Warning: NULL 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:693][ 72]LogLinker: Warning: '/Script/ShooterGame' 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.45:694][ 72]LogLinker: Warning: NULL 로드중 '/Script/ShooterGame' 애셋에 대한 파일을 찾을 수 없습니다.
+[2018.09.17-22.47.59:857][972]BlueprintLog: New page: Rifle_BP 컴파일
+[2018.09.17-22.48.01:743][997]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Weapon/Rifle_BP" FILE="../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset" SILENT=true
+[2018.09.17-22.48.01:826][997]LogSavePackage: Save=42.70ms
+[2018.09.17-22.48.01:826][997]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_BP170FC8084C64C0E185920480410FD474.tmp' to '../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset'
+[2018.09.17-22.48.01:834][997]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset
+[2018.09.17-22.48.04:350][159]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.48.05:240][242]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.48.05:357][256]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-22.48.05:429][256]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-22.48.05:429][256]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 4:48:05)
+[2018.09.17-22.48.05:429][256]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-22.48.05:432][256]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002636s)
+[2018.09.17-22.48.05:433][256]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-22.48.05:433][256]LogPlayLevel: PIE: World Init took: (0.001103s)
+[2018.09.17-22.48.05:433][256]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.003943s)
+[2018.09.17-22.48.05:563][256]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-22.48.05:584][256]LogInit: FAudioDevice initialized.
+[2018.09.17-22.48.05:624][256]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-22.48.05:626][256]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-07.48.05
+[2018.09.17-22.48.05:626][256]LogWorld: Bringing up level for play took: 0.000687
+[2018.09.17-22.48.05:628][256]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 1.204
+[2018.09.17-22.48.16:509][461]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.48.17:372][546]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.48.18:435][546]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2018.09.17-22.48.20:213][547]LogTemp: Executing iPhonePackager certificates Engine -bundlename com.YourCompany.FPSGame
+[2018.09.17-22.48.20:213][547]LogTemp: CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.17-22.48.20:213][547]LogTemp: Initial Dir: C:\Program Files\Epic Games\UE_4.19
+[2018.09.17-22.48.20:213][547]LogTemp: Env CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.17-22.48.20:349][548]LogTemp: BranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries --- GameBranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries
+[2018.09.17-22.48.20:349][548]LogTemp: IPP ERROR: Could not find provision directory 'C:\Users\??????\AppData\Local/Apple Computer/MobileDevice/Provisioning Profiles/'.
+[2018.09.17-22.48.36:160][907]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.48.36:243][917]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-22.48.36:288][917]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-22.48.36:288][917]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 4:48:36)
+[2018.09.17-22.48.36:288][917]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-22.48.36:291][917]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002668s)
+[2018.09.17-22.48.36:292][917]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-22.48.36:292][917]LogPlayLevel: PIE: World Init took: (0.000934s)
+[2018.09.17-22.48.36:292][917]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.003801s)
+[2018.09.17-22.48.36:389][917]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-22.48.36:411][917]LogInit: FAudioDevice initialized.
+[2018.09.17-22.48.36:446][917]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-22.48.36:447][917]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-07.48.36
+[2018.09.17-22.48.36:447][917]LogWorld: Bringing up level for play took: 0.000704
+[2018.09.17-22.48.36:449][917]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.025
+[2018.09.17-22.48.49:671][306]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.48.58:709][890]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.49.01:930][ 38]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_11:PersistentLevel.Actor_1.DebugSkelMeshComponent_1) Already registered. Aborting.
+[2018.09.17-22.49.03:431][ 38]LogContentBrowser: Verbose: The majority of assets in the view are of type: AnimSequence
+[2018.09.17-22.49.22:317][151]BlueprintLog: New page: Rifle_BP 컴파일
+[2018.09.17-22.49.24:256][236]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.49.24:388][250]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-22.49.24:432][250]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-22.49.24:432][250]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 4:49:24)
+[2018.09.17-22.49.24:433][250]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-22.49.24:440][250]LogPlayLevel: PIE: StaticDuplicateObject took: (0.007008s)
+[2018.09.17-22.49.24:441][250]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-22.49.24:441][250]LogPlayLevel: PIE: World Init took: (0.001049s)
+[2018.09.17-22.49.24:441][250]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.008276s)
+[2018.09.17-22.49.24:537][250]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-22.49.24:559][250]LogInit: FAudioDevice initialized.
+[2018.09.17-22.49.24:592][250]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-22.49.24:594][250]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-07.49.24
+[2018.09.17-22.49.24:594][250]LogWorld: Bringing up level for play took: 0.000689
+[2018.09.17-22.49.24:596][250]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.172
+[2018.09.17-22.49.36:510][398]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.49.40:613][721]LogSlate: Window '프로젝트 세팅' being destroyed
+[2018.09.17-22.49.40:619][721]LogSlate: Window '프로젝트 세팅' being destroyed
+[2018.09.17-22.50.24:550][923]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/NewMap' took 0.065
+[2018.09.17-22.50.24:557][923]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Character/PlayerCharacter_BP] ([1] browsable assets)...
+[2018.09.17-22.50.24:579][923]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Character/PlayerCharacter_BP.PlayerCharacter_BP]
+[2018.09.17-22.50.24:579][923]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Character/PlayerCharacter_BP]
+[2018.09.17-22.50.24:638][923]LogSavePackage: Save=29.46ms
+[2018.09.17-22.50.24:638][923]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/PlayerCharacter_BP_Auto5ABD5AE3A45557D6A23404F998BC74B7D.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto5.uasset'
+[2018.09.17-22.50.24:640][923]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Character/PlayerCharacter_BP_Auto5.uasset
+[2018.09.17-22.50.24:641][923]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Weapon/Rifle_BP] ([1] browsable assets)...
+[2018.09.17-22.50.24:661][923]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Weapon/Rifle_BP.Rifle_BP]
+[2018.09.17-22.50.24:661][923]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Weapon/Rifle_BP]
+[2018.09.17-22.50.24:661][923]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Weapon/Rifle_BP" FILE="../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto5.uasset" SILENT=false AUTOSAVING=true
+[2018.09.17-22.50.24:700][923]LogSavePackage: Save=24.66ms
+[2018.09.17-22.50.24:700][923]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_BP_Auto50C648B9547FC0C5F58F5259203B00164.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto5.uasset'
+[2018.09.17-22.50.24:702][923]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto5.uasset
+[2018.09.17-22.50.24:702][923]LogFileHelpers: Auto-saving content packages took 0.151
+[2018.09.17-22.52.06:766][230]LogHotReload: New module detected: UE4Editor-FPS_Game-376.dll
+[2018.09.17-22.52.08:791][237]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-22.52.08:996][237]LogClass: WeaponData HotReload.
+[2018.09.17-22.52.09:007][237]LogHotReload: Re-instancing Weapons after hot-reload.
+[2018.09.17-22.52.10:123][237]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0138 seconds. Added 6 classes and 5 folders.
+[2018.09.17-22.52.10:129][237]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-22.52.10:884][237]LogContentBrowser: Native class hierarchy populated in 0.0252 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-22.52.10:904][237]Display: HotReload took  2.1s.
+[2018.09.17-22.52.28:212][464]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.52.29:555][473]LogSlate: Window '콘텐츠 저장' being destroyed
+[2018.09.17-22.52.29:570][473]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.17-22.52.29:580][473]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Character/PlayerCharacter_BP" FILE="../../../../../../FPS_Game/Content/Bluprints/Character/PlayerCharacter_BP.uasset" SILENT=true
+[2018.09.17-22.52.29:661][473]LogSavePackage: Save=51.33ms
+[2018.09.17-22.52.29:661][473]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/PlayerCharacter_BP0564D34942096E3D4FB598ABE80917C0.tmp' to '../../../../../../FPS_Game/Content/Bluprints/Character/PlayerCharacter_BP.uasset'
+[2018.09.17-22.52.29:676][473]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Content/Bluprints/Character/PlayerCharacter_BP.uasset
+[2018.09.17-22.52.29:701][473]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Weapon/Rifle_BP" FILE="../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset" SILENT=true
+[2018.09.17-22.52.29:781][473]LogSavePackage: Save=64.66ms
+[2018.09.17-22.52.29:781][473]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_BP1C35426F41FAAFA022EA60B16D1BA30C.tmp' to '../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset'
+[2018.09.17-22.52.29:789][473]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset
+[2018.09.17-22.52.29:797][473]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Characters/HeroFPP/HeroFPP" FILE="../../../../../../FPS_Game/Content/Characters/HeroFPP/HeroFPP.uasset" SILENT=true
+[2018.09.17-22.52.30:235][473]LogSavePackage: Save=411.89ms
+[2018.09.17-22.52.30:236][473]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/HeroFPP79E066B641121EDB216FF3AC9EF2A6C3.tmp' to '../../../../../../FPS_Game/Content/Characters/HeroFPP/HeroFPP.uasset'
+[2018.09.17-22.52.30:243][473]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Content/Characters/HeroFPP/HeroFPP.uasset
+[2018.09.17-22.52.30:872][521]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-22.52.30:983][532]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-22.52.31:029][532]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-22.52.31:030][532]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 4:52:31)
+[2018.09.17-22.52.31:043][532]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-22.52.31:046][532]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002810s)
+[2018.09.17-22.52.31:047][532]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-22.52.31:047][532]LogPlayLevel: PIE: World Init took: (0.001086s)
+[2018.09.17-22.52.31:047][532]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.004138s)
+[2018.09.17-22.52.31:224][532]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-22.52.31:258][532]LogInit: FAudioDevice initialized.
+[2018.09.17-22.52.31:297][532]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-22.52.31:298][532]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-07.52.31
+[2018.09.17-22.52.31:299][532]LogWorld: Bringing up level for play took: 0.000735
+[2018.09.17-22.52.31:302][532]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.878
+[2018.09.17-23.07.37:317][756]LogHotReload: New module detected: UE4Editor-FPS_Game-1308.dll
+[2018.09.17-23.07.39:338][763]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-23.07.39:470][763]LogClass: WeaponData HotReload.
+[2018.09.17-23.07.39:491][763]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0026 seconds. Added 6 classes and 5 folders.
+[2018.09.17-23.07.39:497][763]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-23.07.40:437][763]LogContentBrowser: Native class hierarchy populated in 0.0189 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-23.07.40:443][763]Display: HotReload took  1.1s.
+[2018.09.17-23.09.00:785][  4]LogHotReload: New module detected: UE4Editor-FPS_Game-952.dll
+[2018.09.17-23.09.02:140][  9]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-23.09.02:391][  9]LogClass: WeaponData HotReload.
+[2018.09.17-23.09.02:402][  9]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0027 seconds. Added 6 classes and 5 folders.
+[2018.09.17-23.09.02:408][  9]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-23.09.03:414][  9]LogContentBrowser: Native class hierarchy populated in 0.0187 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-23.09.03:419][  9]Display: HotReload took  1.3s.
+[2018.09.17-23.09.07:881][150]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-23.09.08:508][212]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-23.09.08:564][212]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-23.09.08:565][212]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 5:09:08)
+[2018.09.17-23.09.08:565][212]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-23.09.08:581][212]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010064s)
+[2018.09.17-23.09.08:582][212]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-23.09.08:582][212]LogPlayLevel: PIE: World Init took: (0.001417s)
+[2018.09.17-23.09.08:582][212]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.017512s)
+[2018.09.17-23.09.08:749][212]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-23.09.08:828][212]LogInit: FAudioDevice initialized.
+[2018.09.17-23.09.08:973][212]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-23.09.08:975][212]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-08.09.08
+[2018.09.17-23.09.08:976][212]LogWorld: Bringing up level for play took: 0.000825
+[2018.09.17-23.09.08:978][212]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.554
+[2018.09.17-23.09.52:921][685]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-23.10.01:092][461]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_13:PersistentLevel.Actor_2.DebugSkelMeshComponent_3) Already registered. Aborting.
+[2018.09.17-23.10.10:090][881]BlueprintLog: New page: Rifle_BP 컴파일
+[2018.09.17-23.10.12:418][982]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-23.10.12:518][994]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-23.10.12:562][994]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-23.10.12:562][994]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 5:10:12)
+[2018.09.17-23.10.12:562][994]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-23.10.12:565][994]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002695s)
+[2018.09.17-23.10.12:566][994]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-23.10.12:566][994]LogPlayLevel: PIE: World Init took: (0.000898s)
+[2018.09.17-23.10.12:566][994]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.003849s)
+[2018.09.17-23.10.12:675][994]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-23.10.12:720][994]LogInit: FAudioDevice initialized.
+[2018.09.17-23.10.12:766][994]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-23.10.12:768][994]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-08.10.12
+[2018.09.17-23.10.12:768][994]LogWorld: Bringing up level for play took: 0.000668
+[2018.09.17-23.10.12:770][994]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 0.346
+[2018.09.17-23.10.56:983][267]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/NewMap' took 0.251
+[2018.09.17-23.10.56:986][267]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Bluprints/Weapon/Rifle_BP] ([1] browsable assets)...
+[2018.09.17-23.10.57:019][267]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Bluprints/Weapon/Rifle_BP.Rifle_BP]
+[2018.09.17-23.10.57:019][267]OBJ SavePackage: Finished generating thumbnails for package [/Game/Bluprints/Weapon/Rifle_BP]
+[2018.09.17-23.10.57:019][267]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Weapon/Rifle_BP" FILE="../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto6.uasset" SILENT=false AUTOSAVING=true
+[2018.09.17-23.10.57:195][267]LogSavePackage: Save=136.53ms
+[2018.09.17-23.10.57:195][267]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_BP_Auto6A4DDF5DC455CE27EAAABAE92E49C28D2.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto6.uasset'
+[2018.09.17-23.10.57:197][267]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Bluprints/Weapon/Rifle_BP_Auto6.uasset
+[2018.09.17-23.10.57:198][267]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Weapons/Rifle] ([1] browsable assets)...
+[2018.09.17-23.10.57:220][267]OBJ SavePackage:     Rendered thumbnail for [SkeletalMesh /Game/Weapons/Rifle.Rifle]
+[2018.09.17-23.10.57:220][267]OBJ SavePackage: Finished generating thumbnails for package [/Game/Weapons/Rifle]
+[2018.09.17-23.10.57:220][267]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Weapons/Rifle" FILE="../../../../../../FPS_Game/Saved/Autosaves/Game/Weapons/Rifle_Auto6.uasset" SILENT=false AUTOSAVING=true
+[2018.09.17-23.10.57:570][267]LogSavePackage: Save=313.99ms
+[2018.09.17-23.10.57:570][267]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_Auto61E6115D94D71613A7CEE5CACE3E78BE8.tmp' to '../../../../../../FPS_Game/Saved/Autosaves/Game/Weapons/Rifle_Auto6.uasset'
+[2018.09.17-23.10.57:572][267]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Saved/Autosaves/Game/Weapons/Rifle_Auto6.uasset
+[2018.09.17-23.10.57:573][267]LogFileHelpers: Auto-saving content packages took 0.588
+[2018.09.17-23.34.50:256][459]LogHotReload: New module detected: UE4Editor-FPS_Game-7747.dll
+[2018.09.17-23.34.52:267][466]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.17-23.35.00:551][466]LogClass: WeaponData HotReload.
+[2018.09.17-23.35.00:860][466]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0450 seconds. Added 6 classes and 5 folders.
+[2018.09.17-23.35.00:882][466]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.17-23.35.06:369][466]LogContentBrowser: Native class hierarchy populated in 0.4357 seconds. Added 2460 classes and 567 folders.
+[2018.09.17-23.35.06:429][466]Display: HotReload took 14.2s.
+[2018.09.17-23.35.11:738][596]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.17-23.35.11:841][607]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.17-23.35.12:054][607]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.17-23.35.12:075][607]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 5:35:12)
+[2018.09.17-23.35.12:083][607]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.17-23.35.12:194][607]LogPlayLevel: PIE: StaticDuplicateObject took: (0.110540s)
+[2018.09.17-23.35.12:315][607]LogAIModule: Creating AISystem for world NewMap
+[2018.09.17-23.35.12:334][607]LogPlayLevel: PIE: World Init took: (0.140694s)
+[2018.09.17-23.35.12:335][607]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.253600s)
+[2018.09.17-23.35.14:813][607]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.17-23.35.14:895][607]LogInit: FAudioDevice initialized.
+[2018.09.17-23.35.15:025][607]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.17-23.35.15:086][607]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-08.35.15
+[2018.09.17-23.35.15:091][607]LogWorld: Bringing up level for play took: 0.036248
+[2018.09.17-23.35.15:205][607]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: 2.774
+[2018.09.17-23.35.42:353][  1]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2018.09.17-23.35.43:107][  2]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2018.09.18-00.11.42:071][541]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.18-00.11.43:434][639]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.18-00.11.44:905][639]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2018.09.18-00.11.46:681][640]LogTemp: Executing iPhonePackager certificates Engine -bundlename com.YourCompany.FPSGame
+[2018.09.18-00.11.46:681][640]LogTemp: CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.18-00.11.46:681][640]LogTemp: Initial Dir: C:\Program Files\Epic Games\UE_4.19
+[2018.09.18-00.11.46:682][640]LogTemp: Env CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2018.09.18-00.11.46:682][640]LogTemp: BranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries --- GameBranchPath = DESKTOP-5A88OB5/C/Program Files/Epic Games/UE_4.19/Engine/Binaries
+[2018.09.18-00.11.46:682][640]LogTemp: IPP ERROR: Could not find provision directory 'C:\Users\??????\AppData\Local/Apple Computer/MobileDevice/Provisioning Profiles/'.
+[2018.09.18-00.25.28:141][971]LogSlate: Window '채널 편집' being destroyed
+[2018.09.18-00.25.28:730][  1]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.18-00.27.13:890][352]LogHotReload: New module detected: UE4Editor-FPS_Game-5820.dll
+[2018.09.18-00.27.14:981][357]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.18-00.27.21:924][357]LogClass: WeaponData HotReload.
+[2018.09.18-00.27.22:101][357]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0449 seconds. Added 6 classes and 5 folders.
+[2018.09.18-00.27.22:115][357]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
+[2018.09.18-00.27.24:343][357]LogContentBrowser: Native class hierarchy populated in 0.0245 seconds. Added 2460 classes and 567 folders.
+[2018.09.18-00.27.24:359][357]Display: HotReload took  9.4s.
+[2018.09.18-00.36.59:363][ 82]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2018.09.18-00.37.07:579][311]LogHotReload: New module detected: UE4Editor-FPS_Game-7345.dll
+[2018.09.18-00.37.09:498][369]LogHotReload: Starting Hot-Reload from IDE
+[2018.09.18-00.37.09:498][369]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2018.09.18-00.37.10:387][369]LogClass: Could not find existing class PlayerCharacter in package /Script/FPS_Game for HotReload, assuming new class
+[2018.09.18-00.37.10:395][369]LogClass: Function GetWeapon is new.
+[2018.09.18-00.37.10:397][369]LogClass: Function IsFire is new.
+[2018.09.18-00.37.10:397][369]LogClass: Function IsJumping is new.
+[2018.09.18-00.37.10:397][369]LogClass: Function IsSprint is new.
+[2018.09.18-00.37.10:397][369]LogClass: Function IsTargeting is new.
+[2018.09.18-00.37.10:403][369]LogClass: WeaponData HotReload.
+[2018.09.18-00.37.10:678][369]LogHotReload: Re-instancing PlayerCharacter after hot-reload.
+[2018.09.18-00.37.12:659][369]LogContentBrowser: Native class hierarchy updated for 'FPS_Game' in 0.0026 seconds. Added 6 classes and 5 folders.
+[2018.09.18-00.37.12:666][369]Display: HotReload successful (0 functions remapped  1 scriptstructs remapped)
+[2018.09.18-00.37.13:707][369]LogContentBrowser: Native class hierarchy populated in 0.0179 seconds. Added 2460 classes and 567 folders.
+[2018.09.18-00.37.13:717][369]Display: HotReload took  4.2s.
+[2018.09.18-00.37.18:221][611]LogClass: Warning: In asset 'None', there is an enum property of type 'ECollisionEnabled' with an invalid value of ''
+[2018.09.18-00.37.18:221][611]LogClass: Warning: In asset 'None', there is an enum property of type 'ECollisionEnabled' with an invalid value of ''
+[2018.09.18-00.37.18:221][611]LogClass: Warning: In asset 'None', there is an enum property of type 'ECollisionEnabled' with an invalid value of ''
+[2018.09.18-00.37.18:221][611]LogClass: Warning: In asset 'None', there is an enum property of type 'ECollisionEnabled' with an invalid value of ''
+[2018.09.18-00.37.45:769][ 12]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.18-00.37.51:665][309]LogSlate: Window '콘텐츠 저장' being destroyed
+[2018.09.18-00.37.51:686][309]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Bluprints/Weapon/Rifle_BP" FILE="../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset" SILENT=true
+[2018.09.18-00.37.51:877][309]LogSavePackage: Save=122.33ms
+[2018.09.18-00.37.51:888][309]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/Rifle_BP00D80FD645521AD97F1B848571F533EE.tmp' to '../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset'
+[2018.09.18-00.37.51:923][309]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Content/Bluprints/Weapon/Rifle_BP.uasset
+[2018.09.18-00.37.51:923][309]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Weapons/Rifle" FILE="../../../../../../FPS_Game/Content/Weapons/Rifle.uasset" SILENT=true
+[2018.09.18-00.37.52:244][309]LogSavePackage: Save=285.61ms
+[2018.09.18-00.37.52:245][309]LogSavePackage: Moving '../../../../../../FPS_Game/Saved/RifleC3A3E967442AF2F793EAAFBE33F0D68C.tmp' to '../../../../../../FPS_Game/Content/Weapons/Rifle.uasset'
+[2018.09.18-00.37.52:252][309]LogSavePackage: Display: Finished SavePackage ../../../../../../FPS_Game/Content/Weapons/Rifle.uasset
+[2018.09.18-00.37.53:076][309]Cmd: MAP LOAD FILE="../../../../../../FPS_Game/Content/NewMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2018.09.18-00.37.53:078][309]LightingResults: New page: 라이팅 빌드
+[2018.09.18-00.37.54:172][309]LoadErrors: New page: 맵 로드중: NewMap.umap
+[2018.09.18-00.37.54:294][309]MapCheck: New page: 맵 체크
+[2018.09.18-00.37.54:294][309]LightingResults: New page: 라이팅 빌드
+[2018.09.18-00.37.56:252][309]LogAIModule: Creating AISystem for world NewMap
+[2018.09.18-00.37.56:784][309]LogEditorServer: Finished looking for orphan Actors (0.001 secs)
+[2018.09.18-00.37.57:087][309]Cmd: MAP CHECKDEP NOCLEARLOG
+[2018.09.18-00.37.57:817][309]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 710.028ms.
+[2018.09.18-00.37.57:820][309]LogFileHelpers: Loading map 'NewMap' took 5.566
+[2018.09.18-00.38.00:609][582]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.18-00.38.05:791][ 81]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.18-00.38.05:914][ 93]LogTemp: Repeating last play command: 선택된 뷰포트
+[2018.09.18-00.38.05:971][ 93]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.09.18-00.38.05:972][ 93]PIE: New page: PIE 세션: NewMap (2018. 9. 18. 오후 6:38:05)
+[2018.09.18-00.38.05:973][ 93]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_NewMap
+[2018.09.18-00.38.05:984][ 93]LogPlayLevel: PIE: StaticDuplicateObject took: (0.011214s)
+[2018.09.18-00.38.05:986][ 93]LogAIModule: Creating AISystem for world NewMap
+[2018.09.18-00.38.05:987][ 93]LogPlayLevel: PIE: World Init took: (0.001992s)
+[2018.09.18-00.38.05:987][ 93]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/NewMap.NewMap to /Game/UEDPIE_0_NewMap.NewMap (0.013454s)
+[2018.09.18-00.38.06:105][ 93]LogInit: XAudio2 using 'C27F591(NVIDIA High Definition Audio)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.09.18-00.38.06:205][ 93]LogInit: FAudioDevice initialized.
+[2018.09.18-00.38.06:242][ 93]LogLoad: Game class is 'FPS_GameGameModeBase_BP_C'
+[2018.09.18-00.38.06:256][ 93]LogWorld: Bringing World /Game/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2018.09.18-09.38.06
+[2018.09.18-00.38.06:256][ 93]LogWorld: Bringing up level for play took: 0.000907
+[2018.09.18-00.38.06:262][ 93]PIE: /Game/UEDPIE_0_NewMap 에 대한 에디터에서 플레이 시작 시간: -0.162
+[2018.09.18-00.38.35:884][ 93]LogWindows: Error: === Critical error: ===
+[2018.09.18-00.38.35:901][ 93]LogWindows: Error: 
+[2018.09.18-00.38.35:902][ 93]LogWindows: Error: Fatal error!
+[2018.09.18-00.38.35:902][ 93]LogWindows: Error: 
+[2018.09.18-00.38.35:902][ 93]LogWindows: Error: Unhandled Exception: EXCEPTION_ACCESS_VIOLATION reading address 0x00000418
+[2018.09.18-00.38.35:902][ 93]LogWindows: Error: 
+[2018.09.18-00.38.35:902][ 93]LogWindows: Error: [Callstack] 0x00000000CB0B960A UE4Editor-FPS_Game-7345.dll!AWeapons::Tick() [c:\fps_game\source\fps_game\private\weapon\weapons.cpp:99]
+[2018.09.18-00.38.35:902][ 93]LogWindows: Error: [Callstack] 0x00000000BA59E9C7 UE4Editor-Engine.dll!AActor::TickActor() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\engine\private\actor.cpp:870]
+[2018.09.18-00.38.35:902][ 93]LogWindows: Error: [Callstack] 0x00000000BA5500E4 UE4Editor-Engine.dll!FActorTickFunction::ExecuteTick() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\engine\private\actor.cpp:134]
+[2018.09.18-00.38.35:903][ 93]LogWindows: Error: [Callstack] 0x00000000BB6570BB UE4Editor-Engine.dll!FTickFunctionTask::DoTask() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\engine\private\ticktaskmanager.cpp:273]
+[2018.09.18-00.38.35:903][ 93]LogWindows: Error: [Callstack] 0x00000000BB65C793 UE4Editor-Engine.dll!TGraphTask<FTickFunctionTask>::ExecuteTask() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\core\public\async\taskgraphinterfaces.h:829]
+[2018.09.18-00.38.35:903][ 93]LogWindows: Error: [Callstack] 0x00000000CC44B713 UE4Editor-Core.dll!FNamedTaskThread::ProcessTasksNamedThread() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\core\private\async\taskgraph.cpp:665]
+[2018.09.18-00.38.35:903][ 93]LogWindows: Error: [Callstack] 0x00000000CC44BD3A UE4Editor-Core.dll!FNamedTaskThread::ProcessTasksUntilQuit() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\core\private\async\taskgraph.cpp:574]
+[2018.09.18-00.38.35:903][ 93]LogWindows: Error: [Callstack] 0x00000000CC46ECFE UE4Editor-Core.dll!FTaskGraphImplementation::WaitUntilTasksComplete() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\core\private\async\taskgraph.cpp:1355]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000BB67D771 UE4Editor-Engine.dll!FTickTaskSequencer::ReleaseTickGroup() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\engine\private\ticktaskmanager.cpp:542]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000BB683292 UE4Editor-Engine.dll!FTickTaskManager::RunTickGroup() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\engine\private\ticktaskmanager.cpp:1449]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000BAEDC304 UE4Editor-Engine.dll!UWorld::RunTickGroup() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\engine\private\leveltick.cpp:770]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000BAEE756B UE4Editor-Engine.dll!UWorld::Tick() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\engine\private\leveltick.cpp:1429]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000B81FD781 UE4Editor-UnrealEd.dll!UEditorEngine::Tick() [d:\build\++ue4+release-4.19+compile\sync\engine\source\editor\unrealed\private\editorengine.cpp:1693]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000B8A99626 UE4Editor-UnrealEd.dll!UUnrealEdEngine::Tick() [d:\build\++ue4+release-4.19+compile\sync\engine\source\editor\unrealed\private\unrealedengine.cpp:401]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000AF275EAC UE4Editor.exe!FEngineLoop::Tick() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\launch\private\launchengineloop.cpp:3339]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000AF286BD0 UE4Editor.exe!GuardedMain() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\launch\private\launch.cpp:166]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000AF286C4A UE4Editor.exe!GuardedMainWrapper() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\launch\private\windows\launchwindows.cpp:144]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000AF294177 UE4Editor.exe!WinMain() [d:\build\++ue4+release-4.19+compile\sync\engine\source\runtime\launch\private\windows\launchwindows.cpp:223]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000AF295B87 UE4Editor.exe!__scrt_common_main_seh() [f:\dd\vctools\crt\vcstartup\src\startup\exe_common.inl:253]
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000FEC03034 KERNEL32.DLL!UnknownFunction []
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000FED51461 ntdll.dll!UnknownFunction []
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: [Callstack] 0x00000000FED51461 ntdll.dll!UnknownFunction []
+[2018.09.18-00.38.36:461][ 93]LogWindows: Error: 
+[2018.09.18-00.38.38:900][ 93]LogExit: Executing StaticShutdownAfterError
+[2018.09.18-00.38.49:854][ 93]LogWindows: FPlatformMisc::RequestExit(1)
+[2018.09.18-00.38.49:873][ 93]Log file closed, 09/18/18 09:38:49
