@@ -84,6 +84,8 @@ public:
 		bool IsSprint() const;
 	UFUNCTION(BlueprintCallable, Category = "PlayerState")
 		bool IsFire() const;
+	UFUNCTION(BlueprintCallable, Category = "PlayerState")
+		float GetPlayerHP();
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		class AWeapons* GetWeapon() const;
@@ -92,7 +94,9 @@ public:
 
 	void OnCameraUpdate(const FVector& CameraLocation, const FRotator& CameraRotation);
 	void CheckForWeaponInView(FVector CameraLocation, FVector CameraFowardVector, FRotator CameraRotator);
+	float GetDefaultSpeed();
 
+	
 
 	FName GetWeaponAttachPoint() const;
 	USkeletalMeshComponent* GetOwenerMesh() const;

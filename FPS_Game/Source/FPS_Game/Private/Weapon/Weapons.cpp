@@ -96,8 +96,8 @@ void AWeapons::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	ARPlayerController* cont = Cast<ARPlayerController>(WeaponOwner->GetController());
-	cont->OnScreenMessageAmmo(LoadedAmmo);
+	/*ARPlayerController* cont = Cast<ARPlayerController>(WeaponOwner->GetController());
+	cont->OnScreenMessageAmmo(LoadedAmmo);*/
 }
 
 void AWeapons::OnEnterInventory(APlayerCharacter* NewOwner)
@@ -228,7 +228,7 @@ void AWeapons::OnEquipFinished()
 
 	if (WeaponOwner)
 	{
-		if (LoadedAmmo <= 0 && CanReload())
+		if (RemainingAmmo <= 0 && CanReload())
 		{
 			StartReload();
 		}
@@ -542,7 +542,7 @@ bool AWeapons::CanFire() const
 
 bool AWeapons::CanReload() const
 {
-	bool bAmmoCheck = (LoadedAmmo < WeaponConfig.AmmoPerClip);
+	bool bAmmoCheck = (LoadedAmmo < WeaponConfig.AmmoPerClip) && (RemainingAmmo > 0);
 	bool bWeaponStateCheck = ((CurrentWeaponState == EWeaponState::Idle) || (CurrentWeaponState == EWeaponState::Firing));
 
 	return ((bAmmoCheck == true) && (bWeaponStateCheck == true));
@@ -556,4 +556,14 @@ int32 AWeapons::GetCurrentAmmo() const
 USkeletalMeshComponent* AWeapons::GetWeaponMesh() const
 {
 	return WeaponMesh;
+}
+
+int32 AWeapons::GetLoadedAmmo()
+{
+	return LoadedAmmo;
+}
+
+int32 AWeapons::GetRemainingAmmo()
+{
+	return RemainingAmmo;
 }

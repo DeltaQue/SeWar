@@ -188,6 +188,12 @@ public:
 
 	void OnBeginFocus();
 	void OnEndFocus();
+
+	UFUNCTION(BlueprintCallable, Category = "WeaponState")
+		int32 GetLoadedAmmo();
+	UFUNCTION(BlueprintCallable, Category = "WeaponState")
+		int32 GetRemainingAmmo();
+
 private:
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 		USkeletalMeshComponent* WeaponMesh;

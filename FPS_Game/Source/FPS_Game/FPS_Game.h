@@ -7,7 +7,7 @@
 #include "PlayerCharacter.h"
 #include "Weapons.h"
 #include "RPlayerController.h"
-
+#include "ViewportClient.h"
 
 #define COLLISION_WEAPON		ECC_GameTraceChannel1
 #define COLLISION_PROJECTILE	ECC_GameTraceChannel2

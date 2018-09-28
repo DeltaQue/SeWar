@@ -393,3 +393,12 @@ bool APlayerCharacter::IsFire() const
 	return bIsFire;
 }
 
+float APlayerCharacter::GetDefaultSpeed()
+{
+	return fDefaultSpeed + fWalkModifier;
+}
+
+float APlayerCharacter::GetPlayerHP()
+{
+	return GetHealth();
+}
