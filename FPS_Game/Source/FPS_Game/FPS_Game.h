@@ -8,6 +8,7 @@
 #include "Weapons.h"
 #include "RPlayerController.h"
 #include "ViewportClient.h"
+#include "FPS_GameGameModeBase.h"
 
 #define COLLISION_WEAPON		ECC_GameTraceChannel1
 #define COLLISION_PROJECTILE	ECC_GameTraceChannel2

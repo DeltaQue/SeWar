@@ -5,6 +5,9 @@
 #include "GameFramework/Character.h"
 #include "BaseCharacter.generated.h"
 
+class UAudioComponent;
+class USoundCue;
+
 UCLASS(ABSTRACT)
 class FPS_GAME_API ABaseCharacter : public ACharacter
 {
@@ -18,12 +21,31 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+private:
+	void ReSpawnPlayer();
 
 protected:
+	bool IsAlive() const;
+
+	/**virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
+		, class AController* EventInstigator, class AActor* DamageCauser) override;*/
+
+	virtual bool CanDie(float KillingDamage, FDamageEvent const& DamageEvent
+		, AController* Killer, AActor* DamageCauser) const;
+
+	virtual bool Die(float KillingDamage, struct FDamageEvent const& DamageEvent
+		, class AController* Killer, class AActor* DamageCauser);
+
+	/**virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
+
+	virtual void Suicide();*/
+
+
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerState")
 		float Health;
-
-	bool IsAlive() const;
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* DeathSound;
+	
 
 public:	
 	float GetHealth() const;

@@ -5,3 +5,12 @@
 
 
 
+void AFPS_GameGameModeBase::SetPlayerSpawnTransform(FTransform SpawnTransform)
+{
+	PlayerSpawnTransform = SpawnTransform;
+}
+
+FTransform AFPS_GameGameModeBase::GetPlayerSpawnTransform() const
+{
+	return PlayerSpawnTransform;
+}

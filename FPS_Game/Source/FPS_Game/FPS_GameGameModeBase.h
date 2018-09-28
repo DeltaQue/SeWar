@@ -15,6 +15,13 @@ class FPS_GAME_API AFPS_GameGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 	
 	
-	
+private:
+	UPROPERTY()
+		FTransform PlayerSpawnTransform;
+
+public:
+	void SetPlayerSpawnTransform(FTransform SpawnTransform);
+
+	FTransform GetPlayerSpawnTransform() const;
 	
 };
