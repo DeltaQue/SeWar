@@ -23,5 +23,8 @@ public:
 	void SetPlayerSpawnTransform(FTransform SpawnTransform);
 
 	FTransform GetPlayerSpawnTransform() const;
+
+	float DamageCalc(float Damage, AActor* DamagedActor, struct FDamageEvent const &DamageEvent, AController* EventInstigator, AActor* DamageCauser) const;
+
 	
 };

@@ -91,6 +91,7 @@ public:
 		class AWeapons* GetWeapon() const;
 
 	bool CanFire() const;
+	void StopAllAnimMontages();
 
 	void OnCameraUpdate(const FVector& CameraLocation, const FRotator& CameraRotation);
 	void CheckForWeaponInView(FVector CameraLocation, FVector CameraFowardVector, FRotator CameraRotator);

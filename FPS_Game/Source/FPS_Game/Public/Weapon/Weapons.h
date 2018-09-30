@@ -51,6 +51,15 @@ struct FWeaponData
 	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
 		float NoAnimReloadDuration;
 
+	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
+		float WeaponRange;
+
+	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
+		float WeaponSpread;
+
+	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
+		float WeaponTargetingSpread;
+
 	/** defaults */
 	FWeaponData()
 	{
@@ -59,6 +68,9 @@ struct FWeaponData
 		InitialClips = 4;
 		TimeBetweenShots = 0.2f;
 		NoAnimReloadDuration = 1.0f;
+		WeaponRange = 5.0f;
+		WeaponSpread = 5.0f;
+		WeaponTargetingSpread = 0.25f;
 	}
 };
 
@@ -81,6 +93,17 @@ protected:
 		FWeaponData WeaponConfig;
 
 
+	///** impact effects */
+	//UPROPERTY(EditDefaultsOnly, Category = Effects)
+	//	TSubclassOf<AShooterImpactEffect> ImpactTemplate;
+
+	/** smoke trail */
+	UPROPERTY(EditDefaultsOnly, Category = Effects)
+		UParticleSystem* TrailFX;
+
+	/** param name for beam target in smoke trail */
+	UPROPERTY(EditDefaultsOnly, Category = Effects)
+		FName TrailTargetParam;
 
 	/** firing audio (bLoopedFireSound set) */
 	UPROPERTY(Transient)
@@ -189,6 +212,8 @@ public:
 	void OnBeginFocus();
 	void OnEndFocus();
 
+	FVector GetAdjustAim();
+
 	UFUNCTION(BlueprintCallable, Category = "WeaponState")
 		int32 GetLoadedAmmo();
 	UFUNCTION(BlueprintCallable, Category = "WeaponState")
@@ -197,12 +222,12 @@ public:
 private:
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 		USkeletalMeshComponent* WeaponMesh;
-
 	UPROPERTY()
 		class APlayerCharacter* WeaponOwner;
 
 	EWeaponState::Type CurrentWeaponState;
 	
+	FTransform MuzzleTransform;
 
 	//Weapon Fire
 	bool bIsFire;
@@ -232,6 +257,15 @@ private:
 	void StartSimulationWeaponFire();
 	void StopSimulationWeaponFire();
 	void HandleFiring();
+
+	FHitResult HitScanLinTrace(const FVector &Start, const FVector &End) const;
+	float CalcWeaponSpread() const;
+	void ProcessHitScan(const FHitResult& Impact, const FVector& Origin, const FVector& ShootDir, float ReticleSpread);
+	
+	//Decal Spawn
+	void SpawnImpactEffect(const FHitResult& Impact);
+	//Bullet ±À¿˚ ¿Ã∆Â∆Æ
+	void SpawnTrailEffect(const FVector& EndPoint);
 
 	bool CanFire() const;
 	bool CanReload() const;

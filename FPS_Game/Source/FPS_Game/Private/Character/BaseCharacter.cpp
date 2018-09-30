@@ -72,17 +72,20 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 		return false;
 	}
 
+	Health = 0.f;
 
 	if (Health <= 0)
 	{
+		UDamageType const* DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
+		
+		//Score 부분 추가
 
 		if (DeathSound)
 		{
 			UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
 		}
 
-		AFPS_GameGameModeBase* GameMod = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-		
+		//StopAllAimMontages();
 	}
 
 	return true;
@@ -98,4 +101,42 @@ void ABaseCharacter::ReSpawnPlayer()
 		this->SetActorTransform(GameMod->GetPlayerSpawnTransform());
 		
 	}
+}
+
+float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
+	, class AController* EventInstigator, class AActor* DamageCauser)
+{
+	if (Health < 0)
+	{
+		return 0.0f;
+	}
+
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+	Damage = GameMode->DamageCalc(Damage, this, DamageEvent, EventInstigator, DamageCauser);
+
+	const float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+	if (ActualDamage > 0.f)
+	{
+		Health -= ActualDamage;
+		if (Health <= 0)
+		{
+			//Death
+		}
+		else
+		{
+
+		}
+	}
+
+	return ActualDamage;
+}
+
+void ABaseCharacter::FellOutOfWorld(const class UDamageType& dmgType)
+{
+	
+}
+
+void ABaseCharacter::Suicide()
+{
+
 }

@@ -373,6 +373,16 @@ void APlayerCharacter::MoveRight(float Value)
 	}
 }
 
+void APlayerCharacter::StopAllAnimMontages()
+{
+	USkeletalMeshComponent* Mesh = GetMesh();
+	if (Mesh && Mesh->AnimScriptInstance)
+	{
+		Mesh->AnimScriptInstance->Montage_Stop(0.0f);
+	}
+
+}
+
 bool APlayerCharacter::IsTargeting() const
 {
 	return bIsADS;

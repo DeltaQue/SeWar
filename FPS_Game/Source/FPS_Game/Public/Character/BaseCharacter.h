@@ -27,8 +27,8 @@ private:
 protected:
 	bool IsAlive() const;
 
-	/**virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
-		, class AController* EventInstigator, class AActor* DamageCauser) override;*/
+	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
+		, class AController* EventInstigator, class AActor* DamageCauser) override;
 
 	virtual bool CanDie(float KillingDamage, FDamageEvent const& DamageEvent
 		, AController* Killer, AActor* DamageCauser) const;
@@ -36,16 +36,17 @@ protected:
 	virtual bool Die(float KillingDamage, struct FDamageEvent const& DamageEvent
 		, class AController* Killer, class AActor* DamageCauser);
 
-	/**virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
+	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
 
-	virtual void Suicide();*/
+	virtual void Suicide();
 
 
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerState")
 		float Health;
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* DeathSound;
-	
+	UPROPERTY(EditDefaultsOnly, Category = Animation)
+		UAnimMontage* DeathAnim;
 
 public:	
 	float GetHealth() const;

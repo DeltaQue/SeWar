@@ -35,6 +35,8 @@ AWeapons::AWeapons(const FObjectInitializer& ObjectInitializer)
 	RemainingAmmo = 30;
 	BurstCount = 0;
 	LastFireTime = 0.0f;
+
+	MuzzleTransform = WeaponMesh->GetSocketTransform("Muzzle");
 }
 
 void AWeapons::PostInitializeComponents()
@@ -63,6 +65,16 @@ void AWeapons::OnEndFocus()
 
 void AWeapons::FireWeapon()
 {
+	//실질적인 데미지를 가하는 함수
+	//HitScan방식, 
+
+	//Controller의 Camera Rot vector
+	const FVector AimDir = GetAdjustAim();
+	const FVector StartVector = MuzzleTransform.GetLocation();
+	const FVector EndVector = StartVector * WeaponConfig.WeaponRange;
+
+	const FHitResult impact = HitScanLinTrace(StartVector, EndVector);
+
 }
 
 void AWeapons::StartReload()
@@ -480,7 +492,7 @@ void AWeapons::HandleFiring()
 
 		if (WeaponOwner)
 		{
-			//FireWeapon();
+			FireWeapon();
 
 			LoadedAmmo--;
 
@@ -531,6 +543,61 @@ void AWeapons::HandleFiring()
 	LastFireTime = GetWorld()->GetTimeSeconds();
 }
 
+FHitResult AWeapons::HitScanLinTrace(const FVector &Start, const FVector &End) const
+{
+	FCollisionQueryParams TraceParams(SCENE_QUERY_STAT(WeaponTrace), true, Instigator);
+	TraceParams.bTraceAsyncScene = true;
+	TraceParams.bReturnPhysicalMaterial = true;
+
+	FHitResult Hit(ForceInit);
+	GetWorld()->LineTraceSingleByChannel(Hit, Start, End, COLLISION_WEAPON, TraceParams);
+
+	return Hit;
+}
+
+
+float AWeapons::CalcWeaponSpread() const
+{
+	if (WeaponOwner && WeaponOwner->IsTargeting())
+	{
+		return WeaponConfig.WeaponSpread * WeaponConfig.WeaponTargetingSpread;
+	}
+	else
+	{
+		return WeaponConfig.WeaponSpread;
+	}
+}
+
+void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin, const FVector & ShootDir, float ReticleSpread)
+{
+	//if(CanDamage())
+
+	const FVector EndLine = Origin + ShootDir * WeaponConfig.WeaponRange;
+	const FVector EndPoint = Impact.GetActor() ? Impact.ImpactPoint : EndLine;
+
+	SpawnTrailEffect(EndPoint);
+	SpawnImpactEffect(Impact);
+}
+
+void AWeapons::SpawnImpactEffect(const FHitResult & Impact)
+{
+	
+}
+
+void AWeapons::SpawnTrailEffect(const FVector & EndPoint)
+{
+	if (TrailFX)
+	{
+		const FVector Origin = MuzzleTransform.GetLocation();
+
+		UParticleSystemComponent* TrailPSC = UGameplayStatics::SpawnEmitterAtLocation(this, TrailFX, Origin);
+		if (TrailPSC)
+		{
+			TrailPSC->SetVectorParameter(TrailTargetParam, EndPoint);
+		}
+	}
+}
+
 bool AWeapons::CanFire() const
 {
 	bool bAmmoCheck = (LoadedAmmo > 0);
@@ -566,4 +633,20 @@ int32 AWeapons::GetLoadedAmmo()
 int32 AWeapons::GetRemainingAmmo()
 {
 	return RemainingAmmo;
+}
+
+FVector AWeapons::GetAdjustAim()
+{
+	ARPlayerController* PlayerController = Cast<ARPlayerController>(WeaponOwner->GetController());
+	FVector AdjustAim = FVector::ZeroVector;
+
+	if (PlayerController)
+	{
+		FVector Loc;
+		FRotator Rot;
+		PlayerController->GetPlayerViewPoint(Loc, Rot);
+		AdjustAim = Rot.Vector();
+	}
+
+	return AdjustAim;
 }
