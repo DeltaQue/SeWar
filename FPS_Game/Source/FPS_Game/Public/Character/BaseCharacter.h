@@ -25,7 +25,7 @@ private:
 	void ReSpawnPlayer();
 
 protected:
-	bool IsAlive() const;
+	
 
 	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
 		, class AController* EventInstigator, class AActor* DamageCauser) override;
@@ -49,6 +49,7 @@ protected:
 		UAnimMontage* DeathAnim;
 
 public:	
+	bool IsAlive() const;
 	float GetHealth() const;
 	float GetMaxHealth() const;
 	
