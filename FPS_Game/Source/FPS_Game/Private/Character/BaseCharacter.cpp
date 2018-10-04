@@ -9,6 +9,8 @@ ABaseCharacter::ABaseCharacter(const class FObjectInitializer& ObjectInitializer
 {
 	Health = 100.f;
 
+	bIsRagdoll = false;
+	bIsDie = false;
 }
 
 // Called when the game starts or when spawned
@@ -44,10 +46,6 @@ void ABaseCharacter::DestroyTarget()
 		this->Destroy();
 }
 
-void ABaseCharacter::DamagedHealth(float value)
-{
-
-}
 
 
 bool ABaseCharacter::CanDie(float KillingDamage, FDamageEvent const& DamageEvent, AController* Killer, AActor* DamageCauser) const
@@ -78,6 +76,7 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 	{
 		UDamageType const* DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
 		
+		bIsDie = true;
 		//Score 부분 추가
 
 		if (DeathSound)
@@ -86,7 +85,39 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 		}
 
 		//StopAllAimMontages();
+
+		if (GetMesh())
+		{
+			static FName CollisionProfileName(TEXT("Ragdoll"));
+			GetMesh()->SetCollisionProfileName(CollisionProfileName);
+		}
+
+		float DeathAnimTime = PlayAnimMontage(DeathAnim);
+
+		if (DeathAnimTime > 0.f)
+		{
+			// Trigger ragdoll a little before the animation early so the character doesn't
+			// blend back to its normal position.
+			const float TriggerRagdollTime = DeathAnimTime - 0.7f;
+
+			// Enable blend physics so the bones are properly blending against the montage.
+			GetMesh()->bBlendPhysics = true;
+
+			// Use a local timer handle as we don't need to store it for later but we don't need to look for something to clear
+			FTimerHandle TimerHandle;
+			GetWorldTimerManager().SetTimer(TimerHandle, this, &ABaseCharacter::SetRagdollPhysics, FMath::Max(0.1f, TriggerRagdollTime), false);
+		}
+		else
+		{
+			SetRagdollPhysics();
+		}
+
+		// disable collisions on capsule
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Ignore);
 	}
+
+	bIsDie = false;
 
 	return true;
 }
@@ -100,6 +131,46 @@ void ABaseCharacter::ReSpawnPlayer()
 	{
 		this->SetActorTransform(GameMod->GetPlayerSpawnTransform());
 		
+	}
+}
+
+void ABaseCharacter::SetRagdollPhysics()
+{
+
+	bool bIsRagdoll = false;
+
+	if (IsPendingKill())
+	{
+		bIsRagdoll = false;
+	}
+	else if (!GetMesh() || !GetMesh()->GetPhysicsAsset())
+	{
+		bIsRagdoll = false;
+	}
+	else
+	{
+		// initialize physics/etc
+		GetMesh()->SetSimulatePhysics(true);
+		GetMesh()->WakeAllRigidBodies();
+		GetMesh()->bBlendPhysics = true;
+
+		bIsRagdoll = true;
+	}
+
+	GetCharacterMovement()->StopMovementImmediately();
+	GetCharacterMovement()->DisableMovement();
+	GetCharacterMovement()->SetComponentTickEnabled(false);
+
+	if (!bIsRagdoll)
+	{
+		// hide and set short lifespan
+		TurnOff();
+		SetActorHiddenInGame(true);
+		SetLifeSpan(1.0f);
+	}
+	else
+	{
+		SetLifeSpan(10.0f);		//LifeSpan(float x) x가 지나면 모든 개체가 사라짐, 액터는 사라지지 않는다.
 	}
 }
 
@@ -121,6 +192,7 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 		if (Health <= 0)
 		{
 			//Death
+			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
 		}
 		else
 		{
@@ -138,5 +210,17 @@ void ABaseCharacter::FellOutOfWorld(const class UDamageType& dmgType)
 
 void ABaseCharacter::Suicide()
 {
+	AController* Killer = NULL;
+	if (this != NULL)
+	{
+		Killer = this->Controller;
+		LastHitBy = NULL;
+	}
 
+	Die(Health, FDamageEvent(UDamageType::StaticClass()), Killer, NULL);
+}
+
+bool ABaseCharacter::GetIsDie() const
+{
+	return bIsDie;
 }

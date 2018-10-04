@@ -23,7 +23,12 @@ protected:
 
 private:
 	void ReSpawnPlayer();
+	void SetRagdollPhysics();
 
+
+	//Ragdoll Check
+	bool bIsRagdoll;
+	bool bIsDie;
 protected:
 	
 
@@ -38,22 +43,26 @@ protected:
 
 	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
 
-	virtual void Suicide();
+
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+		USkeletalMeshComponent* TPP_Mesh;
 
 
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerState")
 		float Health;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* DeathSound;
 	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* DeathAnim;
 
 public:	
+	void Suicide();
+
 	bool IsAlive() const;
+	bool GetIsDie() const;
 	float GetHealth() const;
 	float GetMaxHealth() const;
 	
 	void DestroyTarget();
-
-	void DamagedHealth(float value);
 };

@@ -5,20 +5,33 @@
 #include "FPS_Game.h"
 
 
+#define LOCTEXT_NAMESPACE "FPS_Game.HUD"
 
 APlayerHUD::APlayerHUD(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	static ConstructorHelpers::FObjectFinder<UTexture2D> CrosshairTextureObj(TEXT("/Game/UI/HUD/Crosshair"));
-	CrosshairTexture = CrosshairTextureObj.Object;
+	static ConstructorHelpers::FObjectFinder<UTexture2D> MainTextureObj(TEXT("/Game/UI/HUD/MainTexture"));
+	MainTexture = MainTextureObj.Object;
 
 	// Center offset
 	//0:left, 1:top, 2:right, 3: bottom, 4:center
-	Crosshair[0] = UCanvas::MakeIcon(CrosshairTexture, 43, 402, 25, 9);
-	Crosshair[1] = UCanvas::MakeIcon(CrosshairTexture, 74, 371, 9, 25);
-	Crosshair[2] = UCanvas::MakeIcon(CrosshairTexture, 88, 402, 25, 9);
-	Crosshair[3] = UCanvas::MakeIcon(CrosshairTexture, 74, 415, 9, 25);
-	Crosshair[4] = UCanvas::MakeIcon(CrosshairTexture, 75, 403, 7, 7); 
+	Crosshair[0] = UCanvas::MakeIcon(MainTexture, 43, 402, 25, 9);
+	Crosshair[1] = UCanvas::MakeIcon(MainTexture, 74, 371, 9, 25);
+	Crosshair[2] = UCanvas::MakeIcon(MainTexture, 88, 402, 25, 9);
+	Crosshair[3] = UCanvas::MakeIcon(MainTexture, 74, 415, 9, 25);
+	Crosshair[4] = UCanvas::MakeIcon(MainTexture, 75, 403, 7, 7); 
+
+
+	DeathMessage = UCanvas::MakeIcon(MainTexture, 502, 177, 342, 187);
+
+
+	static ConstructorHelpers::FObjectFinder<UFont> FontObj(TEXT("/Game/UI/HUD/Roboto51"));
+	MessageFont = FontObj.Object;
+
+
+
+	FontColor1 = FColor(110, 124, 131, 255);
+	FontColor2 = FColor(175, 202, 213, 255);
 }
 
 void APlayerHUD::DrawHUD()
@@ -33,8 +46,29 @@ void APlayerHUD::DrawHUD()
 	// FHD 1080
 	ScaleUI = Canvas->ClipY / 1080.0f;
 
+	ARPlayerController* Controller = Cast<ARPlayerController>(PlayerOwner);
+	APlayerCharacter* Player = Cast<APlayerCharacter>(GetOwningPawn());
+
+	if (!Controller && !Player)
+	{
+		if (!Player->IsAlive() && Player->GetIsDie())
+		{
+			FString Text = LOCTEXT("WaitingForRespawn", "WAITING FOR RESPAWN").ToString();
+			FCanvasTextItem TextItem(FVector2D::ZeroVector, FText::GetEmpty(), MessageFont, FontColor1);
+			TextItem.EnableShadow(FLinearColor::Black);
+			TextItem.Text = FText::FromString(Text);
+			TextItem.Scale = FVector2D(ScaleUI, ScaleUI);
+			//TextItem.FontRenderInfo = ShadowedFont;
+			TextItem.SetColor(FontColor2);
+
+			InfoItems.Add(TextItem);
+			//AddMatchInfoString(TextItem);
+		}
+	}
 	//Crosshair
 	DrawCrosshair();
+
+	ShowTextItems((Canvas->ClipY / 4.0)* ScaleUI, 1.f);
 }
 
 void APlayerHUD::DrawCrosshair()
@@ -121,4 +155,21 @@ float APlayerHUD::GetPlayerHealth()
 	APlayerCharacter* MyPawn = Cast<APlayerCharacter>(PlayerOwner->GetPawn());
 
 	return MyPawn->GetHealth();
+}
+
+float APlayerHUD::ShowTextItems(float YOffset, float TextScale)
+{
+	float Y = YOffset;
+	float CanvasCentre = Canvas->ClipX / 2.0f;
+
+	for (int32 iItem = 0; iItem < InfoItems.Num(); iItem++)
+	{
+		float X = 0.0f;
+		float SizeX, SizeY;
+		Canvas->StrLen(InfoItems[iItem].Font, InfoItems[iItem].Text.ToString(), SizeX, SizeY);
+		X = CanvasCentre - (SizeX * InfoItems[iItem].Scale.X) / 2.0f;
+		Canvas->DrawItem(InfoItems[iItem], X, Y);
+		Y += SizeY * InfoItems[iItem].Scale.Y;
+	}
+	return Y;
 }

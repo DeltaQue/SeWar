@@ -75,6 +75,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = Inventory)
 		FName WeaponAttachPoint;
 
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		class UCameraComponent* FPP_Camera;
 public:
 	UFUNCTION(BlueprintCallable, Category = "PlayerState")
 		bool IsTargeting() const;

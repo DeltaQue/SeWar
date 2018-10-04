@@ -13,7 +13,12 @@ APlayerCharacter::APlayerCharacter(const class FObjectInitializer& ObjectInitial
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	GetMesh()->SetupAttachment(RootComponent);
+	FPP_Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
+	FPP_Camera->SetupAttachment(GetCapsuleComponent());
+	FPP_Camera->RelativeLocation = FVector(-39.56f, 1.75f, 64.f); // Position the camera
+	FPP_Camera->bUsePawnControlRotation = true;
+
+	GetMesh()->SetupAttachment(FPP_Camera);
 	GetMesh()->bOnlyOwnerSee = true;
 	GetMesh()->bOwnerNoSee = false;
 	GetMesh()->bCastDynamicShadow = false;
@@ -233,6 +238,7 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 	PlayerInputComponent->BindAction("ADS", IE_Released, this, &APlayerCharacter::OnStopADS);
 	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &APlayerCharacter::OnReload);
 
+	PlayerInputComponent->BindAction("Suicide", IE_Pressed, this, &ABaseCharacter::Suicide);
 
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerCharacter::OnStartSprint);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &APlayerCharacter::OnStopSprint);
@@ -244,6 +250,8 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
+
+	
 
 }
 

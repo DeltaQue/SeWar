@@ -11,6 +11,13 @@ public class FPS_Game : ModuleRules
         MinFilesUsingPrecompiledHeaderOverride = 1;
         bFasterWithoutUnity = true;
 
+        PrivateIncludePaths.AddRange(
+            new string[] {
+                "FPS_Game/Classes/Character",
+                "FPS_Game/Private"
+            }
+        );
+
         PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG", "Slate", "SlateCore", "AIModule", "GameplayTasks" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

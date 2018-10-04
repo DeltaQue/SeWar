@@ -13,6 +13,7 @@ class UParticleSystemComponent;
 class UCameraShake;
 class UForceFeedbackEffect;
 class USoundCue;
+class AImpactEffects;
 
 namespace EWeaponState
 {
@@ -60,6 +61,12 @@ struct FWeaponData
 	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
 		float WeaponTargetingSpread;
 
+	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
+		int32 HitDamage;
+
+	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
+		TSubclassOf<UDamageType> DamageType;
+
 	/** defaults */
 	FWeaponData()
 	{
@@ -71,6 +78,8 @@ struct FWeaponData
 		WeaponRange = 5.0f;
 		WeaponSpread = 5.0f;
 		WeaponTargetingSpread = 0.25f;
+		HitDamage = 10.f;
+		DamageType = UDamageType::StaticClass();
 	}
 };
 
@@ -93,9 +102,9 @@ protected:
 		FWeaponData WeaponConfig;
 
 
-	///** impact effects */
-	//UPROPERTY(EditDefaultsOnly, Category = Effects)
-	//	TSubclassOf<AShooterImpactEffect> ImpactTemplate;
+	/** impact effects */
+	UPROPERTY(EditDefaultsOnly, Category = Effects)
+		TSubclassOf<AImpactEffects> ImpactTemplate;
 
 	/** smoke trail */
 	UPROPERTY(EditDefaultsOnly, Category = Effects)
@@ -200,6 +209,8 @@ public:
 	void OnUnEquip();
 	void SetOwnerWeapon(APlayerCharacter* Owner);
 
+	FVector GetCameraStartLocation(const FVector &AimDir) const;
+
 	void StartFire();
 	void StopFire();
 	//void SimulateionFire();
@@ -227,7 +238,7 @@ private:
 
 	EWeaponState::Type CurrentWeaponState;
 	
-	FTransform MuzzleTransform;
+	FVector MuzzleLocation;
 
 	//Weapon Fire
 	bool bIsFire;
@@ -258,7 +269,7 @@ private:
 	void StopSimulationWeaponFire();
 	void HandleFiring();
 
-	FHitResult HitScanLinTrace(const FVector &Start, const FVector &End) const;
+	FHitResult HitScanLineTrace(const FVector &Start, const FVector &End) const;
 	float CalcWeaponSpread() const;
 	void ProcessHitScan(const FHitResult& Impact, const FVector& Origin, const FVector& ShootDir, float ReticleSpread);
 	
