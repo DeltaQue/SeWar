@@ -24,6 +24,8 @@ private:
 	void EquipWeapon(AWeapons* NewWeapon);
 	void SetCurrentWeapon(AWeapons* NewWeapon, AWeapons* LastWeapon);
 
+	void ReturnCheckPoint();
+
 	void StartWeaponFire();
 	void StopWeaponFire();
 

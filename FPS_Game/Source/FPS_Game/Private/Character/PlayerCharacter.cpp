@@ -15,7 +15,7 @@ APlayerCharacter::APlayerCharacter(const class FObjectInitializer& ObjectInitial
 
 	FPP_Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
 	FPP_Camera->SetupAttachment(GetCapsuleComponent());
-	FPP_Camera->RelativeLocation = FVector(-39.56f, 1.75f, 64.f); // Position the camera
+	FPP_Camera->RelativeLocation = FVector(-39.56f, 1.75f, 100.f); // Position the camera
 	FPP_Camera->bUsePawnControlRotation = true;
 
 	GetMesh()->SetupAttachment(FPP_Camera);
@@ -32,6 +32,8 @@ APlayerCharacter::APlayerCharacter(const class FObjectInitializer& ObjectInitial
 	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
 	GetCapsuleComponent()->SetCollisionResponseToChannel(COLLISION_PROJECTILE, ECR_Block);
 	GetCapsuleComponent()->SetCollisionResponseToChannel(COLLISION_WEAPON, ECR_Ignore);
+	GetCapsuleComponent()->SetCapsuleHalfHeight(127.5f);
+	GetCapsuleComponent()->SetCapsuleRadius(95.f);
 
 
 	bIsADS = false;
@@ -52,6 +54,11 @@ void APlayerCharacter::PostInitializeComponents()
 	Super::PostInitializeComponents();
 
 	SetDefaultWeaponEquip();
+
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+	GameMode->SetCheckPoint(GetActorLocation());
+
+	//GameMode->GetCheckPoint();
 }
 
 void APlayerCharacter::OnCameraUpdate(const FVector& CameraLocation, const FRotator& CameraRotation)
@@ -239,6 +246,8 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &APlayerCharacter::OnReload);
 
 	PlayerInputComponent->BindAction("Suicide", IE_Pressed, this, &ABaseCharacter::Suicide);
+	PlayerInputComponent->BindAction("CheckPoint", IE_Pressed, this, &APlayerCharacter::ReturnCheckPoint);
+
 
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerCharacter::OnStartSprint);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &APlayerCharacter::OnStopSprint);
@@ -378,6 +387,17 @@ void APlayerCharacter::MoveRight(float Value)
 			// add movement in that direction
 			AddMovementInput(Direction, Value);
 		}
+	}
+}
+
+void APlayerCharacter::ReturnCheckPoint()
+{
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+	if (GameMode)
+	{
+		GameMode->GetCheckPoint();
+		SetActorLocation(GameMode->GetCheckPoint());
+		
 	}
 }
 

@@ -36,7 +36,7 @@ AWeapons::AWeapons(const FObjectInitializer& ObjectInitializer)
 	BurstCount = 0;
 	LastFireTime = 0.0f;
 
-	MuzzleLocation = WeaponMesh->GetSocketLocation("MuzzleFlashSocket");
+	
 }
 
 void AWeapons::PostInitializeComponents()
@@ -49,7 +49,7 @@ void AWeapons::PostInitializeComponents()
 void AWeapons::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 
@@ -85,18 +85,48 @@ void AWeapons::FireWeapon()
 	const float CurrentSpread = CalcWeaponSpread();
 	const float ConeHalfAngle = FMath::DegreesToRadians(CurrentSpread * 0.5f);
 
-	const FVector AimDir = GetAdjustAim();
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are AimDir: %d, %d, %d"), AimDir.X, AimDir.Y, AimDir.Z));
-	const FVector StartTrace = GetCameraStartLocation(AimDir);
-	if(StartTrace != FVector::ZeroVector)
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are StartTrace: %d, %d, %d"), StartTrace.X, StartTrace.Y, StartTrace.Z));
-	const FVector ShootDir = WeaponRandomStream.VRandCone(AimDir, ConeHalfAngle, ConeHalfAngle);
-	const FVector EndTrace = StartTrace + ShootDir * WeaponConfig.WeaponRange;
+	//const FVector AimDir = GetAdjustAim();
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are AimDir: %d, %d, %d"), AimDir.X, AimDir.Y, AimDir.Z));
+	//const FVector StartTrace = GetCameraStartLocation(AimDir);
+	//const FVector ShootDir = WeaponRandomStream.VRandCone(AimDir, ConeHalfAngle, ConeHalfAngle);
+	//const FVector EndTrace = StartTrace + ShootDir * WeaponConfig.WeaponRange;
 
-	const FHitResult Impact = HitScanLineTrace(StartTrace, EndTrace);
-	ProcessHitScan(Impact, StartTrace, ShootDir, CurrentSpread);
+	//const FHitResult Impact = HitScanLineTrace(StartTrace, EndTrace);
+	//ProcessHitScan(Impact, StartTrace, ShootDir, CurrentSpread);
 
 	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Green, false, 1, 0, 1);
+
+
+	//WeaponConfig.WeaponRange 설정해줘야함
+
+
+	const FVector AimDir = GetAdjustAim();
+	const FVector CameraPos = GetCameraStartLocation(AimDir);
+	const FVector EndPos = CameraPos + (AimDir * WeaponConfig.WeaponRange);
+	FHitResult Impact = HitScanLineTrace(CameraPos, EndPos);
+
+	const FVector MuzzleOrigin = GetMuzzleLocation();
+
+	FVector AdjustedAimDir = AimDir;
+	if (Impact.bBlockingHit)
+	{
+		/* Adjust the shoot direction to hit at the crosshair. */
+		AdjustedAimDir = (Impact.ImpactPoint - MuzzleOrigin).GetSafeNormal();
+
+		/* Re-trace with the new aim direction coming out of the weapon muzzle */
+		Impact = HitScanLineTrace(MuzzleOrigin, MuzzleOrigin + (AdjustedAimDir * WeaponConfig.WeaponRange));
+	}
+	else
+	{
+		/* Use the maximum distance as the adjust direction */
+		Impact.ImpactPoint = FVector_NetQuantize(EndPos);
+	}
+
+	ProcessHitScan(Impact, MuzzleOrigin, AdjustedAimDir);
+
+	//DrawDebugLine(GetWorld(), CameraPos, EndPos, FColor::Green, false, 5, 0, 1);
+	DrawDebugPoint(GetWorld(), CameraPos, 20.f,  FColor::Red, false, 999999, SDPG_MAX);
+	DrawDebugPoint(GetWorld(), EndPos, 20.f, FColor::Green, false, 999999, SDPG_MAX);
 }
 
 void AWeapons::StartReload()
@@ -200,6 +230,7 @@ void AWeapons::SetOwnerWeapon(APlayerCharacter* Owner)
 {
 	if (WeaponOwner != Owner)
 	{
+		Instigator = Owner;
 		WeaponOwner = Owner;
 
 		SetOwner(Owner);
@@ -564,7 +595,7 @@ void AWeapons::HandleFiring()
 
 FHitResult AWeapons::HitScanLineTrace(const FVector &Start, const FVector &End) const
 {
-	FCollisionQueryParams TraceParams(SCENE_QUERY_STAT(WeaponTrace), true, Instigator);
+	FCollisionQueryParams TraceParams(TEXT("WeaponTrace"), true, Instigator);
 	TraceParams.bTraceAsyncScene = true;
 	TraceParams.bReturnPhysicalMaterial = true;
 
@@ -587,9 +618,9 @@ float AWeapons::CalcWeaponSpread() const
 	}
 }
 
-void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin, const FVector & ShootDir, float ReticleSpread)
+void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin, const FVector & ShootDir)
 {
-	if (Impact.GetActor())
+	if (Impact.GetActor() && Impact.GetActor() != WeaponOwner)
 	{
 		FPointDamageEvent PointDmg;
 		PointDmg.DamageTypeClass = WeaponConfig.DamageType;
@@ -600,37 +631,36 @@ void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin,
 		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, WeaponOwner->Controller, this);
 	}
 
-	const FVector EndLine = Origin + ShootDir * WeaponConfig.WeaponRange;
-	const FVector EndPoint = Impact.GetActor() ? Impact.ImpactPoint : EndLine;
+	const FVector MuzzleOrigin = GetMuzzleLocation();
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are MuzzleLocation: %d, %d, %d"), MuzzleOrigin.X, MuzzleOrigin.Y, MuzzleOrigin.Z));
 
-	SpawnTrailEffect(EndPoint);
-	SpawnImpactEffect(Impact);
+	const FVector AimDir = (Impact.ImpactPoint - MuzzleOrigin).GetSafeNormal();
+
+	const FVector EndTrace = MuzzleOrigin + (AimDir * WeaponConfig.WeaponRange);
+	const FHitResult ImpactResult = HitScanLineTrace(MuzzleOrigin, EndTrace);
+
+	if (ImpactResult.bBlockingHit)
+	{
+		SpawnImpactEffect(ImpactResult);
+		SpawnTrailEffect(ImpactResult.ImpactPoint);
+	}
+	else
+	{
+		SpawnTrailEffect(EndTrace);
+	}
 }
 
 void AWeapons::SpawnImpactEffect(const FHitResult & Impact)
 {
 	if (ImpactTemplate && Impact.bBlockingHit)
 	{
-		FHitResult UseImpact = Impact;
+		// TODO: Possible re-trace to get hit component that is lost during replication.
 
-		ARPlayerController* cont = Cast<ARPlayerController>(WeaponOwner->GetController());
-		cont->OnScreenMessageSwitch(0);
-
-		// trace again to find component lost during replication
-		if (!Impact.Component.IsValid())
-		{
-			const FVector StartTrace = Impact.ImpactPoint + Impact.ImpactNormal * 10.0f;
-			const FVector EndTrace = Impact.ImpactPoint - Impact.ImpactNormal * 10.0f;
-			FHitResult Hit = HitScanLineTrace(StartTrace, EndTrace);
-			UseImpact = Hit;
-		}
-
-		FTransform const SpawnTransform(Impact.ImpactNormal.Rotation(), Impact.ImpactPoint);
-		AImpactEffects* EffectActor = GetWorld()->SpawnActorDeferred<AImpactEffects>(ImpactTemplate, SpawnTransform);
+		AImpactEffects* EffectActor = GetWorld()->SpawnActorDeferred<AImpactEffects>(ImpactTemplate, FTransform(Impact.ImpactPoint.Rotation(), Impact.ImpactPoint));
 		if (EffectActor)
 		{
-			EffectActor->SurfaceHit = UseImpact;
-			UGameplayStatics::FinishSpawningActor(EffectActor, SpawnTransform);
+			EffectActor->SurfaceHit = Impact;
+			UGameplayStatics::FinishSpawningActor(EffectActor, FTransform(Impact.ImpactNormal.Rotation(), Impact.ImpactPoint));
 		}
 	}
 }
@@ -639,14 +669,14 @@ void AWeapons::SpawnTrailEffect(const FVector & EndPoint)
 {
 	if (TrailFX)
 	{
-		const FVector Origin = MuzzleLocation;
+		const FVector AimDir = GetAdjustAim();
+		const FVector CameraPos = GetCameraStartLocation(AimDir);
+		const FVector Origin = GetMuzzleLocation();
 
-		UParticleSystemComponent* TrailPSC = UGameplayStatics::SpawnEmitterAtLocation(this, TrailFX, Origin);
+		UParticleSystemComponent* TrailPSC = UGameplayStatics::SpawnEmitterAtLocation(this, TrailFX, CameraPos);
 		if (TrailPSC)
 		{
 			TrailPSC->SetVectorParameter(TrailTargetParam, EndPoint);
-			ARPlayerController* cont = Cast<ARPlayerController>(WeaponOwner->GetController());
-			cont->OnScreenMessageSwitch(1);
 		}
 	}
 }
@@ -688,9 +718,9 @@ int32 AWeapons::GetRemainingAmmo()
 	return RemainingAmmo;
 }
 
-FVector AWeapons::GetAdjustAim()
+FVector AWeapons::GetAdjustAim() const
 {
-	ARPlayerController* PlayerController = Cast<ARPlayerController>(WeaponOwner->GetController());
+	ARPlayerController* const PlayerController = Instigator ? Cast<ARPlayerController>(Instigator->Controller) : nullptr;
 	FVector AdjustAim = FVector::ZeroVector;
 
 	if (PlayerController)
@@ -711,13 +741,19 @@ FVector AWeapons::GetCameraStartLocation(const FVector &AimDir) const
 
 	if (PC)
 	{
-		// use player's camera
 		FRotator UnusedRot;
 		PC->GetPlayerViewPoint(OutStartTrace, UnusedRot);
 
-		// Adjust trace so there is nothing blocking the ray between the camera and the pawn, and calculate distance from adjusted start
-		OutStartTrace = OutStartTrace + AimDir * ((Instigator->GetActorLocation() - OutStartTrace) | AimDir);
+		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are Startlocation: %d, %d, %d"),Instigator->GetActorLocation().X, Instigator->GetActorLocation().Y, Instigator->GetActorLocation().Z));
+		//OutStartTrace = OutStartTrace + AimDir * ((Instigator->GetActorLocation() - OutStartTrace) | AimDir);
+		OutStartTrace = OutStartTrace + AimDir * (FVector::DotProduct((Instigator->GetActorLocation() - OutStartTrace), AimDir));
 	}
 
 	return OutStartTrace;
+}
+
+
+FVector AWeapons::GetMuzzleLocation() const
+{
+	return WeaponMesh->GetSocketLocation("MuzzleFlashSocket");
 }

@@ -75,7 +75,7 @@ struct FWeaponData
 		InitialClips = 4;
 		TimeBetweenShots = 0.2f;
 		NoAnimReloadDuration = 1.0f;
-		WeaponRange = 5.0f;
+		WeaponRange = 1500.0f;
 		WeaponSpread = 5.0f;
 		WeaponTargetingSpread = 0.25f;
 		HitDamage = 10.f;
@@ -213,7 +213,8 @@ public:
 
 	void StartFire();
 	void StopFire();
-	//void SimulateionFire();
+
+	FVector GetMuzzleLocation() const;
 
 	void StartReload();
 
@@ -223,7 +224,7 @@ public:
 	void OnBeginFocus();
 	void OnEndFocus();
 
-	FVector GetAdjustAim();
+	FVector GetAdjustAim() const;
 
 	UFUNCTION(BlueprintCallable, Category = "WeaponState")
 		int32 GetLoadedAmmo();
@@ -237,8 +238,6 @@ private:
 		class APlayerCharacter* WeaponOwner;
 
 	EWeaponState::Type CurrentWeaponState;
-	
-	FVector MuzzleLocation;
 
 	//Weapon Fire
 	bool bIsFire;
@@ -271,7 +270,7 @@ private:
 
 	FHitResult HitScanLineTrace(const FVector &Start, const FVector &End) const;
 	float CalcWeaponSpread() const;
-	void ProcessHitScan(const FHitResult& Impact, const FVector& Origin, const FVector& ShootDir, float ReticleSpread);
+	void ProcessHitScan(const FHitResult& Impact, const FVector& Origin, const FVector& ShootDir);
 	
 	//Decal Spawn
 	void SpawnImpactEffect(const FHitResult& Impact);

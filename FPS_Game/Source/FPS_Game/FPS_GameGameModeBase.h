@@ -19,6 +19,16 @@ private:
 	UPROPERTY()
 		FTransform PlayerSpawnTransform;
 
+	const FString JsonFilePath = FPaths::ProjectContentDir() + "/Data/LoadData.json";
+	FString JsonString; //Json converted to FString
+
+	TSharedPtr<FJsonObject> JsonObject;
+
+	TArray<TSharedPtr<FJsonValue>> ObjArray;
+
+protected:
+	virtual void BeginPlay() override;
+
 public:
 	void SetPlayerSpawnTransform(FTransform SpawnTransform);
 
@@ -26,5 +36,7 @@ public:
 
 	float DamageCalc(float Damage, AActor* DamagedActor, struct FDamageEvent const &DamageEvent, AController* EventInstigator, AActor* DamageCauser) const;
 
-	
+	bool SetCheckPoint(const FVector Location);
+
+	FVector GetCheckPoint();
 };
