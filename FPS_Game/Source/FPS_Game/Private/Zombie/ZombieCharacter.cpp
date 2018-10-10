@@ -9,6 +9,7 @@
 /* AI Include */
 #include "Perception/PawnSensingComponent.h"
 
+//DECLARE_DELEGATE_OneParam(ScreamTimerDelegate, APawn*)
 
 // Sets default values
 AZombieCharacter::AZombieCharacter(const class FObjectInitializer& ObjectInitializer)
@@ -37,6 +38,11 @@ AZombieCharacter::AZombieCharacter(const class FObjectInitializer& ObjectInitial
 	GetMovementComponent()->NavAgentProps.AgentHeight = 192;
 
 
+	AudioLoopComp = CreateDefaultSubobject<UAudioComponent>(TEXT("ZombieLoopedSoundComp"));
+	AudioLoopComp->bAutoActivate = false;
+	AudioLoopComp->bAutoDestroy = false;
+	AudioLoopComp->SetupAttachment(RootComponent);
+
 	////Zombie HP bar widget
 	//MyWidget = CreateDefaultSubobject<UWidgetComponent>("Widget");
 
@@ -61,6 +67,7 @@ AZombieCharacter::AZombieCharacter(const class FObjectInitializer& ObjectInitial
 
 	bSensedTarget = false;
 	bHeardTarget = false;
+	bPlayedScream = false;
 
 	//적을 타겟으로 감지하고 리셋하는데 걸리는 시간 2.5초
 	SightSenseTimeOut = 2.5f;
@@ -73,6 +80,8 @@ AZombieCharacter::AZombieCharacter(const class FObjectInitializer& ObjectInitial
 	DefaultMaxWalkSpeed = 0.0f;
 
 	AttackCooltime = 1.5f;
+
+	ZombieType = EZombieType::Passing;
 }
 
 
@@ -93,6 +102,8 @@ void AZombieCharacter::BeginPlay()
 
 	DefaultMaxWalkSpeed = GetMovementComponent()->GetMaxSpeed();
 
+	AudioLoopUpdate(bSensedTarget);
+
 	//if (!MyWidget->AttachToComponent(GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("HPBar_Sock")))
 	//{
 	//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Error Attach HP Bar"));
@@ -112,10 +123,13 @@ void AZombieCharacter::Tick(float DeltaSeconds)
 		if (AIController)
 		{
 			bSensedTarget = false;
+			bPlayedScream = false;
+			bHeardTarget = false;
+
 			/* 타겟 리셋 */
 			AIController->SetTargetEnemy(nullptr);
 
-			bHeardTarget = false;
+			AudioLoopUpdate(false);
 
 			AIController->SetReconLocation(FVector(-1, -1, -1));
 
@@ -138,20 +152,51 @@ void AZombieCharacter::OnSeePlayer(APawn* Pawn)
 
 	if (!bSensedTarget)
 	{
-
+		AudioLoopUpdate(true);
 	}
 
+	float Duration = 0.0f;
+
+	if (ScreamAnimMontage && !bPlayedScream)
+	{
+		Duration = PlayAnimMontage(ScreamAnimMontage);
+		bPlayedScream = true;
+
+		if (Duration <= 0.f)
+		{
+			Duration = 0.5f;
+		}
+
+		AZombieAIController *Controller = Cast<AZombieAIController>(GetController());
+		Controller->StopBehaviorTree();
+
+		FTimerHandle UniqueHandle;
+		FTimerDelegate RespawnDelegate = FTimerDelegate::CreateUObject(this, &AZombieCharacter::TargetChase, Pawn);
+		GetWorldTimerManager().SetTimer(UniqueHandle, RespawnDelegate, Duration, false);
+	}
+
+	
+}
+
+void AZombieCharacter::TargetChase(APawn* Pawn)
+{
 	//타겟을 발견 한 뒤 월드 시간을 받음
 	LastSeenTime = GetWorld()->GetTimeSeconds();
 	bSensedTarget = true;
+	
 
 	AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
 	ABaseCharacter* SensedPawn = Cast<ABaseCharacter>(Pawn);
 	if (AIController && SensedPawn->IsAlive())
 	{
+		AZombieAIController *Controller = Cast<AZombieAIController>(GetController());
+		Controller->StartBehaviorTree();
+
 		AIController->SetTargetEnemy(SensedPawn);
-		//167.0f == Zombie Run
-		Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = 167.0f;
+
+
+
+		Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 10.f;
 	}
 }
 
@@ -163,7 +208,7 @@ void AZombieCharacter::OnHearNoise(APawn* PawnInstigator, const FVector& Locatio
 
 	if (!bSensedTarget)
 	{
-		//AudioLoop(true);
+		AudioLoopUpdate(true);
 	}
 
 	bSensedTarget = true;
@@ -188,22 +233,28 @@ void AZombieCharacter::SetZombieType(EZombieType NewType)
 	{
 		ZombieController->SetBlackboardZombieType(NewType);
 	}
+
+	AudioLoopUpdate(bSensedTarget);
 }
 
 
 void AZombieCharacter::OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
+	APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
 	//Timer Stop
-	TimerHandle_AttackTimer.Invalidate();
+	if (Player)
+	{
+		TimerHandle_AttackTimer.Invalidate();
 
-	ScratchAttack(OtherActor);
+		ScratchAttack(OtherActor);
 
-	AZombieAIController* Controller = Cast<AZombieAIController>(GetController());
-	Controller->SetIsAttackCollisionOverlap(true);
+		AZombieAIController* Controller = Cast<AZombieAIController>(GetController());
+		Controller->SetIsAttackCollisionOverlap(true);
 
-	//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
-	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter::ReTriggerAttack, AttackCooltime, true);
-	//TimerHandleFunc();
+		//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
+		GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter::ReTriggerAttack, AttackCooltime, true);
+		//TimerHandleFunc();
+	}
 }
 
 void AZombieCharacter::OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
@@ -236,7 +287,8 @@ void AZombieCharacter::PlayAttackMotion()
 {
 	if (AttackAnimMontage)
 	{
-		AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
+		//AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
+		this->PlayAnimMontage(AttackAnimMontage);
 	}
 	else
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack anim error"));
@@ -278,7 +330,9 @@ void AZombieCharacter::ScratchAttack(AActor* HitActor)
 
 				HitActor->TakeDamage(DmgEvent.Damage, DmgEvent, GetController(), this);
 
-				PlayAttackMotion();
+				if(AttackAnimMontage)
+					this->PlayAnimMontage(AttackAnimMontage);
+				//PlayAttackMotion();
 			}
 
 		}
@@ -307,6 +361,32 @@ void AZombieCharacter::ReTriggerAttack()
 	}
 }
 
+void AZombieCharacter::AudioLoopUpdate(bool bNewSensedTarget)
+{
+	if (bNewSensedTarget && bSensedTarget)
+	{
+		if (PlayerChaseSoundCue)
+		{
+			UGameplayStatics::SpawnSoundAttached(PlayerChaseSoundCue, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+
+			AudioLoopComp->SetSound(PlayerChaseSoundCue);
+			AudioLoopComp->Play();
+		}
+	}
+	else
+	{
+		if (ZombieType == EZombieType::Patrol)
+		{
+			AudioLoopComp->SetSound(PlayerWanderingSoundCue);
+			AudioLoopComp->Play();
+		}
+		else
+		{
+			AudioLoopComp->SetSound(IdleSoundCue);
+			AudioLoopComp->Play();
+		}
+	}
+}
 
 void AZombieCharacter::TimerHandleFunc()
 {

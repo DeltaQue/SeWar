@@ -46,7 +46,8 @@ private:
 protected:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -78,8 +79,14 @@ protected:
 		FName WeaponAttachPoint;
 
 
+
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		class UCameraComponent* FPP_Camera;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		class UCameraComponent* FPP_BackTargetViewCamera;
+
 public:
 	UFUNCTION(BlueprintCallable, Category = "PlayerState")
 		bool IsTargeting() const;
@@ -102,7 +109,9 @@ public:
 	void CheckForWeaponInView(FVector CameraLocation, FVector CameraFowardVector, FRotator CameraRotator);
 	float GetDefaultSpeed();
 
-	
+	virtual void FaceRotation(FRotator NewRotation, float DeltaTime = 0.f) override;
+	void SwitchTargetCamera(float BlendTime = 5.0f);
+	void SwitchMyCamera();
 
 	FName GetWeaponAttachPoint() const;
 	USkeletalMeshComponent* GetOwenerMesh() const;

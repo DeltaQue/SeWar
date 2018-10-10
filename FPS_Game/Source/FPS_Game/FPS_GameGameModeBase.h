@@ -20,14 +20,39 @@ private:
 		FTransform PlayerSpawnTransform;
 
 	const FString JsonFilePath = FPaths::ProjectContentDir() + "/Data/LoadData.json";
-	FString JsonString; //Json converted to FString
+	const FString QuestFilePath = FPaths::ProjectContentDir() + "/Data/QuestData.json";
+	const FString HealFilePath = FPaths::ProjectContentDir() + "/Data/HealNPCData.json";
+	const FString AmmoFilePath = FPaths::ProjectContentDir() + "/Data/AmmoNPCData.json";
 
-	TSharedPtr<FJsonObject> JsonObject;
+	int32 QuestScriptNum;
+	int32 QuestNum;
 
-	TArray<TSharedPtr<FJsonValue>> ObjArray;
+	//NPCNum
+	//0 : Heal NPC
+	//1 : Ammo NPC
+	int32 NPCScriptNum;
+	int32 NPCNum;
+
+	int32 QuestScriptLength;
+
+	int32 Tutorial_Quest_Script_Max;
+	int32 Stage1_Quest_Script_Max;
+	int32 Stage2_Quest_Script_Max;
+	int32 Heal_Script_Max;
+	int32 Ammo_Script_Max;
+
+
+
+	//0 : Tutorial
+	//1 : Stage1 Quest
+	//2 : Stage2 Quest
+	bool Complete_Quest[3] = {false, false, false};
 
 protected:
 	virtual void BeginPlay() override;
+
+	UPROPERTY(EditDefaultsOnly, Category = Inventory)
+		TArray<TSubclassOf<class AZombieCharacter> > SpawnZombieArray;
 
 public:
 	void SetPlayerSpawnTransform(FTransform SpawnTransform);
@@ -39,4 +64,27 @@ public:
 	bool SetCheckPoint(const FVector Location);
 
 	FVector GetCheckPoint();
+
+	UFUNCTION(BlueprintCallable, Category = "TextScript")
+		FText GetQuestScript();
+	UFUNCTION(BlueprintCallable, Category = "TextScript")
+		FText GetNPCScript(int32 NPCType);
+
+	void NextQuestScript();
+	void NextQuest();
+	void ClearQuest();
+	
+	void NextNPCScript(int32 NPCNum);
+	void ClearNPCScript();
+
+	int32 GetQuestScriptNum() const;
+	int32 GetQuestNum() const;
+	int32 GetQuestScriptMaxSize(int32 QuestNum) const;
+
+	int32 GetNPCScriptNum() const;
+	int32 GetNPCScriptMaxSize(int NPCType) const;
+
+	void SpawnZombie();
+
+	void SetCompleteQuest(int32 QuestNum);
 };

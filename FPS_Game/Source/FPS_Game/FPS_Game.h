@@ -10,6 +10,13 @@
 #include "ViewportClient.h"
 #include "FPS_GameGameModeBase.h"
 #include "ImpactEffects.h"
+#include "FPS_GameStruct.h"
+#include "NPCCharacter.h"
+#include "NPCController.h"
+#include "ZombieCharacter.h"
+#include "ZombieAIController.h"
+
+
 
 #define COLLISION_WEAPON		ECC_GameTraceChannel1
 #define COLLISION_PROJECTILE	ECC_GameTraceChannel2

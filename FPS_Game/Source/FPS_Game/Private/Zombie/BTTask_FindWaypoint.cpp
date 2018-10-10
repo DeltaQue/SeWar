@@ -2,8 +2,8 @@
 
 #include "BTTask_FindWaypoint.h"
 #include "BTTask_FindPatrolLocation.h"
-//#include "Wapoint.h"
 #include "ZombieAIController.h"
+#include "NPCController.h"
 
 /* AI Module includes */
 #include "BehaviorTree/BehaviorTreeComponent.h"
@@ -14,31 +14,30 @@
 
 EBTNodeResult::Type UBTTask_FindWaypoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
-	AZombieAIController* MyController = Cast<AZombieAIController>(OwnerComp.GetAIOwner());
-	if (MyController == nullptr)
+	AZombieAIController* ZombieController = Cast<AZombieAIController>(OwnerComp.GetAIOwner());
+
+	if (ZombieController == nullptr)
 	{
 		return EBTNodeResult::Failed;
 	}
 
-	//AWaypoint* CurrentWaypoint = MyController->GetWaypoint();
-	//AActor* NewWaypoint = nullptr;
+	AWaypoint* CurrentWaypoint = ZombieController->GetWaypoint();
+	AActor* NewWaypoint = nullptr;
 
-	//TArray<AActor*> AllWaypoints;
-	//UGameplayStatics::GetAllActorsOfClass(MyController, AWapoint::StaticClass(), AllWaypoints);
+	TArray<AActor*> AllWaypoints;
+	UGameplayStatics::GetAllActorsOfClass(ZombieController, AWaypoint::StaticClass(), AllWaypoints);
 
-	//if (AllWaypoints.Num() == 0)
-	//	return EBTNodeResult::Failed;
+	if (AllWaypoints.Num() == 0)
+		return EBTNodeResult::Failed;
 
-	//NewWaypoint = AllWaypoints[FMath::RandRange(0, AllWaypoints.Num() - 1)];
+	NewWaypoint = AllWaypoints[FMath::RandRange(0, AllWaypoints.Num() - 1)];
 
-	////if (NewWaypoint && MyController->GetIsArrive() )
-	//if (NewWaypoint)
-	//{
-	//	//NewWaypoint = AllWaypoints[FMath::RandRange(0, AllWaypoints.Num() - 1)];
-
-	//	OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Object>(BlackboardKey.GetSelectedKeyID(), NewWaypoint);
-	//	return EBTNodeResult::Succeeded;
-	//}
+	if (NewWaypoint)
+	{
+		OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Object>(BlackboardKey.GetSelectedKeyID(), NewWaypoint);
+		return EBTNodeResult::Succeeded;
+	}
+	
 
 	return EBTNodeResult::Failed;
 }

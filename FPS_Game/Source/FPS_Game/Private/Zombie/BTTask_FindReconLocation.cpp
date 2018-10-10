@@ -18,22 +18,22 @@ EBTNodeResult::Type UBTTask_FindReconLocation::ExecuteTask(UBehaviorTreeComponen
 	}
 
 
-	////const FVector SearchOrigin = MyController->GetReconLocation();
 	//const FVector SearchOrigin = MyController->GetReconLocation();
+	const FVector SearchOrigin = MyController->GetReconLocation();
 
-	//if (SearchOrigin != FVector(-1, -1, -1))
-	//{
-	//	const float SearchRadius = 200.0f;
+	if (SearchOrigin != FVector(-1, -1, -1))
+	{
+		const float SearchRadius = 200.0f;
 
 
-	//	FNavLocation ResultLocation;
-	//	UNavigationSystem* NavSystem = UNavigationSystem::GetNavigationSystem(MyController);
-	//	if (NavSystem && NavSystem->GetRandomPointInNavigableRadius(SearchOrigin, SearchRadius, ResultLocation))
-	//	{
-	//		OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Vector>(BlackboardKey.GetSelectedKeyID(), ResultLocation.Location);
-	//		return EBTNodeResult::Succeeded;
-	//	}
-	//}
+		FNavLocation ResultLocation;
+		UNavigationSystem* NavSystem = UNavigationSystem::GetNavigationSystem(MyController);
+		if (NavSystem && NavSystem->GetRandomPointInNavigableRadius(SearchOrigin, SearchRadius, ResultLocation))
+		{
+			OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Vector>(BlackboardKey.GetSelectedKeyID(), ResultLocation.Location);
+			return EBTNodeResult::Succeeded;
+		}
+	}
 
 	return EBTNodeResult::Failed;
 }

@@ -15,7 +15,7 @@ ACheckPoint::ACheckPoint()
 	CheckPointCollisionSphere->SetCollisionProfileName("Trigger");
 	RootComponent = CheckPointCollisionSphere;
 
-	MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("My Mesh"));
+	MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CheckPoint Mesh"));
 	MyMesh->SetupAttachment(RootComponent);
 
 	CheckPointCollisionSphere->OnComponentBeginOverlap.AddDynamic(this, &ACheckPoint::OnOverlapBegin);
@@ -40,6 +40,6 @@ void ACheckPoint::OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, clas
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr))
 	{
 		AFPS_GameGameModeBase* GameMod = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-		GameMod->SetPlayerSpawnTransform(this->GetActorTransform());
+		GameMod->SetCheckPoint(GetActorLocation());
 	}
 }

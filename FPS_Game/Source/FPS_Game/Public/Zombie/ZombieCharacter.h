@@ -8,16 +8,11 @@
 #include "Components/WidgetComponent.h"
 #include "ZombieCharacter.generated.h"
 
-UENUM()
-enum class EZombieType : uint8
-{
-	Passing,
-	Patrol
-};
 
-/**
- * 
- */
+class UAnimMontage;
+class UAudioComponent;
+class USoundCue;
+
 UCLASS()
 class FPS_GAME_API AZombieCharacter : public ABaseCharacter
 {
@@ -51,24 +46,28 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		float HearingSenseTimeOut;
 
+	
+	void AudioLoopUpdate(bool bNewSensedTarget);
 
 	float LastAttackTime;
-
 	float AttackCooltime;
 
 	/* 타겟을 쫒다가 SenseTimeOut이 지나면 타겟을 리셋하는용 */
 	bool bSensedTarget;
-
 	bool bHeardTarget;
+	bool bPlayedScream;
 
 	//타겟을 발견 한 뒤 월드 시간을 받음
 	float LastSeenTime;
-
 	float LastHeardTime;
 
 	float DefaultMaxWalkSpeed;
 
 	FTimerHandle TimerHandle_AttackTimer;
+	FTimerHandle TimerHandle_ScreamTimer;
+
+	FTimerDelegate ScreamTimerDelegate;
+
 public:
 	// Sets default values for this character's properties
 	AZombieCharacter(const class FObjectInitializer& ObjectInitializer);
@@ -88,6 +87,9 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Attack")
 		UCapsuleComponent* AttackCollisionComp;
+
+	UPROPERTY(VisibleAnywhere, Category = "Sound")
+		UAudioComponent* AudioLoopComp;
 
 	//체력이 0이하로 내려갔을때 행동들 정의, ragdoll 등..
 	void IsDeath();
@@ -117,9 +119,27 @@ public:
 	void SetZombieType(EZombieType NewType);
 
 	bool DamageHit(uint8 damage);
+
+	UFUNCTION()
+		void TargetChase(APawn* pawn);
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Attack")
 		UAnimMontage* AttackAnimMontage;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+		UAnimMontage* ScreamAnimMontage;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* PlayerChaseSoundCue;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* PlayerWanderingSoundCue;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* IdleSoundCue;
+	
+
+
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UAnimInstance* AnimInstance;

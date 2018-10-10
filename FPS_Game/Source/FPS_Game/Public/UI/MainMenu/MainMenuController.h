@@ -19,9 +19,12 @@ public:
 	
 	UFUNCTION(BlueprintCallable, Category = "Util")
 		void NextLevel(FName MapName);
+
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget") 
 		TSubclassOf<class UUserWidget> wMainMenu;
 	
 	UUserWidget * MyMainMenu;
+
+	
 };

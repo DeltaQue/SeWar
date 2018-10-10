@@ -85,20 +85,7 @@ void AWeapons::FireWeapon()
 	const float CurrentSpread = CalcWeaponSpread();
 	const float ConeHalfAngle = FMath::DegreesToRadians(CurrentSpread * 0.5f);
 
-	//const FVector AimDir = GetAdjustAim();
-	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are AimDir: %d, %d, %d"), AimDir.X, AimDir.Y, AimDir.Z));
-	//const FVector StartTrace = GetCameraStartLocation(AimDir);
-	//const FVector ShootDir = WeaponRandomStream.VRandCone(AimDir, ConeHalfAngle, ConeHalfAngle);
-	//const FVector EndTrace = StartTrace + ShootDir * WeaponConfig.WeaponRange;
-
-	//const FHitResult Impact = HitScanLineTrace(StartTrace, EndTrace);
-	//ProcessHitScan(Impact, StartTrace, ShootDir, CurrentSpread);
-
-	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Green, false, 1, 0, 1);
-
-
-	//WeaponConfig.WeaponRange 설정해줘야함
-
+	//WeaponConfig.WeaponRange BP에서 설정해줘야함
 
 	const FVector AimDir = GetAdjustAim();
 	const FVector CameraPos = GetCameraStartLocation(AimDir);
@@ -125,8 +112,8 @@ void AWeapons::FireWeapon()
 	ProcessHitScan(Impact, MuzzleOrigin, AdjustedAimDir);
 
 	//DrawDebugLine(GetWorld(), CameraPos, EndPos, FColor::Green, false, 5, 0, 1);
-	DrawDebugPoint(GetWorld(), CameraPos, 20.f,  FColor::Red, false, 999999, SDPG_MAX);
-	DrawDebugPoint(GetWorld(), EndPos, 20.f, FColor::Green, false, 999999, SDPG_MAX);
+	//DrawDebugPoint(GetWorld(), CameraPos, 20.f,  FColor::Red, false, 999999, SDPG_MAX);
+	//DrawDebugPoint(GetWorld(), EndPos, 20.f, FColor::Green, false, 999999, SDPG_MAX);
 }
 
 void AWeapons::StartReload()

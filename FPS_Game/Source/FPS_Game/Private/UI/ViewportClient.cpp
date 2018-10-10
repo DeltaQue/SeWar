@@ -44,7 +44,7 @@ void UViewportClient::DrawScreenFade(UCanvas* Canvas)
 		{
 			const float Time = World->GetTimeSeconds();
 			const float Alpha = FMath::Clamp((Time - FadeStartTime) / FadeDuration, 0.f, 1.f);
-			// Make sure that we stay black in a fade to black
+
 			if (Alpha == 1.f && !bToBlack)
 			{
 				bFading = false;
@@ -54,7 +54,7 @@ void UViewportClient::DrawScreenFade(UCanvas* Canvas)
 				FColor OldColor = Canvas->DrawColor;
 				FLinearColor FadeColor = FLinearColor::Black;
 				FadeColor.A = bToBlack ? Alpha : 1 - Alpha;
-				Canvas->DrawColor = FadeColor.ToFColor(true); // TheJamsh: "4.10 cannot convert directly to FColor, so need to use FLinearColor::ToFColor() :)
+				Canvas->DrawColor = FadeColor.ToFColor(true); 
 				Canvas->DrawTile(Canvas->DefaultTexture, 0, 0, Canvas->ClipX, Canvas->ClipY, 0, 0, Canvas->DefaultTexture->GetSizeX(), Canvas->DefaultTexture->GetSizeY());
 				Canvas->DrawColor = OldColor;
 			}

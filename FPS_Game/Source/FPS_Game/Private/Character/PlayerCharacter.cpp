@@ -17,6 +17,14 @@ APlayerCharacter::APlayerCharacter(const class FObjectInitializer& ObjectInitial
 	FPP_Camera->SetupAttachment(GetCapsuleComponent());
 	FPP_Camera->RelativeLocation = FVector(-39.56f, 1.75f, 100.f); // Position the camera
 	FPP_Camera->bUsePawnControlRotation = true;
+	FPP_Camera->Activate(true);
+
+	FPP_BackTargetViewCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("BackTargetViewCamera"));
+	FPP_BackTargetViewCamera->SetupAttachment(GetCapsuleComponent());
+	FPP_BackTargetViewCamera->RelativeLocation = FVector(-200.f, 1.75f, 100.f); // Position the camera
+	FPP_BackTargetViewCamera->RelativeRotation = FRotator(0.f, 0.f, -180.f);
+	FPP_BackTargetViewCamera->bUsePawnControlRotation = false;
+	FPP_BackTargetViewCamera->Deactivate();
 
 	GetMesh()->SetupAttachment(FPP_Camera);
 	GetMesh()->bOnlyOwnerSee = true;
@@ -61,6 +69,15 @@ void APlayerCharacter::PostInitializeComponents()
 	//GameMode->GetCheckPoint();
 }
 
+void APlayerCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(1.0, 0.0), 5.0f);
+
+}
 void APlayerCharacter::OnCameraUpdate(const FVector& CameraLocation, const FRotator& CameraRotation)
 {
 	//USkeletalMeshComponent* DefMesh1P = Cast<USkeletalMeshComponent>(GetClass()->GetDefaultSubobjectByName(TEXT("PawnMesh1P")));
@@ -410,6 +427,51 @@ void APlayerCharacter::StopAllAnimMontages()
 	}
 
 }
+
+void APlayerCharacter::FaceRotation(FRotator NewRotation, float DeltaTime)
+{
+	FRotator CurrentRotation = FMath::RInterpTo(GetActorRotation(), NewRotation, DeltaTime, 5.0f);
+	Super::FaceRotation(CurrentRotation, DeltaTime);
+}
+
+void APlayerCharacter::SwitchTargetCamera(float BlendTime)
+{
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+
+	FViewTargetTransitionParams prams;
+	prams.BlendTime = BlendTime;
+
+	//Controller->SetViewTargetWithBlend(FPP_BackTargetViewCamera, prams);
+
+	if (FPP_Camera->IsActive() && !FPP_BackTargetViewCamera->IsActive())
+	{
+		FPP_Camera->Deactivate();
+		FPP_BackTargetViewCamera->Activate();
+	}
+	else if (!FPP_Camera->IsActive() && FPP_BackTargetViewCamera->IsActive())
+	{
+		FPP_BackTargetViewCamera->Deactivate();
+		FPP_Camera->Activate();
+	}
+
+	FTimerHandle CameraTimerHandle;
+	GetWorldTimerManager().SetTimer(CameraTimerHandle, this, &APlayerCharacter::SwitchMyCamera, 5.0f, false);
+}
+
+void APlayerCharacter::SwitchMyCamera()
+{
+	if (FPP_Camera->IsActive() && !FPP_BackTargetViewCamera->IsActive())
+	{
+		FPP_Camera->Deactivate();
+		FPP_BackTargetViewCamera->Activate();
+	}
+	else if (!FPP_Camera->IsActive() && FPP_BackTargetViewCamera->IsActive())
+	{
+		FPP_BackTargetViewCamera->Deactivate();
+		FPP_Camera->Activate();
+	}
+}
+
 
 bool APlayerCharacter::IsTargeting() const
 {

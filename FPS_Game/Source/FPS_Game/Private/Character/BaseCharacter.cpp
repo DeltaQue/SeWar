@@ -76,6 +76,11 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 	{
 		UDamageType const* DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
 		
+		APlayerCharacter* Player = Cast<APlayerCharacter>(Killer->GetCharacter());
+		ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
+
+		PlayerController->SetScoreKillpoint();
+
 		bIsDie = true;
 		//Score 부분 추가
 

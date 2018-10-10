@@ -22,10 +22,9 @@ AZombieAIController::AZombieAIController(const class FObjectInitializer& ObjectI
 	/* Blackboard Å°°ª°ú ¸ÅÄª */
 	PatrolLocationKeyName = "PatrolLocation";
 	CurrentWaypointKeyName = "CurrentWaypoint";
-	BotTypeKeyName = "BotType";
+	ZombieTypeKeyName = "ZombieType";
 	TargetEnemyKeyName = "TargetEnemy";
 	ReconLocationKeyName = "ReconLocation";
-	IsArriveKeyName = "IsArrive";
 }
 
 
@@ -36,16 +35,18 @@ void AZombieAIController::Possess(class APawn* InPawn)
 	AZombieCharacter* ZombieBot = Cast<AZombieCharacter>(InPawn);
 	if (ZombieBot)
 	{
-		if (ZombieBot->BehaviorTree->BlackboardAsset)
+		if (ZombieBot->BehaviorTree && ZombieBot->BehaviorTree->BlackboardAsset)
 		{
-			BlackboardComp->InitializeBlackboard(*ZombieBot->BehaviorTree->BlackboardAsset);
+			if (ZombieBot->BehaviorTree->BlackboardAsset)
+			{
+				BlackboardComp->InitializeBlackboard(*ZombieBot->BehaviorTree->BlackboardAsset);
 
-			/* Make sure the Blackboard has the type of bot we possessed */
-			//SetBlackboardBotType(ZombieBot->BotType);
+				/* Make sure the Blackboard has the type of bot we possessed */
+				SetBlackboardZombieType(ZombieBot->ZombieType);
+			}
+
+			BehaviorComp->StartTree(*ZombieBot->BehaviorTree);
 		}
-
-		BehaviorComp->StartTree(*ZombieBot->BehaviorTree);
-		SetIsArrive(true);
 	}
 }
 
@@ -56,24 +57,6 @@ void AZombieAIController::UnPossess()
 
 	/* Stop any behavior running as we no longer have a pawn to control */
 	BehaviorComp->StopTree();
-}
-
-
-void AZombieAIController::SetWaypoint(AWaypoint* NewWaypoint)
-{
-	if (BlackboardComp)
-	{
-		BlackboardComp->SetValueAsObject(CurrentWaypointKeyName, NewWaypoint);
-	}
-}
-
-
-void AZombieAIController::SetTargetEnemy(APawn* NewTarget)
-{
-	if (BlackboardComp)
-	{
-		BlackboardComp->SetValueAsObject(TargetEnemyKeyName, NewTarget);
-	}
 }
 
 
@@ -107,16 +90,6 @@ ABaseCharacter* AZombieAIController::GetTargetEnemy() const
 	return nullptr;
 }
 
-bool AZombieAIController::GetIsArrive() const
-{
-	if (BlackboardComp)
-	{
-		return BlackboardComp->GetValueAsBool(IsArriveKeyName);
-	}
-
-	return false;
-}
-
 bool AZombieAIController::GetIsAttackCollisionOverlap() const
 {
 	if (BlackboardComp)
@@ -129,11 +102,28 @@ bool AZombieAIController::GetIsAttackCollisionOverlap() const
 
 
 
+void AZombieAIController::SetWaypoint(AWaypoint* NewWaypoint)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsObject(CurrentWaypointKeyName, NewWaypoint);
+	}
+}
+
+
+void AZombieAIController::SetTargetEnemy(APawn* NewTarget)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsObject(TargetEnemyKeyName, NewTarget);
+	}
+}
+
 void AZombieAIController::SetBlackboardZombieType(EZombieType NewType)
 {
 	if (BlackboardComp)
 	{
-		BlackboardComp->SetValueAsEnum(BotTypeKeyName, (uint8)NewType);
+		BlackboardComp->SetValueAsEnum(ZombieTypeKeyName, (uint8)NewType);
 	}
 }
 
@@ -145,18 +135,22 @@ void AZombieAIController::SetReconLocation(FVector vector)
 	}
 }
 
-void AZombieAIController::SetIsArrive(bool Arrive)
-{
-	if (BlackboardComp)
-	{
-		BlackboardComp->SetValueAsBool(IsArriveKeyName, Arrive);
-	}
-}
-
 void AZombieAIController::SetIsAttackCollisionOverlap(bool Overlaped)
 {
 	if (BlackboardComp)
 	{
 		BlackboardComp->SetValueAsBool(IsAttackCollisionOverlapKeyName, Overlaped);
 	}
+}
+
+
+void AZombieAIController::StopBehaviorTree()
+{
+	BehaviorComp->StopTree();
+}
+
+void AZombieAIController::StartBehaviorTree()
+{
+	AZombieCharacter *ZombieBot = Cast<AZombieCharacter>(GetPawn());
+	BehaviorComp->StartTree(*ZombieBot->BehaviorTree);
 }

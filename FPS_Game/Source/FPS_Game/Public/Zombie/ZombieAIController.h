@@ -7,6 +7,7 @@
 #include "BaseCharacter.h"
 #include "ZombieCharacter.h"
 #include "Waypoint.h"
+#include "FPS_GameStruct.h"
 #include "ZombieAIController.generated.h"
 
 /**
@@ -20,7 +21,7 @@ class FPS_GAME_API AZombieAIController : public AAIController
 {
 	GENERATED_BODY()
 	
-		AZombieAIController(const class FObjectInitializer& ObjectInitializer);
+	AZombieAIController(const class FObjectInitializer& ObjectInitializer);
 
 	/* Called whenever the controller possesses a character bot */
 	virtual void Possess(class APawn* InPawn) override;
@@ -42,13 +43,10 @@ class FPS_GAME_API AZombieAIController : public AAIController
 		FName CurrentWaypointKeyName;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		FName BotTypeKeyName;
+		FName ZombieTypeKeyName;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName ReconLocationKeyName;
-
-	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		FName IsArriveKeyName;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName IsAttackCollisionOverlapKeyName;
@@ -59,8 +57,6 @@ public:
 	ABaseCharacter* GetTargetEnemy() const;
 
 	FVector GetReconLocation() const;
-
-	bool GetIsArrive() const;
 
 	bool GetIsAttackCollisionOverlap() const;
 
@@ -73,9 +69,11 @@ public:
 
 	void SetReconLocation(FVector vector);
 
-	void SetIsArrive(bool Arrive);
-
 	void SetIsAttackCollisionOverlap(bool Overlaped);
+
+
+	void StopBehaviorTree();
+	void StartBehaviorTree();
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorComp() const { return BehaviorComp; }

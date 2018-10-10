@@ -42,3 +42,19 @@ struct FDecalData
 	{
 	}
 };
+
+
+UENUM()
+enum class EZombieType : uint8
+{
+	Passing,
+	Patrol
+};
+
+
+UENUM()
+enum class ENPCPersonality : uint8
+{
+	Passing,
+	Patrol
+};
