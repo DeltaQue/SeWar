@@ -619,7 +619,7 @@ void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin,
 	}
 
 	const FVector MuzzleOrigin = GetMuzzleLocation();
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are MuzzleLocation: %d, %d, %d"), MuzzleOrigin.X, MuzzleOrigin.Y, MuzzleOrigin.Z));
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are MuzzleLocation: %d, %d, %d"), MuzzleOrigin.X, MuzzleOrigin.Y, MuzzleOrigin.Z));
 
 	const FVector AimDir = (Impact.ImpactPoint - MuzzleOrigin).GetSafeNormal();
 
@@ -660,7 +660,8 @@ void AWeapons::SpawnTrailEffect(const FVector & EndPoint)
 		const FVector CameraPos = GetCameraStartLocation(AimDir);
 		const FVector Origin = GetMuzzleLocation();
 
-		UParticleSystemComponent* TrailPSC = UGameplayStatics::SpawnEmitterAtLocation(this, TrailFX, CameraPos);
+		//UParticleSystemComponent* TrailPSC = UGameplayStatics::SpawnEmitterAtLocation(this, TrailFX, CameraPos);
+		UParticleSystemComponent* TrailPSC = UGameplayStatics::SpawnEmitterAtLocation(this, TrailFX, Origin);
 		if (TrailPSC)
 		{
 			TrailPSC->SetVectorParameter(TrailTargetParam, EndPoint);
@@ -731,7 +732,7 @@ FVector AWeapons::GetCameraStartLocation(const FVector &AimDir) const
 		FRotator UnusedRot;
 		PC->GetPlayerViewPoint(OutStartTrace, UnusedRot);
 
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are Startlocation: %d, %d, %d"),Instigator->GetActorLocation().X, Instigator->GetActorLocation().Y, Instigator->GetActorLocation().Z));
+		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are Startlocation: %d, %d, %d"),Instigator->GetActorLocation().X, Instigator->GetActorLocation().Y, Instigator->GetActorLocation().Z));
 		//OutStartTrace = OutStartTrace + AimDir * ((Instigator->GetActorLocation() - OutStartTrace) | AimDir);
 		OutStartTrace = OutStartTrace + AimDir * (FVector::DotProduct((Instigator->GetActorLocation() - OutStartTrace), AimDir));
 	}

@@ -65,6 +65,95 @@ bool ABaseCharacter::CanDie(float KillingDamage, FDamageEvent const& DamageEvent
 bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageEvent
 	, class AController* Killer, class AActor* DamageCauser)
 {
+	//if (!CanDie(KillingDamage, DamageEvent, Killer, DamageCauser))
+	//{
+	//	return false;
+	//}
+
+	//Health = 0.f;
+
+	//PlayHit(KillingDamage, DamageEvent, Killer->GetPawn(), DamageCauser, true);
+
+	//if (Health <= 0)
+	//{
+	//	UDamageType const* DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
+	//	
+	//	APlayerCharacter* Player = Cast<APlayerCharacter>(Killer->GetCharacter());
+	//	ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
+
+	//	//Score 부분 추가
+	//	PlayerController->SetScoreKillpoint();
+
+	//	bIsDie = true;
+	//	
+	//	DetachFromControllerPendingDestroy();
+
+	//	if (DeathSound)
+	//	{
+	//		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
+	//	}
+
+	//	//StopAllAimMontages();
+
+	//	if (GetMesh())
+	//	{
+	//		static FName CollisionProfileName(TEXT("Ragdoll"));
+	//		GetMesh()->SetCollisionProfileName(CollisionProfileName);
+	//	}
+
+	//	SetActorEnableCollision(true);
+
+	//	float DeathAnimTime = PlayAnimMontage(DeathAnim);
+
+	//	if (DeathAnimTime > 0.f)
+	//	{
+	//		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Zombie Death Anim Duration: %f"), DeathAnimTime));
+	//		
+	//		// Trigger ragdoll a little before the animation early so the character doesn't
+	//		// blend back to its normal position.
+	//		const float TriggerRagdollTime = DeathAnimTime - 0.7f;
+
+	//		// Enable blend physics so the bones are properly blending against the montage.
+	//		GetMesh()->bBlendPhysics = true;
+
+	//		SetRagdollPhysics();
+
+	//		// Use a local timer handle as we don't need to store it for later but we don't need to look for something to clear
+	//		//FTimerHandle TimerHandle;
+	//		//GetWorldTimerManager().SetTimer(TimerHandle, this, &ABaseCharacter::SetRagdollPhysics, FMath::Max(0.1f, TriggerRagdollTime), false);
+	//	}
+	//	else
+	//	{
+	//		SetRagdollPhysics();
+	//	}
+
+	//	// disable collisions on capsule
+	//	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	//	GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	//}
+
+	///* Apply physics impulse on the bone of the enemy skeleton mesh we hit (ray-trace damage only) */
+	//if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+	//{
+	//	FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
+	//	{
+	//		GetMesh()->AddImpulseAtLocation(PointDmg.ShotDirection * 5000, PointDmg.HitInfo.ImpactPoint, PointDmg.HitInfo.BoneName);
+	//	}
+	//}
+	//if (DamageEvent.IsOfType(FRadialDamageEvent::ClassID))
+	//{
+	//	FRadialDamageEvent RadialDmg = *((FRadialDamageEvent const*)(&DamageEvent));
+	//	{
+	//		GetMesh()->AddRadialImpulse(RadialDmg.Origin, RadialDmg.Params.GetMaxRadius(), 100000, ERadialImpulseFalloff::RIF_Linear);
+	//	}
+	//}
+
+	//bIsDie = false;
+
+	//return true;
+
+
 	if (!CanDie(KillingDamage, DamageEvent, Killer, DamageCauser))
 	{
 		return false;
@@ -72,61 +161,67 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 
 	Health = 0.f;
 
-	if (Health <= 0)
+	PlayHit(KillingDamage, DamageEvent, Killer->GetPawn(), DamageCauser, true);
+
+
+	DetachFromControllerPendingDestroy();
+
+	/* Disable all collision on capsule */
+	UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
+	CapsuleComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	CapsuleComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	
+	USkeletalMeshComponent* Mesh = GetMesh();
+	if (Mesh)
 	{
-		UDamageType const* DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
-		
-		APlayerCharacter* Player = Cast<APlayerCharacter>(Killer->GetCharacter());
-		ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
-
-		PlayerController->SetScoreKillpoint();
-
-		bIsDie = true;
-		//Score 부분 추가
-
-		if (DeathSound)
-		{
-			UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
-		}
-
-		//StopAllAimMontages();
-
-		if (GetMesh())
-		{
-			static FName CollisionProfileName(TEXT("Ragdoll"));
-			GetMesh()->SetCollisionProfileName(CollisionProfileName);
-		}
-
-		float DeathAnimTime = PlayAnimMontage(DeathAnim);
-
-		if (DeathAnimTime > 0.f)
-		{
-			// Trigger ragdoll a little before the animation early so the character doesn't
-			// blend back to its normal position.
-			const float TriggerRagdollTime = DeathAnimTime - 0.7f;
-
-			// Enable blend physics so the bones are properly blending against the montage.
-			GetMesh()->bBlendPhysics = true;
-
-			// Use a local timer handle as we don't need to store it for later but we don't need to look for something to clear
-			FTimerHandle TimerHandle;
-			GetWorldTimerManager().SetTimer(TimerHandle, this, &ABaseCharacter::SetRagdollPhysics, FMath::Max(0.1f, TriggerRagdollTime), false);
-		}
-		else
-		{
-			SetRagdollPhysics();
-		}
-
-		// disable collisions on capsule
-		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-		GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Ignore);
+		Mesh->SetCollisionProfileName(TEXT("Ragdoll"));
 	}
+	//SetActorEnableCollision(true);
 
-	bIsDie = false;
+
+	SetRagdollPhysics();
+
+	/* Apply physics impulse on the bone of the enemy skeleton mesh we hit (ray-trace damage only) */
+	if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+	{
+		FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
+		{
+			// TODO: Use DamageTypeClass->DamageImpulse
+			Mesh->AddImpulseAtLocation(PointDmg.ShotDirection * 12000, PointDmg.HitInfo.ImpactPoint, PointDmg.HitInfo.BoneName);
+		}
+	}
+	if (DamageEvent.IsOfType(FRadialDamageEvent::ClassID))
+	{
+		FRadialDamageEvent RadialDmg = *((FRadialDamageEvent const*)(&DamageEvent));
+		{
+			Mesh->AddRadialImpulse(RadialDmg.Origin, RadialDmg.Params.GetMaxRadius(), 100000 /*RadialDmg.DamageTypeClass->DamageImpulse*/, ERadialImpulseFalloff::RIF_Linear);
+		}
+	}
 
 	return true;
 }
 
+void ABaseCharacter::PlayHit(float DamageTaken, struct FDamageEvent const& DamageEvent, APawn* PawnInstigator, AActor* DamageCauser, bool bKilled)
+{
+	if (bKilled && DeathSound)
+	{
+		UGameplayStatics::SpawnSoundAttached(DeathSound, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+	}
+	else if (HitSound)
+	{
+		UGameplayStatics::SpawnSoundAttached(HitSound, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+	}
+
+	if (bKilled && DeathAnim)
+	{
+		float DeathAnimTime = PlayAnimMontage(DeathAnim);
+	}
+	else if (HitAnim)
+	{
+		float DeathAnimTime = PlayAnimMontage(HitAnim);
+	}
+}
 
 void ABaseCharacter::ReSpawnPlayer()
 {
@@ -142,40 +237,50 @@ void ABaseCharacter::ReSpawnPlayer()
 void ABaseCharacter::SetRagdollPhysics()
 {
 
-	bool bIsRagdoll = false;
+	bool bInRagdoll = false;
+	USkeletalMeshComponent* Mesh = GetMesh();
 
 	if (IsPendingKill())
 	{
-		bIsRagdoll = false;
+		bInRagdoll = false;
 	}
-	else if (!GetMesh() || !GetMesh()->GetPhysicsAsset())
+	else if (!Mesh || !Mesh->GetPhysicsAsset())
 	{
-		bIsRagdoll = false;
+		bInRagdoll = false;
 	}
 	else
 	{
-		// initialize physics/etc
-		GetMesh()->SetSimulatePhysics(true);
-		GetMesh()->WakeAllRigidBodies();
-		GetMesh()->bBlendPhysics = true;
+		Mesh->SetAllBodiesSimulatePhysics(true);
+		Mesh->SetSimulatePhysics(true);
+		Mesh->WakeAllRigidBodies();
+		Mesh->bBlendPhysics = true;
 
-		bIsRagdoll = true;
+		PlayAnimMontage(DeathAnim);
+
+		bInRagdoll = true;
 	}
 
-	GetCharacterMovement()->StopMovementImmediately();
-	GetCharacterMovement()->DisableMovement();
-	GetCharacterMovement()->SetComponentTickEnabled(false);
-
-	if (!bIsRagdoll)
+	UCharacterMovementComponent* CharacterComp = Cast<UCharacterMovementComponent>(GetMovementComponent());
+	if (CharacterComp)
 	{
-		// hide and set short lifespan
+		CharacterComp->StopMovementImmediately();
+		CharacterComp->DisableMovement();
+		CharacterComp->SetComponentTickEnabled(false);
+	}
+
+	if (!bInRagdoll)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("bInRagdoll is false")));
+
+		// Immediately hide the pawn
 		TurnOff();
 		SetActorHiddenInGame(true);
 		SetLifeSpan(1.0f);
 	}
 	else
 	{
-		SetLifeSpan(10.0f);		//LifeSpan(float x) x가 지나면 모든 개체가 사라짐, 액터는 사라지지 않는다.
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("bInRagdoll is true")));
+		//SetLifeSpan(10.0f);		//LifeSpan(float x) x가 지나면 모든 개체가 사라짐, 액터는 사라지지 않는다.
 	}
 }
 
@@ -191,17 +296,23 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 	Damage = GameMode->DamageCalc(Damage, this, DamageEvent, EventInstigator, DamageCauser);
 
 	const float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+
 	if (ActualDamage > 0.f)
 	{
 		Health -= ActualDamage;
 		if (Health <= 0)
 		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Zombie Die In")));
 			//Death
-			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
+			//Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
 		}
 		else
 		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Zombie Play Hit in")));
+			SetRagdollPhysics();
 
+			//APawn* Pawn = EventInstigator ? EventInstigator->GetPawn() : nullptr;
+			//PlayHit(ActualDamage, DamageEvent, Pawn, DamageCauser, false);
 		}
 	}
 

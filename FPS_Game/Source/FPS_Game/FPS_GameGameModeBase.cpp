@@ -67,11 +67,24 @@ float AFPS_GameGameModeBase::DamageCalc(float Damage, AActor * DamagedActor, FDa
 }
 
 
-void AFPS_GameGameModeBase::SpawnZombie()
+void AFPS_GameGameModeBase::SpawnZombie(int32 ZombieCount)
 {
 	if (SpawnZombieArray.Num() > 0)
 	{
 		int32 NumZombieClasses = SpawnZombieArray.Num();
+		/*for (int32 i = 0; i < ZombieCount; i++)
+		{
+			if (SpawnZombieArray[i] && Stage1_Spawnpoint[i])
+			{
+				AActor* SPawnPoint = Cast<AActor>(Stage1_Spawnpoint[i]);
+				FVector SpawnLoc(SPawnPoint->GetActorLocation());
+				FRotator SpawnRot(0.f, 0.f, 0.f);
+				FActorSpawnParameters SpawnInfo;
+				SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+				SpawnInfo.bAllowDuringConstructionScript = true;
+				AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+			}
+		}*/
 		for (int32 i = 0; i < NumZombieClasses; i++)
 		{
 			if (SpawnZombieArray[i])

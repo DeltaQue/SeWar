@@ -341,7 +341,7 @@ void ARPlayerController::NextScript()
 			{
 				bTurnViewTarget = true;
 
-				GameMode->SpawnZombie();
+				GameMode->SpawnZombie(1);
 			}
 			break;
 

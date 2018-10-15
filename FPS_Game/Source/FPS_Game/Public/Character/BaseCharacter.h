@@ -23,7 +23,7 @@ protected:
 
 private:
 	void ReSpawnPlayer();
-	void SetRagdollPhysics();
+	
 
 
 	//Ragdoll Check
@@ -43,6 +43,9 @@ protected:
 
 	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
 
+	virtual void PlayHit(float DamageTaken, struct FDamageEvent const& DamageEvent, APawn* PawnInstigator, AActor* DamageCauser, bool bKilled);
+
+	void SetRagdollPhysics();
 
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 		USkeletalMeshComponent* TPP_Mesh;
@@ -53,8 +56,13 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* DeathSound;
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* HitSound;
+
 	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* DeathAnim;
+	UPROPERTY(EditDefaultsOnly, Category = Animation)
+		UAnimMontage* HitAnim;
 
 public:	
 	void Suicide();

@@ -67,6 +67,12 @@ struct FWeaponData
 	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
 		TSubclassOf<UDamageType> DamageType;
 
+
+	//true : HitScan
+	//false : Projectile
+	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
+		bool IsHitScan;
+
 	/** defaults */
 	FWeaponData()
 	{
@@ -80,6 +86,7 @@ struct FWeaponData
 		WeaponTargetingSpread = 0.25f;
 		HitDamage = 10.f;
 		DamageType = UDamageType::StaticClass();
+		IsHitScan = true;
 	}
 };
 
@@ -165,6 +172,7 @@ protected:
 	/** reload animations */
 	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* ReloadAnim;
+
 
 	/** equip sound */
 	UPROPERTY(EditDefaultsOnly, Category = Sound)

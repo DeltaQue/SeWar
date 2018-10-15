@@ -21,3 +21,18 @@
 #define COLLISION_WEAPON		ECC_GameTraceChannel1
 #define COLLISION_PROJECTILE	ECC_GameTraceChannel2
 #define COLLISION_PICKUP		ECC_GameTraceChannel3
+
+
+
+#define SURFACE_DEFAULT				SurfaceType_Default
+#define SURFACE_CONCRETE			SurfaceType1
+#define SURFACE_DIRT				SurfaceType2
+#define SURFACE_WATER				SurfaceType3
+#define SURFACE_METAL				SurfaceType4
+#define SURFACE_WOOD				SurfaceType5
+#define SURFACE_GRASS				SurfaceType6
+#define SURFACE_GLASS				SurfaceType7
+#define SURFACE_FLESH				SurfaceType8
+#define SURFACE_ZOMBIEBODY			SurfaceType9
+#define SURFACE_ZOMBIEHEAD			SurfaceType10
+#define SURFACE_ZOMBIELIMB			SurfaceType11

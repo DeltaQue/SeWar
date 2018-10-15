@@ -48,6 +48,8 @@ private:
 
 	
 	void AudioLoopUpdate(bool bNewSensedTarget);
+	
+
 
 	float LastAttackTime;
 	float AttackCooltime;
@@ -123,10 +125,10 @@ public:
 	UFUNCTION()
 		void TargetChase(APawn* pawn);
 protected:
-	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* AttackAnimMontage;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* ScreamAnimMontage;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")

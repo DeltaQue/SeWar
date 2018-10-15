@@ -54,6 +54,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = Inventory)
 		TArray<TSubclassOf<class AZombieCharacter> > SpawnZombieArray;
 
+	UPROPERTY(EditDefaultsOnly, Category = Inventory)
+		TArray<TSubclassOf<AActor> > Stage1_Spawnpoint;
+
 public:
 	void SetPlayerSpawnTransform(FTransform SpawnTransform);
 
@@ -84,7 +87,7 @@ public:
 	int32 GetNPCScriptNum() const;
 	int32 GetNPCScriptMaxSize(int NPCType) const;
 
-	void SpawnZombie();
+	void SpawnZombie(int32 ZombieCount);
 
 	void SetCompleteQuest(int32 QuestNum);
 };

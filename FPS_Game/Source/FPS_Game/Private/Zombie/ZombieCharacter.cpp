@@ -388,6 +388,7 @@ void AZombieCharacter::AudioLoopUpdate(bool bNewSensedTarget)
 	}
 }
 
+
 void AZombieCharacter::TimerHandleFunc()
 {
 	//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
