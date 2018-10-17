@@ -2,6 +2,7 @@
 
 #include "Weapons.h"
 #include "FPS_Game.h"
+#include "PlayerDamageType.h"
 
 
 
@@ -376,7 +377,7 @@ void AWeapons::StopReload()
 
 void AWeapons::ReloadWeapon()
 {
-	if (RemainingAmmo > 0)
+	if (RemainingAmmo > 0 && WeaponConfig.AmmoPerClip > LoadedAmmo)
 	{
 		// 장전할 총알이 남은 총알보다 더 많거나 같을 경우 
 		// ex) 30-20 >= 9, 10발 충전해야하지만 9발만 장전
@@ -388,8 +389,8 @@ void AWeapons::ReloadWeapon()
 		// ex) 30-20 < 50, 장전할 총알보다 남은 총알이 더 많을경우
 		else if ((WeaponConfig.AmmoPerClip - LoadedAmmo) < RemainingAmmo)
 		{
-			LoadedAmmo += (WeaponConfig.AmmoPerClip - LoadedAmmo);
 			RemainingAmmo -= (WeaponConfig.AmmoPerClip - LoadedAmmo);
+			LoadedAmmo += (WeaponConfig.AmmoPerClip - LoadedAmmo);
 		}
 	}
 }
@@ -609,11 +610,31 @@ void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin,
 {
 	if (Impact.GetActor() && Impact.GetActor() != WeaponOwner)
 	{
+		float ActualDamage = WeaponConfig.HitDamage;
+
+		UPlayerDamageType* DmgType = Cast<UPlayerDamageType>(WeaponConfig.DamageType->GetDefaultObject());
+		UPhysicalMaterial * PhysMat = Impact.PhysMaterial.Get();
+		if (PhysMat && DmgType)
+		{
+			if (PhysMat->SurfaceType == SURFACE_ZOMBIEHEAD)
+			{
+				ActualDamage *= DmgType->GetHeadDamageModifier();
+			}
+			else if (PhysMat->SurfaceType == SURFACE_ZOMBIEBODY)
+			{
+				ActualDamage *= DmgType->GetBodyDamageModifier();
+			}
+			else if (PhysMat->SurfaceType == SURFACE_ZOMBIELIMB)
+			{
+				ActualDamage *= DmgType->GetLimbDamageModifier();
+			}
+		}
+
 		FPointDamageEvent PointDmg;
 		PointDmg.DamageTypeClass = WeaponConfig.DamageType;
 		PointDmg.HitInfo = Impact;
 		PointDmg.ShotDirection = ShootDir;
-		PointDmg.Damage = WeaponConfig.HitDamage;
+		PointDmg.Damage = ActualDamage;
 
 		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, WeaponOwner->Controller, this);
 	}
@@ -629,11 +650,11 @@ void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin,
 	if (ImpactResult.bBlockingHit)
 	{
 		SpawnImpactEffect(ImpactResult);
-		SpawnTrailEffect(ImpactResult.ImpactPoint);
+		//SpawnTrailEffect(ImpactResult.ImpactPoint);
 	}
 	else
 	{
-		SpawnTrailEffect(EndTrace);
+		//SpawnTrailEffect(EndTrace);
 	}
 }
 

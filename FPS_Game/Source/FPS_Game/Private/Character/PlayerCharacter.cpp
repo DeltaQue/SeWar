@@ -283,7 +283,6 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 
 void APlayerCharacter::Tick(float DeltaTime)
 {
-
 }
 
 void APlayerCharacter::OnStartJump()

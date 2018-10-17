@@ -137,7 +137,6 @@ void AZombieCharacter::Tick(float DeltaSeconds)
 		}
 	}
 
-
 	IsDeath();
 }
 
@@ -167,14 +166,10 @@ void AZombieCharacter::OnSeePlayer(APawn* Pawn)
 			Duration = 0.5f;
 		}
 
-		AZombieAIController *Controller = Cast<AZombieAIController>(GetController());
-		Controller->StopBehaviorTree();
-
 		FTimerHandle UniqueHandle;
 		FTimerDelegate RespawnDelegate = FTimerDelegate::CreateUObject(this, &AZombieCharacter::TargetChase, Pawn);
 		GetWorldTimerManager().SetTimer(UniqueHandle, RespawnDelegate, Duration, false);
 	}
-
 	
 }
 
@@ -183,17 +178,12 @@ void AZombieCharacter::TargetChase(APawn* Pawn)
 	//타겟을 발견 한 뒤 월드 시간을 받음
 	LastSeenTime = GetWorld()->GetTimeSeconds();
 	bSensedTarget = true;
-	
 
 	AZombieAIController* AIController = Cast<AZombieAIController>(GetController());
 	ABaseCharacter* SensedPawn = Cast<ABaseCharacter>(Pawn);
 	if (AIController && SensedPawn->IsAlive())
 	{
-		AZombieAIController *Controller = Cast<AZombieAIController>(GetController());
-		Controller->StartBehaviorTree();
-
 		AIController->SetTargetEnemy(SensedPawn);
-
 
 
 		Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 10.f;
@@ -242,7 +232,7 @@ void AZombieCharacter::OnAttackCollisionCompBeginOverlap(class UPrimitiveCompone
 {
 	APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
 	//Timer Stop
-	if (Player)
+	if (Player && this->Health > 0 && !GetHitReact())
 	{
 		TimerHandle_AttackTimer.Invalidate();
 
@@ -279,8 +269,9 @@ bool AZombieCharacter::DamageHit(uint8 damage)
 
 void AZombieCharacter::IsDeath()
 {
-	if (!this->IsAlive())
-		Destroy();
+	//if (!this->IsAlive())
+		//Destroy();
+
 }
 
 void AZombieCharacter::PlayAttackMotion()

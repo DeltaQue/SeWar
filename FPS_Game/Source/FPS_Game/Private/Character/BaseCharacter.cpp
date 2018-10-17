@@ -11,6 +11,7 @@ ABaseCharacter::ABaseCharacter(const class FObjectInitializer& ObjectInitializer
 
 	bIsRagdoll = false;
 	bIsDie = false;
+	bHitReact = false;
 }
 
 // Called when the game starts or when spawned
@@ -177,7 +178,7 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 	{
 		Mesh->SetCollisionProfileName(TEXT("Ragdoll"));
 	}
-	//SetActorEnableCollision(true);
+	SetActorEnableCollision(true);
 
 
 	SetRagdollPhysics();
@@ -219,8 +220,33 @@ void ABaseCharacter::PlayHit(float DamageTaken, struct FDamageEvent const& Damag
 	}
 	else if (HitAnim)
 	{
-		float DeathAnimTime = PlayAnimMontage(HitAnim);
+		AZombieCharacter* Zombie = Cast<AZombieCharacter>(PawnInstigator);
+		AZombieAIController* AIController = Cast<AZombieAIController>(PawnInstigator->GetController());
+		if (AIController)
+		{
+			Zombie->GetCharacterMovement()->MaxWalkSpeed = Zombie->GetCharacterMovement()->MaxWalkSpeed / 2;
+			float DeathAnimTime = PlayAnimMontage(HitAnim);
+
+			bHitReact = true;
+
+			FTimerHandle HitReactTimer_Handle;
+			FTimerDelegate HitReactDelegate = FTimerDelegate::CreateUObject(this, &ABaseCharacter::AI_StopBehaviorTree, PawnInstigator);
+			GetWorldTimerManager().SetTimer(HitReactTimer_Handle, HitReactDelegate, DeathAnimTime, true);
+		}
+		else
+		{
+			float DeathAnimTime = PlayAnimMontage(HitAnim);
+		}
+		
 	}
+}
+
+void ABaseCharacter::AI_StopBehaviorTree(class APawn* PawnInstigator)
+{
+	AZombieCharacter* Zombie = Cast<AZombieCharacter>(PawnInstigator);
+	Zombie->GetCharacterMovement()->MaxWalkSpeed = Zombie->GetCharacterMovement()->MaxWalkSpeed * 2;
+
+	bHitReact = false;
 }
 
 void ABaseCharacter::ReSpawnPlayer()
@@ -270,8 +296,6 @@ void ABaseCharacter::SetRagdollPhysics()
 
 	if (!bInRagdoll)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("bInRagdoll is false")));
-
 		// Immediately hide the pawn
 		TurnOff();
 		SetActorHiddenInGame(true);
@@ -279,8 +303,7 @@ void ABaseCharacter::SetRagdollPhysics()
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("bInRagdoll is true")));
-		//SetLifeSpan(10.0f);		//LifeSpan(float x) x가 지나면 모든 개체가 사라짐, 액터는 사라지지 않는다.
+		SetLifeSpan(4.0f);		//LifeSpan(float x) x가 지나면 모든 개체가 사라짐, 액터는 사라지지 않는다.
 	}
 }
 
@@ -302,17 +325,13 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 		Health -= ActualDamage;
 		if (Health <= 0)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Zombie Die In")));
 			//Death
-			//Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
+			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
 		}
 		else
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Zombie Play Hit in")));
-			SetRagdollPhysics();
-
-			//APawn* Pawn = EventInstigator ? EventInstigator->GetPawn() : nullptr;
-			//PlayHit(ActualDamage, DamageEvent, Pawn, DamageCauser, false);
+			APawn* Pawn = EventInstigator ? EventInstigator->GetPawn() : nullptr;
+			PlayHit(ActualDamage, DamageEvent, Pawn, DamageCauser, false);
 		}
 	}
 
@@ -332,11 +351,16 @@ void ABaseCharacter::Suicide()
 		Killer = this->Controller;
 		LastHitBy = NULL;
 	}
-
+	Health = 0.f;
 	Die(Health, FDamageEvent(UDamageType::StaticClass()), Killer, NULL);
 }
 
 bool ABaseCharacter::GetIsDie() const
 {
 	return bIsDie;
+}
+
+bool ABaseCharacter::GetHitReact() const
+{
+	return bHitReact;
 }

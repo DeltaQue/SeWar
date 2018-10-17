@@ -65,7 +65,7 @@ struct FWeaponData
 		int32 HitDamage;
 
 	UPROPERTY(EditDefaultsOnly, Category = WeaponStat)
-		TSubclassOf<UDamageType> DamageType;
+		TSubclassOf<class UDamageType> DamageType;
 
 
 	//true : HitScan

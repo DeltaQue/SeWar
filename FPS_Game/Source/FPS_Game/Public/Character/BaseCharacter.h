@@ -24,11 +24,12 @@ protected:
 private:
 	void ReSpawnPlayer();
 	
-
+	void AI_StopBehaviorTree(class APawn* PawnInstigator);
 
 	//Ragdoll Check
 	bool bIsRagdoll;
 	bool bIsDie;
+	bool bHitReact;
 protected:
 	
 
@@ -71,6 +72,8 @@ public:
 	bool GetIsDie() const;
 	float GetHealth() const;
 	float GetMaxHealth() const;
-	
+	bool GetHitReact() const;
+
+
 	void DestroyTarget();
 };
