@@ -105,9 +105,6 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditDefaultsOnly, Category = Config)
-		FWeaponData WeaponConfig;
-
 
 	/** impact effects */
 	UPROPERTY(EditDefaultsOnly, Category = Effects)
@@ -213,6 +210,7 @@ public:
 
 	virtual void OnEnterInventory(APlayerCharacter* NewOwner);
 	
+
 	void OnEquip(const AWeapons* LastWeapon);
 	void OnUnEquip();
 	void SetOwnerWeapon(APlayerCharacter* Owner);
@@ -238,6 +236,11 @@ public:
 		int32 GetLoadedAmmo();
 	UFUNCTION(BlueprintCallable, Category = "WeaponState")
 		int32 GetRemainingAmmo();
+
+	void SetRemainingAmmo(int32 ImproveBullet);
+
+	UPROPERTY(EditDefaultsOnly, Category = Config)
+		FWeaponData WeaponConfig;
 
 private:
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)

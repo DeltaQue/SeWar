@@ -232,7 +232,7 @@ void AZombieCharacter::OnAttackCollisionCompBeginOverlap(class UPrimitiveCompone
 {
 	APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
 	//Timer Stop
-	if (Player && this->Health > 0 && !GetHitReact())
+	if (Player && this->Health > 0)
 	{
 		TimerHandle_AttackTimer.Invalidate();
 

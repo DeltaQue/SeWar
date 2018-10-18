@@ -118,6 +118,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* AttackSound;
 
+
 	void SetZombieType(EZombieType NewType);
 
 	bool DamageHit(uint8 damage);

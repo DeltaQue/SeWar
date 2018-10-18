@@ -8,6 +8,7 @@ ABaseCharacter::ABaseCharacter(const class FObjectInitializer& ObjectInitializer
 	:Super(ObjectInitializer)
 {
 	Health = 100.f;
+	MaxHealth = 100.f;
 
 	bIsRagdoll = false;
 	bIsDie = false;
@@ -28,7 +29,23 @@ float ABaseCharacter::GetHealth() const
 
 float ABaseCharacter::GetMaxHealth() const
 {
-	return 100.f;
+	return MaxHealth;
+}
+
+void ABaseCharacter::SetHealth(float ImproveHealth)
+{
+	if (ImproveHealth > 0.f)
+	{
+		if (MaxHealth >= Health + ImproveHealth)
+		{
+			Health += ImproveHealth;
+		}
+		else if (MaxHealth < Health + ImproveHealth)
+		{
+			Health = MaxHealth;
+		}
+	}
+		
 }
 
 bool ABaseCharacter::IsAlive() const
@@ -323,6 +340,8 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 	if (ActualDamage > 0.f)
 	{
 		Health -= ActualDamage;
+
+		OnScreenDamage(ActualDamage);
 		if (Health <= 0)
 		{
 			//Death

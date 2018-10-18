@@ -766,3 +766,15 @@ FVector AWeapons::GetMuzzleLocation() const
 {
 	return WeaponMesh->GetSocketLocation("MuzzleFlashSocket");
 }
+
+void AWeapons::SetRemainingAmmo(int32 ImproveAmmo)
+{
+	if (WeaponConfig.MaxAmmo >= RemainingAmmo + ImproveAmmo)
+	{
+		RemainingAmmo += ImproveAmmo;
+	}
+	else if (WeaponConfig.MaxAmmo < RemainingAmmo + ImproveAmmo)
+	{
+		RemainingAmmo = WeaponConfig.MaxAmmo;
+	}
+}

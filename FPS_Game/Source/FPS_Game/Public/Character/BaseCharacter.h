@@ -8,6 +8,7 @@
 class UAudioComponent;
 class USoundCue;
 
+
 UCLASS(ABSTRACT)
 class FPS_GAME_API ABaseCharacter : public ACharacter
 {
@@ -31,7 +32,10 @@ private:
 	bool bIsDie;
 	bool bHitReact;
 protected:
-	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Damage")
+		void OnScreenDamage(float FlictDamage);
+
+
 
 	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
 		, class AController* EventInstigator, class AActor* DamageCauser) override;
@@ -55,6 +59,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerState")
 		float Health;
 
+	UPROPERTY(EditDefaultsOnly, Category = "PlayerState")
+		float MaxHealth;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* DeathSound;
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
@@ -74,6 +81,7 @@ public:
 	float GetMaxHealth() const;
 	bool GetHitReact() const;
 
+	void SetHealth(float ImproveHealth);
 
 	void DestroyTarget();
 };
