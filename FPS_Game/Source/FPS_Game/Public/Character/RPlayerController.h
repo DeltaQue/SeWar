@@ -32,44 +32,31 @@ private:
 protected:
 	virtual void SetupInputComponent() override;
 
-	
-
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-	//	TSubclassOf<class UUserWidget> wGuideWidget;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-	//	TSubclassOf<class UUserWidget> wTutorialWidget;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-	//	TSubclassOf<class UUserWidget> wStage1_QuestWidget;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-	//	TSubclassOf<class UUserWidget> wStage2_QuestWidget;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-	//	TSubclassOf<class UUserWidget> wHealWidget;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-	//	TSubclassOf<class UUserWidget> wAmmoWidget;
-
+	virtual void Tick(float DeltaTime) override;
 
 	//wWidgetArray
-	//0 : GuideWidget
-	//1 : TutorialWidget
-	//2 : Stage1_QuestWidget
-	//3 : Stage2_QuestWidget
-	//4 : HealWidget
-	//5 : AmmoWidget
+	//1 : QusetScriptlWidget
+	//2 : HealWidget
+	//3 : AmmoWidget
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
 		TArray<TSubclassOf<class UUserWidget>> wWidgetArray;
 
+	//wGuideWidgetArray
+	//0 : Movement GuideWidget
+	//1 : Weapon GuideWidget
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-		TSubclassOf<class UUserWidget> wCurrentQuestHUD;
+		TArray<TSubclassOf<class UUserWidget>> wGuideWidgetArray;
 
-	UUserWidget* GuideWidget;
-	UUserWidget* TutorialWidget;
-	UUserWidget* Stage1_QuestWidget;
-	UUserWidget* Stage2_QuestWidget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+		TSubclassOf<class UUserWidget> wStatusHUD;
+
+	UUserWidget* MovementGuideWidget;
+	UUserWidget* WeaponGuideWidget;
+	UUserWidget* QuestScriptWidget;
 	UUserWidget* HealWidget;
 	UUserWidget* AmmoWidget;
 
-	UUserWidget* CurrentQuestHUD;
+	UUserWidget* StatusHUD;
 
 public:
 	void OnScreenMessage(FName string);
@@ -77,26 +64,41 @@ public:
 	void OnScreenMessageAmmo(int32 ammo);
 	void OnScreenMessageSwitch(int32 val);
 
-	void OpenGuideWidget();
-	void CloseGuideWidget();
+	void OpenAllGuideWidget();
+	void OpenGuideWidget(int GuideWidgetNum);
+	void CloseGuideWidget(int GuideWidgetNum);
 
-	void OpenQuestWidget(int32 WidgetNum);
-	void CloseQuestWidget(int32 WidgetNum);
-
-	void OpenCurrentQuestHUD();
-	void CloseCurrentQuestHUD();
+	void OpenWidget(int32 WidgetNum);
+	void CloseWidget(int32 WidgetNum);
+	
 
 	UFUNCTION(BlueprintCallable, Category = "Bind")
 		int32 BindKilledpoint();
 	UFUNCTION(BlueprintCallable, Category = "Bind")
 		void NextScript();
 
+	void SetGamePause();
+	void SetGameUnPause();
 
 	void SetScoreKillpoint();
-	int32 GetScoreKillpoint();
+	int32 GetScoreKillpoint() const;
 
 	UPROPERTY()
 		bool bTurnViewTarget;
 
 	void SetTalkNPCType(int32 NPCType);
+
+
+	//Status WIdget을 얻기 위한 함수
+	UFUNCTION(BlueprintCallable, Category = "Widget")
+		UUserWidget* GetStatusHUD() const;
+	//퀘스트 스코어
+	UFUNCTION(BlueprintCallable, Category = "Widget")
+		int32 GetQuestScore() const;
+
+
+	void OpenStatusHUD();
+	void CloseStatusHUD();
+
+
 };

@@ -56,9 +56,10 @@ UParticleSystem* AImpactEffects::GetImpactFX(TEnumAsByte<EPhysicalSurface> Surfa
 	case SURFACE_GRASS:			ImpactFX = GrassFX; break;
 	case SURFACE_GLASS:			ImpactFX = GlassFX; break;
 	case SURFACE_FLESH:			ImpactFX = FleshFX; break;
-	case SURFACE_ZOMBIEBODY:	ImpactFX = FleshFX; break;
-	case SURFACE_ZOMBIEHEAD:	ImpactFX = FleshFX; break;
-	case SURFACE_ZOMBIELIMB:	ImpactFX = FleshFX; break;
+	case SURFACE_ZOMBIEBODY:
+	case SURFACE_ZOMBIEHEAD:
+	case SURFACE_ZOMBIELIMB:	
+		ImpactFX = FleshFX; break;
 
 	default:						ImpactFX = DefaultFX; break;
 	}

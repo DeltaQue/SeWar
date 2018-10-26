@@ -17,7 +17,9 @@ private:
 	APlayerCharacter(const class FObjectInitializer& ObjectInitializer);
 
 	virtual void PostInitializeComponents() override;
-	
+
+	void MovementTutorialOpen();
+
 	void AddWeapon(AWeapons* TargetWeapon);
 	void RemoveWeapon(AWeapons* TargetWeapon);
 	void SetDefaultWeaponEquip();
@@ -58,6 +60,9 @@ protected:
 	void OnStartADS();
 	void OnStopADS();
 	void OnReload();
+	void OnPrevWeapon();
+	void OnNextWeapon();
+
 
 	void OnStartSprint();
 	void OnStopSprint();
@@ -101,6 +106,16 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		class AWeapons* GetWeapon() const;
+
+	//Ammo Gauge Event
+	UFUNCTION(BlueprintImplementableEvent, Category = "AmmoGauge")
+		void WeaponFireEvent(float LoadedAmmo);
+	//현재 퀘스트 활성화
+	UFUNCTION(BlueprintImplementableEvent, Category = "Widget")
+		void SetCurrentQuestActivate(int QuestNum);
+	//현재 퀘스트 비활성화
+	UFUNCTION(BlueprintImplementableEvent, Category = "Widget")
+		void SetCurrentQuestDeActivate(int QuestNum);
 
 	bool CanFire() const;
 	void StopAllAnimMontages();

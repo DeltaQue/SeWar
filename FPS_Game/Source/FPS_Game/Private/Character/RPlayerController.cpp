@@ -3,27 +3,30 @@
 #include "RPlayerController.h"
 #include "FPS_Game.h"
 #include "CameraManager.h"
+#include "GameFramework/PlayerInput.h"
 #include "Runtime/Engine/Classes/Kismet/KismetMathLibrary.h"
 
 //wWidgetArray
-//0 : GuideWidget
-//1 : TutorialWidget
-//2 : Stage1_QuestWidget
-//3 : Stage2_QuestWidget
-//4 : HealWidget
-//5 : AmmoWidget
+//1 : QuestScriptWidget
+//2 : HealWidget
+//3 : AmmoWidget
 
 ARPlayerController::ARPlayerController(const class FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer)
 {
 	PlayerCameraManagerClass = ACameraManager::StaticClass();
 
-	OpenGuideWidget();
-	
 	
 	bTurnViewTarget = false;
 
 	TalkNPCType = -1;
+}
+
+void ARPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+
 }
 
 void ARPlayerController::SetupInputComponent()
@@ -31,13 +34,12 @@ void ARPlayerController::SetupInputComponent()
 	// set up gameplay key bindings
 	Super::SetupInputComponent();
 
-	InputComponent->BindAction("Guide", IE_Pressed, this, &ARPlayerController::OpenGuideWidget);
-	InputComponent->BindAction("Guide", IE_Released, this, &ARPlayerController::CloseGuideWidget);
+	InputComponent->BindAction("Guide", IE_Pressed, this, &ARPlayerController::OpenAllGuideWidget);
+	//InputComponent->BindAction("Guide", IE_Released, this, &ARPlayerController::CloseGuideWidget);
 
 	InputComponent->BindAction("Anykey", IE_Released, this, &ARPlayerController::NextScript);
 
-	InputComponent->BindAction("ESC", IE_Released, this, &ARPlayerController::CloseAllWidget);
-
+	//InputComponent->BindAction("ESC", IE_Released, this, &ARPlayerController::CloseAllWidget);
 }
 
 
@@ -76,53 +78,126 @@ void ARPlayerController::OnScreenMessageSwitch(int32 val)
 	}
 }
 
-void ARPlayerController::OpenGuideWidget()
+void ARPlayerController::OpenAllGuideWidget()
 {
-	if (wWidgetArray.Num() != 0)
+	if (GetWorld())
 	{
-		if (GuideWidget)
+		if (wGuideWidgetArray.Num() != 0)
 		{
-			CloseGuideWidget();
-		}
-		else
-		{
-			if (wWidgetArray[0]) // Check if the Asset is assigned in the blueprint.
+			//Movement Guide Widget
+			if (wGuideWidgetArray[0])
 			{
-				// Create the widget and store it.
-				GuideWidget = CreateWidget<UUserWidget>(this, wWidgetArray[0]);
+				MovementGuideWidget = CreateWidget<UUserWidget>(this, wGuideWidgetArray[0]);
 
-				// now you can use the widget directly since you have a referance for it.
-				// Extra check to  make sure the pointer holds the widget.
-				if (GuideWidget)
+				if (MovementGuideWidget)
 				{
-					//let add it to the view port
-					GuideWidget->AddToViewport();
+					MovementGuideWidget->AddToViewport();
 				}
 
 			}
+			//Weapon Guide Widget
+			if (wGuideWidgetArray[1])
+			{
+				WeaponGuideWidget = CreateWidget<UUserWidget>(this, wGuideWidgetArray[1]);
+
+				if (WeaponGuideWidget)
+				{
+					WeaponGuideWidget->AddToViewport();
+				}
+			}
+
+			bShowMouseCursor = true;
+
+			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+			GameMode->SetGamePause();
 		}
 	}
 }
 
-void ARPlayerController::CloseGuideWidget()
+void ARPlayerController::OpenGuideWidget(int GuideWidgetNum)
 {
-	if (GuideWidget)
+	if (GetWorld())
 	{
-		GuideWidget->RemoveFromParent();
-		GuideWidget = nullptr;
+		if (wGuideWidgetArray.Num() != 0)
+		{
+			switch (GuideWidgetNum)
+			{
+			case 0:
+				//Movement Guide Widget
+				if (wGuideWidgetArray[0])
+				{
+					MovementGuideWidget = CreateWidget<UUserWidget>(this, wGuideWidgetArray[0]);
+
+					if (MovementGuideWidget)
+					{
+						MovementGuideWidget->AddToViewport();
+					}
+				}
+				break;
+
+			case 1:
+				//Weapon Guide Widget
+				if (wGuideWidgetArray[1])
+				{
+					WeaponGuideWidget = CreateWidget<UUserWidget>(this, wGuideWidgetArray[1]);
+
+					if (WeaponGuideWidget)
+					{
+						WeaponGuideWidget->AddToViewport();
+					}
+				}
+				break;
+
+			default:
+				break;
+			}
+
+			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+			GameMode->SetGamePause();
+		}
 	}
 }
 
-void ARPlayerController::OpenQuestWidget(int32 WidgetNum)
+void ARPlayerController::CloseGuideWidget(int GuideWidgetNum)
+{
+	switch (GuideWidgetNum)
+	{
+	case 0:
+		if (MovementGuideWidget)
+		{
+			MovementGuideWidget->RemoveFromParent();
+			MovementGuideWidget = nullptr;
+
+			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+			GameMode->SetGameUnPause();
+		}
+		break;
+
+	case 1:
+		if (WeaponGuideWidget)
+		{
+			WeaponGuideWidget->RemoveFromParent();
+			WeaponGuideWidget = nullptr;
+
+			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+			GameMode->SetGameUnPause();
+		}
+		break;
+
+	default:
+		break;
+	}
+	
+}
+
+void ARPlayerController::OpenWidget(int32 WidgetNum)
 {
 	if (wWidgetArray.Num() != 0)
 	{
 		//Widget Num
-		//1 : Tutorial WIdget
-		//2 : Stage1 Quest Widget
-		//3 : Stage2 Quest Widget
-		//4 : Heal Widget
-		//5 : Ammo Widget
+		//1 : QuestScript WIdget
+		//2 : Heal Widget
+		//3 : Ammo Widget
 		switch (WidgetNum)
 		{
 		case 0:
@@ -131,47 +206,24 @@ void ARPlayerController::OpenQuestWidget(int32 WidgetNum)
 			if (wWidgetArray[1]) // Check if the Asset is assigned in the blueprint.
 			{
 				// Create the widget and store it.
-				TutorialWidget = CreateWidget<UUserWidget>(this, wWidgetArray[1]);
+				QuestScriptWidget = CreateWidget<UUserWidget>(this, wWidgetArray[1]);
 
 				// now you can use the widget directly since you have a referance for it.
 				// Extra check to  make sure the pointer holds the widget.
-				if (TutorialWidget)
+				if (QuestScriptWidget)
 				{
 					//let add it to the view port
-					TutorialWidget->AddToViewport();
+					QuestScriptWidget->AddToViewport();
 				}
 
 			}
 			break;
 
+			//Health 회복 NPC Sciprt 오픈
 		case 2:
 			if (wWidgetArray[2])
 			{
-				Stage1_QuestWidget = CreateWidget<UUserWidget>(this, wWidgetArray[2]);
-
-				if (Stage1_QuestWidget)
-				{
-					Stage1_QuestWidget->AddToViewport();
-				}
-			}
-			break;
-
-		case 3:
-			if (wWidgetArray[3])
-			{
-				Stage2_QuestWidget = CreateWidget<UUserWidget>(this, wWidgetArray[3]);
-
-				if (Stage2_QuestWidget)
-				{
-					Stage2_QuestWidget->AddToViewport();
-				}
-			}
-			break;
-
-		case 4:
-			if (wWidgetArray[4])
-			{
-				HealWidget = CreateWidget<UUserWidget>(this, wWidgetArray[4]);
+				HealWidget = CreateWidget<UUserWidget>(this, wWidgetArray[3]);
 
 				if (HealWidget)
 				{
@@ -180,10 +232,11 @@ void ARPlayerController::OpenQuestWidget(int32 WidgetNum)
 			}
 			break;
 
-		case 5:
-			if (wWidgetArray[5])
+			//Ammo 충전 NPC Sciprt 오픈
+		case 3:
+			if (wWidgetArray[3])
 			{
-				AmmoWidget = CreateWidget<UUserWidget>(this, wWidgetArray[5]);
+				AmmoWidget = CreateWidget<UUserWidget>(this, wWidgetArray[3]);
 
 				if (AmmoWidget)
 				{
@@ -197,23 +250,21 @@ void ARPlayerController::OpenQuestWidget(int32 WidgetNum)
 	}
 }
 
-void ARPlayerController::CloseQuestWidget(int32 WidgetNum)
+void ARPlayerController::CloseWidget(int32 WidgetNum)
 {
 	//Widget Num
 	//1 : Tutorial WIdget
-	//2 : Stage1 Quest Widget
-	//3 : Stage2 Quest Widget
-	//4 : Heal Widget
-	//5 : Ammo Widget
+	//2 : Heal Widget
+	//3 : Ammo Widget
 
 	switch (WidgetNum)
 	{
 	case 0:
 	case 1:
-		if (TutorialWidget)
+		if (QuestScriptWidget)
 		{
-			TutorialWidget->RemoveFromParent();
-			TutorialWidget = nullptr;
+			QuestScriptWidget->RemoveFromParent();
+			QuestScriptWidget = nullptr;
 
 			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
 
@@ -221,10 +272,11 @@ void ARPlayerController::CloseQuestWidget(int32 WidgetNum)
 			if (GameMode->GetQuestScriptMaxSize(GameMode->GetQuestNum()) - 1 == GameMode->GetQuestScriptNum())
 			{
 				//다음 퀘스트로 넘어가는 조건 => GameMode에서 SetCompleteQuest()에서 진행
-				//GameMode->NextQuest();
+				//if (GameMode->Complete_Quest[GameMode->GetQuestNum()] == true)
+					//GameMode->NextQuest();
 			}
 			//스크립트가 완전히 종료되지 않았는데 퀘스트 위젯을 꺼야할때
-			else
+			else if(GameMode->GetQuestScriptMaxSize(GameMode->GetQuestNum()) - 1 > GameMode->GetQuestScriptNum())
 			{
 				GameMode->ClearQuest();
 			}
@@ -232,28 +284,6 @@ void ARPlayerController::CloseQuestWidget(int32 WidgetNum)
 		break;
 
 	case 2:
-		if (Stage1_QuestWidget)
-		{
-			Stage1_QuestWidget->RemoveFromParent();
-			Stage1_QuestWidget = nullptr;
-
-			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-			GameMode->ClearQuest();
-		}
-		break;
-
-	case 3:
-		if (Stage2_QuestWidget)
-		{
-			Stage2_QuestWidget->RemoveFromParent();
-			Stage2_QuestWidget = nullptr;
-
-			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-			GameMode->ClearQuest();
-		}
-		break;
-
-	case 4:
 		if (HealWidget)
 		{
 			HealWidget->RemoveFromParent();
@@ -264,7 +294,7 @@ void ARPlayerController::CloseQuestWidget(int32 WidgetNum)
 		}
 		break;
 
-	case 5:
+	case 3:
 		if (AmmoWidget)
 		{
 			AmmoWidget->RemoveFromParent();
@@ -281,32 +311,37 @@ void ARPlayerController::CloseQuestWidget(int32 WidgetNum)
 	
 }
 
-void ARPlayerController::OpenCurrentQuestHUD()
+void ARPlayerController::OpenStatusHUD()
 {
-	if (wCurrentQuestHUD) // Check if the Asset is assigned in the blueprint.
+	if (wStatusHUD) 
 	{
-		// Create the widget and store it.
-		CurrentQuestHUD = CreateWidget<UUserWidget>(this, wCurrentQuestHUD);
+		StatusHUD = CreateWidget<UUserWidget>(this, wStatusHUD);
 
-		// now you can use the widget directly since you have a referance for it.
-		// Extra check to  make sure the pointer holds the widget.
-		if (CurrentQuestHUD)
+		if (StatusHUD)
 		{
-			//let add it to the view port
-			CurrentQuestHUD->AddToViewport();
+			StatusHUD->AddToViewport();
 		}
 
 	}
 }
 
-void ARPlayerController::CloseCurrentQuestHUD()
+void ARPlayerController::CloseStatusHUD()
 {
-	if (CurrentQuestHUD)
+	if (StatusHUD)
 	{
-		CurrentQuestHUD->RemoveFromParent();
-		CurrentQuestHUD = nullptr;
+		StatusHUD->RemoveFromParent();
+		StatusHUD = nullptr;
 	}
 }
+
+UUserWidget* ARPlayerController::GetStatusHUD() const
+{
+	if (StatusHUD)
+		return StatusHUD;
+	else
+		return nullptr;
+}
+
 
 void ARPlayerController::NextScript()
 {
@@ -317,47 +352,53 @@ void ARPlayerController::NextScript()
 	{
 	//case 0 : Quest NPC
 	case 0:
-		//현재 스크립트가 끝인경우
 		switch (GameMode->GetQuestNum())
 		{
+			//현재 스크립트가 끝인경우
+
 			//Tutorial Quest
 		case 0:
 			if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(0) - 1)
 			{
-				CloseQuestWidget(0);
+				//대화창 종료
+				CloseWidget(0);
 
-				//FRotator TargetRot = UKismetMathLibrary::FindLookAtRotation(Player->GetActorLocation(), TargetLoc);
-				//Player->SetActorRotation(FMath::RInterpTo(Player->GetActorRotation(), TargetRot, GetWorld()->GetDeltaSeconds(), 5.0f));
-				//Player->SetActorRotation(FMath::RInterpTo(Player->GetActorRotation(), Dir.Rotation(), GetWorld()->GetDeltaSeconds(), 5.0f));
-				//Player->SetActorRelativeRotation(FMath::RInterpTo(Player->GetActorRotation(), TargetRot, GetWorld()->GetDeltaSeconds(), 5.0f));
-
-				/*FVector MyLoc = MyCharacter->GetActorLocation();
-				FVector TargetLoc = FVector(100.f, 100.f, 0.f);
-				FVector Dir = (TargetLoc - MyLoc);
-				Dir.Normalize();
-				MyCharacter->SetActorRotation(FMath::Lerp(MyCharacter->GetActorRotation(), Dir.Rotation(), 0.05f));*/
+				//퀘스트 UI 활성화
+				Player->SetCurrentQuestActivate(0);
 			}
+			//튜토리얼 이벤트
 			else if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(0) - 2)
 			{
 				bTurnViewTarget = true;
-
-				GameMode->SpawnZombie(1);
+				//튜토리얼 좀비 스폰
+				GameMode->SpawnZombie();
 			}
 			break;
 
 			//Stage1 - Quest 
 		case 1:
-			if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(2) - 1)
+			if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(1) - 1)
 			{
-				CloseQuestWidget(2);
+				CloseWidget(1);
 
-				//Quest UI SetActivate!
-				OpenCurrentQuestHUD();
+				//퀘스트 UI 활성화
+				Player->SetCurrentQuestActivate(1);
+
+				GameMode->SpawnZombie();
 			}
 			break;
 
 			//Stage2 - Quest
 		case 2:
+			if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(2) - 1)
+			{
+				CloseWidget(2);
+
+				//퀘스트 UI 활성화
+				Player->SetCurrentQuestActivate(2);
+
+				GameMode->SpawnZombie();
+			}
 			break;
 
 		default:
@@ -380,7 +421,7 @@ void ARPlayerController::NextScript()
 	case 1:
 		if (GameMode->GetNPCScriptNum() == GameMode->GetNPCScriptMaxSize(1) - 1)
 		{
-			CloseQuestWidget(4);
+			CloseWidget(2);
 
 			//HP 회복 함수
 		}
@@ -390,7 +431,7 @@ void ARPlayerController::NextScript()
 	case 2:
 		if (GameMode->GetNPCScriptNum() == GameMode->GetNPCScriptMaxSize(2) - 1)
 		{
-			CloseQuestWidget(5);
+			CloseWidget(3);
 
 			//Ammo 충전 함수
 		}
@@ -410,7 +451,7 @@ int32 ARPlayerController::BindKilledpoint()
 	return Killpoint;
 }
 
-int32 ARPlayerController::GetScoreKillpoint()
+int32 ARPlayerController::GetScoreKillpoint() const
 {
 	return Killpoint;
 }
@@ -418,14 +459,6 @@ int32 ARPlayerController::GetScoreKillpoint()
 void ARPlayerController::SetScoreKillpoint()
 {
 	Killpoint++;
-
-	if (Killpoint == 1)
-	{
-		AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-
-		//Tutorial Quest Clear
-		GameMode->SetCompleteQuest(0);
-	}
 }
 
 void ARPlayerController::SetTalkNPCType(int32 NPCType)
@@ -436,25 +469,20 @@ void ARPlayerController::SetTalkNPCType(int32 NPCType)
 
 void ARPlayerController::CloseAllWidget()
 {
-	if (GuideWidget)
+	if (MovementGuideWidget)
 	{
-		GuideWidget->RemoveFromParent();
-		GuideWidget = nullptr;
+		MovementGuideWidget->RemoveFromParent();
+		MovementGuideWidget = nullptr;
 	}
-	if (TutorialWidget)
+	if (WeaponGuideWidget)
 	{
-		TutorialWidget->RemoveFromParent();
-		TutorialWidget = nullptr;
+		WeaponGuideWidget->RemoveFromParent();
+		WeaponGuideWidget = nullptr;
 	}
-	if (Stage1_QuestWidget)
+	if (QuestScriptWidget)
 	{
-		Stage1_QuestWidget->RemoveFromParent();
-		Stage1_QuestWidget = nullptr;
-	}
-	if (Stage2_QuestWidget)
-	{
-		Stage2_QuestWidget->RemoveFromParent();
-		Stage2_QuestWidget = nullptr;
+		QuestScriptWidget->RemoveFromParent();
+		QuestScriptWidget = nullptr;
 	}
 	if (HealWidget)
 	{
@@ -470,4 +498,36 @@ void ARPlayerController::CloseAllWidget()
 	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
 	GameMode->ClearNPCScript();
 	GameMode->ClearQuest();
+}
+
+
+void ARPlayerController::SetGamePause()
+{
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+
+	GameMode->SetGamePause();
+}
+
+
+void ARPlayerController::SetGameUnPause()
+{
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+
+	GameMode->SetGameUnPause();
+}
+
+int32 ARPlayerController::GetQuestScore() const
+{
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+
+	if (GameMode->GetQuestNum() == 0)
+	{
+		return GetScoreKillpoint();
+	}
+	else if (GameMode->GetQuestNum() == 1)
+	{
+		return GetScoreKillpoint() - 1;
+	}
+	else
+		return -1;
 }

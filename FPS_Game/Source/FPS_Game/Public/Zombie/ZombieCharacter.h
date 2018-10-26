@@ -3,7 +3,6 @@
 #pragma once
 
 #include "FPS_Game.h"
-#include "BaseCharacter.h"
 #include "Character/BaseCharacter.h"
 #include "Components/WidgetComponent.h"
 #include "ZombieCharacter.generated.h"

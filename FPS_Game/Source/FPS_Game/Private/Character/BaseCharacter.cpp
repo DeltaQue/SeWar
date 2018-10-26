@@ -83,94 +83,6 @@ bool ABaseCharacter::CanDie(float KillingDamage, FDamageEvent const& DamageEvent
 bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageEvent
 	, class AController* Killer, class AActor* DamageCauser)
 {
-	//if (!CanDie(KillingDamage, DamageEvent, Killer, DamageCauser))
-	//{
-	//	return false;
-	//}
-
-	//Health = 0.f;
-
-	//PlayHit(KillingDamage, DamageEvent, Killer->GetPawn(), DamageCauser, true);
-
-	//if (Health <= 0)
-	//{
-	//	UDamageType const* DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
-	//	
-	//	APlayerCharacter* Player = Cast<APlayerCharacter>(Killer->GetCharacter());
-	//	ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
-
-	//	//Score 부분 추가
-	//	PlayerController->SetScoreKillpoint();
-
-	//	bIsDie = true;
-	//	
-	//	DetachFromControllerPendingDestroy();
-
-	//	if (DeathSound)
-	//	{
-	//		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
-	//	}
-
-	//	//StopAllAimMontages();
-
-	//	if (GetMesh())
-	//	{
-	//		static FName CollisionProfileName(TEXT("Ragdoll"));
-	//		GetMesh()->SetCollisionProfileName(CollisionProfileName);
-	//	}
-
-	//	SetActorEnableCollision(true);
-
-	//	float DeathAnimTime = PlayAnimMontage(DeathAnim);
-
-	//	if (DeathAnimTime > 0.f)
-	//	{
-	//		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Zombie Death Anim Duration: %f"), DeathAnimTime));
-	//		
-	//		// Trigger ragdoll a little before the animation early so the character doesn't
-	//		// blend back to its normal position.
-	//		const float TriggerRagdollTime = DeathAnimTime - 0.7f;
-
-	//		// Enable blend physics so the bones are properly blending against the montage.
-	//		GetMesh()->bBlendPhysics = true;
-
-	//		SetRagdollPhysics();
-
-	//		// Use a local timer handle as we don't need to store it for later but we don't need to look for something to clear
-	//		//FTimerHandle TimerHandle;
-	//		//GetWorldTimerManager().SetTimer(TimerHandle, this, &ABaseCharacter::SetRagdollPhysics, FMath::Max(0.1f, TriggerRagdollTime), false);
-	//	}
-	//	else
-	//	{
-	//		SetRagdollPhysics();
-	//	}
-
-	//	// disable collisions on capsule
-	//	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	//	GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Ignore);
-
-	//}
-
-	///* Apply physics impulse on the bone of the enemy skeleton mesh we hit (ray-trace damage only) */
-	//if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
-	//{
-	//	FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
-	//	{
-	//		GetMesh()->AddImpulseAtLocation(PointDmg.ShotDirection * 5000, PointDmg.HitInfo.ImpactPoint, PointDmg.HitInfo.BoneName);
-	//	}
-	//}
-	//if (DamageEvent.IsOfType(FRadialDamageEvent::ClassID))
-	//{
-	//	FRadialDamageEvent RadialDmg = *((FRadialDamageEvent const*)(&DamageEvent));
-	//	{
-	//		GetMesh()->AddRadialImpulse(RadialDmg.Origin, RadialDmg.Params.GetMaxRadius(), 100000, ERadialImpulseFalloff::RIF_Linear);
-	//	}
-	//}
-
-	//bIsDie = false;
-
-	//return true;
-
 
 	if (!CanDie(KillingDamage, DamageEvent, Killer, DamageCauser))
 	{
@@ -181,7 +93,24 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 
 	PlayHit(KillingDamage, DamageEvent, Killer->GetPawn(), DamageCauser, true);
 
+	APlayerCharacter* Player = Cast<APlayerCharacter>(Killer->GetCharacter());
+	ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
 
+	FPointDamageEvent* PointDamageEvent;
+	if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+	{
+		PointDamageEvent = (FPointDamageEvent*)&DamageEvent;
+
+		AZombieCharacter* Zombie = Cast<AZombieCharacter>(PointDamageEvent->HitInfo.Actor);
+		if (Zombie && !Zombie->IsPendingKill() && KilledZombie != Zombie)
+		{
+			PlayerController->SetScoreKillpoint();
+			KilledZombie = Zombie;
+		}
+	}
+		
+	
+	
 	DetachFromControllerPendingDestroy();
 
 	/* Disable all collision on capsule */
@@ -332,8 +261,8 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 		return 0.0f;
 	}
 
-	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-	Damage = GameMode->DamageCalc(Damage, this, DamageEvent, EventInstigator, DamageCauser);
+	/*AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+	Damage = GameMode->DamageCalc(Damage, this, DamageEvent, EventInstigator, DamageCauser);*/
 
 	const float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 
@@ -341,6 +270,7 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 	{
 		Health -= ActualDamage;
 
+		//Floating Damage Event 
 		OnScreenDamage(ActualDamage);
 		if (Health <= 0)
 		{

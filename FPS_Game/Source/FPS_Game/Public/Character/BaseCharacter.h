@@ -31,6 +31,9 @@ private:
 	bool bIsRagdoll;
 	bool bIsDie;
 	bool bHitReact;
+
+	UPROPERTY()
+		class AZombieCharacter* KilledZombie;
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Damage")
 		void OnScreenDamage(float FlictDamage);

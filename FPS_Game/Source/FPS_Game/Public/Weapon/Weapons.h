@@ -226,6 +226,7 @@ public:
 
 	int32 GetCurrentAmmo() const;
 	USkeletalMeshComponent* GetWeaponMesh() const;
+	EWeaponState::Type GetWeaponState() const;
 
 	void OnBeginFocus();
 	void OnEndFocus();

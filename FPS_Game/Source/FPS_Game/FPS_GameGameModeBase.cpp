@@ -36,6 +36,9 @@ void AFPS_GameGameModeBase::BeginPlay()
 		Ammo_Script_Max = AmmoScriptArray.Max();
 	}
 
+	SetZombieSpawnPoint();
+
+
 
 	QuestScriptNum = 0;
 	QuestNum = 0;
@@ -67,36 +70,61 @@ float AFPS_GameGameModeBase::DamageCalc(float Damage, AActor * DamagedActor, FDa
 }
 
 
-void AFPS_GameGameModeBase::SpawnZombie(int32 ZombieCount)
+void AFPS_GameGameModeBase::SpawnZombie()
 {
 	if (SpawnZombieArray.Num() > 0)
 	{
 		int32 NumZombieClasses = SpawnZombieArray.Num();
-		/*for (int32 i = 0; i < ZombieCount; i++)
+
+		//Tutorial Zombie Spawn
+		if (QuestNum == 0)
 		{
-			if (SpawnZombieArray[i] && Stage1_Spawnpoint[i])
+			for (int32 i = 0; i < 1; i++)
 			{
-				AActor* SPawnPoint = Cast<AActor>(Stage1_Spawnpoint[i]);
-				FVector SpawnLoc(SPawnPoint->GetActorLocation());
-				FRotator SpawnRot(0.f, 0.f, 0.f);
-				FActorSpawnParameters SpawnInfo;
-				SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-				SpawnInfo.bAllowDuringConstructionScript = true;
-				AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
-			}
-		}*/
-		for (int32 i = 0; i < NumZombieClasses; i++)
-		{
-			if (SpawnZombieArray[i])
-			{
-				FVector SpawnLoc(23.0f, 398.0f, 250.0f);
-				FRotator SpawnRot(0.f, 0.f, 0.f);
-				FActorSpawnParameters SpawnInfo;
-				SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-				SpawnInfo.bAllowDuringConstructionScript = true;
-				AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+				if (SpawnZombieArray[i])
+				{
+					FVector SpawnLoc(ZombieSpawnPoint[i]);
+					FRotator SpawnRot(0.f, 0.f, 0.f);
+					FActorSpawnParameters SpawnInfo;
+					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+					SpawnInfo.bAllowDuringConstructionScript = true;
+					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+				}
 			}
 		}
+
+		//Stage1 Zombie Spawn, 5마리
+		else if (QuestNum == 1)
+		{
+			for (int32 i = 1; i < 6; i++)
+			{
+				if (SpawnZombieArray[i])
+				{
+					FVector SpawnLoc(ZombieSpawnPoint[i]);
+					FRotator SpawnRot(0.f, 0.f, 0.f);
+					FActorSpawnParameters SpawnInfo;
+					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+					SpawnInfo.bAllowDuringConstructionScript = true;
+					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+				}
+			}
+		}
+		//Stage2 Zombie Spawn, 20마리
+		/*else if (QuestNum == 2)
+		{
+			for (int32 i = 6; i < 26; i++)
+			{
+				if (SpawnZombieArray[i])
+				{
+					FVector SpawnLoc(ZombieSpawnPoint[i]);
+					FRotator SpawnRot(0.f, 0.f, 0.f);
+					FActorSpawnParameters SpawnInfo;
+					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+					SpawnInfo.bAllowDuringConstructionScript = true;
+					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+				}
+			}
+		}*/
 	}
 }
 
@@ -164,6 +192,32 @@ FText AFPS_GameGameModeBase::GetQuestScript()
 
 	return FText::FromString(TEXT("Fale"));
 }
+
+FText AFPS_GameGameModeBase::GetQuestData(int DataNum)
+{
+
+	FString jsonstr;	// Recive load json text
+	FFileHelper::LoadFileToString(jsonstr, *QuestDataFilePath);	// Load json to filePath
+
+	TSharedRef<TJsonReader<TCHAR>> reader = TJsonReaderFactory<TCHAR>::Create(jsonstr);
+	TSharedPtr<FJsonObject> jsonObj = MakeShareable(new FJsonObject());
+
+	if (FJsonSerializer::Deserialize(reader, jsonObj) && jsonObj.IsValid())
+	{
+		//Get Quest Data
+		TArray<TSharedPtr<FJsonValue>> QuestData = jsonObj->GetObjectField("QuestData")->GetArrayField("Script");
+		TArray <TSharedPtr <FJsonValue >> QuestData_Array = QuestData[QuestNum]->AsArray();
+
+		//DataNum
+		//0 : 퀘스트 이름
+		//1 : 퀘스트 내용
+		//2 : 퀘스트 목표
+		return FText::FromString(QuestData_Array[DataNum]->AsString());
+	}
+
+	return FText::FromString(TEXT("Fale"));
+}
+
 
 FText AFPS_GameGameModeBase::GetNPCScript(int32 NPCType)
 {
@@ -351,4 +405,17 @@ void AFPS_GameGameModeBase::SetCompleteQuest(int32 QuestNum)
 	default:
 		break;
 	}
+}
+
+
+void AFPS_GameGameModeBase::SetZombieSpawnPoint()
+{
+	//튜토리얼 좀비
+	ZombieSpawnPoint.Add(FVector(23.0f, 398.0f, 250.0f));
+	//스테이지1 좀비
+	ZombieSpawnPoint.Add(FVector(386.0f, 948.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(1222.0f, 1414.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(1666.0f, 686.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(2518.0f, -22.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(2518.0f, -2981.0f, 250.0f));
 }

@@ -392,6 +392,8 @@ void AWeapons::ReloadWeapon()
 			RemainingAmmo -= (WeaponConfig.AmmoPerClip - LoadedAmmo);
 			LoadedAmmo += (WeaponConfig.AmmoPerClip - LoadedAmmo);
 		}
+
+		WeaponOwner->WeaponFireEvent(LoadedAmmo);
 	}
 }
 
@@ -534,6 +536,8 @@ void AWeapons::HandleFiring()
 
 			LoadedAmmo--;
 
+			WeaponOwner->WeaponFireEvent(LoadedAmmo);
+
 			BurstCount++;
 		}
 	}
@@ -633,6 +637,7 @@ void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin,
 		FPointDamageEvent PointDmg;
 		PointDmg.DamageTypeClass = WeaponConfig.DamageType;
 		PointDmg.HitInfo = Impact;
+		PointDmg.HitInfo.Actor = Impact.Actor;
 		PointDmg.ShotDirection = ShootDir;
 		PointDmg.Damage = ActualDamage;
 
@@ -777,4 +782,10 @@ void AWeapons::SetRemainingAmmo(int32 ImproveAmmo)
 	{
 		RemainingAmmo = WeaponConfig.MaxAmmo;
 	}
+}
+
+
+EWeaponState::Type AWeapons::GetWeaponState() const
+{
+	return CurrentWeaponState;
 }

@@ -12,6 +12,9 @@
 
 class UBehaviorTreeComponent;
 class UBlackboardComponent;
+
+
+
 UCLASS()
 class FPS_GAME_API ANPCController : public AAIController
 {
@@ -47,6 +50,9 @@ class FPS_GAME_API ANPCController : public AAIController
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName SafetyZoneLocationKeyName;
+
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName IsRunAwayKeyName;
 public:
 
 
@@ -56,7 +62,9 @@ public:
 
 	APlayerCharacter* GetTargetPlayer() const;
 
+	bool GetIsRunAway() const; 
 
+	FVector GetSafetyZoneLocation() const;
 
 
 	void SetWaypoint(AWaypoint* NewWaypoint);
@@ -68,6 +76,8 @@ public:
 	void SetPersonality(ENPCPersonality NPCPersonality);
 
 	void SetSafetyZoneLocation(FVector location);
+
+	void SetIsRunAway(bool bIsRunAway);
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorComp() const { return BehaviorComp; }

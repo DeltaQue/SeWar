@@ -66,6 +66,18 @@ void ACameraDirector::SwitchPlayerCamera()
 		{
 			//Blend smoothly to camera two.
 			OurPlayerController->SetViewTargetWithBlend(Controller->GetPawn(), 1.8f);
+
+			FTimerHandle TutorialTimer_Handle;
+			GetWorld()->GetTimerManager().SetTimer(TutorialTimer_Handle, this, &ACameraDirector::WeaponTutorialOpen, 3.6f, false);
 		}
 	}
+}
+
+
+void ACameraDirector::WeaponTutorialOpen()
+{
+	APlayerController* OurPlayerController = UGameplayStatics::GetPlayerController(this, 0);
+	ARPlayerController* PlayerController = Cast<ARPlayerController>(OurPlayerController);
+
+	PlayerController->OpenGuideWidget(1);
 }

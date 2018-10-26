@@ -10,14 +10,6 @@ UPlayerDamageType::UPlayerDamageType(const FObjectInitializer& ObjectInitializer
 	HeadDmgModifier = 2.0f;
 	LimbDmgModifier = 0.5f;
 	BodyDmgModifier = 1.0f;
-
-	bCanDieFrom = true;
-}
-
-
-bool UPlayerDamageType::GetCanDieFrom()
-{
-	return bCanDieFrom;
 }
 
 

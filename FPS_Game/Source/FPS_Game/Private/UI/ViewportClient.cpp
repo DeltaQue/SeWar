@@ -57,8 +57,8 @@ void UViewportClient::DrawScreenFade(UCanvas* Canvas)
 				Canvas->DrawColor = FadeColor.ToFColor(true); 
 				Canvas->DrawTile(Canvas->DefaultTexture, 0, 0, Canvas->ClipX, Canvas->ClipY, 0, 0, Canvas->DefaultTexture->GetSizeX(), Canvas->DefaultTexture->GetSizeY());
 				Canvas->DrawColor = OldColor;
+				
 			}
 		}
 	}
 }
-

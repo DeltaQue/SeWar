@@ -34,4 +34,7 @@ public:
 	void SwitchCameraViewTarget(float BlendTime);
 	void SwitchPlayerCamera();
 	
+
+private:
+	void WeaponTutorialOpen();
 };

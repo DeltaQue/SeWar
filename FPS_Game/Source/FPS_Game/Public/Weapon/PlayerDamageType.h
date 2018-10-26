@@ -15,11 +15,6 @@ class FPS_GAME_API UPlayerDamageType : public UDamageType
 	GENERATED_BODY()
 
 	UPlayerDamageType(const FObjectInitializer& ObjectInitializer);
-	
-	
-	/* Can player die from this damage type (eg. players don't die from hunger) */
-	UPROPERTY(EditDefaultsOnly)
-		bool bCanDieFrom;
 
 	/* 
 	헤드샷 데미지 2배

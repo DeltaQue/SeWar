@@ -20,7 +20,8 @@ private:
 		FTransform PlayerSpawnTransform;
 
 	const FString JsonFilePath = FPaths::ProjectContentDir() + "/Data/LoadData.json";
-	const FString QuestFilePath = FPaths::ProjectContentDir() + "/Data/QuestData.json";
+	const FString QuestFilePath = FPaths::ProjectContentDir() + "/Data/QuestScript.json";
+	const FString QuestDataFilePath = FPaths::ProjectContentDir() + "/Data/QuestData.json";
 	const FString HealFilePath = FPaths::ProjectContentDir() + "/Data/HealNPCData.json";
 	const FString AmmoFilePath = FPaths::ProjectContentDir() + "/Data/AmmoNPCData.json";
 
@@ -42,20 +43,20 @@ private:
 	int32 Ammo_Script_Max;
 
 
-
-	//0 : Tutorial
-	//1 : Stage1 Quest
-	//2 : Stage2 Quest
-	bool Complete_Quest[3] = {false, false, false};
+	void SetZombieSpawnPoint();
+	
 
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditDefaultsOnly, Category = Inventory)
+	UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
 		TArray<TSubclassOf<class AZombieCharacter> > SpawnZombieArray;
 
-	UPROPERTY(EditDefaultsOnly, Category = Inventory)
-		TArray<TSubclassOf<AActor> > Stage1_Spawnpoint;
+	/*UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
+		TArray<TSubclassOf<AActor> > Stage1_Spawnpoint;*/
+
+	TArray<FVector> ZombieSpawnPoint;
+	
 
 public:
 	void SetPlayerSpawnTransform(FTransform SpawnTransform);
@@ -68,10 +69,24 @@ public:
 
 	FVector GetCheckPoint();
 
+	//퀘스트 대화내용을 읽어들임
 	UFUNCTION(BlueprintCallable, Category = "TextScript")
 		FText GetQuestScript();
 	UFUNCTION(BlueprintCallable, Category = "TextScript")
 		FText GetNPCScript(int32 NPCType);
+
+	//퀘스트 세부 데이터를 읽어들임
+	//DataNum
+	//0 : 퀘스트 이름
+	//1 : 퀘스트 내용
+	//2 : 퀘스트 목표
+	UFUNCTION(BlueprintCallable, Category = "TextScript")
+		FText GetQuestData(int DataNum);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "GamePause")
+		void SetGamePause();
+	UFUNCTION(BlueprintImplementableEvent, Category = "GamePause")
+		void SetGameUnPause();
 
 	void NextQuestScript();
 	void NextQuest();
@@ -84,10 +99,18 @@ public:
 	int32 GetQuestNum() const;
 	int32 GetQuestScriptMaxSize(int32 QuestNum) const;
 
+
+
 	int32 GetNPCScriptNum() const;
 	int32 GetNPCScriptMaxSize(int NPCType) const;
 
-	void SpawnZombie(int32 ZombieCount);
+	void SpawnZombie();
+
+
+	//0 : Tutorial
+	//1 : Stage1 Quest
+	//2 : Stage2 Quest
+	bool Complete_Quest[3] = { false, false, false };
 
 	void SetCompleteQuest(int32 QuestNum);
 };

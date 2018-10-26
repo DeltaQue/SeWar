@@ -31,5 +31,4 @@ private:
 	float FadeAlpha;
 	float FadeStartTime;
 	float FadeDuration;
-	
 };

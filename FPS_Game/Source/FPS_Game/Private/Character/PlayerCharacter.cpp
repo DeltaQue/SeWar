@@ -77,7 +77,20 @@ void APlayerCharacter::BeginPlay()
 	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
 	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(1.0, 0.0), 5.0f);
 
+
+	if (CurrentWeapon)
+	{
+		WeaponFireEvent(CurrentWeapon->GetLoadedAmmo());
+	}
+
+	if (Controller)
+	{
+		FTimerHandle TutorialTimer_Handle;
+		GetWorld()->GetTimerManager().SetTimer(TutorialTimer_Handle, this, &APlayerCharacter::MovementTutorialOpen, 5.0f, false);
+	}
+
 }
+
 void APlayerCharacter::OnCameraUpdate(const FVector& CameraLocation, const FRotator& CameraRotation)
 {
 	//USkeletalMeshComponent* DefMesh1P = Cast<USkeletalMeshComponent>(GetClass()->GetDefaultSubobjectByName(TEXT("PawnMesh1P")));
@@ -265,6 +278,8 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 	PlayerInputComponent->BindAction("Suicide", IE_Pressed, this, &ABaseCharacter::Suicide);
 	PlayerInputComponent->BindAction("CheckPoint", IE_Pressed, this, &APlayerCharacter::ReturnCheckPoint);
 
+	PlayerInputComponent->BindAction("NextWeapon", IE_Pressed, this, &APlayerCharacter::OnNextWeapon);
+	PlayerInputComponent->BindAction("NextWeapon", IE_Pressed, this, &APlayerCharacter::OnPrevWeapon);
 
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerCharacter::OnStartSprint);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &APlayerCharacter::OnStopSprint);
@@ -349,6 +364,34 @@ void APlayerCharacter::WeaponEquip()
 	if (PickupWeapon)
 	{
 		AddWeapon(PickupWeapon);
+	}
+}
+
+void APlayerCharacter::OnNextWeapon()
+{
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+	if (Controller)
+	{
+		if (Inventory.Num() >= 2 && (CurrentWeapon == NULL || CurrentWeapon->GetWeaponState() != EWeaponState::Equipping))
+		{
+			const int32 CurrentWeaponIdx = Inventory.IndexOfByKey(CurrentWeapon);
+			AWeapons* NextWeapon = Inventory[(CurrentWeaponIdx + 1) % Inventory.Num()];
+			EquipWeapon(NextWeapon);
+		}
+	}
+}
+
+void APlayerCharacter::OnPrevWeapon()
+{
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+	if (Controller)
+	{
+		if (Inventory.Num() >= 2 && (CurrentWeapon == NULL || CurrentWeapon->GetWeaponState() != EWeaponState::Equipping))
+		{
+			const int32 CurrentWeaponIdx = Inventory.IndexOfByKey(CurrentWeapon);
+			AWeapons* PrevWeapon = Inventory[(CurrentWeaponIdx - 1 + Inventory.Num()) % Inventory.Num()];
+			EquipWeapon(PrevWeapon);
+		}
 	}
 }
 
@@ -500,4 +543,12 @@ float APlayerCharacter::GetDefaultSpeed()
 float APlayerCharacter::GetPlayerHP()
 {
 	return GetHealth();
+}
+
+
+void APlayerCharacter::MovementTutorialOpen()
+{
+	ARPlayerController* PlayerController = Cast<ARPlayerController>(GetController());
+
+	PlayerController->OpenGuideWidget(0);
 }

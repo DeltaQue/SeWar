@@ -24,7 +24,7 @@ ANPCController::ANPCController(const class FObjectInitializer& ObjectInitializer
 	TargetPlayerKeyName = "TargetPlayer";
 	NPCPersonalityKeyName = "NPCPersonality";
 	SafetyZoneLocationKeyName = "SafetyZoneLocation";
-
+	IsRunAwayKeyName = "IsRunAway";
 
 }
 
@@ -43,7 +43,7 @@ void ANPCController::Possess(class APawn* InPawn)
 			SetPersonality(NPCBot->Personality);
 		}
 
-		SetSafetyZoneLocation(FVector(2280.0f, 750.0f, 170.0f));
+		SetSafetyZoneLocation(FVector(-205.0f, -1947.0f, 247.837448f));
 		BehaviorComp->StartTree(*NPCBot->BehaviorTree);
 	}
 }
@@ -98,6 +98,16 @@ void ANPCController::SetSafetyZoneLocation(FVector location)
 		BlackboardComp->SetValueAsVector(SafetyZoneLocationKeyName, location);
 	}
 }
+
+void ANPCController::SetIsRunAway(bool bIsRunAway)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsBool(SafetyZoneLocationKeyName, bIsRunAway);
+	}
+}
+
+
 ///////////////////////////////
 
 
@@ -129,4 +139,20 @@ APlayerCharacter* ANPCController::GetTargetPlayer() const
 	}
 
 	return nullptr;
+}
+
+bool ANPCController::GetIsRunAway() const
+{
+	if (BlackboardComp)
+	{
+		return BlackboardComp->GetValueAsBool(IsRunAwayKeyName);
+	}
+
+	return false;
+}
+
+
+FVector ANPCController::GetSafetyZoneLocation() const
+{
+	return BlackboardComp->GetValueAsVector(CurrentWaypointKeyName);
 }

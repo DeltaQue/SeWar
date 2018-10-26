@@ -84,6 +84,9 @@ void ANPCCharacter::BeginPlay()
 		TalkCollisionComp->OnComponentEndOverlap.AddDynamic(this, &ANPCCharacter::OnTalkCollisionCompEndOverlap);//&AFlockingPlayerController::ClosedWidget);
 	}
 
+	ANPCController* NPC = Cast<ANPCController>(GetController());
+	NPC->SetIsRunAway(true);
+
 	DefaultMaxWalkSpeed = GetMovementComponent()->GetMaxSpeed();
 }
 
@@ -110,7 +113,15 @@ void ANPCCharacter::Tick(float DeltaTime)
 		}
 	}
 
-	
+	if (GetWorld())
+	{
+		AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+		if (GameMode && GameMode->Complete_Quest[0] == true)
+		{
+			ANPCController* NPC = Cast<ANPCController>(GetController());
+			NPC->SetIsRunAway(false);
+		}
+	}
 }
 
 
@@ -135,54 +146,76 @@ void ANPCCharacter::OnTalkCollisionCompBeginOverlap(class UPrimitiveComponent* O
 	//APlayerCharacter *SensedPlayer = Cast<APlayerCharacter>(OtherActor);
 	////APawn* SensedPlayer = Cast<APawn>(OtherActor);
 	//Controller->SetTargetPlayer(SensedPlayer);
-
-	APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
-	ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
-	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-
-
-	if (bIsQuestNPC && !bIsAmmoNPC && !bIsHealNPC)
+	if (OtherActor->ActorHasTag("Player"))
 	{
-		PlayerController->SetTalkNPCType(0);
+		APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
+		ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
+		AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
 
-		//Quest 위젯 띄우는 조건이 있어야함
-		PlayerController->OpenQuestWidget(GameMode->GetQuestNum()+1);
-	}
-	else if (!bIsQuestNPC && !bIsAmmoNPC && bIsHealNPC)
-	{
-		PlayerController->SetTalkNPCType(1);
 
-		//Heal Widget Open
-		PlayerController->OpenQuestWidget(4);
-	}
-	else if (!bIsQuestNPC && bIsAmmoNPC && !bIsHealNPC)
-	{
-		PlayerController->SetTalkNPCType(2);
-
-		//Ammmo WIdget Open
-		PlayerController->OpenQuestWidget(5);
-	}
-
-	/*APlayerController* OurPlayerController = UGameplayStatics::GetPlayerController(this, 0);
-	ARPlayerController* Controller = Cast<ARPlayerController>(OurPlayerController);*/
-	if (PlayerController)
-	{
-		if (PlayerController->bTurnViewTarget == true)
+		if (bIsQuestNPC && !bIsAmmoNPC && !bIsHealNPC)
 		{
-			StopAllAnimation();
-			
-			if(SurpriseAnimMontage)
-				PlayAnimMontage(SurpriseAnimMontage);
-		}
-		else
-		{
-			StopAllAnimation();
+			//현재 퀘스트를 완료 한 경우, 퀘스트창을 닫는다.
+			if (GameMode->GetQuestNum() < 3 && GameMode->Complete_Quest[GameMode->GetQuestNum()] == true)
+			{
 
-			if (TalkAnimMontage)
-				PlayAnimMontage(TalkAnimMontage);
+			}
+
+			//Tutorial Quest Clear
+			if (GameMode->GetQuestNum() == 0 && PlayerController->GetQuestScore() == 1)
+			{
+				Player->SetCurrentQuestDeActivate(GameMode->GetQuestNum());
+				GameMode->SetCompleteQuest(0);
+			}
+			//Stage1 Quest Clear
+			if (GameMode->GetQuestNum() == 1 && PlayerController->GetQuestScore() == 5)
+			{
+				Player->SetCurrentQuestDeActivate(GameMode->GetQuestNum());
+				GameMode->SetCompleteQuest(1);
+			}
+
+			PlayerController->SetTalkNPCType(0);
+
+
+			//Quest 위젯 띄우는 조건이 있어야함
+			//Quest Script Widget Open
+			PlayerController->OpenWidget(1);
+		}
+		else if (!bIsQuestNPC && !bIsAmmoNPC && bIsHealNPC)
+		{
+			PlayerController->SetTalkNPCType(1);
+
+			//Heal Widget Open
+			PlayerController->OpenWidget(2);
+		}
+		else if (!bIsQuestNPC && bIsAmmoNPC && !bIsHealNPC)
+		{
+			PlayerController->SetTalkNPCType(2);
+
+			//Ammmo WIdget Open
+			PlayerController->OpenWidget(3);
+		}
+
+		/*APlayerController* OurPlayerController = UGameplayStatics::GetPlayerController(this, 0);
+		ARPlayerController* Controller = Cast<ARPlayerController>(OurPlayerController);*/
+		if (PlayerController)
+		{
+			if (PlayerController->bTurnViewTarget == true)
+			{
+				StopAllAnimation();
+
+				if (SurpriseAnimMontage)
+					PlayAnimMontage(SurpriseAnimMontage);
+			}
+			else
+			{
+				StopAllAnimation();
+
+				if (TalkAnimMontage)
+					PlayAnimMontage(TalkAnimMontage);
+			}
 		}
 	}
-
 	
 }
 
@@ -195,7 +228,7 @@ void ANPCCharacter::OnTalkCollisionCompEndOverlap(UPrimitiveComponent* Overlappe
 	ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
 	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
 
-	PlayerController->CloseQuestWidget(GameMode->GetQuestNum()+1);
+	PlayerController->CloseWidget(1);
 
 	StopAllAnimation();
 }
