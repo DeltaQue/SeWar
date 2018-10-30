@@ -21,6 +21,13 @@ ABossCharacter::ABossCharacter(const class FObjectInitializer& ObjectInitializer
 	GetCapsuleComponent()->SetCapsuleHalfHeight(96.0f, false);
 	GetCapsuleComponent()->SetCapsuleRadius(42.0f);
 
+	AttackCollisionComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("AttackCollision"));
+	AttackCollisionComp->SetRelativeLocation(FVector(45, 0, 25));
+	AttackCollisionComp->SetCapsuleHalfHeight(60);
+	AttackCollisionComp->SetCapsuleRadius(35, false);
+	AttackCollisionComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+	AttackCollisionComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+	AttackCollisionComp->SetupAttachment(GetCapsuleComponent());
 
 	GetMovementComponent()->NavAgentProps.AgentRadius = 42;
 	GetMovementComponent()->NavAgentProps.AgentHeight = 192;
@@ -38,6 +45,8 @@ ABossCharacter::ABossCharacter(const class FObjectInitializer& ObjectInitializer
 	LastHeardTime = 0.0f;
 
 	DefaultMaxWalkSpeed = 0.0f;
+
+	BossType = EBossType::Patrol;
 }
 
 
@@ -105,9 +114,147 @@ void ABossCharacter::OnSeePlayer(APawn* Pawn)
 			Duration = 0.5f;
 		}
 
-		/*FTimerHandle UniqueHandle;
+		FTimerHandle UniqueHandle;
 		FTimerDelegate RespawnDelegate = FTimerDelegate::CreateUObject(this, &ABossCharacter::TargetChase, Pawn);
-		GetWorldTimerManager().SetTimer(UniqueHandle, RespawnDelegate, Duration, false);*/
+		GetWorldTimerManager().SetTimer(UniqueHandle, RespawnDelegate, Duration, false);
 	}
 
+	FTimerHandle UniqueHandle;
+	FTimerDelegate RespawnDelegate = FTimerDelegate::CreateUObject(this, &ABossCharacter::TargetChase, Pawn);
+	GetWorldTimerManager().SetTimer(UniqueHandle, RespawnDelegate, 1.f, false);
+}
+
+void ABossCharacter::TargetChase(APawn* Pawn)
+{
+	//타겟을 발견 한 뒤 월드 시간을 받음
+	LastSeenTime = GetWorld()->GetTimeSeconds();
+	bSensedTarget = true;
+
+	ABossAIController* AIController = Cast<ABossAIController>(GetController());
+	ABaseCharacter* SensedPawn = Cast<ABaseCharacter>(Pawn);
+
+	if (AIController && SensedPawn->IsAlive())
+	{
+		AIController->SetTargetEnemy(SensedPawn);
+
+
+		Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 2.f;
+	}
+}
+
+
+float ABossCharacter::PlayAttackAnimMontage(int AttackType)
+{
+	float Duration = 0.f;
+
+	switch (AttackType)
+	{
+	case 0:
+		if (BiteAttackAnimMontage)
+		{
+			Duration = PlayAnimMontage(BiteAttackAnimMontage);
+		}
+		break;
+
+	case 1:
+		if (HookAttackAnimMontage)
+		{
+			Duration = PlayAnimMontage(HookAttackAnimMontage);
+		}
+		break;
+
+	default:
+		break;
+	}
+	
+	return Duration;
+}
+
+float ABossCharacter::PlayAttackSound(int AttackType)
+{
+	float Duration = 0.f;
+
+	if (AttackSound)
+	{
+
+	}
+
+	return Duration;
+}
+
+void ABossCharacter::OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	if (OtherActor->ActorHasTag("Player"))
+	{
+		APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
+
+		//Timer Stop
+		if (Player && this->Health > 0)
+		{
+			ABossAIController* Controller = Cast<ABossAIController>(GetController());
+
+			Controller->SetAttackAble(true);
+		}
+	}
+}
+
+void ABossCharacter::OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	if (OtherActor->ActorHasTag("Player"))
+	{
+		APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
+		
+		ABossAIController* Controller = Cast<ABossAIController>(GetController());
+
+		Controller->SetAttackAble(false);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TSubclassOf<UDamageType> ABossCharacter::GetAttackDamageType() const
+{
+	if (AttackDamageType)
+	{
+		return AttackDamageType;
+	}
+
+	return nullptr;
+}
+
+float ABossCharacter::GetAttackDamage(int AttackType) const
+{
+	float AttackDamage = 0.0f;
+
+	switch (AttackType)
+	{
+	case 0:
+		AttackDamage = BiteAttackDamage;
+		break;
+
+	case 1:
+		AttackDamage = HookAttackDamage;
+		break;
+
+	default:
+		break;
+	}
+
+	return AttackDamage;
 }

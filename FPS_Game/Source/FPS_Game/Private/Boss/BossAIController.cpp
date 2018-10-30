@@ -16,6 +16,9 @@ ABossAIController::ABossAIController(const class FObjectInitializer& ObjectIniti
 	BlackboardComp = ObjectInitializer.CreateDefaultSubobject<UBlackboardComponent>(this, TEXT("BlackboardComp"));
 
 	TargetEnemyKeyName = "Enemy";
+	PatrolLocationKeyName = "PatrolLocation";
+	BossTypeKeyName = "BossType";
+	AttackAbleKeyName = "AttackAble";
 }
 
 void ABossAIController::Possess(APawn* InPawn)
@@ -25,10 +28,16 @@ void ABossAIController::Possess(APawn* InPawn)
 	ABossCharacter* BossBot = Cast<ABossCharacter>(InPawn);
 	if (BossBot)
 	{
-		if (BehaviorTree)
+		if (BossBot->BehaviorTree && BossBot->BehaviorTree->BlackboardAsset)
 		{
-			BlackboardComp->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
-			BehaviorTreeComp->StartTree(*BehaviorTree);
+			if (BossBot->BehaviorTree->BlackboardAsset)
+			{
+				BlackboardComp->InitializeBlackboard(*BossBot->BehaviorTree->BlackboardAsset);
+
+				SetBossType(BossBot->BossType);
+			}
+
+			BehaviorTreeComp->StartTree(*BossBot->BehaviorTree);
 		}
 	}
 
@@ -58,4 +67,46 @@ void ABossAIController::SetTargetEnemy(APawn* NewTarget)
 	{
 		BlackboardComp->SetValueAsObject(TargetEnemyKeyName, NewTarget);
 	}
+}
+
+void ABossAIController::SetPatrolLocation(FVector NewLocation)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsVector(PatrolLocationKeyName, NewLocation);
+	}
+}
+
+void ABossAIController::SetBossType(EBossType NewType)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsEnum(BossTypeKeyName, (uint8)NewType);
+	}
+}
+
+void ABossAIController::SetAttackAble(bool IsValid)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsBool(AttackAbleKeyName, IsValid);
+	}
+}
+
+
+
+
+APlayerCharacter* ABossAIController::GetTargetEnemy() const
+{
+	if (BlackboardComp)
+	{
+		return Cast<APlayerCharacter>(BlackboardComp->GetValueAsObject(TargetEnemyKeyName));
+	}
+
+	return nullptr;
+}
+
+bool ABossAIController::GetAttackAble() const
+{
+	return BlackboardComp->GetValueAsBool(AttackAbleKeyName);
 }

@@ -73,14 +73,14 @@ USoundCue* AImpactEffects::GetImpactSound(TEnumAsByte<EPhysicalSurface> SurfaceT
 
 	switch (SurfaceType)
 	{
-	case FPS_Game_SURFACE_Concrete:	ImpactSound = ConcreteSound; break;
-	case FPS_Game_SURFACE_Dirt:		ImpactSound = DirtSound; break;
-	case FPS_Game_SURFACE_Water:	ImpactSound = WaterSound; break;
-	case FPS_Game_SURFACE_Metal:	ImpactSound = MetalSound; break;
-	case FPS_Game_SURFACE_Wood:		ImpactSound = WoodSound; break;
-	case FPS_Game_SURFACE_Grass:	ImpactSound = GrassSound; break;
-	case FPS_Game_SURFACE_Glass:	ImpactSound = GlassSound; break;
-	case FPS_Game_SURFACE_Flesh:	ImpactSound = FleshSound; break;
+	case SURFACE_CONCRETE:	ImpactSound = ConcreteSound; break;
+	case SURFACE_DIRT:		ImpactSound = DirtSound; break;
+	case SURFACE_METAL:		ImpactSound = WaterSound; break;
+	case SURFACE_WATER:		ImpactSound = MetalSound; break;
+	case SURFACE_WOOD:		ImpactSound = WoodSound; break;
+	case SURFACE_GRASS:		ImpactSound = GrassSound; break;
+	case SURFACE_GLASS:		ImpactSound = GlassSound; break;
+	case SURFACE_FLESH:		ImpactSound = FleshSound; break;
 	default:						ImpactSound = DefaultSound; break;
 	}
 

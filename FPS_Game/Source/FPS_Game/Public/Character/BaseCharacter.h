@@ -37,11 +37,10 @@ private:
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Damage")
 		void OnScreenDamage(float FlictDamage);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Effect")
+		void OnBloodEffectEvent(FHitResult HitResult);
 
-
-
-	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
-		, class AController* EventInstigator, class AActor* DamageCauser) override;
+	
 
 	virtual bool CanDie(float KillingDamage, FDamageEvent const& DamageEvent
 		, AController* Killer, AActor* DamageCauser) const;
@@ -76,6 +75,10 @@ protected:
 		UAnimMontage* HitAnim;
 
 public:	
+	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
+		, class AController* EventInstigator, class AActor* DamageCauser) override;
+
+
 	void Suicide();
 
 	bool IsAlive() const;

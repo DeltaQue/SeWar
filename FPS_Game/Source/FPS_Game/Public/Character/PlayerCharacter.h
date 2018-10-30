@@ -117,6 +117,11 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Widget")
 		void SetCurrentQuestDeActivate(int QuestNum);
 
+	UFUNCTION(BlueprintCallable, Category = "PlayerState")
+		void StartFadeOut(float Time);
+	UFUNCTION(BlueprintCallable, Category = "PlayerState")
+		void StartFadeIn(float Time);
+
 	bool CanFire() const;
 	void StopAllAnimMontages();
 

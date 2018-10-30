@@ -5,6 +5,8 @@
 #include "AIController.h"
 #include "Perception/AIPerceptionComponent.h"
 #include "Perception/AISenseConfig_Sight.h"
+#include "PlayerCharacter.h"
+#include "FPS_GameStruct.h"
 #include "BossAIController.generated.h"
 
 
@@ -19,21 +21,19 @@ class FPS_GAME_API ABossAIController : public AAIController
 	
 private:
 
-	UBlackboardComponent * BlackboardComp;
+	UBlackboardComponent* BlackboardComp;
 	UBehaviorTreeComponent* BehaviorTreeComp;
 
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName TargetEnemyKeyName;
-
-
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName PatrolLocationKeyName;
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName BossTypeKeyName;
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName AttackAbleKeyName;
 protected:
-
-	UPROPERTY(EditAnywhere)
-		UBehaviorTree* BehaviorTree;
-
-	UPROPERTY(VisibleAnywhere)
-		UAIPerceptionComponent* AIPerceptionComponent;
 
 public:
 
@@ -47,8 +47,12 @@ public:
 
 
 	void SetTargetEnemy(APawn* NewTarget);
+	void SetPatrolLocation(FVector NewLocation);
+	void SetBossType(EBossType NewType);
+	void SetAttackAble(bool IsValid);
 
-
+	APlayerCharacter* GetTargetEnemy() const;
+	bool GetAttackAble() const;
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorTreeComp() const { return BehaviorTreeComp; }

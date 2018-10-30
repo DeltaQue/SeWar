@@ -4,6 +4,7 @@
 
 #include "FPS_Game.h"
 #include "Character/BaseCharacter.h"
+#include "FPS_GameStruct.h"
 #include "BossCharacter.generated.h"
 
 class UAnimMontage;
@@ -24,9 +25,19 @@ private:
 	
 private:
 	UFUNCTION()
+		void OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
+	UFUNCTION()
+		void OnAttackCollisionCompEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+	
+	
+
+	UFUNCTION()
 		void OnSeePlayer(APawn* pawn);
 
 
+	UPROPERTY(VisibleAnywhere, Category = "Attack")
+		UCapsuleComponent* AttackCollisionComp;
 
 	UPROPERTY(VisibleAnywhere, Category = "AI")
 		class UPawnSensingComponent* PawnSensingComp;
@@ -53,10 +64,25 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		class UBehaviorTree* BehaviorTree;
+	////좀비 보스 타입
+	UPROPERTY(EditAnywhere, Category = "AI")
+		EBossType BossType;
 
+	float PlayAttackAnimMontage(int AttackType);
+	float PlayAttackSound(int AttackType);
+
+	TSubclassOf<UDamageType> GetAttackDamageType() const;
+
+	float GetAttackDamage(int AttackType) const;
 protected:
+	//0 : BiteAttack
+	//1 : HookAttack
 	UPROPERTY(EditDefaultsOnly, Category = Animation)
-		UAnimMontage* AttackAnimMontage;
+		UAnimMontage* BiteAttackAnimMontage;
+
+	UPROPERTY(EditDefaultsOnly, Category = Animation)
+		UAnimMontage* HookAttackAnimMontage;
+
 
 	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* ScreamAnimMontage;
@@ -69,6 +95,21 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* IdleSoundCue;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* AttackSound;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+		TSubclassOf<UDamageType> AttackDamageType;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attacking")
+		float BiteAttackDamage;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attacking")
+		float HookAttackDamage;
+
+
+	void TargetChase(APawn* pawn);
 
 
 };

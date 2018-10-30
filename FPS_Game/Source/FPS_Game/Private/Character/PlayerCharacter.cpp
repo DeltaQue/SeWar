@@ -74,9 +74,9 @@ void APlayerCharacter::BeginPlay()
 	Super::BeginPlay();
 
 
-	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
-	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(1.0, 0.0), 5.0f);
-
+	/*ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(1.0, 0.0), 5.0f);*/
+	StartFadeIn(5.0f);
 
 	if (CurrentWeapon)
 	{
@@ -551,4 +551,16 @@ void APlayerCharacter::MovementTutorialOpen()
 	ARPlayerController* PlayerController = Cast<ARPlayerController>(GetController());
 
 	PlayerController->OpenGuideWidget(0);
+}
+
+void APlayerCharacter::StartFadeOut(float Time)
+{
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(0.0, 1.0), Time);
+}
+
+void APlayerCharacter::StartFadeIn(float Time)
+{
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(1.0, 0.0), Time);
 }

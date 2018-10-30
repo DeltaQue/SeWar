@@ -128,8 +128,7 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 
 
 	SetRagdollPhysics();
-
-	/* Apply physics impulse on the bone of the enemy skeleton mesh we hit (ray-trace damage only) */
+	
 	if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
 	{
 		FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
@@ -172,6 +171,8 @@ void ABaseCharacter::PlayHit(float DamageTaken, struct FDamageEvent const& Damag
 		{
 			Zombie->GetCharacterMovement()->MaxWalkSpeed = Zombie->GetCharacterMovement()->MaxWalkSpeed / 2;
 			float DeathAnimTime = PlayAnimMontage(HitAnim);
+
+			
 
 			bHitReact = true;
 
@@ -272,6 +273,15 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 
 		//Floating Damage Event 
 		OnScreenDamage(ActualDamage);
+
+		if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+		{
+			FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
+
+			OnBloodEffectEvent(PointDmg.HitInfo);
+		}
+
+
 		if (Health <= 0)
 		{
 			//Death

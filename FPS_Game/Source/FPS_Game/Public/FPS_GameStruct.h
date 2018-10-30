@@ -8,15 +8,9 @@
 /**
  * 
  */
-#define FPS_Game_SURFACE_Default	SurfaceType_Default
-#define FPS_Game_SURFACE_Concrete	SurfaceType1
-#define FPS_Game_SURFACE_Dirt		SurfaceType2
-#define FPS_Game_SURFACE_Water		SurfaceType3
-#define FPS_Game_SURFACE_Metal		SurfaceType4
-#define FPS_Game_SURFACE_Wood		SurfaceType5
-#define FPS_Game_SURFACE_Grass		SurfaceType6
-#define FPS_Game_SURFACE_Glass		SurfaceType7
-#define FPS_Game_SURFACE_Flesh		SurfaceType8
+
+
+
 
 USTRUCT()
 struct FDecalData
@@ -51,6 +45,12 @@ enum class EZombieType : uint8
 	Patrol
 };
 
+UENUM()
+enum class EBossType : uint8
+{
+	Patrol,
+	RunAway
+};
 
 UENUM()
 enum class ENPCPersonality : uint8
@@ -58,3 +58,4 @@ enum class ENPCPersonality : uint8
 	Passing,
 	Patrol
 };
+

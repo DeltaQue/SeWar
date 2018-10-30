@@ -81,7 +81,7 @@ AZombieCharacter::AZombieCharacter(const class FObjectInitializer& ObjectInitial
 
 	AttackCooltime = 1.5f;
 
-	ZombieType = EZombieType::Passing;
+	//ZombieType = EZombieType::Passing;
 }
 
 
