@@ -8,6 +8,9 @@
 /**
  * 
  */
+
+class UCameraShake;
+
 UCLASS()
 class FPS_GAME_API APlayerCharacter : public ABaseCharacter
 {
@@ -45,6 +48,8 @@ private:
 
 	bool bHasNewFocus;
 
+	void PlayEarthquakeShake();
+	FTimerHandle Earthquake_TimerHandle;
 protected:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -62,7 +67,7 @@ protected:
 	void OnReload();
 	void OnPrevWeapon();
 	void OnNextWeapon();
-
+	void OnTurnOnLight();
 
 	void OnStartSprint();
 	void OnStopSprint();
@@ -84,6 +89,9 @@ protected:
 		FName WeaponAttachPoint;
 
 
+	UPROPERTY(EditDefaultsOnly, Category = Effects)
+		TSubclassOf<UCameraShake> EarthquakeCameraShake;
+	
 
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))

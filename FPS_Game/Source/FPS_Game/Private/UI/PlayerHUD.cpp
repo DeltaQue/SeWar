@@ -213,13 +213,6 @@ void APlayerHUD::DrawRadar()
 
 	for (float i = 0; i < 360; i += DegreeStep)
 	{
-		//We want to draw a circle in order to represent our radar
-		//In order to do so, we calculate the sin and cos of almost every degree
-		//It it impossible to calculate each and every possible degree because they are infinite
-		//Lower the degree step in case you need a more accurate circle representation
-
-		//We multiply our coordinates by radar size 
-		//in order to draw a circle with radius equal to the one we will input through the editor
 		float fixedX = FMath::Cos(i) * RadarRadius;
 		float fixedY = FMath::Sin(i) * RadarRadius;
 
@@ -238,10 +231,13 @@ void APlayerHUD::DrawPlayerInRadar()
 void APlayerHUD::PerformRadarRaycast()
 {
 	APawn* Player = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+
+	ECollisionChannel ECC = ECollisionChannel::ECC_GameTraceChannel2;
 
 	if (Player)
 	{
-		TArray<FHitResult> HitResults;
+		/*TArray<FHitResult> HitResults;
 		FVector EndLocation = Player->GetActorLocation();
 		EndLocation.Z += SphereHeight;
 
@@ -249,14 +245,19 @@ void APlayerHUD::PerformRadarRaycast()
 		CollisionShape.ShapeType = ECollisionShape::Sphere;
 		CollisionShape.SetSphere(SphereRadius);
 
-		GetWorld()->SweepMultiByChannel(HitResults, Player->GetActorLocation(), EndLocation, FQuat::Identity, ECollisionChannel::ECC_Pawn, CollisionShape);
+		GetWorld()->SweepMultiByChannel(HitResults, Player->GetActorLocation(), EndLocation, FQuat::Identity, ECollisionChannel::ECC_Pawn, CollisionShape);*/
 
-		for (auto It : HitResults)
+		
+		for (auto It : GameMode->GetSpawnZombie())
 		{
-			AActor* CurrentActor = It.GetActor();
+			//AActor* CurrentActor = It.GetActor();
+			AZombieCharacter* Zombie = Cast<AZombieCharacter>(It);
 
-			if (CurrentActor && CurrentActor->ActorHasTag("Enemy")) 
-				RadarActors.Add(CurrentActor);
+			if (Zombie)
+			{
+				if (Zombie->ActorHasTag("Boss") || Zombie->ActorHasTag("Enemy"))
+					RadarActors.Add(Zombie);
+			}
 		}
 	}
 }

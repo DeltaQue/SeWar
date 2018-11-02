@@ -47,7 +47,7 @@ private:
 
 	
 	void AudioLoopUpdate(bool bNewSensedTarget);
-	
+	void Attack_TakeDamage(AActor* HitActor);
 
 
 	float LastAttackTime;
@@ -122,11 +122,16 @@ public:
 
 	bool DamageHit(uint8 damage);
 
+	bool GetIsBoss() const;
+
 	UFUNCTION()
 		void TargetChase(APawn* pawn);
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* AttackAnimMontage;
+
+	UPROPERTY(EditDefaultsOnly, Category = Animation)
+		UAnimMontage* AttackAnim2Montage;
 
 	UPROPERTY(EditDefaultsOnly, Category = Animation)
 		UAnimMontage* ScreamAnimMontage;
@@ -141,6 +146,8 @@ protected:
 		USoundCue* IdleSoundCue;
 	
 
+	UPROPERTY(EditDefaultsOnly, Category = "ZombieState")
+		bool IsBoss;
 
 
 	UPROPERTY(VisibleDefaultsOnly)

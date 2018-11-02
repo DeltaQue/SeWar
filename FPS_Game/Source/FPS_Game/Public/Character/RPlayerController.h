@@ -34,6 +34,8 @@ protected:
 
 	virtual void Tick(float DeltaTime) override;
 
+
+
 	//wWidgetArray
 	//1 : QusetScriptlWidget
 	//2 : HealWidget
@@ -50,6 +52,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
 		TSubclassOf<class UUserWidget> wStatusHUD;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+		TSubclassOf<class UUserWidget> wDeathWidget;
+
 	UUserWidget* MovementGuideWidget;
 	UUserWidget* WeaponGuideWidget;
 	UUserWidget* QuestScriptWidget;
@@ -57,6 +62,8 @@ protected:
 	UUserWidget* AmmoWidget;
 
 	UUserWidget* StatusHUD;
+
+	UUserWidget* DeathWidget;
 
 public:
 	void OnScreenMessage(FName string);
@@ -71,6 +78,7 @@ public:
 	void OpenWidget(int32 WidgetNum);
 	void CloseWidget(int32 WidgetNum);
 	
+	void OpenDeathWidget();
 
 	UFUNCTION(BlueprintCallable, Category = "Bind")
 		int32 BindKilledpoint();
@@ -99,6 +107,5 @@ public:
 
 	void OpenStatusHUD();
 	void CloseStatusHUD();
-
 
 };

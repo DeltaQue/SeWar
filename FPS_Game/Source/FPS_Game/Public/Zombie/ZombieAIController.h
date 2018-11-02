@@ -7,6 +7,7 @@
 #include "BaseCharacter.h"
 #include "ZombieCharacter.h"
 #include "Waypoint.h"
+#include "EscapePoint.h"
 #include "FPS_GameStruct.h"
 #include "ZombieAIController.generated.h"
 
@@ -50,6 +51,9 @@ class FPS_GAME_API AZombieAIController : public AAIController
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName IsAttackCollisionOverlapKeyName;
+
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		FName EscapePointKeyName;
 public:
 
 	AWaypoint * GetWaypoint() const;
@@ -59,6 +63,8 @@ public:
 	FVector GetReconLocation() const;
 
 	bool GetIsAttackCollisionOverlap() const;
+
+	AEscapePoint* GetEscapePoint() const;
 
 
 	void SetWaypoint(AWaypoint* NewWaypoint);
@@ -71,6 +77,9 @@ public:
 
 	void SetIsAttackCollisionOverlap(bool Overlaped);
 
+	void SetPatrolLocation(FVector Location);
+
+	void SetEscapePoint(AEscapePoint* EscapeTarget);
 
 	void StopBehaviorTree();
 	void StartBehaviorTree();

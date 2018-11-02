@@ -25,6 +25,7 @@ AZombieAIController::AZombieAIController(const class FObjectInitializer& ObjectI
 	ZombieTypeKeyName = "ZombieType";
 	TargetEnemyKeyName = "TargetEnemy";
 	ReconLocationKeyName = "ReconLocation";
+	EscapePointKeyName = "EscapePoint";
 }
 
 
@@ -65,6 +66,16 @@ AWaypoint* AZombieAIController::GetWaypoint() const
 	if (BlackboardComp)
 	{
 		return Cast<AWaypoint>(BlackboardComp->GetValueAsObject(CurrentWaypointKeyName));
+	}
+
+	return nullptr;
+}
+
+AEscapePoint* AZombieAIController::GetEscapePoint() const
+{
+	if (BlackboardComp)
+	{
+		return Cast<AEscapePoint>(BlackboardComp->GetValueAsObject(EscapePointKeyName));
 	}
 
 	return nullptr;
@@ -142,6 +153,29 @@ void AZombieAIController::SetIsAttackCollisionOverlap(bool Overlaped)
 		BlackboardComp->SetValueAsBool(IsAttackCollisionOverlapKeyName, Overlaped);
 	}
 }
+
+void AZombieAIController::SetPatrolLocation(FVector Location)
+{
+	if (BlackboardComp)
+	{
+		BlackboardComp->SetValueAsVector(PatrolLocationKeyName, Location);
+	}
+}
+
+void AZombieAIController::SetEscapePoint(AEscapePoint* EscapeTarget)
+{
+	AZombieCharacter* Boss = Cast<AZombieCharacter>(this->GetPawn());
+
+	if (Boss->GetIsBoss())
+	{
+		if (BlackboardComp)
+		{
+			BlackboardComp->SetValueAsObject(EscapePointKeyName, EscapeTarget);
+		}
+	}
+}
+
+
 
 
 void AZombieAIController::StopBehaviorTree()

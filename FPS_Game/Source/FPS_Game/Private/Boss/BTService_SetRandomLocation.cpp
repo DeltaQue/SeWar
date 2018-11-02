@@ -1,15 +1,15 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BTService_SetRandomLocation.h"
-#include "BossCharacter.h"
-#include "BossAIController.h"
+#include "ZombieCharacter.h"
+#include "ZombieAIController.h"
 #include "Engine.h"
 
 
 void UBTService_SetRandomLocation::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
 {
-	ABossAIController* BossController = Cast<ABossAIController>(OwnerComp.GetAIOwner());
-	ABossCharacter* BossCharacter = Cast<ABossCharacter>(BossController->GetPawn());
+	AZombieAIController* ZombieController = Cast<AZombieAIController>(OwnerComp.GetAIOwner());
+	AZombieCharacter* ZombieCharacter = Cast<AZombieCharacter>(ZombieController->GetPawn());
 
 	UNavigationSystem* NavSys = UNavigationSystem::GetCurrent(GetWorld());
 	if (!NavSys)
@@ -20,10 +20,10 @@ void UBTService_SetRandomLocation::TickNode(UBehaviorTreeComponent& OwnerComp, u
 	FNavLocation Result;
 
 
-	bool bSuccess = NavSys->GetRandomPointInNavigableRadius(BossCharacter->GetActorLocation(), 1500.f, Result);
+	bool bSuccess = NavSys->GetRandomPointInNavigableRadius(ZombieCharacter->GetActorLocation(), 1500.f, Result);
 	
 	if (bSuccess)
 	{
-		BossController->SetPatrolLocation(Result.Location);
+		ZombieController->SetPatrolLocation(Result.Location);
 	}
 }

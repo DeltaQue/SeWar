@@ -8,6 +8,7 @@
 #include "LaserActor.generated.h"
 
 class UParticleSystemComponent;
+class UDestructibleComponent;
 
 UCLASS()
 class FPS_GAME_API ALaserActor : public AActor
@@ -16,33 +17,30 @@ class FPS_GAME_API ALaserActor : public AActor
 	
 public:	
 	// Sets default values for this actor's properties
-	ALaserActor();
+	ALaserActor(const FObjectInitializer& ObjectInitializer);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	USceneComponent* Root;
+	//USceneComponent* Root;
 
-	UPROPERTY(EditDefaultsOnly)
-		UParticleSystemComponent* LaserPSC;
+	/*UPROPERTY(EditDefaultsOnly)
+		UParticleSystemComponent* LaserPSC;*/
 
-	
-	UPROPERTY(EditDefaultsOnly)
+	/*UPROPERTY(EditDefaultsOnly, Catagory = "Destructible Mesh", meta = (AllowPrivateAccess = "true"))
+		UCapsuleComponent* CollisionComp;*/
+
+	UPROPERTY(EditDefaultsOnly, meta = (AllowPrivateAccess = "true"))
 		UDestructibleComponent* BlockA;
 
-	UPROPERTY(EditDefaultsOnly)
-		UDestructibleComponent* BlockB;
+	/*UPROPERTY(EditDefaultsOnly)
+		UDestructibleComponent* BlockB;*/
 
-	//UPROPERTY(EditDefaultsOnly)
-	//	UStaticMeshComponent* BlockA;
-
-	//UPROPERTY(EditDefaultsOnly)
-	//	UStaticMeshComponent* BlockB;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	
-	
+	UDestructibleComponent* GetDestructibleComponent() const;
 };

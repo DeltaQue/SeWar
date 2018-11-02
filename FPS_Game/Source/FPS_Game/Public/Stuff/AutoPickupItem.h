@@ -23,6 +23,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 	/** FX component */
 	UPROPERTY(VisibleDefaultsOnly, Category = Effects)
@@ -56,5 +57,8 @@ protected:
 
 	virtual void PickupEvent(class APlayerCharacter* PickupPawn);
 
-	void RespawnEvent();	
+	void RespawnEvent();
+
+private:
+	float RotateTime;
 };

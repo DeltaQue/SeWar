@@ -40,44 +40,26 @@ class FPS_GAME_API ANPCController : public AAIController
 		FName TargetPlayerKeyName;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		FName PatrolLocationKeyName;
-
-	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		FName CurrentWaypointKeyName;
-
-	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		FName NPCPersonalityKeyName;
+		FName NPCTypeKeyName;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		FName SafetyZoneLocationKeyName;
 
-	UPROPERTY(EditDefaultsOnly, Category = "AI")
-		FName IsRunAwayKeyName;
 public:
-
-
-	AWaypoint * GetWaypoint() const;
-
 	ANPCCharacter* GetTargetEnemy() const;
 
 	APlayerCharacter* GetTargetPlayer() const;
 
-	bool GetIsRunAway() const; 
-
 	FVector GetSafetyZoneLocation() const;
 
-
-	void SetWaypoint(AWaypoint* NewWaypoint);
 
 	void SetTargetEnemy(APawn* NewTarget);
 
 	void SetTargetPlayer(APawn* NewTarget);
 
-	void SetPersonality(ENPCPersonality NPCPersonality);
+	void SetNPCType(ENPCType NPCPersonality);
 
 	void SetSafetyZoneLocation(FVector location);
-
-	void SetIsRunAway(bool bIsRunAway);
 
 	/** Returns BehaviorComp subobject **/
 	FORCEINLINE UBehaviorTreeComponent* GetBehaviorComp() const { return BehaviorComp; }

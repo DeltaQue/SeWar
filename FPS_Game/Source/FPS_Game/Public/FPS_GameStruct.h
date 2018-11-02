@@ -41,7 +41,8 @@ struct FDecalData
 UENUM()
 enum class EZombieType : uint8
 {
-	Passing,
+	RunAway,
+	Rage,
 	Patrol
 };
 
@@ -53,9 +54,9 @@ enum class EBossType : uint8
 };
 
 UENUM()
-enum class ENPCPersonality : uint8
+enum class ENPCType : uint8
 {
-	Passing,
-	Patrol
+	Idle,
+	RunAway
 };
 

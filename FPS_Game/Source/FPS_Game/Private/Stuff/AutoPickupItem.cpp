@@ -30,6 +30,17 @@ void AAutoPickupItem::BeginPlay()
 	RespawnEvent();
 }
 
+void AAutoPickupItem::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	FRotator NewRotate = PickupPSC->GetComponentRotation();
+	float DeltaHeight = (FMath::Sin(RotateTime + DeltaTime) - FMath::Sin(RotateTime));
+	NewRotate.Yaw += DeltaHeight * 20.0f;
+	RotateTime += DeltaTime;
+	PickupPSC->SetRelativeRotation(NewRotate);
+}
+
 void AAutoPickupItem::NotifyActorBeginOverlap(class AActor* Other)
 {
 	Super::NotifyActorBeginOverlap(Other);

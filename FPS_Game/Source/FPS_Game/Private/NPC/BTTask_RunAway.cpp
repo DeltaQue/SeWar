@@ -20,8 +20,7 @@ EBTNodeResult::Type UBTTask_RunAway::ExecuteTask(UBehaviorTreeComponent& OwnerCo
 		return EBTNodeResult::Failed;
 	}
 
-	bool bIsRunAway = NPCController->GetIsRunAway();
-	if (bIsRunAway)
+	if (NPCController->GetSafetyZoneLocation() != FVector(0,0,0))
 	{
 		const float SearchRadius = 200.0f;
 		const FVector SafetyZoneLocation = NPCController->GetSafetyZoneLocation();

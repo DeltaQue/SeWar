@@ -3,7 +3,8 @@
 #include "Weapons.h"
 #include "FPS_Game.h"
 #include "PlayerDamageType.h"
-
+#include "LaserActor.h"
+#include "Components/SpotLightComponent.h"
 
 
 // Sets default values
@@ -22,6 +23,10 @@ AWeapons::AWeapons(const FObjectInitializer& ObjectInitializer)
 	WeaponMesh->SetCollisionResponseToAllChannels(ECR_Ignore);
 	RootComponent = WeaponMesh;
 
+	WeaponLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("WeaponLight"));
+	WeaponLight->AttachToComponent(WeaponMesh, FAttachmentTransformRules::KeepRelativeTransform, FName("MuzzleFlashSocket"));
+	WeaponLight->RelativeLocation = FVector(16.f, 0.0f, -6.f); 
+	WeaponLight->RelativeRotation = FRotator(0.f, 5.f, 0.f);
 
 	bLoopedMuzzleFX = false;
 	bLoopedFireAnim = false;
@@ -148,8 +153,6 @@ void AWeapons::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	/*ARPlayerController* cont = Cast<ARPlayerController>(WeaponOwner->GetController());
-	cont->OnScreenMessageAmmo(LoadedAmmo);*/
 }
 
 void AWeapons::OnEnterInventory(APlayerCharacter* NewOwner)
@@ -612,54 +615,83 @@ float AWeapons::CalcWeaponSpread() const
 
 void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin, const FVector & ShootDir)
 {
-	if (Impact.GetActor() && Impact.GetActor() != WeaponOwner)
-	{
-		float ActualDamage = WeaponConfig.HitDamage;
+	//if (Impact.GetActor()->ActorHasTag("DestructibleMesh") && Impact.GetActor() != WeaponOwner && Impact.GetActor() != this )
+	//{
+	//	ALaserActor* Dest = Cast<ALaserActor>(Impact.GetActor());
+	//	if (Dest)
+	//	{
+	//		if (Dest->GetDestructibleComponent()->IsSimulatingPhysics())
+	//		{
+	//			Dest->GetDestructibleComponent()->SetSimulatePhysics(true);
+	//			Dest->GetDestructibleComponent()->AddRadialForce(Impact.Location, 100.f, 3000.f, RIF_Constant);
+	//			//Dest->GetDestructibleComponent()->AddRadialImpulse(Impact.Location, 300000.f, 1000.f, RIF_Constant);
+	//			Dest->GetDestructibleComponent()->AddImpulseAtLocation(FVector(300.f, 300.f, 300.f) * 10.f, Impact.Location);
+	//		}
 
-		UPlayerDamageType* DmgType = Cast<UPlayerDamageType>(WeaponConfig.DamageType->GetDefaultObject());
-		UPhysicalMaterial * PhysMat = Impact.PhysMaterial.Get();
-		if (PhysMat && DmgType)
+	//		/*if (Impact.GetComponent()->IsSimulatingPhysics())
+	//		{
+	//			Impact.GetComponent()->AddForceAtLocation(FVector(100.f, 100.f, 100.f), Impact.Location);
+	//			Impact.GetComponent()->AddImpulseAtLocation(FVector(300.f, 300.f, 300.f) * 100.f, Impact.Location);
+	//		}
+	//		else if (!Impact.GetComponent()->IsSimulatingPhysics())
+	//		{
+	//			Impact.GetComponent()->SetSimulatePhysics(true);
+	//			Impact.GetComponent()->AddRadialForce(Impact.Location, 300.f, 1000.f, RIF_Constant);
+
+	//		}*/
+	//	}
+	//}
+	if(Impact.GetActor()->ActorHasTag("Zombie") || Impact.GetActor()->ActorHasTag("Boss"))
+	{
+		if (Impact.GetActor() && Impact.GetActor() != WeaponOwner && Impact.GetActor() != this)
 		{
-			if (PhysMat->SurfaceType == SURFACE_ZOMBIEHEAD)
+			float ActualDamage = WeaponConfig.HitDamage;
+
+			UPlayerDamageType* DmgType = Cast<UPlayerDamageType>(WeaponConfig.DamageType->GetDefaultObject());
+			UPhysicalMaterial * PhysMat = Impact.PhysMaterial.Get();
+			if (PhysMat && DmgType)
 			{
-				ActualDamage *= DmgType->GetHeadDamageModifier();
+				if (PhysMat->SurfaceType == SURFACE_ZOMBIEHEAD)
+				{
+					ActualDamage *= DmgType->GetHeadDamageModifier();
+				}
+				else if (PhysMat->SurfaceType == SURFACE_ZOMBIEBODY)
+				{
+					ActualDamage *= DmgType->GetBodyDamageModifier();
+				}
+				else if (PhysMat->SurfaceType == SURFACE_ZOMBIELIMB)
+				{
+					ActualDamage *= DmgType->GetLimbDamageModifier();
+				}
 			}
-			else if (PhysMat->SurfaceType == SURFACE_ZOMBIEBODY)
-			{
-				ActualDamage *= DmgType->GetBodyDamageModifier();
-			}
-			else if (PhysMat->SurfaceType == SURFACE_ZOMBIELIMB)
-			{
-				ActualDamage *= DmgType->GetLimbDamageModifier();
-			}
+
+			FPointDamageEvent PointDmg;
+			PointDmg.DamageTypeClass = WeaponConfig.DamageType;
+			PointDmg.HitInfo = Impact;
+			PointDmg.HitInfo.Actor = Impact.Actor;
+			PointDmg.ShotDirection = ShootDir;
+			PointDmg.Damage = ActualDamage;
+
+			Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, WeaponOwner->Controller, this);
 		}
 
-		FPointDamageEvent PointDmg;
-		PointDmg.DamageTypeClass = WeaponConfig.DamageType;
-		PointDmg.HitInfo = Impact;
-		PointDmg.HitInfo.Actor = Impact.Actor;
-		PointDmg.ShotDirection = ShootDir;
-		PointDmg.Damage = ActualDamage;
+		const FVector MuzzleOrigin = GetMuzzleLocation();
+		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are MuzzleLocation: %d, %d, %d"), MuzzleOrigin.X, MuzzleOrigin.Y, MuzzleOrigin.Z));
 
-		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, WeaponOwner->Controller, this);
-	}
+		const FVector AimDir = (Impact.ImpactPoint - MuzzleOrigin).GetSafeNormal();
 
-	const FVector MuzzleOrigin = GetMuzzleLocation();
-	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are MuzzleLocation: %d, %d, %d"), MuzzleOrigin.X, MuzzleOrigin.Y, MuzzleOrigin.Z));
+		const FVector EndTrace = MuzzleOrigin + (AimDir * WeaponConfig.WeaponRange);
+		const FHitResult ImpactResult = HitScanLineTrace(MuzzleOrigin, EndTrace);
 
-	const FVector AimDir = (Impact.ImpactPoint - MuzzleOrigin).GetSafeNormal();
-
-	const FVector EndTrace = MuzzleOrigin + (AimDir * WeaponConfig.WeaponRange);
-	const FHitResult ImpactResult = HitScanLineTrace(MuzzleOrigin, EndTrace);
-
-	if (ImpactResult.bBlockingHit)
-	{
-		SpawnImpactEffect(ImpactResult);
-		//SpawnTrailEffect(ImpactResult.ImpactPoint);
-	}
-	else
-	{
-		//SpawnTrailEffect(EndTrace);
+		if (ImpactResult.bBlockingHit)
+		{
+			SpawnImpactEffect(ImpactResult);
+			//SpawnTrailEffect(ImpactResult.ImpactPoint);
+		}
+		else
+		{
+			//SpawnTrailEffect(EndTrace);
+		}
 	}
 }
 
@@ -788,4 +820,13 @@ void AWeapons::SetRemainingAmmo(int32 ImproveAmmo)
 EWeaponState::Type AWeapons::GetWeaponState() const
 {
 	return CurrentWeaponState;
+}
+
+
+USpotLightComponent* AWeapons::GetWeaponLight()
+{
+	if (WeaponLight)
+		return WeaponLight;
+	else
+		return nullptr;
 }

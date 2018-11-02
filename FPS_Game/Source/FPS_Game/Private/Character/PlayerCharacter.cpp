@@ -86,8 +86,10 @@ void APlayerCharacter::BeginPlay()
 	if (Controller)
 	{
 		FTimerHandle TutorialTimer_Handle;
-		GetWorld()->GetTimerManager().SetTimer(TutorialTimer_Handle, this, &APlayerCharacter::MovementTutorialOpen, 5.0f, false);
+		GetWorld()->GetTimerManager().SetTimer(TutorialTimer_Handle, this, &APlayerCharacter::MovementTutorialOpen, 4.0f, false);
 	}
+
+	GetWorldTimerManager().SetTimer(Earthquake_TimerHandle, this, &APlayerCharacter::PlayEarthquakeShake, 60.f, true);
 
 }
 
@@ -274,6 +276,8 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 	PlayerInputComponent->BindAction("ADS", IE_Pressed, this, &APlayerCharacter::OnStartADS);
 	PlayerInputComponent->BindAction("ADS", IE_Released, this, &APlayerCharacter::OnStopADS);
 	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &APlayerCharacter::OnReload);
+	PlayerInputComponent->BindAction("Light", IE_Pressed, this, &APlayerCharacter::OnTurnOnLight);
+
 
 	PlayerInputComponent->BindAction("Suicide", IE_Pressed, this, &ABaseCharacter::Suicide);
 	PlayerInputComponent->BindAction("CheckPoint", IE_Pressed, this, &APlayerCharacter::ReturnCheckPoint);
@@ -563,4 +567,31 @@ void APlayerCharacter::StartFadeIn(float Time)
 {
 	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
 	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(1.0, 0.0), Time);
+}
+
+
+void APlayerCharacter::PlayEarthquakeShake()
+{
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+
+	if (EarthquakeCameraShake != NULL && Controller)
+	{
+		//Camera Shake로 Weapon 반동 추가
+		Controller->ClientPlayCameraShake(EarthquakeCameraShake, 1.5f);
+	}
+}
+
+void APlayerCharacter::OnTurnOnLight()
+{
+	if (CurrentWeapon)
+	{
+		if (CurrentWeapon->GetWeaponLight()->IsVisible() == true)
+		{
+			CurrentWeapon->GetWeaponLight()->SetVisibility(false);
+		}
+		else if (CurrentWeapon->GetWeaponLight()->IsVisible() == false)
+		{
+			CurrentWeapon->GetWeaponLight()->SetVisibility(true);
+		}
+	}
 }

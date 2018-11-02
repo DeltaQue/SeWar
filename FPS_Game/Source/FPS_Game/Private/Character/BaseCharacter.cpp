@@ -93,57 +93,85 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 
 	PlayHit(KillingDamage, DamageEvent, Killer->GetPawn(), DamageCauser, true);
 
-	APlayerCharacter* Player = Cast<APlayerCharacter>(Killer->GetCharacter());
-	ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
 
-	FPointDamageEvent* PointDamageEvent;
-	if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+	//Player -> Zombie Kill
+	if (Killer->GetPawn()->ActorHasTag(FName(TEXT("Player"))))
 	{
-		PointDamageEvent = (FPointDamageEvent*)&DamageEvent;
+		APlayerCharacter* Player = Cast<APlayerCharacter>(Killer->GetPawn());
+		ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
 
-		AZombieCharacter* Zombie = Cast<AZombieCharacter>(PointDamageEvent->HitInfo.Actor);
-		if (Zombie && !Zombie->IsPendingKill() && KilledZombie != Zombie)
+		FPointDamageEvent* PointDamageEvent;
+		if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
 		{
-			PlayerController->SetScoreKillpoint();
-			KilledZombie = Zombie;
+			PointDamageEvent = (FPointDamageEvent*)&DamageEvent;
+
+			AZombieCharacter* Zombie = Cast<AZombieCharacter>(PointDamageEvent->HitInfo.Actor);
+			if (Zombie && !Zombie->IsPendingKill() && KilledZombie != Zombie)
+			{
+				PlayerController->SetScoreKillpoint();
+				KilledZombie = Zombie;
+			}
+		}
+
+		DetachFromControllerPendingDestroy();
+
+		/* Disable all collision on capsule */
+		UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
+		CapsuleComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		CapsuleComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+
+		USkeletalMeshComponent* Mesh = GetMesh();
+		if (Mesh)
+		{
+			Mesh->SetCollisionProfileName(TEXT("Ragdoll"));
+		}
+		SetActorEnableCollision(true);
+
+
+		SetRagdollPhysics();
+
+		if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+		{
+			FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
+			{
+				// TODO: Use DamageTypeClass->DamageImpulse
+				Mesh->AddImpulseAtLocation(PointDmg.ShotDirection * 12000, PointDmg.HitInfo.ImpactPoint, PointDmg.HitInfo.BoneName);
+			}
+		}
+		if (DamageEvent.IsOfType(FRadialDamageEvent::ClassID))
+		{
+			FRadialDamageEvent RadialDmg = *((FRadialDamageEvent const*)(&DamageEvent));
+			{
+				Mesh->AddRadialImpulse(RadialDmg.Origin, RadialDmg.Params.GetMaxRadius(), 100000 /*RadialDmg.DamageTypeClass->DamageImpulse*/, ERadialImpulseFalloff::RIF_Linear);
+			}
 		}
 	}
+	//Zombie -> Player Kill
+	else if (Killer->GetPawn()->ActorHasTag(FName(TEXT("Zombie"))))
+	{
+		//Death UI
+		FPointDamageEvent* PointDamageEvent;
+		if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+		{
+			PointDamageEvent = (FPointDamageEvent*)&DamageEvent;
+
+			APlayerCharacter* Player = Cast<APlayerCharacter>(PointDamageEvent->HitInfo.Actor);
+			ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
+
+			if (PlayerController)
+			{
+				PlayerController->OpenDeathWidget();
+			}
+		}
+
+	}
+
+	
 		
 	
 	
-	DetachFromControllerPendingDestroy();
-
-	/* Disable all collision on capsule */
-	UCapsuleComponent* CapsuleComp = GetCapsuleComponent();
-	CapsuleComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	CapsuleComp->SetCollisionResponseToAllChannels(ECR_Ignore);
-
 	
-	USkeletalMeshComponent* Mesh = GetMesh();
-	if (Mesh)
-	{
-		Mesh->SetCollisionProfileName(TEXT("Ragdoll"));
-	}
-	SetActorEnableCollision(true);
-
-
-	SetRagdollPhysics();
-	
-	if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
-	{
-		FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
-		{
-			// TODO: Use DamageTypeClass->DamageImpulse
-			Mesh->AddImpulseAtLocation(PointDmg.ShotDirection * 12000, PointDmg.HitInfo.ImpactPoint, PointDmg.HitInfo.BoneName);
-		}
-	}
-	if (DamageEvent.IsOfType(FRadialDamageEvent::ClassID))
-	{
-		FRadialDamageEvent RadialDmg = *((FRadialDamageEvent const*)(&DamageEvent));
-		{
-			Mesh->AddRadialImpulse(RadialDmg.Origin, RadialDmg.Params.GetMaxRadius(), 100000 /*RadialDmg.DamageTypeClass->DamageImpulse*/, ERadialImpulseFalloff::RIF_Linear);
-		}
-	}
 
 	return true;
 }
@@ -279,6 +307,26 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 			FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
 
 			OnBloodEffectEvent(PointDmg.HitInfo);
+
+			if (EventInstigator->GetPawn()->ActorHasTag("Player") && PointDmg.HitInfo.Actor->ActorHasTag("Boss"))
+			{
+				AZombieCharacter* Zombie = Cast<AZombieCharacter>(PointDmg.HitInfo.Actor);
+				AZombieAIController* ZombieController = Cast<AZombieAIController>(Zombie->GetController());
+				
+				if (Zombie && Zombie->IsAlive())
+				{
+					//Boss HP가 50% 이하로 떨어질 경우 주변 모든 좀비들의 타겟을 플레이어로 집중시킴(한번만)
+					if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 2)
+					{
+						ZombieController->SetBlackboardZombieType(EZombieType::Rage);
+					}
+					//Boss HP가 20% 이하로 떨어질 경우 HP회복을 하기 위해 도망친다.
+					else if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 4)
+					{
+						ZombieController->SetBlackboardZombieType(EZombieType::RunAway);
+					}
+				}
+			}
 		}
 
 

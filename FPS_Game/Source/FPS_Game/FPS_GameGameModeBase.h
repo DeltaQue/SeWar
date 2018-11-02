@@ -44,13 +44,17 @@ private:
 
 
 	void SetZombieSpawnPoint();
-	
 
+
+	TArray<class AZombieCharacter*> StoreSpawnZombie;
 protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
 		TArray<TSubclassOf<class AZombieCharacter> > SpawnZombieArray;
+
+	UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
+		TArray<TSubclassOf<class AZombieCharacter> > Stage2SpawnZombieArray;
 
 	/*UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
 		TArray<TSubclassOf<AActor> > Stage1_Spawnpoint;*/
@@ -106,6 +110,7 @@ public:
 
 	void SpawnZombie();
 
+	TArray<class AZombieCharacter*> GetSpawnZombie();
 
 	//0 : Tutorial
 	//1 : Stage1 Quest

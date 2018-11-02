@@ -43,6 +43,10 @@ AZombieCharacter::AZombieCharacter(const class FObjectInitializer& ObjectInitial
 	AudioLoopComp->bAutoDestroy = false;
 	AudioLoopComp->SetupAttachment(RootComponent);
 
+
+	GetMesh()->SetCollisionResponseToAllChannels(ECR_Ignore);
+	GetMesh()->SetCollisionResponseToChannel(ECC_GameTraceChannel2, ECR_Overlap);
+
 	////Zombie HP bar widget
 	//MyWidget = CreateDefaultSubobject<UWidgetComponent>("Widget");
 
@@ -81,7 +85,9 @@ AZombieCharacter::AZombieCharacter(const class FObjectInitializer& ObjectInitial
 
 	AttackCooltime = 1.5f;
 
-	//ZombieType = EZombieType::Passing;
+	ZombieType = EZombieType::Patrol;
+
+	IsBoss = false;
 }
 
 
@@ -103,6 +109,9 @@ void AZombieCharacter::BeginPlay()
 	DefaultMaxWalkSpeed = GetMovementComponent()->GetMaxSpeed();
 
 	AudioLoopUpdate(bSensedTarget);
+
+
+	SetZombieType(ZombieType);
 
 	//if (!MyWidget->AttachToComponent(GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("HPBar_Sock")))
 	//{
@@ -170,7 +179,7 @@ void AZombieCharacter::OnSeePlayer(APawn* Pawn)
 		FTimerDelegate RespawnDelegate = FTimerDelegate::CreateUObject(this, &AZombieCharacter::TargetChase, Pawn);
 		GetWorldTimerManager().SetTimer(UniqueHandle, RespawnDelegate, Duration, false);
 	}
-	
+
 }
 
 void AZombieCharacter::TargetChase(APawn* Pawn)
@@ -185,8 +194,11 @@ void AZombieCharacter::TargetChase(APawn* Pawn)
 	{
 		AIController->SetTargetEnemy(SensedPawn);
 
+		if(IsBoss == true)
+			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 2.f;
+		else
+			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 5.f;
 
-		Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 10.f;
 	}
 }
 
@@ -301,31 +313,33 @@ void AZombieCharacter::ScratchAttack(AActor* HitActor)
 		{
 
 		}
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack CoolTime!"));
 		return;
 	}
 
 	//AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherComp);
 	if (HitActor && HitActor != this && IsAlive()) {
 
-		if (AttackAnimMontage != NULL) {
-			AnimInstance = this->GetMesh()->GetAnimInstance();
-			if (AnimInstance != NULL) {
-				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Begin Attack"));
+		if (HitActor->ActorHasTag("Player"))
+		{
+			APlayerCharacter* Player = Cast<APlayerCharacter>(HitActor);
+			if (Player->IsAlive())
+			{
+				if (AttackAnimMontage != NULL) {
+					AnimInstance = this->GetMesh()->GetAnimInstance();
+					if (AnimInstance != NULL) {
+						LastAttackTime = GetWorld()->GetTimeSeconds();
 
-				LastAttackTime = GetWorld()->GetTimeSeconds();
+						float Duration = 0.f;
 
-				FPointDamageEvent DmgEvent;
-				DmgEvent.DamageTypeClass = ScratchDamageType;
-				DmgEvent.Damage = AttackDamage;
+						if (AttackAnimMontage)
+							Duration = this->PlayAnimMontage(AttackAnimMontage);
 
-				HitActor->TakeDamage(DmgEvent.Damage, DmgEvent, GetController(), this);
-
-				if(AttackAnimMontage)
-					this->PlayAnimMontage(AttackAnimMontage);
-				//PlayAttackMotion();
+						FTimerHandle TimerHandle_TakeDamage;
+						FTimerDelegate TakeDamage_Delegate = FTimerDelegate::CreateUObject(this, &AZombieCharacter::Attack_TakeDamage, HitActor);
+						GetWorldTimerManager().SetTimer(TimerHandle_TakeDamage, TakeDamage_Delegate, Duration, false);
+					}
+				}
 			}
-
 		}
 	}
 }
@@ -343,8 +357,6 @@ void AZombieCharacter::ReTriggerAttack()
 		{
 			ScratchAttack(OverlappingPawn);
 		}
-		else
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("ReTrigger Attack fail"));
 	}
 	if (OverlapActor.Num() == 0)
 	{
@@ -386,6 +398,18 @@ void AZombieCharacter::TimerHandleFunc()
 	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter::ReTriggerAttack, AttackCooltime, true);
 }
 
+void AZombieCharacter::Attack_TakeDamage(AActor* HitActor)
+{
+	FPointDamageEvent DmgEvent;
+	DmgEvent.DamageTypeClass = ScratchDamageType;
+	DmgEvent.Damage = AttackDamage;
+	DmgEvent.HitInfo.Actor = HitActor;
+
+	HitActor->TakeDamage(DmgEvent.Damage, DmgEvent, GetController(), this);
+}
+
 UAnimInstance* AZombieCharacter::GetAttackAnimInstance() const { return AnimInstance; }
 
 UAnimMontage* AZombieCharacter::GetAttackAnimMontage() const { return AttackAnimMontage; }
+
+bool AZombieCharacter::GetIsBoss() const { return IsBoss; }

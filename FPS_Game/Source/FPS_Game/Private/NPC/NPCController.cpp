@@ -18,13 +18,10 @@ ANPCController::ANPCController(const class FObjectInitializer& ObjectInitializer
 	BlackboardComp = ObjectInitializer.CreateDefaultSubobject<UBlackboardComponent>(this, TEXT("BlackboardComp"));
 
 	/* Blackboard Å°°ª°ú ¸ÅÄª */
-	PatrolLocationKeyName = "PatrolLocation";
-	CurrentWaypointKeyName = "CurrentWaypoint";
 	TargetEnemyKeyName = "TargetEnemy";
 	TargetPlayerKeyName = "TargetPlayer";
-	NPCPersonalityKeyName = "NPCPersonality";
+	NPCTypeKeyName = "NPCType";
 	SafetyZoneLocationKeyName = "SafetyZoneLocation";
-	IsRunAwayKeyName = "IsRunAway";
 
 }
 
@@ -40,10 +37,10 @@ void ANPCController::Possess(class APawn* InPawn)
 		{
 			BlackboardComp->InitializeBlackboard(*NPCBot->BehaviorTree->BlackboardAsset);
 
-			SetPersonality(NPCBot->Personality);
+			SetNPCType(NPCBot->NPCType);
 		}
 
-		SetSafetyZoneLocation(FVector(-205.0f, -1947.0f, 247.837448f));
+		SetSafetyZoneLocation(FVector(723.0f, -2297.0f, 247.837448f));
 		BehaviorComp->StartTree(*NPCBot->BehaviorTree);
 	}
 }
@@ -55,16 +52,6 @@ void ANPCController::UnPossess()
 
 	BehaviorComp->StopTree();
 }
-
-
-void ANPCController::SetWaypoint(AWaypoint* NewWaypoint)
-{
-	if (BlackboardComp)
-	{
-		BlackboardComp->SetValueAsObject(CurrentWaypointKeyName, NewWaypoint);
-	}
-}
-
 
 
 void ANPCController::SetTargetEnemy(APawn* NewTarget)
@@ -83,11 +70,11 @@ void ANPCController::SetTargetPlayer(APawn* NewTarget)
 	}
 }
 
-void ANPCController::SetPersonality(ENPCPersonality NPCPersonality)
+void ANPCController::SetNPCType(ENPCType NPCType)
 {
 	if (BlackboardComp)
 	{
-		BlackboardComp->SetValueAsEnum(NPCPersonalityKeyName, (uint8)NPCPersonality);
+		BlackboardComp->SetValueAsEnum(NPCTypeKeyName, (uint8)NPCType);
 	}
 }
 
@@ -99,27 +86,8 @@ void ANPCController::SetSafetyZoneLocation(FVector location)
 	}
 }
 
-void ANPCController::SetIsRunAway(bool bIsRunAway)
-{
-	if (BlackboardComp)
-	{
-		BlackboardComp->SetValueAsBool(SafetyZoneLocationKeyName, bIsRunAway);
-	}
-}
-
-
 ///////////////////////////////
 
-
-AWaypoint* ANPCController::GetWaypoint() const
-{
-	if (BlackboardComp)
-	{
-		return Cast<AWaypoint>(BlackboardComp->GetValueAsObject(CurrentWaypointKeyName));
-	}
-
-	return nullptr;
-}
 
 ANPCCharacter* ANPCController::GetTargetEnemy() const
 {
@@ -141,18 +109,12 @@ APlayerCharacter* ANPCController::GetTargetPlayer() const
 	return nullptr;
 }
 
-bool ANPCController::GetIsRunAway() const
+FVector ANPCController::GetSafetyZoneLocation() const
 {
 	if (BlackboardComp)
 	{
-		return BlackboardComp->GetValueAsBool(IsRunAwayKeyName);
+		return BlackboardComp->GetValueAsVector(SafetyZoneLocationKeyName);
 	}
 
-	return false;
-}
-
-
-FVector ANPCController::GetSafetyZoneLocation() const
-{
-	return BlackboardComp->GetValueAsVector(CurrentWaypointKeyName);
+	return FVector(0, 0, 0);
 }

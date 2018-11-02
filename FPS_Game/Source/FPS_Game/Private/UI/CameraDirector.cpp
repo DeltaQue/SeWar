@@ -50,7 +50,7 @@ void ACameraDirector::SwitchCameraViewTarget(float BlendTime)
 			FTimerHandle CameraTimer_Handle;
 			/*FTimerDelegate CameraFuncDelegate = FTimerDelegate::CreateUObject(this, &ACameraDirector::SwitchPlayerCamera, BlendTime);
 			GetWorldTimerManager().SetTimer(CameraTimer_Handle, CameraFuncDelegate, 5.0f, false);*/
-			GetWorldTimerManager().SetTimer(CameraTimer_Handle, this, &ACameraDirector::SwitchPlayerCamera, 15.0f, false);
+			GetWorldTimerManager().SetTimer(CameraTimer_Handle, this, &ACameraDirector::SwitchPlayerCamera, 10.0f, false);
 		}
 	}
 }
@@ -68,7 +68,7 @@ void ACameraDirector::SwitchPlayerCamera()
 			OurPlayerController->SetViewTargetWithBlend(Controller->GetPawn(), 1.8f);
 
 			FTimerHandle TutorialTimer_Handle;
-			GetWorld()->GetTimerManager().SetTimer(TutorialTimer_Handle, this, &ACameraDirector::WeaponTutorialOpen, 3.6f, false);
+			GetWorld()->GetTimerManager().SetTimer(TutorialTimer_Handle, this, &ACameraDirector::WeaponTutorialOpen, 3.4f, false);
 		}
 	}
 }

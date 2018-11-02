@@ -48,13 +48,6 @@ UParticleSystem* AImpactEffects::GetImpactFX(TEnumAsByte<EPhysicalSurface> Surfa
 
 	switch (SurfaceType)
 	{
-	case SURFACE_CONCRETE:		ImpactFX = ConcreteFX; break;
-	case SURFACE_DIRT:			ImpactFX = DirtFX; break;
-	case SURFACE_METAL:			ImpactFX = MetalFX; break;
-	case SURFACE_WATER:			ImpactFX = WaterFX; break;
-	case SURFACE_WOOD:			ImpactFX = WoodFX; break;
-	case SURFACE_GRASS:			ImpactFX = GrassFX; break;
-	case SURFACE_GLASS:			ImpactFX = GlassFX; break;
 	case SURFACE_FLESH:			ImpactFX = FleshFX; break;
 	case SURFACE_ZOMBIEBODY:
 	case SURFACE_ZOMBIEHEAD:

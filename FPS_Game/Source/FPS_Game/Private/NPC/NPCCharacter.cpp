@@ -26,14 +26,6 @@ ANPCCharacter::ANPCCharacter(const class FObjectInitializer& ObjectInitializer)
 	PawnSensingComp->HearingThreshold = 600;
 	PawnSensingComp->LOSHearingThreshold = 1200;
 
-	AttackCollisionComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("AttackCollision"));
-	AttackCollisionComp->SetRelativeLocation(FVector(45, 0, 25));
-	AttackCollisionComp->SetCapsuleHalfHeight(60);
-	AttackCollisionComp->SetCapsuleRadius(35, false);
-	AttackCollisionComp->SetCollisionResponseToAllChannels(ECR_Ignore);
-	AttackCollisionComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
-	AttackCollisionComp->SetupAttachment(GetCapsuleComponent());
-
 	TalkCollisionComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("TalkCollision"));
 	TalkCollisionComp->SetCapsuleHalfHeight(60);
 	TalkCollisionComp->SetCapsuleRadius(150, false);
@@ -45,7 +37,6 @@ ANPCCharacter::ANPCCharacter(const class FObjectInitializer& ObjectInitializer)
 	bHeardTarget = false;
 
 	//적을 타겟으로 감지하고 리셋하는데 걸리는 시간 2.5초
-	SightSenseTimeOut = 10.0f;
 	HearingSenseTimeOut = 6.0f;
 
 	//현재 시간 저장용 변수
@@ -54,7 +45,7 @@ ANPCCharacter::ANPCCharacter(const class FObjectInitializer& ObjectInitializer)
 
 	DefaultMaxWalkSpeed = 0.0f;
 
-	AttackCooltime = 1.5f;
+	NPCType = ENPCType::Idle;
 
 	bIsQuestNPC = false;
 	bIsAmmoNPC = false;
@@ -68,13 +59,7 @@ void ANPCCharacter::BeginPlay()
 
 	if (PawnSensingComp)
 	{
-		PawnSensingComp->OnSeePawn.AddDynamic(this, &ANPCCharacter::OnSeeZombie);
-
 		PawnSensingComp->OnHearNoise.AddDynamic(this, &ANPCCharacter::OnHearNoise);
-	}
-	if (AttackCollisionComp)
-	{
-		AttackCollisionComp->OnComponentBeginOverlap.AddDynamic(this, &ANPCCharacter::OnAttackCollisionCompBeginOverlap);
 	}
 
 	if (TalkCollisionComp)
@@ -84,8 +69,8 @@ void ANPCCharacter::BeginPlay()
 		TalkCollisionComp->OnComponentEndOverlap.AddDynamic(this, &ANPCCharacter::OnTalkCollisionCompEndOverlap);//&AFlockingPlayerController::ClosedWidget);
 	}
 
-	ANPCController* NPC = Cast<ANPCController>(GetController());
-	NPC->SetIsRunAway(true);
+	ANPCController* Controller = Cast<ANPCController>(GetController());
+	Controller->SetNPCType(NPCType);
 
 	DefaultMaxWalkSpeed = GetMovementComponent()->GetMaxSpeed();
 }
@@ -95,57 +80,13 @@ void ANPCCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-
-	/* 2.5초 동안 플레이어를 쫒다가 플레이어를 쫒지 못하면 타겟 초기화 */
-	if (bSensedTarget && (GetWorld()->TimeSeconds - LastSeenTime) > SightSenseTimeOut
-		&& (GetWorld()->TimeSeconds - LastHeardTime) > HearingSenseTimeOut)
-	{
-		ANPCController* AIController = Cast<ANPCController>(GetController());
-		if (AIController)
-		{
-			bSensedTarget = false;
-			/* 타겟 리셋 */
-			AIController->SetTargetEnemy(nullptr);
-
-			bHeardTarget = false;
-
-			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed;
-		}
-	}
-
-	if (GetWorld())
-	{
-		AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-		if (GameMode && GameMode->Complete_Quest[0] == true)
-		{
-			ANPCController* NPC = Cast<ANPCController>(GetController());
-			NPC->SetIsRunAway(false);
-		}
-	}
+	
 }
 
 
-void ANPCCharacter::OnAttackCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
-{
-	/*TimerHandle_AttackTimer.Invalidate();
-
-	ScratchAttack(OtherActor);
-
-	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &ANPCCharacter::ReTriggerAttack, AttackCooltime, true);*/
-
-}
-
-void ANPCCharacter::OnAttackCollisionCompEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-
-}
 
 void ANPCCharacter::OnTalkCollisionCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	//ANPCController* Controller = Cast<ANPCController>(GetController());
-	//APlayerCharacter *SensedPlayer = Cast<APlayerCharacter>(OtherActor);
-	////APawn* SensedPlayer = Cast<APawn>(OtherActor);
-	//Controller->SetTargetPlayer(SensedPlayer);
 	if (OtherActor->ActorHasTag("Player"))
 	{
 		APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
@@ -196,8 +137,6 @@ void ANPCCharacter::OnTalkCollisionCompBeginOverlap(class UPrimitiveComponent* O
 			PlayerController->OpenWidget(3);
 		}
 
-		/*APlayerController* OurPlayerController = UGameplayStatics::GetPlayerController(this, 0);
-		ARPlayerController* Controller = Cast<ARPlayerController>(OurPlayerController);*/
 		if (PlayerController)
 		{
 			if (PlayerController->bTurnViewTarget == true)
@@ -221,9 +160,6 @@ void ANPCCharacter::OnTalkCollisionCompBeginOverlap(class UPrimitiveComponent* O
 
 void ANPCCharacter::OnTalkCollisionCompEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	/*ANPCController* Controller = Cast<ANPCController>(GetController());
-	Controller->SetTargetPlayer(nullptr);*/
-
 	APlayerCharacter* Player = Cast<APlayerCharacter>(OtherActor);
 	ARPlayerController* PlayerController = Cast<ARPlayerController>(Player->GetController());
 	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
@@ -231,33 +167,23 @@ void ANPCCharacter::OnTalkCollisionCompEndOverlap(UPrimitiveComponent* Overlappe
 	PlayerController->CloseWidget(1);
 
 	StopAllAnimation();
+
+
+	if (GetWorld())
+	{
+		AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+		if (GameMode)
+		{
+			if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(0) - 1 && GameMode->Complete_Quest[0] == false)
+			{
+				ANPCController* NPC = Cast<ANPCController>(GetController());
+				NPC->SetNPCType(ENPCType::RunAway);
+			}
+		}
+	}
+	
 }
 
-void ANPCCharacter::OnSeeZombie(APawn* pawn)
-{
-	if (!bSensedTarget)
-	{
-
-	}
-
-	if (!bSensedTarget)
-	{
-		//AuidoLoop
-	}
-
-	//타겟을 발견 한 뒤 월드 시간을 받음
-	LastSeenTime = GetWorld()->GetTimeSeconds();
-	bSensedTarget = true;
-
-	ANPCController* AIController = Cast<ANPCController>(GetController());
-	AZombieCharacter* SensedPawn = Cast<AZombieCharacter>(pawn);
-	if (AIController)
-	{
-		AIController->SetTargetEnemy(SensedPawn);
-		//167.0f == Zombie Run
-		Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = 167.0f;
-	}
-}
 
 void ANPCCharacter::OnHearNoise(APawn* PawnInstigator, const FVector& Location, float Volume)
 {
@@ -273,88 +199,11 @@ void ANPCCharacter::OnHearNoise(APawn* PawnInstigator, const FVector& Location, 
 	}
 }
 
-void ANPCCharacter::ScratchAttack(AActor* HitActor)
-{
-	if (LastAttackTime > GetWorld()->GetTimeSeconds() - AttackCooltime)
-	{
-		if (!TimerHandle_AttackTimer.IsValid())
-		{
-
-		}
-		return;
-	}
-
-	//AZombieCharacter_2* other = Cast<AZombieCharacter_2>(OtherComp);
-	if (HitActor && HitActor != this) {
-
-		if (AttackAnimMontage != NULL) {
-			AnimInstance = this->GetMesh()->GetAnimInstance();
-			if (AnimInstance != NULL) {
-				LastAttackTime = GetWorld()->GetTimeSeconds();
-
-
-				PlayAttackMotion();
-			}
-
-		}
-	}
-}
-
-void ANPCCharacter::ReTriggerAttack()
-{
-	TArray<AActor*> OverlapActor;
-	//Attack Collision에 Timer가 ReTriggerAttack을 실행 할 때 마다, Overlap된 액터를 집어넣음
-	AttackCollisionComp->GetOverlappingActors(OverlapActor, AZombieCharacter::StaticClass());
-	for (int32 i = 0; i < OverlapActor.Num(); i++)
-	{
-		AZombieCharacter* OverlappingPawn = Cast<AZombieCharacter>(OverlapActor[i]);
-		if (OverlappingPawn)
-		{
-			ScratchAttack(OverlappingPawn);
-		}
-	}
-	if (OverlapActor.Num() == 0)
-	{
-		TimerHandle_AttackTimer.Invalidate();
-	}
-}
-
-void ANPCCharacter::PlayAttackMotion()
-{
-	if (AttackAnimMontage)
-	{
-		AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
-	}
-}
-
-
-void ANPCCharacter::TimerHandleFunc()
-{
-	//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
-	GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &ANPCCharacter::ReTriggerAttack, AttackCooltime, true);
-}
-
 void ANPCCharacter::PlayTalkMotion()
 {
 	if (TalkAnimMontage)
 	{
 		AnimInstance->Montage_Play(TalkAnimMontage, 2.5f);
-	}
-}
-
-void ANPCCharacter::PlayAngryMotion()
-{
-	if (AngryAnimMontage)
-	{
-		AnimInstance->Montage_Play(AngryAnimMontage, 2.5f);
-	}
-}
-
-void ANPCCharacter::PlayHappyMotion()
-{
-	if (HappyAnimMontage)
-	{
-		AnimInstance->Montage_Play(HappyAnimMontage, 2.5f);
 	}
 }
 

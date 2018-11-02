@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Weapons.generated.h"
 
+class USpotLightComponent;
 class APlayerCharacter;
 class UAnimMontage;
 class UAudioComponent;
@@ -203,7 +204,9 @@ protected:
 	void FireWeapon();
 
 	
-
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		USpotLightComponent* WeaponLight;
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -242,6 +245,8 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = Config)
 		FWeaponData WeaponConfig;
+
+	USpotLightComponent* GetWeaponLight();
 
 private:
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)

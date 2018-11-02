@@ -158,6 +158,8 @@ void ARPlayerController::OpenGuideWidget(int GuideWidgetNum)
 	}
 }
 
+
+
 void ARPlayerController::CloseGuideWidget(int GuideWidgetNum)
 {
 	switch (GuideWidgetNum)
@@ -311,6 +313,23 @@ void ARPlayerController::CloseWidget(int32 WidgetNum)
 	
 }
 
+void ARPlayerController::OpenDeathWidget()
+{
+	if (wDeathWidget)
+	{
+		DeathWidget = CreateWidget<UUserWidget>(this, wDeathWidget);
+
+		if (DeathWidget)
+		{
+			DeathWidget->AddToViewport();
+
+			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+			GameMode->SetGamePause();
+		}
+	}
+}
+
+
 void ARPlayerController::OpenStatusHUD()
 {
 	if (wStatusHUD) 
@@ -392,12 +411,12 @@ void ARPlayerController::NextScript()
 		case 2:
 			if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(2) - 1)
 			{
-				CloseWidget(2);
+				CloseWidget(1);
 
 				//퀘스트 UI 활성화
 				Player->SetCurrentQuestActivate(2);
 
-				GameMode->SpawnZombie();
+				//GameMode->SpawnZombie();
 			}
 			break;
 

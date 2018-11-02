@@ -37,14 +37,14 @@ void AFPS_GameGameModeBase::BeginPlay()
 	}
 
 	SetZombieSpawnPoint();
-
-
+	
 
 	QuestScriptNum = 0;
 	QuestNum = 0;
 
 	NPCScriptNum = 0;
 	NPCNum = 0;
+
 }
 
 void AFPS_GameGameModeBase::SetPlayerSpawnTransform(FTransform SpawnTransform)
@@ -75,7 +75,7 @@ void AFPS_GameGameModeBase::SpawnZombie()
 	if (SpawnZombieArray.Num() > 0)
 	{
 		int32 NumZombieClasses = SpawnZombieArray.Num();
-
+		int32 NumStage2ZombieClasses = Stage2SpawnZombieArray.Num();
 		//Tutorial Zombie Spawn
 		if (QuestNum == 0)
 		{
@@ -88,7 +88,8 @@ void AFPS_GameGameModeBase::SpawnZombie()
 					FActorSpawnParameters SpawnInfo;
 					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 					SpawnInfo.bAllowDuringConstructionScript = true;
-					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+					//AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+					StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo));
 				}
 			}
 		}
@@ -105,26 +106,27 @@ void AFPS_GameGameModeBase::SpawnZombie()
 					FActorSpawnParameters SpawnInfo;
 					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 					SpawnInfo.bAllowDuringConstructionScript = true;
-					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+					//AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+					StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo));
 				}
 			}
 		}
-		//Stage2 Zombie Spawn, 20마리
-		/*else if (QuestNum == 2)
+		//Stage2 Zombie Spawn, 16마리
+		else if (QuestNum == 2)
 		{
-			for (int32 i = 6; i < 26; i++)
+			for (int32 i = 0; i < 16; i++)
 			{
-				if (SpawnZombieArray[i])
+				if (Stage2SpawnZombieArray[i])
 				{
-					FVector SpawnLoc(ZombieSpawnPoint[i]);
+					FVector SpawnLoc(ZombieSpawnPoint[i+6]);
 					FRotator SpawnRot(0.f, 0.f, 0.f);
 					FActorSpawnParameters SpawnInfo;
 					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 					SpawnInfo.bAllowDuringConstructionScript = true;
-					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(Stage2SpawnZombieArray[i+6], SpawnLoc, SpawnRot, SpawnInfo);
 				}
 			}
-		}*/
+		}
 	}
 }
 
@@ -418,4 +420,36 @@ void AFPS_GameGameModeBase::SetZombieSpawnPoint()
 	ZombieSpawnPoint.Add(FVector(1666.0f, 686.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(2518.0f, -22.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(2518.0f, -2981.0f, 250.0f));
+
+	//스테이지2 시작 좀비 스폰
+	ZombieSpawnPoint.Add(FVector(15609.0f, -7202.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(13706.0f, -7202.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(13706.0f, -4912.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(13706.0f, -3838.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(12568.0f, -3838.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(12568.0f, -4311.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(12568.0f, -2463.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(12568.0f, 441.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(13212.0f, 441.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(13212.0f, 1328.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(14224.0f, 1328.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(16338.0f, 1328.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(16338.0f, 2662.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(16680.0f, -1488.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(14119.0f, 2801.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(13348.0f, 3293.0f, 250.0f));
+
+
+	//스테이지2 좀비 스포너 포인트
+	ZombieSpawnPoint.Add(FVector(9248.0f, -7563.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(18127.0f, -7642.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(13869.0f, -1311.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(16587.0f, 3676.0f, 250.0f));
+	ZombieSpawnPoint.Add(FVector(10135.0f, 3110.0f, 250.0f));
+}
+
+
+TArray<class AZombieCharacter*> AFPS_GameGameModeBase::GetSpawnZombie()
+{
+	return StoreSpawnZombie;
 }
