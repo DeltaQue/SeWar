@@ -103,21 +103,18 @@ void AWeapons::FireWeapon()
 	FVector AdjustedAimDir = AimDir;
 	if (Impact.bBlockingHit)
 	{
-		/* Adjust the shoot direction to hit at the crosshair. */
 		AdjustedAimDir = (Impact.ImpactPoint - MuzzleOrigin).GetSafeNormal();
 
-		/* Re-trace with the new aim direction coming out of the weapon muzzle */
 		Impact = HitScanLineTrace(MuzzleOrigin, MuzzleOrigin + (AdjustedAimDir * WeaponConfig.WeaponRange));
 	}
 	else
 	{
-		/* Use the maximum distance as the adjust direction */
 		Impact.ImpactPoint = FVector_NetQuantize(EndPos);
 	}
 
 	ProcessHitScan(Impact, MuzzleOrigin, AdjustedAimDir);
 
-	//DrawDebugLine(GetWorld(), CameraPos, EndPos, FColor::Green, false, 5, 0, 1);
+	//
 	//DrawDebugPoint(GetWorld(), CameraPos, 20.f,  FColor::Red, false, 999999, SDPG_MAX);
 	//DrawDebugPoint(GetWorld(), EndPos, 20.f, FColor::Green, false, 999999, SDPG_MAX);
 }
@@ -584,6 +581,11 @@ void AWeapons::HandleFiring()
 		}
 	}
 
+	if (WeaponOwner)
+	{
+		WeaponOwner->MakePawnNoise(1.f);
+	}
+
 	//LastFireTime을 발사시간으로 초기화 하여, 연사시 딜레이 타임 체크
 	LastFireTime = GetWorld()->GetTimeSeconds();
 }
@@ -615,32 +617,19 @@ float AWeapons::CalcWeaponSpread() const
 
 void AWeapons::ProcessHitScan(const FHitResult & Impact, const FVector & Origin, const FVector & ShootDir)
 {
-	//if (Impact.GetActor()->ActorHasTag("DestructibleMesh") && Impact.GetActor() != WeaponOwner && Impact.GetActor() != this )
-	//{
-	//	ALaserActor* Dest = Cast<ALaserActor>(Impact.GetActor());
-	//	if (Dest)
-	//	{
-	//		if (Dest->GetDestructibleComponent()->IsSimulatingPhysics())
-	//		{
-	//			Dest->GetDestructibleComponent()->SetSimulatePhysics(true);
-	//			Dest->GetDestructibleComponent()->AddRadialForce(Impact.Location, 100.f, 3000.f, RIF_Constant);
-	//			//Dest->GetDestructibleComponent()->AddRadialImpulse(Impact.Location, 300000.f, 1000.f, RIF_Constant);
-	//			Dest->GetDestructibleComponent()->AddImpulseAtLocation(FVector(300.f, 300.f, 300.f) * 10.f, Impact.Location);
-	//		}
+	if (Impact.GetActor()->ActorHasTag("DestructibleMesh") && Impact.GetActor() != WeaponOwner && Impact.GetActor() != this )
+	{
+		ALaserActor* Dest = Cast<ALaserActor>(Impact.GetActor());
+		if (Dest)
+		{
+			if (Dest->GetDestructibleComponent()->IsSimulatingPhysics())
+			{
+				Dest->GetDestructibleComponent()->SetSimulatePhysics(true);
+				Dest->GetDestructibleComponent()->AddRadialForce(Impact.Location, 500.f, 1000000.f, RIF_Constant);
+			}
+		}
+	}
 
-	//		/*if (Impact.GetComponent()->IsSimulatingPhysics())
-	//		{
-	//			Impact.GetComponent()->AddForceAtLocation(FVector(100.f, 100.f, 100.f), Impact.Location);
-	//			Impact.GetComponent()->AddImpulseAtLocation(FVector(300.f, 300.f, 300.f) * 100.f, Impact.Location);
-	//		}
-	//		else if (!Impact.GetComponent()->IsSimulatingPhysics())
-	//		{
-	//			Impact.GetComponent()->SetSimulatePhysics(true);
-	//			Impact.GetComponent()->AddRadialForce(Impact.Location, 300.f, 1000.f, RIF_Constant);
-
-	//		}*/
-	//	}
-	//}
 	if(Impact.GetActor()->ActorHasTag("Zombie") || Impact.GetActor()->ActorHasTag("Boss"))
 	{
 		if (Impact.GetActor() && Impact.GetActor() != WeaponOwner && Impact.GetActor() != this)
@@ -813,6 +802,18 @@ void AWeapons::SetRemainingAmmo(int32 ImproveAmmo)
 	else if (WeaponConfig.MaxAmmo < RemainingAmmo + ImproveAmmo)
 	{
 		RemainingAmmo = WeaponConfig.MaxAmmo;
+	}
+}
+
+void AWeapons::SetLoadedAmmo(int32 ImproveAmmo)
+{
+	if (WeaponConfig.AmmoPerClip >= LoadedAmmo + ImproveAmmo)
+	{
+		LoadedAmmo += ImproveAmmo;
+	}
+	else if (WeaponConfig.AmmoPerClip < LoadedAmmo + ImproveAmmo)
+	{
+		LoadedAmmo = WeaponConfig.AmmoPerClip;
 	}
 }
 

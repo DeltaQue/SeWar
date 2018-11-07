@@ -1,5 +1,10 @@
 {
 	"Location X": -5,
 	"Location Y": -1958,
-	"Location Z": 236
+	"Location Z": 200,
+	"Current Quest": 0,
+	"Current HP": 100,
+	"LoadedAmmo": 30,
+	"RemainingAmmo": 30,
+	"Killpoint": 0
 }

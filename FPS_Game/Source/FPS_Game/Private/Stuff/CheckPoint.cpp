@@ -40,6 +40,6 @@ void ACheckPoint::OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, clas
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr))
 	{
 		AFPS_GameGameModeBase* GameMod = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-		GameMod->SetCheckPoint(GetActorLocation());
+		//GameMod->SetCheckPoint(GetActorLocation());
 	}
 }

@@ -87,7 +87,7 @@ public:
 	float GetMaxHealth() const;
 	bool GetHitReact() const;
 
-	void SetHealth(float ImproveHealth);
-
+	void SetAddHealth(float ImproveHealth);
+	void SetHealth(float NewHealth);
 	void DestroyTarget();
 };

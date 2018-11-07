@@ -55,6 +55,12 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
 		TSubclassOf<class UUserWidget> wDeathWidget;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+		TSubclassOf<class UUserWidget> wStageClearWidget;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+		TSubclassOf<class UUserWidget> wCreditWidget;
+
 	UUserWidget* MovementGuideWidget;
 	UUserWidget* WeaponGuideWidget;
 	UUserWidget* QuestScriptWidget;
@@ -64,6 +70,10 @@ protected:
 	UUserWidget* StatusHUD;
 
 	UUserWidget* DeathWidget;
+
+	UUserWidget* StageClearWidget;
+	UUserWidget* CreditWidget;
+
 
 public:
 	void OnScreenMessage(FName string);
@@ -80,6 +90,10 @@ public:
 	
 	void OpenDeathWidget();
 
+	int OpenStageClearWidget(int QuestNum);
+	void OpenCreditWidget();
+
+
 	UFUNCTION(BlueprintCallable, Category = "Bind")
 		int32 BindKilledpoint();
 	UFUNCTION(BlueprintCallable, Category = "Bind")
@@ -88,7 +102,8 @@ public:
 	void SetGamePause();
 	void SetGameUnPause();
 
-	void SetScoreKillpoint();
+	void SetScoreKillpoint(int Num);
+	void AddScoreKillpoint();
 	int32 GetScoreKillpoint() const;
 
 	UPROPERTY()

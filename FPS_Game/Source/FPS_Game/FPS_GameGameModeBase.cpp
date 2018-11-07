@@ -4,6 +4,28 @@
 #include "FPS_Game.h"
 #include "UObject/ConstructorHelpers.h"
 
+void AFPS_GameGameModeBase::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	//FString GameInfojsonstr;	// Recive load json text
+	//FFileHelper::LoadFileToString(GameInfojsonstr, *JsonFilePath);	// Load json to filePath
+
+	//TSharedRef<TJsonReader<TCHAR>> GameInforeader = TJsonReaderFactory<TCHAR>::Create(GameInfojsonstr);
+	//TSharedPtr<FJsonObject> GameInfojsonObj = MakeShareable(new FJsonObject());
+
+	//if (FJsonSerializer::Deserialize(GameInforeader, GameInfojsonObj) && GameInfojsonObj.IsValid())
+	//{
+	//	LoadLocation = FVector(GameInfojsonObj->GetIntegerField("Location X"), GameInfojsonObj->GetIntegerField("Location Y"), GameInfojsonObj->GetIntegerField("Location Z"));
+	//	LoadHP = (int32)(GameInfojsonObj->GetIntegerField("Current HP"));
+	//	LoadQuestNum = GameInfojsonObj->GetStringField("");
+	//	LoadKillpoint;
+	//	LoadLoadedAmmo;
+	//	LoadedRemainingAmmo;
+	//}
+
+
+}
 
 void AFPS_GameGameModeBase::BeginPlay()
 {
@@ -36,6 +58,9 @@ void AFPS_GameGameModeBase::BeginPlay()
 		Ammo_Script_Max = AmmoScriptArray.Max();
 	}
 
+
+	
+
 	SetZombieSpawnPoint();
 	
 
@@ -45,6 +70,7 @@ void AFPS_GameGameModeBase::BeginPlay()
 	NPCScriptNum = 0;
 	NPCNum = 0;
 
+	
 }
 
 void AFPS_GameGameModeBase::SetPlayerSpawnTransform(FTransform SpawnTransform)
@@ -72,65 +98,118 @@ float AFPS_GameGameModeBase::DamageCalc(float Damage, AActor * DamagedActor, FDa
 
 void AFPS_GameGameModeBase::SpawnZombie()
 {
+	//Spawn Zombie Array 
+	//0: Tutorial Zombie
+	//1: Stage1 Zombie
+	//2: Stage2 Zombie
+	//3: Boss Zombie
 	if (SpawnZombieArray.Num() > 0)
 	{
-		int32 NumZombieClasses = SpawnZombieArray.Num();
-		int32 NumStage2ZombieClasses = Stage2SpawnZombieArray.Num();
+		switch (QuestNum)
+		{
 		//Tutorial Zombie Spawn
-		if (QuestNum == 0)
-		{
-			for (int32 i = 0; i < 1; i++)
+		case 0:
+			if (ZombieSpawnCheck[QuestNum] == false)
 			{
-				if (SpawnZombieArray[i])
+				if (SpawnZombieArray[0])
 				{
-					FVector SpawnLoc(ZombieSpawnPoint[i]);
+					FVector SpawnLoc(ZombieSpawnPoint[0]);
 					FRotator SpawnRot(0.f, 0.f, 0.f);
 					FActorSpawnParameters SpawnInfo;
 					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 					SpawnInfo.bAllowDuringConstructionScript = true;
 					//AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
-					StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo));
-				}
-			}
-		}
+					StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[0], SpawnLoc, SpawnRot, SpawnInfo));
 
+					ZombieSpawnCheck[QuestNum] = true;
+				}
+			}
+			break;
+		
 		//Stage1 Zombie Spawn, 5마리
-		else if (QuestNum == 1)
-		{
-			for (int32 i = 1; i < 6; i++)
+		case 1:
+			if (ZombieSpawnCheck[QuestNum] == false)
 			{
-				if (SpawnZombieArray[i])
+				for (int32 i = 1; i < 6; i++)
 				{
-					FVector SpawnLoc(ZombieSpawnPoint[i]);
-					FRotator SpawnRot(0.f, 0.f, 0.f);
-					FActorSpawnParameters SpawnInfo;
-					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-					SpawnInfo.bAllowDuringConstructionScript = true;
-					//AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
-					StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo));
+					if (SpawnZombieArray[1])
+					{
+						FVector SpawnLoc(ZombieSpawnPoint[i]);
+						FRotator SpawnRot(0.f, 0.f, 0.f);
+						FActorSpawnParameters SpawnInfo;
+						SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+						SpawnInfo.bAllowDuringConstructionScript = true;
+						//AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[i], SpawnLoc, SpawnRot, SpawnInfo);
+						StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[1], SpawnLoc, SpawnRot, SpawnInfo));
+					}
 				}
+				ZombieSpawnCheck[QuestNum] = true;
 			}
-		}
+			break;
+
 		//Stage2 Zombie Spawn, 16마리
-		else if (QuestNum == 2)
-		{
-			for (int32 i = 0; i < 16; i++)
+		case 2:
+			if (ZombieSpawnCheck[QuestNum] == false)
 			{
-				if (Stage2SpawnZombieArray[i])
+				for (int32 i = 6; i < 22; i++)
 				{
-					FVector SpawnLoc(ZombieSpawnPoint[i+6]);
+					if (SpawnZombieArray[2])
+					{
+						FVector SpawnLoc(ZombieSpawnPoint[i]);
+						FRotator SpawnRot(0.f, 0.f, 0.f);
+						FActorSpawnParameters SpawnInfo;
+						SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+						SpawnInfo.bAllowDuringConstructionScript = true;
+						//AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(Stage2SpawnZombieArray, SpawnLoc, SpawnRot, SpawnInfo);
+						StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[2], SpawnLoc, SpawnRot, SpawnInfo));
+					}
+				}
+				ZombieSpawnCheck[QuestNum] = true;
+
+				// + Boss Zombie Spawn
+				if (SpawnZombieArray[3])
+				{
+					FVector SpawnLoc(ZombieSpawnPoint[22]);
 					FRotator SpawnRot(0.f, 0.f, 0.f);
 					FActorSpawnParameters SpawnInfo;
 					SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 					SpawnInfo.bAllowDuringConstructionScript = true;
-					AZombieCharacter* NewZombie = GetWorld()->SpawnActor<AZombieCharacter>(Stage2SpawnZombieArray[i+6], SpawnLoc, SpawnRot, SpawnInfo);
+
+					StoreSpawnZombie.Add(GetWorld()->SpawnActor<AZombieCharacter>(SpawnZombieArray[3], SpawnLoc, SpawnRot, SpawnInfo));
 				}
 			}
+			break;
+
+		default:
+			break;
 		}
 	}
 }
 
-bool AFPS_GameGameModeBase::SetCheckPoint(const FVector Location)
+bool AFPS_GameGameModeBase::SetClearCheckPoint()
+{
+	FString jsonstr;
+	TSharedRef<TJsonWriter<TCHAR>> jsonObj = TJsonWriterFactory<>::Create(&jsonstr);
+
+
+	jsonObj->WriteObjectStart();
+	jsonObj->WriteValue("Location X", -5);	// Value type : bool, int, float, string
+	jsonObj->WriteValue("Location Y", -1958);
+	jsonObj->WriteValue("Location Z", 200);
+	jsonObj->WriteValue("Current Quest", 0);
+	jsonObj->WriteValue("Current HP", 100);
+	jsonObj->WriteValue("LoadedAmmo", 30);
+	jsonObj->WriteValue("RemainingAmmo", 30);
+	jsonObj->WriteValue("Killpoint", 0);
+	jsonObj->WriteObjectEnd();
+	jsonObj->Close();
+
+	FFileHelper::SaveStringToFile(*jsonstr, *JsonFilePath);	// Save json to filePath
+
+	return true;
+}
+
+bool AFPS_GameGameModeBase::SetCheckPoint(const FVector Location, const float HP, const int32 LoadedAmmo, const int32 RemainingAmmo, const int32 Killpoint)
 {
 	if (Location == FVector::ZeroVector)
 		return false;
@@ -141,11 +220,18 @@ bool AFPS_GameGameModeBase::SetCheckPoint(const FVector Location)
 	int32 LocationX = static_cast<int32>(Location.X);
 	int32 LocationY = static_cast<int32>(Location.Y);
 	int32 LocationZ = static_cast<int32>(Location.Z);
+	
+	int32 Health = static_cast<int32>(HP);
 
 	jsonObj->WriteObjectStart();
 	jsonObj->WriteValue("Location X", LocationX);	// Value type : bool, int, float, string
 	jsonObj->WriteValue("Location Y", LocationY);
 	jsonObj->WriteValue("Location Z", LocationZ);
+	jsonObj->WriteValue("Current Quest", QuestNum);
+	jsonObj->WriteValue("Current HP", Health);
+	jsonObj->WriteValue("LoadedAmmo", LoadedAmmo);
+	jsonObj->WriteValue("RemainingAmmo", RemainingAmmo);
+	jsonObj->WriteValue("Killpoint", Killpoint);
 	jsonObj->WriteObjectEnd();
 	jsonObj->Close();
 
@@ -169,10 +255,103 @@ FVector AFPS_GameGameModeBase::GetCheckPoint()
 	{
 		return FVector(jsonObj->GetIntegerField("Location X"), jsonObj->GetIntegerField("Location Y"), jsonObj->GetIntegerField("Location Z"));
 	}
-
 	return CheckPointLocation;
 }
 
+float AFPS_GameGameModeBase::GetLoadHP()
+{
+	float LoadHP = 100;
+
+	FString jsonstr;	// Recive load json text
+	FFileHelper::LoadFileToString(jsonstr, *JsonFilePath);	// Load json to filePath
+
+	TSharedRef<TJsonReader<TCHAR>> reader = TJsonReaderFactory<TCHAR>::Create(jsonstr);
+	TSharedPtr<FJsonObject> jsonObj = MakeShareable(new FJsonObject());
+
+	if (FJsonSerializer::Deserialize(reader, jsonObj) && jsonObj.IsValid())
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("Load HP data : %d"), (int32)(jsonObj->GetIntegerField("Current HP"))));
+		return (int32)(jsonObj->GetIntegerField("Current HP"));
+	}
+
+	return LoadHP;
+}
+
+int32 AFPS_GameGameModeBase::GetLoadKillpoint()
+{
+	int LoadKillpoint = 0;
+
+	FString jsonstr;	// Recive load json text
+	FFileHelper::LoadFileToString(jsonstr, *JsonFilePath);	// Load json to filePath
+
+	TSharedRef<TJsonReader<TCHAR>> reader = TJsonReaderFactory<TCHAR>::Create(jsonstr);
+	TSharedPtr<FJsonObject> jsonObj = MakeShareable(new FJsonObject());
+
+	if (FJsonSerializer::Deserialize(reader, jsonObj) && jsonObj.IsValid())
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("killpoint : %d"), jsonObj->GetIntegerField("Killpoint")));
+		return jsonObj->GetIntegerField("Killpoint");
+	}
+
+	return LoadKillpoint;
+}
+
+int32 AFPS_GameGameModeBase::GetLoadQuest()
+{
+	int LoadQuestNum = 0;
+
+	FString jsonstr;	// Recive load json text
+	FFileHelper::LoadFileToString(jsonstr, *JsonFilePath);	// Load json to filePath
+
+	TSharedRef<TJsonReader<TCHAR>> reader = TJsonReaderFactory<TCHAR>::Create(jsonstr);
+	TSharedPtr<FJsonObject> jsonObj = MakeShareable(new FJsonObject());
+
+	if (FJsonSerializer::Deserialize(reader, jsonObj) && jsonObj.IsValid())
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("QuestNum : %d"), jsonObj->GetIntegerField("Current Quest")));
+		return jsonObj->GetIntegerField("Current Quest");
+	}
+
+	return LoadQuestNum;
+}
+
+int32 AFPS_GameGameModeBase::GetLoadLoadedAmmo()
+{
+	int LoadLoadedAmmo = 0;
+
+	FString jsonstr;	// Recive load json text
+	FFileHelper::LoadFileToString(jsonstr, *JsonFilePath);	// Load json to filePath
+
+	TSharedRef<TJsonReader<TCHAR>> reader = TJsonReaderFactory<TCHAR>::Create(jsonstr);
+	TSharedPtr<FJsonObject> jsonObj = MakeShareable(new FJsonObject());
+
+	if (FJsonSerializer::Deserialize(reader, jsonObj) && jsonObj.IsValid())
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("LoadedAmmo : %d"), jsonObj->GetIntegerField("LoadedAmmo")));
+		return jsonObj->GetIntegerField("LoadedAmmo");
+	}
+
+	return LoadLoadedAmmo;
+}
+
+int32 AFPS_GameGameModeBase::GetLoadRemainingAmmo()
+{
+	int LoadRemainingAmmo = 0;
+
+	FString jsonstr;	// Recive load json text
+	FFileHelper::LoadFileToString(jsonstr, *JsonFilePath);	// Load json to filePath
+
+	TSharedRef<TJsonReader<TCHAR>> reader = TJsonReaderFactory<TCHAR>::Create(jsonstr);
+	TSharedPtr<FJsonObject> jsonObj = MakeShareable(new FJsonObject());
+
+	if (FJsonSerializer::Deserialize(reader, jsonObj) && jsonObj.IsValid())
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("RemainingAmmo : %d"), jsonObj->GetIntegerField("RemainingAmmo")));
+		return jsonObj->GetIntegerField("RemainingAmmo");
+	}
+
+	return LoadRemainingAmmo;
+}
 
 FText AFPS_GameGameModeBase::GetQuestScript()
 {
@@ -412,9 +591,10 @@ void AFPS_GameGameModeBase::SetCompleteQuest(int32 QuestNum)
 
 void AFPS_GameGameModeBase::SetZombieSpawnPoint()
 {
-	//튜토리얼 좀비
+	//튜토리얼 좀비(1마리)
 	ZombieSpawnPoint.Add(FVector(23.0f, 398.0f, 250.0f));
-	//스테이지1 좀비
+
+	//스테이지1 좀비(5마리)
 	ZombieSpawnPoint.Add(FVector(386.0f, 948.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(1222.0f, 1414.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(1666.0f, 686.0f, 250.0f));
@@ -439,6 +619,8 @@ void AFPS_GameGameModeBase::SetZombieSpawnPoint()
 	ZombieSpawnPoint.Add(FVector(14119.0f, 2801.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(13348.0f, 3293.0f, 250.0f));
 
+	//보스 좀비 스폰
+	ZombieSpawnPoint.Add(FVector(13291.0f, -3559.0f, 242.837448f));
 
 	//스테이지2 좀비 스포너 포인트
 	ZombieSpawnPoint.Add(FVector(9248.0f, -7563.0f, 250.0f));
@@ -452,4 +634,69 @@ void AFPS_GameGameModeBase::SetZombieSpawnPoint()
 TArray<class AZombieCharacter*> AFPS_GameGameModeBase::GetSpawnZombie()
 {
 	return StoreSpawnZombie;
+}
+
+
+void AFPS_GameGameModeBase::SpawnZombieKill(class AZombieCharacter* Zombie)
+{
+	int Index = 0;
+	Index = StoreSpawnZombie.Find(Zombie);
+
+	StoreSpawnZombie.RemoveAt(Index);
+}
+
+
+void AFPS_GameGameModeBase::SetQuest(int NewQuestNum)
+{
+	if(NewQuestNum < 3)
+		QuestNum = NewQuestNum;
+}
+
+void AFPS_GameGameModeBase::RestartPlayer(class AController* NewPlayer)
+{
+	FVector SpawnOrigin = FVector::ZeroVector;
+	FRotator StartRotation = FRotator::ZeroRotator;
+
+	if (GetCheckPoint() != FVector::ZeroVector)
+	{
+		SpawnOrigin = GetCheckPoint();
+	}
+
+	if (NewPlayer->GetPawn() == nullptr && GetDefaultPawnClassForController(NewPlayer) != nullptr)
+	{
+		FActorSpawnParameters SpawnInfo;
+		SpawnInfo.Instigator = Instigator;
+		APawn* ResultPawn = GetWorld()->SpawnActor<APawn>(GetDefaultPawnClassForController(NewPlayer), SpawnOrigin, StartRotation, SpawnInfo);
+		if (ResultPawn == nullptr)
+		{
+			// faile
+		}
+		NewPlayer->SetPawn(ResultPawn);
+	}
+
+
+	if (NewPlayer->GetPawn() == nullptr)
+	{
+		NewPlayer->FailedToSpawnPawn();
+	}
+	else
+	{
+		NewPlayer->Possess(NewPlayer->GetPawn());
+
+		if (NewPlayer->GetPawn() == nullptr)
+		{
+			NewPlayer->FailedToSpawnPawn();
+		}
+		else
+		{
+			NewPlayer->ClientSetRotation(NewPlayer->GetPawn()->GetActorRotation(), true);
+
+			FRotator NewControllerRot = StartRotation;
+			NewControllerRot.Roll = 0.f;
+			NewPlayer->SetControlRotation(NewControllerRot);
+
+			SetPlayerDefaults(NewPlayer->GetPawn());
+		}
+	}
+
 }

@@ -5,6 +5,7 @@
 #include "GameFramework/Pawn.h"
 #include "MainMenuPawn.generated.h"
 
+
 UCLASS()
 class FPS_GAME_API AMainMenuPawn : public APawn
 {
@@ -25,5 +26,6 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		void ExitGame();
+		
 
 };

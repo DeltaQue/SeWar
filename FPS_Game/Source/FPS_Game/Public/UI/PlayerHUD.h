@@ -75,28 +75,12 @@ protected:
 		float DrawPixelSize = 5.f;
 
 private:
-	///** Crosshair asset pointer */
-	//class UTexture2D* CrosshairTex;
-
-	/*Holds a reference to every actor we are currently drawing in our radar*/
 	TArray<AActor*> RadarActors;
-
-	/*Returns the center of the radar as a 2d vector*/
 	FVector2D GetRadarCenterPosition();
-
-	/*Converts the given actors' location to local (based on our character)*/
 	FVector2D ConvertWorldLocationToLocal(AActor* ActorToPlace);
 
-	/*Draws the radar*/
 	void DrawRadar();
-
-	/*Draws the player in the center of the radar*/
 	void DrawPlayerInRadar();
-
-	/*Performs a sphere shaped raycast starting from our player to find any valid actors for radar display
-	*Populates the RadarActors array with valid actors*/
-	void PerformRadarRaycast();
-
-	/*Draws the raycasted actors in our radar*/
-	void DrawRaycastedActors();
+	void FindEnemy();
+	void DrawFIndEnemyInRadar();
 };

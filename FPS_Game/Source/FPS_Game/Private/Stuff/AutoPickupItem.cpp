@@ -72,6 +72,8 @@ void AAutoPickupItem::PickupItem(class APlayerCharacter* pawn)
 			{
 				UGameplayStatics::SpawnSoundAttached(PickupSound, pawn->GetRootComponent());
 			}
+
+			Destroy(this);
 		}
 	}
 }

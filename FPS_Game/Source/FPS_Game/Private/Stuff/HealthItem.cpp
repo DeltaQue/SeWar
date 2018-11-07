@@ -19,7 +19,7 @@ void AHealthItem::PickupEvent(class APlayerCharacter* PickupPawn)
 {
 	if (PickupPawn && CanPickup(PickupPawn))
 	{
-		PickupPawn->SetHealth(ImproveHealth);
+		PickupPawn->SetAddHealth(ImproveHealth);
 
 
 	}

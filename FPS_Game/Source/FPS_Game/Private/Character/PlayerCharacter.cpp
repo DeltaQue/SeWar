@@ -62,20 +62,12 @@ void APlayerCharacter::PostInitializeComponents()
 	Super::PostInitializeComponents();
 
 	SetDefaultWeaponEquip();
-
-	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-	GameMode->SetCheckPoint(GetActorLocation());
-
-	//GameMode->GetCheckPoint();
 }
 
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-
-	/*ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
-	Controller->ClientSetCameraFade(true, FColor::Black, FVector2D(1.0, 0.0), 5.0f);*/
 	StartFadeIn(5.0f);
 
 	if (CurrentWeapon)
@@ -283,7 +275,7 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 	PlayerInputComponent->BindAction("CheckPoint", IE_Pressed, this, &APlayerCharacter::ReturnCheckPoint);
 
 	PlayerInputComponent->BindAction("NextWeapon", IE_Pressed, this, &APlayerCharacter::OnNextWeapon);
-	PlayerInputComponent->BindAction("NextWeapon", IE_Pressed, this, &APlayerCharacter::OnPrevWeapon);
+	PlayerInputComponent->BindAction("PrevWeapon", IE_Pressed, this, &APlayerCharacter::OnPrevWeapon);
 
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerCharacter::OnStartSprint);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &APlayerCharacter::OnStopSprint);
@@ -579,6 +571,10 @@ void APlayerCharacter::PlayEarthquakeShake()
 		//Camera Shake로 Weapon 반동 추가
 		Controller->ClientPlayCameraShake(EarthquakeCameraShake, 1.5f);
 	}
+	if (EarthquakeSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), EarthquakeSound, GetActorLocation());
+	}
 }
 
 void APlayerCharacter::OnTurnOnLight()
@@ -594,4 +590,53 @@ void APlayerCharacter::OnTurnOnLight()
 			CurrentWeapon->GetWeaponLight()->SetVisibility(true);
 		}
 	}
+}
+
+void APlayerCharacter::SaveGameInfo()
+{
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+	if (GameMode && Controller)
+	{
+		GameMode->SetCheckPoint(GetActorLocation(), GetHealth(), GetWeapon()->GetLoadedAmmo(), GetWeapon()->GetRemainingAmmo(), Controller->GetScoreKillpoint());
+	}
+}
+
+void APlayerCharacter::LoadGameInfo()
+{
+	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+	ARPlayerController* Controller = Cast<ARPlayerController>(GetController());
+
+	if (GameMode->GetCheckPoint() != FVector::ZeroVector)
+	{
+		FVector Temp = GameMode->GetCheckPoint();
+		SetActorLocation(Temp);
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Character Location: %d, %d, %d"), Temp.X, Temp.Y, Temp.Z));
+	}
+	if (GameMode->GetLoadHP() != 0)
+	{
+		SetHealth(GameMode->GetLoadHP());
+		GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("HP data : %f"), GameMode->GetLoadHP()));
+	}
+	if (GameMode->GetLoadQuest())
+	{
+		GameMode->SetQuest(GameMode->GetLoadQuest());
+	}
+	if (GameMode->GetLoadLoadedAmmo())
+	{
+		GetWeapon()->SetLoadedAmmo(GameMode->GetLoadLoadedAmmo());
+	}
+	if (GameMode->GetLoadRemainingAmmo())
+	{
+		GetWeapon()->SetRemainingAmmo(GameMode->GetLoadRemainingAmmo());
+	}
+	if (GameMode->GetLoadKillpoint())
+	{
+		Controller->SetScoreKillpoint(GameMode->GetLoadKillpoint());
+	}
+}
+
+void APlayerCharacter::MakePawnNoise(float Loudness)
+{
+	MakeNoise(Loudness, this, GetActorLocation());
 }

@@ -45,16 +45,15 @@ private:
 
 	void SetZombieSpawnPoint();
 
-
 	TArray<class AZombieCharacter*> StoreSpawnZombie;
+	bool ZombieSpawnCheck[4] = { false, false, false, false };
+
 protected:
 	virtual void BeginPlay() override;
+	virtual void PostInitializeComponents() override;
 
 	UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
 		TArray<TSubclassOf<class AZombieCharacter> > SpawnZombieArray;
-
-	UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
-		TArray<TSubclassOf<class AZombieCharacter> > Stage2SpawnZombieArray;
 
 	/*UPROPERTY(EditDefaultsOnly, Category = "EnemySpawnData")
 		TArray<TSubclassOf<AActor> > Stage1_Spawnpoint;*/
@@ -69,9 +68,18 @@ public:
 
 	float DamageCalc(float Damage, AActor* DamagedActor, struct FDamageEvent const &DamageEvent, AController* EventInstigator, AActor* DamageCauser) const;
 
-	bool SetCheckPoint(const FVector Location);
+	bool SetCheckPoint(const FVector Location, const float HP, const int32 LoadedAmmo, const int32 RemainingAmmo, const int32 Killpoint);
+	
+	UFUNCTION(BlueprintCallable, Category = "GameStatus")
+		bool SetClearCheckPoint();
 
 	FVector GetCheckPoint();
+	float GetLoadHP();
+	int32 GetLoadKillpoint();
+	int32 GetLoadQuest();
+	int32 GetLoadLoadedAmmo();
+	int32 GetLoadRemainingAmmo();
+
 
 	//퀘스트 대화내용을 읽어들임
 	UFUNCTION(BlueprintCallable, Category = "TextScript")
@@ -95,15 +103,17 @@ public:
 	void NextQuestScript();
 	void NextQuest();
 	void ClearQuest();
-	
+	void SetQuest(int QuestNum);
+
 	void NextNPCScript(int32 NPCNum);
 	void ClearNPCScript();
 
+	UFUNCTION(BlueprintCallable, Category = "GameStatus")
+		int32 GetQuestNum() const;
 	int32 GetQuestScriptNum() const;
-	int32 GetQuestNum() const;
 	int32 GetQuestScriptMaxSize(int32 QuestNum) const;
 
-
+	virtual void RestartPlayer(class AController* NewPlayer) override;
 
 	int32 GetNPCScriptNum() const;
 	int32 GetNPCScriptMaxSize(int NPCType) const;
@@ -111,6 +121,7 @@ public:
 	void SpawnZombie();
 
 	TArray<class AZombieCharacter*> GetSpawnZombie();
+	void SpawnZombieKill(class AZombieCharacter* Zombie);
 
 	//0 : Tutorial
 	//1 : Stage1 Quest

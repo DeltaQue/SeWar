@@ -32,7 +32,7 @@ float ABaseCharacter::GetMaxHealth() const
 	return MaxHealth;
 }
 
-void ABaseCharacter::SetHealth(float ImproveHealth)
+void ABaseCharacter::SetAddHealth(float ImproveHealth)
 {
 	if (ImproveHealth > 0.f)
 	{
@@ -48,6 +48,10 @@ void ABaseCharacter::SetHealth(float ImproveHealth)
 		
 }
 
+void ABaseCharacter::SetHealth(float NewHealth)
+{
+	Health = NewHealth;
+}
 bool ABaseCharacter::IsAlive() const
 {
 	if (Health > 0.f)
@@ -108,7 +112,15 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 			AZombieCharacter* Zombie = Cast<AZombieCharacter>(PointDamageEvent->HitInfo.Actor);
 			if (Zombie && !Zombie->IsPendingKill() && KilledZombie != Zombie)
 			{
-				PlayerController->SetScoreKillpoint();
+				if (Zombie->ActorHasTag("Boss"))
+				{
+					PlayerController->OpenStageClearWidget(2);
+				}
+				//Minimap에서 Kill된 Zombie 없애기
+				AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+				GameMode->SpawnZombieKill(Zombie);
+
+				PlayerController->AddScoreKillpoint();
 				KilledZombie = Zombie;
 			}
 		}
@@ -148,7 +160,8 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 		}
 	}
 	//Zombie -> Player Kill
-	else if (Killer->GetPawn()->ActorHasTag(FName(TEXT("Zombie"))))
+	else if (Killer->GetPawn()->ActorHasTag(FName(TEXT("Zombie"))) 
+		|| Killer->GetPawn()->ActorHasTag(FName(TEXT("Boss"))))
 	{
 		//Death UI
 		FPointDamageEvent* PointDamageEvent;
@@ -166,13 +179,6 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 		}
 
 	}
-
-	
-		
-	
-	
-	
-
 	return true;
 }
 
@@ -285,63 +291,72 @@ void ABaseCharacter::SetRagdollPhysics()
 float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent
 	, class AController* EventInstigator, class AActor* DamageCauser)
 {
-	if (Health < 0)
+	if (Health <= 0)
 	{
 		return 0.0f;
 	}
 
-	/*AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
-	Damage = GameMode->DamageCalc(Damage, this, DamageEvent, EventInstigator, DamageCauser);*/
 
 	const float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 
-	if (ActualDamage > 0.f)
+
+	if (this->IsAlive() )
 	{
-		Health -= ActualDamage;
-
-		//Floating Damage Event 
-		OnScreenDamage(ActualDamage);
-
-		if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
+		if (ActualDamage > 0.f)
 		{
-			FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
+			Health -= ActualDamage;
 
-			OnBloodEffectEvent(PointDmg.HitInfo);
+			//Floating Damage Event 
+			OnScreenDamage(ActualDamage);
 
-			if (EventInstigator->GetPawn()->ActorHasTag("Player") && PointDmg.HitInfo.Actor->ActorHasTag("Boss"))
+			if (Health > 0)
 			{
-				AZombieCharacter* Zombie = Cast<AZombieCharacter>(PointDmg.HitInfo.Actor);
-				AZombieAIController* ZombieController = Cast<AZombieAIController>(Zombie->GetController());
-				
-				if (Zombie && Zombie->IsAlive())
+				if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
 				{
-					//Boss HP가 50% 이하로 떨어질 경우 주변 모든 좀비들의 타겟을 플레이어로 집중시킴(한번만)
-					if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 2)
+					FPointDamageEvent PointDmg = *((FPointDamageEvent*)(&DamageEvent));
+
+					OnBloodEffectEvent(PointDmg.HitInfo);
+
+					APawn* Pawn = EventInstigator ? EventInstigator->GetPawn() : nullptr;
+
+					if (Pawn)
 					{
-						ZombieController->SetBlackboardZombieType(EZombieType::Rage);
-					}
-					//Boss HP가 20% 이하로 떨어질 경우 HP회복을 하기 위해 도망친다.
-					else if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 4)
-					{
-						ZombieController->SetBlackboardZombieType(EZombieType::RunAway);
+						if (this->ActorHasTag("Boss"))
+						{
+							AZombieCharacter* Zombie = Cast<AZombieCharacter>(this);
+							AZombieAIController* ZombieController = Cast<AZombieAIController>(Zombie->GetController());
+
+							if (Zombie && Zombie->IsAlive() && Zombie->GetIsBoss())
+							{
+								//Boss HP가 50% 이하로 떨어질 경우 주변 모든 좀비들의 타겟을 플레이어로 집중시킴(한번만)
+								if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 2)
+								{
+									ZombieController->SetBlackboardZombieType(EZombieType::Rage);
+								}
+								//Boss HP가 20% 이하로 떨어질 경우 HP회복을 하기 위해 도망친다.
+								else if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 4)
+								{
+									ZombieController->SetBlackboardZombieType(EZombieType::RunAway);
+								}
+							}
+						}
+
+						PlayHit(ActualDamage, DamageEvent, Pawn, DamageCauser, false);
 					}
 				}
 			}
-		}
-
-
-		if (Health <= 0)
-		{
-			//Death
-			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
-		}
-		else
-		{
-			APawn* Pawn = EventInstigator ? EventInstigator->GetPawn() : nullptr;
-			PlayHit(ActualDamage, DamageEvent, Pawn, DamageCauser, false);
+			else if (Health <= 0)
+			{
+				//Death
+				Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
+			}
+		/*	else
+			{
+				APawn* Pawn = EventInstigator ? EventInstigator->GetPawn() : nullptr;
+				PlayHit(ActualDamage, DamageEvent, Pawn, DamageCauser, false);
+			}*/
 		}
 	}
-
 	return ActualDamage;
 }
 

@@ -94,6 +94,7 @@ private:
 
 	//체력이 0이하로 내려갔을때 행동들 정의, ragdoll 등..
 	void IsDeath();
+
 public:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 		class UBehaviorTree* BehaviorTree;
@@ -109,13 +110,12 @@ public:
 		UAnimMontage* GetAttackAnimMontage() const;
 
 	UFUNCTION()
-		void PlayAttackMotion();
+		float PlayAttackMotion();
 
 	UFUNCTION()
 		void TimerHandleFunc();
 
-	UPROPERTY(EditDefaultsOnly, Category = "Sound")
-		USoundCue* AttackSound;
+	
 
 
 	void SetZombieType(EZombieType NewType);
@@ -144,14 +144,15 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		USoundCue* IdleSoundCue;
-	
+
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		USoundCue* AttackSound;
 
 	UPROPERTY(EditDefaultsOnly, Category = "ZombieState")
 		bool IsBoss;
 
 
-	UPROPERTY(VisibleDefaultsOnly)
-		class UAnimInstance* AnimInstance;
+	class UAnimInstance* AnimInstance;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Attack")
 		TSubclassOf<UDamageType> ScratchDamageType;

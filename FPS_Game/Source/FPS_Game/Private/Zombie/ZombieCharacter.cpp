@@ -197,7 +197,7 @@ void AZombieCharacter::TargetChase(APawn* Pawn)
 		if(IsBoss == true)
 			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 2.f;
 		else
-			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 5.f;
+			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed * 10.f;
 
 	}
 }
@@ -253,6 +253,11 @@ void AZombieCharacter::OnAttackCollisionCompBeginOverlap(class UPrimitiveCompone
 		AZombieAIController* Controller = Cast<AZombieAIController>(GetController());
 		Controller->SetIsAttackCollisionOverlap(true);
 
+		if (IsBoss)
+		{
+			AttackCooltime = 4.6f;
+		}
+
 		//Timer함수. AttackTimer가 Invalidate 되지 않았다면, AttackCooltime 마다 ReTriggerAttack 함수를 실행함.
 		GetWorldTimerManager().SetTimer(TimerHandle_AttackTimer, this, &AZombieCharacter::ReTriggerAttack, AttackCooltime, true);
 		//TimerHandleFunc();
@@ -286,22 +291,48 @@ void AZombieCharacter::IsDeath()
 
 }
 
-void AZombieCharacter::PlayAttackMotion()
+float AZombieCharacter::PlayAttackMotion()
 {
-	if (AttackAnimMontage)
+	float duration = 0.f;
+
+	if (IsBoss == true)
 	{
-		//AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
-		this->PlayAnimMontage(AttackAnimMontage);
+		int AttackType = FMath::FRandRange(0, 2);
+
+		switch (AttackType)
+		{
+		case 0:
+			if (AttackAnimMontage)
+			{
+				duration = PlayAnimMontage(AttackAnimMontage);
+			}
+			break;
+
+		case 1:
+			if (AttackAnim2Montage)
+			{
+				duration = PlayAnimMontage(AttackAnim2Montage);
+			}
+			break;
+		default:
+			break;
+		}
 	}
 	else
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack anim error"));
+	{
+		if (AttackAnimMontage)
+		{
+			//AnimInstance->Montage_Play(AttackAnimMontage, 2.5f);
+			duration = this->PlayAnimMontage(AttackAnimMontage);
+		}
+	}
 
 	if (AttackSound)
 	{
 		UGameplayStatics::SpawnSoundAttached(AttackSound, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
 	}
-	else
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Attack sound error"));
+
+	return duration;
 }
 
 
@@ -331,8 +362,7 @@ void AZombieCharacter::ScratchAttack(AActor* HitActor)
 
 						float Duration = 0.f;
 
-						if (AttackAnimMontage)
-							Duration = this->PlayAnimMontage(AttackAnimMontage);
+						Duration = PlayAttackMotion();
 
 						FTimerHandle TimerHandle_TakeDamage;
 						FTimerDelegate TakeDamage_Delegate = FTimerDelegate::CreateUObject(this, &AZombieCharacter::Attack_TakeDamage, HitActor);
@@ -353,7 +383,7 @@ void AZombieCharacter::ReTriggerAttack()
 	for (int32 i = 0; i < OverlapActor.Num(); i++)
 	{
 		ABaseCharacter* OverlappingPawn = Cast<ABaseCharacter>(OverlapActor[i]);
-		if (OverlappingPawn)
+		if (OverlappingPawn && OverlappingPawn->IsAlive() && IsAlive())
 		{
 			ScratchAttack(OverlappingPawn);
 		}
@@ -400,13 +430,21 @@ void AZombieCharacter::TimerHandleFunc()
 
 void AZombieCharacter::Attack_TakeDamage(AActor* HitActor)
 {
-	FPointDamageEvent DmgEvent;
-	DmgEvent.DamageTypeClass = ScratchDamageType;
-	DmgEvent.Damage = AttackDamage;
-	DmgEvent.HitInfo.Actor = HitActor;
+	if (HitActor && HitActor != this && IsAlive()) 
+	{
+		APlayerCharacter* Player = Cast<APlayerCharacter>(HitActor);
+		if (Player)
+		{
+			FPointDamageEvent DmgEvent;
+			DmgEvent.DamageTypeClass = ScratchDamageType;
+			DmgEvent.Damage = AttackDamage;
+			DmgEvent.HitInfo.Actor = HitActor;
 
-	HitActor->TakeDamage(DmgEvent.Damage, DmgEvent, GetController(), this);
+			HitActor->TakeDamage(DmgEvent.Damage, DmgEvent, GetController(), this);
+		}
+	}
 }
+
 
 UAnimInstance* AZombieCharacter::GetAttackAnimInstance() const { return AnimInstance; }
 

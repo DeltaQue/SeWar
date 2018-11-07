@@ -77,12 +77,12 @@ struct FWeaponData
 	/** defaults */
 	FWeaponData()
 	{
-		MaxAmmo = 100;
+		MaxAmmo = 150;
 		AmmoPerClip = 30;
 		InitialClips = 4;
 		TimeBetweenShots = 0.2f;
 		NoAnimReloadDuration = 1.0f;
-		WeaponRange = 1500.0f;
+		WeaponRange = 10000.0f;
 		WeaponSpread = 5.0f;
 		WeaponTargetingSpread = 0.25f;
 		HitDamage = 10.f;
@@ -242,6 +242,7 @@ public:
 		int32 GetRemainingAmmo();
 
 	void SetRemainingAmmo(int32 ImproveBullet);
+	void SetLoadedAmmo(int32 Ammo);
 
 	UPROPERTY(EditDefaultsOnly, Category = Config)
 		FWeaponData WeaponConfig;

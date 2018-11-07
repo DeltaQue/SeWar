@@ -74,8 +74,8 @@ void APlayerHUD::DrawHUD()
 	/* Radar */
 	DrawRadar();
 	DrawPlayerInRadar();
-	PerformRadarRaycast();
-	DrawRaycastedActors();
+	FindEnemy();
+	DrawFIndEnemyInRadar();
 
 	RadarActors.Empty();
 }
@@ -191,16 +191,16 @@ FVector2D APlayerHUD::ConvertWorldLocationToLocal(AActor* ActorToPlace)
 
 	if (Player && ActorToPlace)
 	{
-		//Convert the world location to local, based on the transform of the player
+		//받아온 액터의 World좌표를 기반으로 Local좌표로 변환
 		FVector ActorsLocal3dVector = Player->GetTransform().InverseTransformPosition(ActorToPlace->GetActorLocation());
 
-		//Rotate the vector by 90 degrees counter-clockwise in order to have a valid rotation in our radar
+		//정확한 방향을 위해 y축 -90회전
 		ActorsLocal3dVector = FRotator(0.f, -90.f, 0.f).RotateVector(ActorsLocal3dVector);
 
-		//Apply the given distance scale
+		//거리 비례로 변환
 		ActorsLocal3dVector /= RadarDistanceScale;
 
-		//Return a 2d vector based on the 3d vector we've created above
+		//레이더는 평면이기때문에 2D벡터로 변환
 		return FVector2D(ActorsLocal3dVector);
 	}
 
@@ -216,7 +216,6 @@ void APlayerHUD::DrawRadar()
 		float fixedX = FMath::Cos(i) * RadarRadius;
 		float fixedY = FMath::Sin(i) * RadarRadius;
 
-		//Actual draw
 		DrawLine(RadarCenter.X, RadarCenter.Y, RadarCenter.X + fixedX, RadarCenter.Y + fixedY, FLinearColor::Gray, 1.f);
 	}
 }
@@ -228,56 +227,62 @@ void APlayerHUD::DrawPlayerInRadar()
 	DrawRect(FLinearColor::Blue, RadarCenter.X, RadarCenter.Y, DrawPixelSize, DrawPixelSize);
 }
 
-void APlayerHUD::PerformRadarRaycast()
+void APlayerHUD::FindEnemy()
 {
 	APawn* Player = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
 	AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
 
-	ECollisionChannel ECC = ECollisionChannel::ECC_GameTraceChannel2;
-
 	if (Player)
 	{
-		/*TArray<FHitResult> HitResults;
-		FVector EndLocation = Player->GetActorLocation();
-		EndLocation.Z += SphereHeight;
-
-		FCollisionShape CollisionShape;
-		CollisionShape.ShapeType = ECollisionShape::Sphere;
-		CollisionShape.SetSphere(SphereRadius);
-
-		GetWorld()->SweepMultiByChannel(HitResults, Player->GetActorLocation(), EndLocation, FQuat::Identity, ECollisionChannel::ECC_Pawn, CollisionShape);*/
-
-		
-		for (auto It : GameMode->GetSpawnZombie())
+		if (GameMode->GetSpawnZombie().Num() != 0)
 		{
-			//AActor* CurrentActor = It.GetActor();
-			AZombieCharacter* Zombie = Cast<AZombieCharacter>(It);
-
-			if (Zombie)
+			for (auto It : GameMode->GetSpawnZombie())
 			{
-				if (Zombie->ActorHasTag("Boss") || Zombie->ActorHasTag("Enemy"))
-					RadarActors.Add(Zombie);
+				AZombieCharacter* Zombie = Cast<AZombieCharacter>(It);
+
+				if (Zombie)
+				{
+					if (Zombie->ActorHasTag("Boss") || Zombie->ActorHasTag("Zombie"))
+						RadarActors.Add(Zombie);
+				}
 			}
 		}
 	}
 }
 
-void APlayerHUD::DrawRaycastedActors()
+void APlayerHUD::DrawFIndEnemyInRadar()
 {
 	FVector2D RadarCenter = GetRadarCenterPosition();
 
-	for (auto It : RadarActors)
+	if(RadarActors.Num() != 0)
 	{
-		FVector2D convertedLocation = ConvertWorldLocationToLocal(It);
+		for (auto It : RadarActors)
+		{
+			FVector2D convertedLocation = ConvertWorldLocationToLocal(It);
 
-		FVector tempVector = FVector(convertedLocation.X, convertedLocation.Y, 0.f);
+			FVector tempVector = FVector(convertedLocation.X, convertedLocation.Y, 0.f);
 
 
-		tempVector = tempVector.GetClampedToMaxSize2D(RadarRadius - DrawPixelSize);
+			tempVector = tempVector.GetClampedToMaxSize2D(RadarRadius - DrawPixelSize);
 
-		convertedLocation.X = tempVector.X;
-		convertedLocation.Y = tempVector.Y;
+			convertedLocation.X = tempVector.X;
+			convertedLocation.Y = tempVector.Y;
 
-		DrawRect(FLinearColor::Red, RadarCenter.X + convertedLocation.X, RadarCenter.Y + convertedLocation.Y, DrawPixelSize, DrawPixelSize);
+			AZombieCharacter* Zombie = Cast<AZombieCharacter>(It);
+			AZombieAIController* ZombieController = Cast<AZombieAIController>(Zombie->GetController());
+
+			if (Zombie && ZombieController)
+			{
+				if (ZombieController->GetTargetEnemy())
+				{
+					DrawRect(FLinearColor::Red, RadarCenter.X + convertedLocation.X, RadarCenter.Y + convertedLocation.Y, DrawPixelSize, DrawPixelSize);
+				}
+				else
+				{
+					DrawRect(FLinearColor::Green, RadarCenter.X + convertedLocation.X, RadarCenter.Y + convertedLocation.Y, DrawPixelSize, DrawPixelSize);
+				}
+			}
+
+		}
 	}
 }

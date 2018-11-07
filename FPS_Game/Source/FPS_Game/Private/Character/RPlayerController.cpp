@@ -329,6 +329,35 @@ void ARPlayerController::OpenDeathWidget()
 	}
 }
 
+int ARPlayerController::OpenStageClearWidget(int QuestNum)
+{
+	if (wStageClearWidget)
+	{
+		StageClearWidget = CreateWidget<UUserWidget>(this, wStageClearWidget);
+
+		if (StageClearWidget)
+		{
+			StageClearWidget->AddToViewport();
+		}
+	}
+	return QuestNum;
+}
+
+void ARPlayerController::OpenCreditWidget()
+{
+	if (wCreditWidget)
+	{
+		CreditWidget = CreateWidget<UUserWidget>(this, wCreditWidget);
+
+		if (CreditWidget)
+		{
+			CreditWidget->AddToViewport();
+
+			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
+			GameMode->SetGamePause();
+		}
+	}
+}
 
 void ARPlayerController::OpenStatusHUD()
 {
@@ -416,7 +445,7 @@ void ARPlayerController::NextScript()
 				//퀘스트 UI 활성화
 				Player->SetCurrentQuestActivate(2);
 
-				//GameMode->SpawnZombie();
+				GameMode->SpawnZombie();
 			}
 			break;
 
@@ -475,7 +504,12 @@ int32 ARPlayerController::GetScoreKillpoint() const
 	return Killpoint;
 }
 
-void ARPlayerController::SetScoreKillpoint()
+void ARPlayerController::SetScoreKillpoint(int num)
+{
+	Killpoint = num;
+}
+
+void ARPlayerController::AddScoreKillpoint()
 {
 	Killpoint++;
 }

@@ -105,12 +105,14 @@ void ANPCCharacter::OnTalkCollisionCompBeginOverlap(class UPrimitiveComponent* O
 			//Tutorial Quest Clear
 			if (GameMode->GetQuestNum() == 0 && PlayerController->GetQuestScore() == 1)
 			{
+				PlayerController->OpenStageClearWidget(0);
 				Player->SetCurrentQuestDeActivate(GameMode->GetQuestNum());
 				GameMode->SetCompleteQuest(0);
 			}
 			//Stage1 Quest Clear
 			if (GameMode->GetQuestNum() == 1 && PlayerController->GetQuestScore() == 5)
 			{
+				PlayerController->OpenStageClearWidget(1);
 				Player->SetCurrentQuestDeActivate(GameMode->GetQuestNum());
 				GameMode->SetCompleteQuest(1);
 			}

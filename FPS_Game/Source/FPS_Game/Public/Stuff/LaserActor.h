@@ -31,7 +31,7 @@ protected:
 	/*UPROPERTY(EditDefaultsOnly, Catagory = "Destructible Mesh", meta = (AllowPrivateAccess = "true"))
 		UCapsuleComponent* CollisionComp;*/
 
-	UPROPERTY(EditDefaultsOnly, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, meta = (AllowPrivateAccess = "true"))
 		UDestructibleComponent* BlockA;
 
 	/*UPROPERTY(EditDefaultsOnly)

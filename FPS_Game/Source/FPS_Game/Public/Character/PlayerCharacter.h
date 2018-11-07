@@ -91,7 +91,8 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = Effects)
 		TSubclassOf<UCameraShake> EarthquakeCameraShake;
-	
+	UPROPERTY(EditDefaultsOnly, Category = Effects)
+		USoundCue* EarthquakeSound;
 
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -111,6 +112,10 @@ public:
 		bool IsFire() const;
 	UFUNCTION(BlueprintCallable, Category = "PlayerState")
 		float GetPlayerHP();
+	UFUNCTION(BlueprintCallable, Category = "PlayerState")
+		void SaveGameInfo();
+	UFUNCTION(BlueprintCallable, Category = "PlayerState")
+		void LoadGameInfo();
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		class AWeapons* GetWeapon() const;
@@ -140,6 +145,8 @@ public:
 	virtual void FaceRotation(FRotator NewRotation, float DeltaTime = 0.f) override;
 	void SwitchTargetCamera(float BlendTime = 5.0f);
 	void SwitchMyCamera();
+
+	void MakePawnNoise(float Loudness);
 
 	FName GetWeaponAttachPoint() const;
 	USkeletalMeshComponent* GetOwenerMesh() const;
