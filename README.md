@@ -2,9 +2,9 @@
 
 Name : Sewar
 
-Version : v4.19
+UE4 Version : v4.19
 
-Genre : FPS
+Genres : FPS
 
 Target Platform : Windows
 
