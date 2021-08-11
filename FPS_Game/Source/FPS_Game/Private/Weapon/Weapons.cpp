@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Weapons.h"
 #include "FPS_Game.h"
@@ -71,10 +71,10 @@ void AWeapons::OnEndFocus()
 
 void AWeapons::FireWeapon()
 {
-	//½ÇÁúÀûÀÎ µ¥¹ÌÁö¸¦ °¡ÇÏ´Â ÇÔ¼ö
-	//HitScan¹æ½Ä, 
+	//ì‹¤ì§ˆì ì¸ ë°ë¯¸ì§€ë¥¼ ê°€í•˜ëŠ” í•¨ìˆ˜
+	//HitScanë°©ì‹, 
 
-	//ControllerÀÇ Camera Rot vector
+	//Controllerì˜ Camera Rot vector
 	/*const FVector AimDir = GetAdjustAim();
 	const float CurrentSpread = CalcWeaponSpread();
 	const FVector StartVector = MuzzleTransform.GetLocation();
@@ -91,7 +91,7 @@ void AWeapons::FireWeapon()
 	const float CurrentSpread = CalcWeaponSpread();
 	const float ConeHalfAngle = FMath::DegreesToRadians(CurrentSpread * 0.5f);
 
-	//WeaponConfig.WeaponRange BP¿¡¼­ ¼³Á¤ÇØÁà¾ßÇÔ
+	//WeaponConfig.WeaponRange BPì—ì„œ ì„¤ì •í•´ì¤˜ì•¼í•¨
 
 	const FVector AimDir = GetAdjustAim();
 	const FVector CameraPos = GetCameraStartLocation(AimDir);
@@ -340,10 +340,10 @@ void AWeapons::SetWeaponState(EWeaponState::Type NewState)
 
 void AWeapons::OnBurstStarted()
 {
-	//ÇöÀç ½Ã°£
+	//í˜„ìž¬ ì‹œê°„
 	const float GameTime = GetWorld()->GetTimeSeconds();
 
-	//µô·¹ÀÌ Ã¼Å©
+	//ë”œë ˆì´ ì²´í¬
 	if (LastFireTime > 0 && WeaponConfig.TimeBetweenShots > 0.0f &&
 		LastFireTime + WeaponConfig.TimeBetweenShots > GameTime)
 	{
@@ -379,14 +379,14 @@ void AWeapons::ReloadWeapon()
 {
 	if (RemainingAmmo > 0 && WeaponConfig.AmmoPerClip > LoadedAmmo)
 	{
-		// ÀåÀüÇÒ ÃÑ¾ËÀÌ ³²Àº ÃÑ¾Ëº¸´Ù ´õ ¸¹°Å³ª °°À» °æ¿ì 
-		// ex) 30-20 >= 9, 10¹ß ÃæÀüÇØ¾ßÇÏÁö¸¸ 9¹ß¸¸ ÀåÀü
+		// ìž¥ì „í•  ì´ì•Œì´ ë‚¨ì€ ì´ì•Œë³´ë‹¤ ë” ë§Žê±°ë‚˜ ê°™ì„ ê²½ìš° 
+		// ex) 30-20 >= 9, 10ë°œ ì¶©ì „í•´ì•¼í•˜ì§€ë§Œ 9ë°œë§Œ ìž¥ì „
 		if ((WeaponConfig.AmmoPerClip - LoadedAmmo) >= RemainingAmmo)
 		{
 			LoadedAmmo += RemainingAmmo;
 			RemainingAmmo = 0;
 		}
-		// ex) 30-20 < 50, ÀåÀüÇÒ ÃÑ¾Ëº¸´Ù ³²Àº ÃÑ¾ËÀÌ ´õ ¸¹À»°æ¿ì
+		// ex) 30-20 < 50, ìž¥ì „í•  ì´ì•Œë³´ë‹¤ ë‚¨ì€ ì´ì•Œì´ ë” ë§Žì„ê²½ìš°
 		else if ((WeaponConfig.AmmoPerClip - LoadedAmmo) < RemainingAmmo)
 		{
 			RemainingAmmo -= (WeaponConfig.AmmoPerClip - LoadedAmmo);
@@ -484,7 +484,7 @@ void AWeapons::StartSimulationWeaponFire()
 	{
 		if (FireCameraShake != NULL)
 		{
-			//Camera Shake·Î Weapon ¹Ýµ¿ Ãß°¡
+			//Camera Shakeë¡œ Weapon ë°˜ë™ ì¶”ê°€
 			PC->ClientPlayCameraShake(FireCameraShake, 1);
 		}
 	}
@@ -541,12 +541,12 @@ void AWeapons::HandleFiring()
 			BurstCount++;
 		}
 	}
-	//ÃÑ¾ËÀÌ ¾øÀ» °æ¿ì
+	//ì´ì•Œì´ ì—†ì„ ê²½ìš°
 	else if (CanReload())
 	{
 		StartReload();
 	}
-	//ÀçÀåÀüÀ» ÇÏ°í ³­ µÚ¿¡µµ ÃÑ¾ËÀÌ ¾øÀ» °æ¿ì, ³²Àº Åº¾àÀÌ 0ÀÏ°æ¿ì
+	//ìž¬ìž¥ì „ì„ í•˜ê³  ë‚œ ë’¤ì—ë„ ì´ì•Œì´ ì—†ì„ ê²½ìš°, ë‚¨ì€ íƒ„ì•½ì´ 0ì¼ê²½ìš°
 	else if (WeaponOwner)
 	{
 		if (LoadedAmmo == 0 && !bRefiring)
@@ -586,7 +586,7 @@ void AWeapons::HandleFiring()
 		WeaponOwner->MakePawnNoise(1.f);
 	}
 
-	//LastFireTimeÀ» ¹ß»ç½Ã°£À¸·Î ÃÊ±âÈ­ ÇÏ¿©, ¿¬»ç½Ã µô·¹ÀÌ Å¸ÀÓ Ã¼Å©
+	//LastFireTimeì„ ë°œì‚¬ì‹œê°„ìœ¼ë¡œ ì´ˆê¸°í™” í•˜ì—¬, ì—°ì‚¬ì‹œ ë”œë ˆì´ íƒ€ìž„ ì²´í¬
 	LastFireTime = GetWorld()->GetTimeSeconds();
 }
 

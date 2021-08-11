@@ -62,7 +62,7 @@ protected:
 	
 
 public:
-	void SetPlayerSpawnTransform(FTransform SpawnTransform);
+	void SetPlayerSpawnTransform(FTransform& SpawnTransform);
 
 	FTransform GetPlayerSpawnTransform() const;
 

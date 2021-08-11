@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "ZombieAIController.h"
 #include "ZombieCharacter.h"
@@ -19,7 +19,7 @@ AZombieAIController::AZombieAIController(const class FObjectInitializer& ObjectI
 	BehaviorComp = ObjectInitializer.CreateDefaultSubobject<UBehaviorTreeComponent>(this, TEXT("BehaviorComp"));
 	BlackboardComp = ObjectInitializer.CreateDefaultSubobject<UBlackboardComponent>(this, TEXT("BlackboardComp"));
 
-	/* Blackboard Å°°ª°ú ¸ÅÄª */
+	/* Blackboard í‚¤ê°’ê³¼ ë§¤ì¹­ */
 	PatrolLocationKeyName = "PatrolLocation";
 	CurrentWaypointKeyName = "CurrentWaypoint";
 	ZombieTypeKeyName = "ZombieType";

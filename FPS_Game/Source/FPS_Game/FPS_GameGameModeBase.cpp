@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "FPS_GameGameModeBase.h"
 #include "FPS_Game.h"
@@ -73,7 +73,7 @@ void AFPS_GameGameModeBase::BeginPlay()
 	
 }
 
-void AFPS_GameGameModeBase::SetPlayerSpawnTransform(FTransform SpawnTransform)
+void AFPS_GameGameModeBase::SetPlayerSpawnTransform(FTransform& SpawnTransform)
 {
 	PlayerSpawnTransform = SpawnTransform;
 }
@@ -126,7 +126,7 @@ void AFPS_GameGameModeBase::SpawnZombie()
 			}
 			break;
 		
-		//Stage1 Zombie Spawn, 5¸¶¸®
+		//Stage1 Zombie Spawn, 5ë§ˆë¦¬
 		case 1:
 			if (ZombieSpawnCheck[QuestNum] == false)
 			{
@@ -147,7 +147,7 @@ void AFPS_GameGameModeBase::SpawnZombie()
 			}
 			break;
 
-		//Stage2 Zombie Spawn, 16¸¶¸®
+		//Stage2 Zombie Spawn, 16ë§ˆë¦¬
 		case 2:
 			if (ZombieSpawnCheck[QuestNum] == false)
 			{
@@ -390,9 +390,9 @@ FText AFPS_GameGameModeBase::GetQuestData(int DataNum)
 		TArray <TSharedPtr <FJsonValue >> QuestData_Array = QuestData[QuestNum]->AsArray();
 
 		//DataNum
-		//0 : Äù½ºÆ® ÀÌ¸§
-		//1 : Äù½ºÆ® ³»¿ë
-		//2 : Äù½ºÆ® ¸ñÇ¥
+		//0 : í€˜ìŠ¤íŠ¸ ì´ë¦„
+		//1 : í€˜ìŠ¤íŠ¸ ë‚´ìš©
+		//2 : í€˜ìŠ¤íŠ¸ ëª©í‘œ
 		return FText::FromString(QuestData_Array[DataNum]->AsString());
 	}
 
@@ -591,17 +591,17 @@ void AFPS_GameGameModeBase::SetCompleteQuest(int32 QuestNum)
 
 void AFPS_GameGameModeBase::SetZombieSpawnPoint()
 {
-	//Æ©Åä¸®¾ó Á»ºñ(1¸¶¸®)
+	//íŠœí† ë¦¬ì–¼ ì¢€ë¹„(1ë§ˆë¦¬)
 	ZombieSpawnPoint.Add(FVector(23.0f, 398.0f, 250.0f));
 
-	//½ºÅ×ÀÌÁö1 Á»ºñ(5¸¶¸®)
+	//ìŠ¤í…Œì´ì§€1 ì¢€ë¹„(5ë§ˆë¦¬)
 	ZombieSpawnPoint.Add(FVector(386.0f, 948.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(1222.0f, 1414.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(1666.0f, 686.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(2518.0f, -22.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(2518.0f, -2981.0f, 250.0f));
 
-	//½ºÅ×ÀÌÁö2 ½ÃÀÛ Á»ºñ ½ºÆù
+	//ìŠ¤í…Œì´ì§€2 ì‹œì‘ ì¢€ë¹„ ìŠ¤í°
 	ZombieSpawnPoint.Add(FVector(15609.0f, -7202.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(13706.0f, -7202.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(13706.0f, -4912.0f, 250.0f));
@@ -619,10 +619,10 @@ void AFPS_GameGameModeBase::SetZombieSpawnPoint()
 	ZombieSpawnPoint.Add(FVector(14119.0f, 2801.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(13348.0f, 3293.0f, 250.0f));
 
-	//º¸½º Á»ºñ ½ºÆù
+	//ë³´ìŠ¤ ì¢€ë¹„ ìŠ¤í°
 	ZombieSpawnPoint.Add(FVector(13291.0f, -3559.0f, 242.837448f));
 
-	//½ºÅ×ÀÌÁö2 Á»ºñ ½ºÆ÷³Ê Æ÷ÀÎÆ®
+	//ìŠ¤í…Œì´ì§€2 ì¢€ë¹„ ìŠ¤í¬ë„ˆ í¬ì¸íŠ¸
 	ZombieSpawnPoint.Add(FVector(9248.0f, -7563.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(18127.0f, -7642.0f, 250.0f));
 	ZombieSpawnPoint.Add(FVector(13869.0f, -1311.0f, 250.0f));

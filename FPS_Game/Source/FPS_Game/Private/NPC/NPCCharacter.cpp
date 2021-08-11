@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "NPCCharacter.h"
 #include "FPS_Game.h"
@@ -36,10 +36,10 @@ ANPCCharacter::ANPCCharacter(const class FObjectInitializer& ObjectInitializer)
 	bSensedTarget = false;
 	bHeardTarget = false;
 
-	//ÀûÀ» Å¸°ÙÀ¸·Î °¨ÁöÇÏ°í ¸®¼ÂÇÏ´Âµ¥ °É¸®´Â ½Ã°£ 2.5ÃÊ
+	//ì ì„ íƒ€ê²Ÿìœ¼ë¡œ ê°ì§€í•˜ê³  ë¦¬ì…‹í•˜ëŠ”ë° ê±¸ë¦¬ëŠ” ì‹œê°„ 2.5ì´ˆ
 	HearingSenseTimeOut = 6.0f;
 
-	//ÇöÀç ½Ã°£ ÀúÀå¿ë º¯¼ö
+	//í˜„ìž¬ ì‹œê°„ ì €ìž¥ìš© ë³€ìˆ˜
 	LastSeenTime = 0.0f;
 	LastHeardTime = 0.0f;
 
@@ -96,7 +96,7 @@ void ANPCCharacter::OnTalkCollisionCompBeginOverlap(class UPrimitiveComponent* O
 
 		if (bIsQuestNPC && !bIsAmmoNPC && !bIsHealNPC)
 		{
-			//ÇöÀç Äù½ºÆ®¸¦ ¿Ï·á ÇÑ °æ¿ì, Äù½ºÆ®Ã¢À» ´Ý´Â´Ù.
+			//í˜„ìž¬ í€˜ìŠ¤íŠ¸ë¥¼ ì™„ë£Œ í•œ ê²½ìš°, í€˜ìŠ¤íŠ¸ì°½ì„ ë‹«ëŠ”ë‹¤.
 			if (GameMode->GetQuestNum() < 3 && GameMode->Complete_Quest[GameMode->GetQuestNum()] == true)
 			{
 
@@ -120,7 +120,7 @@ void ANPCCharacter::OnTalkCollisionCompBeginOverlap(class UPrimitiveComponent* O
 			PlayerController->SetTalkNPCType(0);
 
 
-			//Quest À§Á¬ ¶ç¿ì´Â Á¶°ÇÀÌ ÀÖ¾î¾ßÇÔ
+			//Quest ìœ„ì ¯ ë„ìš°ëŠ” ì¡°ê±´ì´ ìžˆì–´ì•¼í•¨
 			//Quest Script Widget Open
 			PlayerController->OpenWidget(1);
 		}

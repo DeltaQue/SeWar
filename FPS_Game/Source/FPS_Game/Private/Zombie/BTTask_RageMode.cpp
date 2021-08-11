@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BTTask_RageMode.h"
 #include "ZombieAIController.h"
@@ -34,7 +34,7 @@ EBTNodeResult::Type UBTTask_RageMode::ExecuteTask(UBehaviorTreeComponent& OwnerC
 		AZombieCharacter* OtherZombie = Cast<AZombieCharacter>(AllZombieCharacter[i]);
 		AZombieAIController* OtherZombieController = Cast<AZombieAIController>(OtherZombie->GetController());
 
-		//¸ðµç Á»ºñÀÇ Å¸°ÙÀ» ÇÃ·¹ÀÌ¾î·Î ¹Ù²Þ
+		//ëª¨ë“  ì¢€ë¹„ì˜ íƒ€ê²Ÿì„ í”Œë ˆì´ì–´ë¡œ ë°”ê¿ˆ
 		OtherZombieController->SetTargetEnemy(Player);
 	}
 

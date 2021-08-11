@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "PlayerCharacter.h"
 #include "FPS_Game.h"
@@ -162,7 +162,7 @@ void APlayerCharacter::SetCurrentWeapon(AWeapons* NewWeapon, AWeapons* LastWeapo
 		LocalLastWeapon = CurrentWeapon;
 	}
 
-	// ÀÌÀü ¹«±âUnEquip
+	// ì´ì „ ë¬´ê¸°UnEquip
 	if (LocalLastWeapon)
 	{
 		LocalLastWeapon->OnUnEquip();
@@ -228,18 +228,18 @@ USkeletalMeshComponent* APlayerCharacter::GetOwenerMesh() const
 
 void APlayerCharacter::CheckForWeaponInView(FVector CameraLocation, FVector CameraFowardVector, FRotator CameraRotator)
 {
-	// LineTrace·Î È÷Æ®µÇ´Â ¾×ÅÍ Ã¼Å©
+	// LineTraceë¡œ ížˆíŠ¸ë˜ëŠ” ì•¡í„° ì²´í¬
 	FHitResult HitResult;
 
 	int32 Range = 500;
 	FVector StartTrace = CameraLocation;
 	FVector EndTrace = (CameraFowardVector * Range) + StartTrace;
 
-	//Ä³¸¯ÅÍ º»Ã¼´Â LineTrace¿¡ IgnoreÇØ¼­ LineTrace¿¡ HitµÇÁö¾Ê°Ô ÇÔ
+	//ìºë¦­í„° ë³¸ì²´ëŠ” LineTraceì— Ignoreí•´ì„œ LineTraceì— Hitë˜ì§€ì•Šê²Œ í•¨
 	FCollisionQueryParams QueryParams;
 	QueryParams.AddIgnoredActor(this);
 
-	// ECC_Visibility´Â ¾ð¸®¾ó³» ¿ÀºêÁ§Æ® ÆÇ´Ü À¯Çü, Visible·Î µÇ¾îÀÖ´Â ¸ðµç ¾×ÅÍ¸¦ ´ë»óÀ¸·Î Check ??
+	// ECC_VisibilityëŠ” ì–¸ë¦¬ì–¼ë‚´ ì˜¤ë¸Œì íŠ¸ íŒë‹¨ ìœ í˜•, Visibleë¡œ ë˜ì–´ìžˆëŠ” ëª¨ë“  ì•¡í„°ë¥¼ ëŒ€ìƒìœ¼ë¡œ Check ??
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartTrace, EndTrace, ECC_Visibility, QueryParams))
 	{
 		AWeapons* Pickup = Cast<AWeapons>(HitResult.GetActor());
@@ -251,7 +251,7 @@ void APlayerCharacter::CheckForWeaponInView(FVector CameraLocation, FVector Came
 		}
 
 	}
-	//HitµÈ Actor°¡ ¾ø´Ù¸é nullptr¸¦ 
+	//Hitëœ Actorê°€ ì—†ë‹¤ë©´ nullptrë¥¼ 
 	PickupWeapon->OnEndFocus();
 }
 
@@ -568,7 +568,7 @@ void APlayerCharacter::PlayEarthquakeShake()
 
 	if (EarthquakeCameraShake != NULL && Controller)
 	{
-		//Camera Shake·Î Weapon ¹Ýµ¿ Ãß°¡
+		//Camera Shakeë¡œ Weapon ë°˜ë™ ì¶”ê°€
 		Controller->ClientPlayCameraShake(EarthquakeCameraShake, 1.5f);
 	}
 	if (EarthquakeSound)

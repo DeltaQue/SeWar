@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BaseCharacter.h"
 #include "FPS_Game.h"
@@ -72,7 +72,7 @@ void ABaseCharacter::DestroyTarget()
 
 bool ABaseCharacter::CanDie(float KillingDamage, FDamageEvent const& DamageEvent, AController* Killer, AActor* DamageCauser) const
 {
-	//ÀÌ¹Ì »èÁ¦ÁßÀÎÁö ÆÇ´Ü
+	//ì´ë¯¸ ì‚­ì œì¤‘ì¸ì§€ íŒë‹¨
 	if (IsPendingKill())
 	{
 		return false;
@@ -116,7 +116,7 @@ bool ABaseCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageE
 				{
 					PlayerController->OpenStageClearWidget(2);
 				}
-				//Minimap¿¡¼­ KillµÈ Zombie ¾ø¾Ö±â
+				//Minimapì—ì„œ Killëœ Zombie ì—†ì• ê¸°
 				AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
 				GameMode->SpawnZombieKill(Zombie);
 
@@ -284,7 +284,7 @@ void ABaseCharacter::SetRagdollPhysics()
 	}
 	else
 	{
-		SetLifeSpan(4.0f);		//LifeSpan(float x) x°¡ Áö³ª¸é ¸ğµç °³Ã¼°¡ »ç¶óÁü, ¾×ÅÍ´Â »ç¶óÁöÁö ¾Ê´Â´Ù.
+		SetLifeSpan(4.0f);		//LifeSpan(float x) xê°€ ì§€ë‚˜ë©´ ëª¨ë“  ê°œì²´ê°€ ì‚¬ë¼ì§, ì•¡í„°ëŠ” ì‚¬ë¼ì§€ì§€ ì•ŠëŠ”ë‹¤.
 	}
 }
 
@@ -328,12 +328,12 @@ float ABaseCharacter::TakeDamage(float Damage, struct FDamageEvent const& Damage
 
 							if (Zombie && Zombie->IsAlive() && Zombie->GetIsBoss())
 							{
-								//Boss HP°¡ 50% ÀÌÇÏ·Î ¶³¾îÁú °æ¿ì ÁÖº¯ ¸ğµç Á»ºñµéÀÇ Å¸°ÙÀ» ÇÃ·¹ÀÌ¾î·Î ÁıÁß½ÃÅ´(ÇÑ¹ø¸¸)
+								//Boss HPê°€ 50% ì´í•˜ë¡œ ë–¨ì–´ì§ˆ ê²½ìš° ì£¼ë³€ ëª¨ë“  ì¢€ë¹„ë“¤ì˜ íƒ€ê²Ÿì„ í”Œë ˆì´ì–´ë¡œ ì§‘ì¤‘ì‹œí‚´(í•œë²ˆë§Œ)
 								if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 2)
 								{
 									ZombieController->SetBlackboardZombieType(EZombieType::Rage);
 								}
-								//Boss HP°¡ 20% ÀÌÇÏ·Î ¶³¾îÁú °æ¿ì HPÈ¸º¹À» ÇÏ±â À§ÇØ µµ¸ÁÄ£´Ù.
+								//Boss HPê°€ 20% ì´í•˜ë¡œ ë–¨ì–´ì§ˆ ê²½ìš° HPíšŒë³µì„ í•˜ê¸° ìœ„í•´ ë„ë§ì¹œë‹¤.
 								else if (Zombie->GetHealth() <= Zombie->GetMaxHealth() / 4)
 								{
 									ZombieController->SetBlackboardZombieType(EZombieType::RunAway);

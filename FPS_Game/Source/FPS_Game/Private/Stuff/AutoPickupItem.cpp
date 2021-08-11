@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "AutoPickupItem.h"
 #include "FPS_Game.h"
@@ -73,7 +73,8 @@ void AAutoPickupItem::PickupItem(class APlayerCharacter* pawn)
 				UGameplayStatics::SpawnSoundAttached(PickupSound, pawn->GetRootComponent());
 			}
 
-			Destroy(this);
+			//Destroy(this);
+			Destroy();
 		}
 	}
 }
@@ -100,7 +101,7 @@ void AAutoPickupItem::RespawnEvent()
 		PickupPSC->DeactivateSystem();
 	}
 
-	//CreationTimeÀº ¾×ÅÍ°¡ »ı¼ºµÈ ½Ã°£
+	//CreationTimeì€ ì•¡í„°ê°€ ìƒì„±ëœ ì‹œê°„
 	const bool bJustSpawned = CreationTime <= (GetWorld()->GetTimeSeconds() + 5.0f);
 	if (RespawnSound && !bJustSpawned)
 	{

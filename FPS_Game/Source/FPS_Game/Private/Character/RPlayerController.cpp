@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "RPlayerController.h"
 #include "FPS_Game.h"
@@ -221,7 +221,7 @@ void ARPlayerController::OpenWidget(int32 WidgetNum)
 			}
 			break;
 
-			//Health È¸º¹ NPC Sciprt ¿ÀÇÂ
+			//Health íšŒë³µ NPC Sciprt ì˜¤í”ˆ
 		case 2:
 			if (wWidgetArray[2])
 			{
@@ -234,7 +234,7 @@ void ARPlayerController::OpenWidget(int32 WidgetNum)
 			}
 			break;
 
-			//Ammo ÃæÀü NPC Sciprt ¿ÀÇÂ
+			//Ammo ì¶©ì „ NPC Sciprt ì˜¤í”ˆ
 		case 3:
 			if (wWidgetArray[3])
 			{
@@ -270,14 +270,14 @@ void ARPlayerController::CloseWidget(int32 WidgetNum)
 
 			AFPS_GameGameModeBase* GameMode = Cast<AFPS_GameGameModeBase>(GetWorld()->GetAuthGameMode());
 
-			//´ÙÀ½ Äù½ºÆ®¸¦ ³Ñ¾î°¡¾ßÇÒ¶§
+			//ë‹¤ìŒ í€˜ìŠ¤íŠ¸ë¥¼ ë„˜ì–´ê°€ì•¼í• ë•Œ
 			if (GameMode->GetQuestScriptMaxSize(GameMode->GetQuestNum()) - 1 == GameMode->GetQuestScriptNum())
 			{
-				//´ÙÀ½ Äù½ºÆ®·Î ³Ñ¾î°¡´Â Á¶°Ç => GameMode¿¡¼­ SetCompleteQuest()¿¡¼­ ÁøÇà
+				//ë‹¤ìŒ í€˜ìŠ¤íŠ¸ë¡œ ë„˜ì–´ê°€ëŠ” ì¡°ê±´ => GameModeì—ì„œ SetCompleteQuest()ì—ì„œ ì§„í–‰
 				//if (GameMode->Complete_Quest[GameMode->GetQuestNum()] == true)
 					//GameMode->NextQuest();
 			}
-			//½ºÅ©¸³Æ®°¡ ¿ÏÀüÈ÷ Á¾·áµÇÁö ¾Ê¾Ò´Âµ¥ Äù½ºÆ® À§Á¬À» ²¨¾ßÇÒ¶§
+			//ìŠ¤í¬ë¦½íŠ¸ê°€ ì™„ì „ížˆ ì¢…ë£Œë˜ì§€ ì•Šì•˜ëŠ”ë° í€˜ìŠ¤íŠ¸ ìœ„ì ¯ì„ êº¼ì•¼í• ë•Œ
 			else if(GameMode->GetQuestScriptMaxSize(GameMode->GetQuestNum()) - 1 > GameMode->GetQuestScriptNum())
 			{
 				GameMode->ClearQuest();
@@ -402,23 +402,23 @@ void ARPlayerController::NextScript()
 	case 0:
 		switch (GameMode->GetQuestNum())
 		{
-			//ÇöÀç ½ºÅ©¸³Æ®°¡ ³¡ÀÎ°æ¿ì
+			//í˜„ìž¬ ìŠ¤í¬ë¦½íŠ¸ê°€ ëì¸ê²½ìš°
 
 			//Tutorial Quest
 		case 0:
 			if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(0) - 1)
 			{
-				//´ëÈ­Ã¢ Á¾·á
+				//ëŒ€í™”ì°½ ì¢…ë£Œ
 				CloseWidget(0);
 
-				//Äù½ºÆ® UI È°¼ºÈ­
+				//í€˜ìŠ¤íŠ¸ UI í™œì„±í™”
 				Player->SetCurrentQuestActivate(0);
 			}
-			//Æ©Åä¸®¾ó ÀÌº¥Æ®
+			//íŠœí† ë¦¬ì–¼ ì´ë²¤íŠ¸
 			else if (GameMode->GetQuestScriptNum() == GameMode->GetQuestScriptMaxSize(0) - 2)
 			{
 				bTurnViewTarget = true;
-				//Æ©Åä¸®¾ó Á»ºñ ½ºÆù
+				//íŠœí† ë¦¬ì–¼ ì¢€ë¹„ ìŠ¤í°
 				GameMode->SpawnZombie();
 			}
 			break;
@@ -429,7 +429,7 @@ void ARPlayerController::NextScript()
 			{
 				CloseWidget(1);
 
-				//Äù½ºÆ® UI È°¼ºÈ­
+				//í€˜ìŠ¤íŠ¸ UI í™œì„±í™”
 				Player->SetCurrentQuestActivate(1);
 
 				GameMode->SpawnZombie();
@@ -442,7 +442,7 @@ void ARPlayerController::NextScript()
 			{
 				CloseWidget(1);
 
-				//Äù½ºÆ® UI È°¼ºÈ­
+				//í€˜ìŠ¤íŠ¸ UI í™œì„±í™”
 				Player->SetCurrentQuestActivate(2);
 
 				GameMode->SpawnZombie();
@@ -453,7 +453,7 @@ void ARPlayerController::NextScript()
 			break;
 		}
 
-		//´ÙÀ½ ½ºÅ©¸³Æ®°¡ ÀÖ´Â°æ¿ì
+		//ë‹¤ìŒ ìŠ¤í¬ë¦½íŠ¸ê°€ ìžˆëŠ”ê²½ìš°
 		/*if (QuestWidget)
 		{
 		GameMode->NextQuestScript();
@@ -471,7 +471,7 @@ void ARPlayerController::NextScript()
 		{
 			CloseWidget(2);
 
-			//HP È¸º¹ ÇÔ¼ö
+			//HP íšŒë³µ í•¨ìˆ˜
 		}
 		break;
 
@@ -481,7 +481,7 @@ void ARPlayerController::NextScript()
 		{
 			CloseWidget(3);
 
-			//Ammo ÃæÀü ÇÔ¼ö
+			//Ammo ì¶©ì „ í•¨ìˆ˜
 		}
 
 		break;

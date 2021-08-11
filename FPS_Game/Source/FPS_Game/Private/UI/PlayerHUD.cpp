@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "PlayerHUD.h"
@@ -82,7 +82,7 @@ void APlayerHUD::DrawHUD()
 
 void APlayerHUD::DrawCrosshair()
 {
-	//PlayerOwner HUDÁ¦°ø
+	//PlayerOwner HUDì œê³µ
 	ARPlayerController* OwnerController = Cast<ARPlayerController>(PlayerOwner);
 	APlayerCharacter* MyPawn = Cast<APlayerCharacter>(OwnerController->GetPawn());
 
@@ -92,7 +92,7 @@ void APlayerHUD::DrawCrosshair()
 		{
 			AWeapons* MyWeapon = Cast<AWeapons>(MyPawn->GetWeapon());
 
-			//Crosshair °£°İ, Idle & Run
+			//Crosshair ê°„ê²©, Idle & Run
 			float AimOffset = 0;
 			float CurrentSpeed = MyPawn->GetVelocity().Size();
 
@@ -191,16 +191,16 @@ FVector2D APlayerHUD::ConvertWorldLocationToLocal(AActor* ActorToPlace)
 
 	if (Player && ActorToPlace)
 	{
-		//¹Ş¾Æ¿Â ¾×ÅÍÀÇ WorldÁÂÇ¥¸¦ ±â¹İÀ¸·Î LocalÁÂÇ¥·Î º¯È¯
+		//ë°›ì•„ì˜¨ ì•¡í„°ì˜ Worldì¢Œí‘œë¥¼ ê¸°ë°˜ìœ¼ë¡œ Localì¢Œí‘œë¡œ ë³€í™˜
 		FVector ActorsLocal3dVector = Player->GetTransform().InverseTransformPosition(ActorToPlace->GetActorLocation());
 
-		//Á¤È®ÇÑ ¹æÇâÀ» À§ÇØ yÃà -90È¸Àü
+		//ì •í™•í•œ ë°©í–¥ì„ ìœ„í•´ yì¶• -90íšŒì „
 		ActorsLocal3dVector = FRotator(0.f, -90.f, 0.f).RotateVector(ActorsLocal3dVector);
 
-		//°Å¸® ºñ·Ê·Î º¯È¯
+		//ê±°ë¦¬ ë¹„ë¡€ë¡œ ë³€í™˜
 		ActorsLocal3dVector /= RadarDistanceScale;
 
-		//·¹ÀÌ´õ´Â Æò¸éÀÌ±â¶§¹®¿¡ 2Dº¤ÅÍ·Î º¯È¯
+		//ë ˆì´ë”ëŠ” í‰ë©´ì´ê¸°ë•Œë¬¸ì— 2Dë²¡í„°ë¡œ ë³€í™˜
 		return FVector2D(ActorsLocal3dVector);
 	}
 

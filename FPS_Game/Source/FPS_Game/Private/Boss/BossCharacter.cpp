@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BossCharacter.h"
 #include "BossAIController.h"
@@ -11,7 +11,7 @@ ABossCharacter::ABossCharacter(const class FObjectInitializer& ObjectInitializer
 	: Super(ObjectInitializer)
 {
 
-	//½Ã¾ß¿¡ ÀûÀÌ ÀÖ´ÂÁö Ã¼Å©ÇÏ´Â ÄÄÆ÷³ÍÆ®
+	//ì‹œì•¼ì— ì ì´ ìˆëŠ”ì§€ ì²´í¬í•˜ëŠ” ì»´í¬ë„ŒíŠ¸
 	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
 	PawnSensingComp->SetPeripheralVisionAngle(60.0f);
 	PawnSensingComp->SightRadius = 2000;
@@ -36,11 +36,11 @@ ABossCharacter::ABossCharacter(const class FObjectInitializer& ObjectInitializer
 	bHeardTarget = false;
 	bPlayedScream = false;
 
-	//ÀûÀ» Å¸°ÙÀ¸·Î °¨ÁöÇÏ°í ¸®¼ÂÇÏ´Âµ¥ °É¸®´Â ½Ã°£ 2.5ÃÊ
+	//ì ì„ íƒ€ê²Ÿìœ¼ë¡œ ê°ì§€í•˜ê³  ë¦¬ì…‹í•˜ëŠ”ë° ê±¸ë¦¬ëŠ” ì‹œê°„ 2.5ì´ˆ
 	SightSenseTimeOut = 2.5f;
 	HearingSenseTimeOut = 6.0f;
 
-	//ÇöÀç ½Ã°£ ÀúÀå¿ë º¯¼ö
+	//í˜„ì¬ ì‹œê°„ ì €ì¥ìš© ë³€ìˆ˜
 	LastSeenTime = 0.0f;
 	LastHeardTime = 0.0f;
 
@@ -69,7 +69,7 @@ void ABossCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	/* 2.5ÃÊ µ¿¾È ÇÃ·¹ÀÌ¾î¸¦ ¦i´Ù°¡ ÇÃ·¹ÀÌ¾î¸¦ ¦iÁö ¸øÇÏ¸é Å¸°Ù ÃÊ±âÈ­ */
+	/* 2.5ì´ˆ ë™ì•ˆ í”Œë ˆì´ì–´ë¥¼ ì«’ë‹¤ê°€ í”Œë ˆì´ì–´ë¥¼ ì«’ì§€ ëª»í•˜ë©´ íƒ€ê²Ÿ ì´ˆê¸°í™” */
 	if (bSensedTarget && (GetWorld()->TimeSeconds - LastSeenTime) > SightSenseTimeOut
 		&& (GetWorld()->TimeSeconds - LastHeardTime) > HearingSenseTimeOut)
 	{
@@ -80,7 +80,7 @@ void ABossCharacter::Tick(float DeltaSeconds)
 			bPlayedScream = false;
 			bHeardTarget = false;
 
-			/* Å¸°Ù ¸®¼Â */
+			/* íƒ€ê²Ÿ ë¦¬ì…‹ */
 			AIController->SetTargetEnemy(nullptr);
 
 			Cast<UCharacterMovementComponent>(GetMovementComponent())->MaxWalkSpeed = DefaultMaxWalkSpeed;
@@ -126,7 +126,7 @@ void ABossCharacter::OnSeePlayer(APawn* Pawn)
 
 void ABossCharacter::TargetChase(APawn* Pawn)
 {
-	//Å¸°ÙÀ» ¹ß°ß ÇÑ µÚ ¿ùµå ½Ã°£À» ¹ŞÀ½
+	//íƒ€ê²Ÿì„ ë°œê²¬ í•œ ë’¤ ì›”ë“œ ì‹œê°„ì„ ë°›ìŒ
 	LastSeenTime = GetWorld()->GetTimeSeconds();
 	bSensedTarget = true;
 
